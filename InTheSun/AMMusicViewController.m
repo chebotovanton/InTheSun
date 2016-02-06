@@ -7,21 +7,60 @@
 //
 
 #import "AMMusicViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
-@interface AMMusicViewController ()
+static NSString * kSongCellIdentifier = @"songCell";
+
+@interface AMMusicViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, weak) IBOutlet UITableView *contentTableView;
 
 @end
 
 @implementation AMMusicViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.items = [self createItems];
+    [self.contentTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kSongCellIdentifier];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSArray *)createItems
+{
+    MPMediaQuery *songsQuery = [MPMediaQuery songsQuery];
+    NSArray *songs = [songsQuery items];
+    return songs;
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.items.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:kSongCellIdentifier];
+    MPMediaItem *rowItem = [self.items objectAtIndex:indexPath.row];
+    cell.textLabel.text = rowItem.title;
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
