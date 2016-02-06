@@ -15,6 +15,8 @@ static NSString * kSongCellIdentifier = @"songCell";
 
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, weak) IBOutlet UITableView *contentTableView;
+@property (nonatomic, strong) MPMusicPlayerController * playerController;
+
 
 @end
 
@@ -26,6 +28,7 @@ static NSString * kSongCellIdentifier = @"songCell";
     
     self.items = [self createItems];
     [self.contentTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kSongCellIdentifier];
+    self.playerController = [MPMusicPlayerController new];
 }
 
 - (NSArray *)createItems
@@ -33,6 +36,15 @@ static NSString * kSongCellIdentifier = @"songCell";
     MPMediaQuery *songsQuery = [MPMediaQuery songsQuery];
     NSArray *songs = [songsQuery items];
     return songs;
+}
+
+- (void)playItem:(MPMediaItem *)item
+{
+//    [self.playerController setQueueWithItemCollection:collection];
+    [self.playerController setNowPlayingItem:item];
+    
+    [self.playerController prepareToPlay];
+    [self.playerController play];
 }
 
 #pragma mark - UITableViewDataSource
@@ -59,6 +71,8 @@ static NSString * kSongCellIdentifier = @"songCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    MPMediaItem *rowItem = [self.items objectAtIndex:indexPath.row];
+    [self playItem:rowItem];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
