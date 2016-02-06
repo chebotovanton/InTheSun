@@ -13,10 +13,10 @@
 		9FADBCDE1C65FBDC00562B13 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCDD1C65FBDC00562B13 /* SecondViewController.m */; };
 		9FADBCE11C65FBDC00562B13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBCDF1C65FBDC00562B13 /* Main.storyboard */; };
 		9FADBCE31C65FBDC00562B13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBCE21C65FBDC00562B13 /* Assets.xcassets */; };
-		9FADBCE61C65FBDC00562B13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBCE41C65FBDC00562B13 /* LaunchScreen.storyboard */; };
 		9FADBCF11C65FBDC00562B13 /* InTheSunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCF01C65FBDC00562B13 /* InTheSunTests.m */; };
 		9FADBCFF1C66141C00562B13 /* AMBlockingScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCFD1C66141C00562B13 /* AMBlockingScreenVC.m */; };
 		9FADBD001C66141C00562B13 /* AMBlockingScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBCFE1C66141C00562B13 /* AMBlockingScreenVC.xib */; };
+		9FADBD041C6638C700562B13 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBD031C6638C700562B13 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 		9FADBCDD1C65FBDC00562B13 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		9FADBCE01C65FBDC00562B13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FADBCE21C65FBDC00562B13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9FADBCE51C65FBDC00562B13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FADBCE71C65FBDC00562B13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FADBCEC1C65FBDC00562B13 /* InTheSunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InTheSunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FADBCF01C65FBDC00562B13 /* InTheSunTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InTheSunTests.m; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		9FADBCFC1C66141C00562B13 /* AMBlockingScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBlockingScreenVC.h; sourceTree = "<group>"; };
 		9FADBCFD1C66141C00562B13 /* AMBlockingScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBlockingScreenVC.m; sourceTree = "<group>"; };
 		9FADBCFE1C66141C00562B13 /* AMBlockingScreenVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMBlockingScreenVC.xib; sourceTree = "<group>"; };
+		9FADBD031C6638C700562B13 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +71,7 @@
 		9FADBCC71C65FBDC00562B13 = {
 			isa = PBXGroup;
 			children = (
+				9FADBD031C6638C700562B13 /* LaunchScreen.xib */,
 				9FADBCD21C65FBDC00562B13 /* InTheSun */,
 				9FADBCEF1C65FBDC00562B13 /* InTheSunTests */,
 				9FADBCD11C65FBDC00562B13 /* Products */,
@@ -97,7 +98,6 @@
 				9FADBCDD1C65FBDC00562B13 /* SecondViewController.m */,
 				9FADBCDF1C65FBDC00562B13 /* Main.storyboard */,
 				9FADBCE21C65FBDC00562B13 /* Assets.xcassets */,
-				9FADBCE41C65FBDC00562B13 /* LaunchScreen.storyboard */,
 				9FADBCE71C65FBDC00562B13 /* Info.plist */,
 				9FADBCFB1C6613E700562B13 /* BlockingScreen */,
 				9FADBCD31C65FBDC00562B13 /* Supporting Files */,
@@ -212,7 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FADBCE61C65FBDC00562B13 /* LaunchScreen.storyboard in Resources */,
+				9FADBD041C6638C700562B13 /* LaunchScreen.xib in Resources */,
 				9FADBCE31C65FBDC00562B13 /* Assets.xcassets in Resources */,
 				9FADBCE11C65FBDC00562B13 /* Main.storyboard in Resources */,
 				9FADBD001C66141C00562B13 /* AMBlockingScreenVC.xib in Resources */,
@@ -266,14 +266,6 @@
 				9FADBCE01C65FBDC00562B13 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9FADBCE41C65FBDC00562B13 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9FADBCE51C65FBDC00562B13 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
