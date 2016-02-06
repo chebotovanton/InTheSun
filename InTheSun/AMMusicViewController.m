@@ -17,7 +17,6 @@ static NSString * kSongCellIdentifier = @"songCell";
 @property (nonatomic, weak) IBOutlet UITableView *contentTableView;
 @property (nonatomic, strong) MPMusicPlayerController * playerController;
 
-
 @end
 
 @implementation AMMusicViewController
@@ -40,14 +39,13 @@ static NSString * kSongCellIdentifier = @"songCell";
 
 - (void)playItem:(MPMediaItem *)item
 {
-//    [self.playerController setQueueWithItemCollection:collection];
     [self.playerController setNowPlayingItem:item];
-    
     [self.playerController prepareToPlay];
     [self.playerController play];
 }
 
 #pragma mark - UITableViewDataSource
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.items.count;
@@ -65,7 +63,6 @@ static NSString * kSongCellIdentifier = @"songCell";
 {
     return 1;
 }
-
 
 #pragma mark - UITableViewDelegate
 
