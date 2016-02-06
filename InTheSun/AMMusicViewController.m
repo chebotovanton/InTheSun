@@ -6,13 +6,13 @@
 //  Copyright © 2016 Anton Chebotov. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "AMMusicViewController.h"
 
-@interface FirstViewController ()
+@interface AMMusicViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation AMMusicViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
