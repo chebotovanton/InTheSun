@@ -7,6 +7,7 @@
 //
 
 #import "AMBlockingScreenVC.h"
+#import "AppDelegate.h"
 
 @interface AMBlockingScreenVC () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -24,18 +25,27 @@
     [self presentViewController:picker animated:YES completion:NULL];
 }
 
+- (BOOL)doesImageFitConditions:(UIImage *)image
+{
+    return YES;
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    //    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    //    self.imageView.image = chosenImage;
-    //
-    [picker dismissViewControllerAnimated:YES completion:NULL];
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    if ([self doesImageFitConditions:chosenImage]) {
+        AppDelegate * appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        [appDelegate hideBlockingScreenAnimated:YES];
+    }
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-    
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

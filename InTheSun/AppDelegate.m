@@ -65,4 +65,9 @@ static NSString * kLaunchCountKey = @"launchCountKey";
     [self.window.rootViewController presentViewController:blockingScreen animated:animated completion:nil];
 }
 
+- (void)hideBlockingScreenAnimated:(BOOL)animated
+{
+    [self.window.rootViewController dismissViewControllerAnimated:animated completion:nil];
+}
+
 @end
