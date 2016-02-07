@@ -9,13 +9,18 @@
 #import "AppDelegate.h"
 #import "AMBlockingScreenVC.h"
 
+static NSString * kLaunchCountKey = @"launchCountKey";
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [self.window makeKeyAndVisible];
+    [self showBlockingScreenIfNeeded];
     return YES;
 }
 
@@ -33,10 +38,23 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+}
+
+#pragma mark - Private
+
+- (void)showBlockingScreenIfNeeded
+{
+    NSInteger launchCount = [[NSUserDefaults standardUserDefaults] integerForKey:kLaunchCountKey];
+    if (launchCount == 0) {
+        [self showBlockingScreenAnimated:NO];
+    }
+    launchCount ++;
+    [[NSUserDefaults standardUserDefaults] setInteger:launchCount forKey:kLaunchCountKey];
 }
 
 #pragma mark - Public
