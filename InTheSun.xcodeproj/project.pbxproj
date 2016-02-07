@@ -18,6 +18,7 @@
 		9FADBD001C66141C00562B13 /* AMBlockingScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBCFE1C66141C00562B13 /* AMBlockingScreenVC.xib */; };
 		9FADBD041C6638C700562B13 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBD031C6638C700562B13 /* LaunchScreen.xib */; };
 		9FADBD061C66435000562B13 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FADBD051C66435000562B13 /* MediaPlayer.framework */; };
+		9FADBD0A1C67B07E00562B13 /* AMImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBD091C67B07E00562B13 /* AMImageProcessor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		9FADBCFE1C66141C00562B13 /* AMBlockingScreenVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMBlockingScreenVC.xib; sourceTree = "<group>"; };
 		9FADBD031C6638C700562B13 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		9FADBD051C66435000562B13 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		9FADBD081C67B07E00562B13 /* AMImageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMImageProcessor.h; sourceTree = "<group>"; };
+		9FADBD091C67B07E00562B13 /* AMImageProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMImageProcessor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,7 @@
 				9FADBCDF1C65FBDC00562B13 /* Main.storyboard */,
 				9FADBCE21C65FBDC00562B13 /* Assets.xcassets */,
 				9FADBCE71C65FBDC00562B13 /* Info.plist */,
+				9FADBD071C67B04C00562B13 /* ImageProcessor */,
 				9FADBCFB1C6613E700562B13 /* BlockingScreen */,
 				9FADBCD31C65FBDC00562B13 /* Supporting Files */,
 			);
@@ -134,6 +138,15 @@
 				9FADBCFE1C66141C00562B13 /* AMBlockingScreenVC.xib */,
 			);
 			path = BlockingScreen;
+			sourceTree = "<group>";
+		};
+		9FADBD071C67B04C00562B13 /* ImageProcessor */ = {
+			isa = PBXGroup;
+			children = (
+				9FADBD081C67B07E00562B13 /* AMImageProcessor.h */,
+				9FADBD091C67B07E00562B13 /* AMImageProcessor.m */,
+			);
+			path = ImageProcessor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +254,7 @@
 				9FADBCD81C65FBDC00562B13 /* AppDelegate.m in Sources */,
 				9FADBCDB1C65FBDC00562B13 /* AMMusicViewController.m in Sources */,
 				9FADBCFF1C66141C00562B13 /* AMBlockingScreenVC.m in Sources */,
+				9FADBD0A1C67B07E00562B13 /* AMImageProcessor.m in Sources */,
 				9FADBCD51C65FBDC00562B13 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
