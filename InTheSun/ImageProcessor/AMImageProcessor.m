@@ -14,7 +14,6 @@ static CGFloat kLuminanceThreshold = 0.5 * 255;
 
 + (BOOL)doesImageFitConditions:(UIImage *)image
 {
-#warning Not implemented!
     CGFloat averageLuminance = [self getAverageLuminanceFromImage:image step:10];
     return averageLuminance > kLuminanceThreshold;
 }

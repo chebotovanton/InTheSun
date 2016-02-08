@@ -13,12 +13,16 @@
 		9FADBCDE1C65FBDC00562B13 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCDD1C65FBDC00562B13 /* SecondViewController.m */; };
 		9FADBCE11C65FBDC00562B13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBCDF1C65FBDC00562B13 /* Main.storyboard */; };
 		9FADBCE31C65FBDC00562B13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBCE21C65FBDC00562B13 /* Assets.xcassets */; };
-		9FADBCF11C65FBDC00562B13 /* InTheSunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCF01C65FBDC00562B13 /* InTheSunTests.m */; };
 		9FADBCFF1C66141C00562B13 /* AMBlockingScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCFD1C66141C00562B13 /* AMBlockingScreenVC.m */; };
 		9FADBD001C66141C00562B13 /* AMBlockingScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBCFE1C66141C00562B13 /* AMBlockingScreenVC.xib */; };
 		9FADBD041C6638C700562B13 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBD031C6638C700562B13 /* LaunchScreen.xib */; };
 		9FADBD061C66435000562B13 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FADBD051C66435000562B13 /* MediaPlayer.framework */; };
 		9FADBD0A1C67B07E00562B13 /* AMImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBD091C67B07E00562B13 /* AMImageProcessor.m */; };
+		9FBEFA9B1C69011100821123 /* AMImageProcessorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEFA9A1C69011100821123 /* AMImageProcessorTests.m */; };
+		9FBEFAA11C6901F000821123 /* dark1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFA9D1C6901F000821123 /* dark1.jpeg */; };
+		9FBEFAA21C6901F000821123 /* dark2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFA9E1C6901F000821123 /* dark2.jpeg */; };
+		9FBEFAA31C6901F000821123 /* sunny1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFA9F1C6901F000821123 /* sunny1.jpeg */; };
+		9FBEFAA41C6901F000821123 /* sunny2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFAA01C6901F000821123 /* sunny2.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +48,6 @@
 		9FADBCE21C65FBDC00562B13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FADBCE71C65FBDC00562B13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FADBCEC1C65FBDC00562B13 /* InTheSunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InTheSunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FADBCF01C65FBDC00562B13 /* InTheSunTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InTheSunTests.m; sourceTree = "<group>"; };
 		9FADBCF21C65FBDC00562B13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FADBCFC1C66141C00562B13 /* AMBlockingScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBlockingScreenVC.h; sourceTree = "<group>"; };
 		9FADBCFD1C66141C00562B13 /* AMBlockingScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBlockingScreenVC.m; sourceTree = "<group>"; };
@@ -53,6 +56,11 @@
 		9FADBD051C66435000562B13 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		9FADBD081C67B07E00562B13 /* AMImageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMImageProcessor.h; sourceTree = "<group>"; };
 		9FADBD091C67B07E00562B13 /* AMImageProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMImageProcessor.m; sourceTree = "<group>"; };
+		9FBEFA9A1C69011100821123 /* AMImageProcessorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMImageProcessorTests.m; sourceTree = "<group>"; };
+		9FBEFA9D1C6901F000821123 /* dark1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dark1.jpeg; sourceTree = "<group>"; };
+		9FBEFA9E1C6901F000821123 /* dark2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dark2.jpeg; sourceTree = "<group>"; };
+		9FBEFA9F1C6901F000821123 /* sunny1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny1.jpeg; sourceTree = "<group>"; };
+		9FBEFAA01C6901F000821123 /* sunny2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny2.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +132,9 @@
 		9FADBCEF1C65FBDC00562B13 /* InTheSunTests */ = {
 			isa = PBXGroup;
 			children = (
-				9FADBCF01C65FBDC00562B13 /* InTheSunTests.m */,
+				9FBEFA9C1C69016F00821123 /* TestImages */,
 				9FADBCF21C65FBDC00562B13 /* Info.plist */,
+				9FBEFA9A1C69011100821123 /* AMImageProcessorTests.m */,
 			);
 			path = InTheSunTests;
 			sourceTree = "<group>";
@@ -147,6 +156,17 @@
 				9FADBD091C67B07E00562B13 /* AMImageProcessor.m */,
 			);
 			path = ImageProcessor;
+			sourceTree = "<group>";
+		};
+		9FBEFA9C1C69016F00821123 /* TestImages */ = {
+			isa = PBXGroup;
+			children = (
+				9FBEFA9D1C6901F000821123 /* dark1.jpeg */,
+				9FBEFA9E1C6901F000821123 /* dark2.jpeg */,
+				9FBEFA9F1C6901F000821123 /* sunny1.jpeg */,
+				9FBEFAA01C6901F000821123 /* sunny2.jpeg */,
+			);
+			path = TestImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +218,7 @@
 				TargetAttributes = {
 					9FADBCCF1C65FBDC00562B13 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = C92M3ZV55X;
 					};
 					9FADBCEB1C65FBDC00562B13 = {
 						CreatedOnToolsVersion = 7.2;
@@ -240,6 +261,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBEFAA41C6901F000821123 /* sunny2.jpeg in Resources */,
+				9FBEFAA21C6901F000821123 /* dark2.jpeg in Resources */,
+				9FBEFAA11C6901F000821123 /* dark1.jpeg in Resources */,
+				9FBEFAA31C6901F000821123 /* sunny1.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FADBCF11C65FBDC00562B13 /* InTheSunTests.m in Sources */,
+				9FBEFA9B1C69011100821123 /* AMImageProcessorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +400,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = InTheSun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -387,6 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = InTheSun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
