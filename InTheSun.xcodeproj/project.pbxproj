@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98DB3BCD1D2FDD3BA0152E9A /* libPods-InTheSun.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00826D850DF4F81DF31E846A /* libPods-InTheSun.a */; };
 		9FADBCD51C65FBDC00562B13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCD41C65FBDC00562B13 /* main.m */; };
 		9FADBCD81C65FBDC00562B13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCD71C65FBDC00562B13 /* AppDelegate.m */; };
 		9FADBCDB1C65FBDC00562B13 /* AMMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCDA1C65FBDC00562B13 /* AMMusicViewController.m */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00826D850DF4F81DF31E846A /* libPods-InTheSun.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InTheSun.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FADBCD01C65FBDC00562B13 /* InTheSun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InTheSun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FADBCD41C65FBDC00562B13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9FADBCD61C65FBDC00562B13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,6 +63,8 @@
 		9FBEFA9E1C6901F000821123 /* dark2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dark2.jpeg; sourceTree = "<group>"; };
 		9FBEFA9F1C6901F000821123 /* sunny1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny1.jpeg; sourceTree = "<group>"; };
 		9FBEFAA01C6901F000821123 /* sunny2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny2.jpeg; sourceTree = "<group>"; };
+		AD583DF034C7E9280CC9302B /* Pods-InTheSun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InTheSun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InTheSun/Pods-InTheSun.debug.xcconfig"; sourceTree = "<group>"; };
+		B10B75000799D04DC96EAE94 /* Pods-InTheSun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InTheSun.release.xcconfig"; path = "Pods/Target Support Files/Pods-InTheSun/Pods-InTheSun.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FADBD061C66435000562B13 /* MediaPlayer.framework in Frameworks */,
+				98DB3BCD1D2FDD3BA0152E9A /* libPods-InTheSun.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A1F9A940D21CB2BDBE5C6D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00826D850DF4F81DF31E846A /* libPods-InTheSun.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9FADBCC71C65FBDC00562B13 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +103,8 @@
 				9FADBCD21C65FBDC00562B13 /* InTheSun */,
 				9FADBCEF1C65FBDC00562B13 /* InTheSunTests */,
 				9FADBCD11C65FBDC00562B13 /* Products */,
+				F339C9549E1BAD2A7DF0FA87 /* Pods */,
+				2A1F9A940D21CB2BDBE5C6D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +184,15 @@
 			path = TestImages;
 			sourceTree = "<group>";
 		};
+		F339C9549E1BAD2A7DF0FA87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD583DF034C7E9280CC9302B /* Pods-InTheSun.debug.xcconfig */,
+				B10B75000799D04DC96EAE94 /* Pods-InTheSun.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,9 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FADBCF51C65FBDC00562B13 /* Build configuration list for PBXNativeTarget "InTheSun" */;
 			buildPhases = (
+				4F85096543DCE78D1777BB10 /* Check Pods Manifest.lock */,
 				9FADBCCC1C65FBDC00562B13 /* Sources */,
 				9FADBCCD1C65FBDC00562B13 /* Frameworks */,
 				9FADBCCE1C65FBDC00562B13 /* Resources */,
+				5EBD417DFF96AF1B8BCC41D6 /* Embed Pods Frameworks */,
+				027DE3BA4370461DE9B5349C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,6 +296,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		027DE3BA4370461DE9B5349C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InTheSun/Pods-InTheSun-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F85096543DCE78D1777BB10 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5EBD417DFF96AF1B8BCC41D6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InTheSun/Pods-InTheSun-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9FADBCCC1C65FBDC00562B13 /* Sources */ = {
@@ -398,6 +473,7 @@
 		};
 		9FADBCF61C65FBDC00562B13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD583DF034C7E9280CC9302B /* Pods-InTheSun.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -411,6 +487,7 @@
 		};
 		9FADBCF71C65FBDC00562B13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B10B75000799D04DC96EAE94 /* Pods-InTheSun.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

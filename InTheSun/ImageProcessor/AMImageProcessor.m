@@ -1,11 +1,3 @@
-//
-//  AMImageProcessor.m
-//  InTheSun
-//
-//  Created by Anton Chebotov on 07/02/16.
-//  Copyright © 2016 Anton Chebotov. All rights reserved.
-//
-
 #import "AMImageProcessor.h"
 
 static CGFloat kLuminanceThreshold = 0.5 * 255;
@@ -20,6 +12,7 @@ static CGFloat kLuminanceThreshold = 0.5 * 255;
 
 + (CGFloat)getAverageLuminanceFromImage:(UIImage *)image step:(NSInteger)step
 {
+    CIDetector
     // First get the image into your data buffer
     CGImageRef imageRef = [image CGImage];
     NSUInteger width = CGImageGetWidth(imageRef);
@@ -57,5 +50,7 @@ static CGFloat kLuminanceThreshold = 0.5 * 255;
     
     return luminanceSum / luminanceTakes;
 }
+
+
 
 @end
