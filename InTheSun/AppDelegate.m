@@ -16,12 +16,11 @@ static NSString * kLaunchCountKey = @"launchCountKey";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [SoundCloudFacade registerUser];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];    
     self.window.rootViewController = [[AMTabMenuVC alloc] initWithNibName:@"AMTabMenuVC" bundle:nil];
     [self.window makeKeyAndVisible];
-
-    [SoundCloudFacade registerUser];
     
     [self showBlockingScreenIfNeeded];
     return YES;
