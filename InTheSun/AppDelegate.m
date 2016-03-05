@@ -1,25 +1,28 @@
-//
-//  AppDelegate.m
-//  InTheSun
-//
-//  Created by Anton Chebotov on 06/02/16.
-//  Copyright © 2016 Anton Chebotov. All rights reserved.
-//
-
 #import "AppDelegate.h"
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
+
 #import "AMBlockingScreenVC.h"
+#import "AMTabMenuVC.h"
+#import "InTheSun-Swift.h"
 
 static NSString * kLaunchCountKey = @"launchCountKey";
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];    
+    self.window.rootViewController = [[AMTabMenuVC alloc] initWithNibName:@"AMTabMenuVC" bundle:nil];
     [self.window makeKeyAndVisible];
+
+    [SoundCloudFacade registerUser];
+    
     [self showBlockingScreenIfNeeded];
     return YES;
 }

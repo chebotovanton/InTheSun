@@ -1,13 +1,7 @@
-//
-//  FirstViewController.m
-//  InTheSun
-//
-//  Created by Anton Chebotov on 06/02/16.
-//  Copyright © 2016 Anton Chebotov. All rights reserved.
-//
-
 #import "AMMusicViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
+#import "InTheSun-Swift.h"
 
 static NSString * kSongCellIdentifier = @"songCell";
 
@@ -16,6 +10,8 @@ static NSString * kSongCellIdentifier = @"songCell";
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, weak) IBOutlet UITableView *contentTableView;
 @property (nonatomic, strong) MPMusicPlayerController *playerController;
+
+@property (nonatomic, strong) AVPlayer * player;
 
 @end
 
@@ -39,9 +35,13 @@ static NSString * kSongCellIdentifier = @"songCell";
 
 - (void)playItem:(MPMediaItem *)item
 {
-    [self.playerController setNowPlayingItem:item];
-    [self.playerController prepareToPlay];
-    [self.playerController play];
+    NSString* urlString = [@"https://api.soundcloud.com/tracks/169494324/stream?client_id=8867dd81941c97cd17a7b2553b76a3b1" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL * url = [NSURL URLWithString:urlString];
+        
+    AVPlayerItem * playerItem = [AVPlayerItem playerItemWithURL:url];
+    self.player = [[AVPlayer alloc] initWithPlayerItem:playerItem];
+    [self.player play];
+
 }
 
 

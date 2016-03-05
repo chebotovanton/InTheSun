@@ -1,10 +1,19 @@
 PODS:
+  - 1PasswordExtension (1.8)
   - OpenCV (3.0.0)
+  - Soundcloud (0.7.1):
+    - 1PasswordExtension (~> 1.5)
+    - UICKeyChainStore (~> 2.0.6)
+  - UICKeyChainStore (2.0.7)
 
 DEPENDENCIES:
   - OpenCV (~> 3.0)
+  - Soundcloud (~> 0.7)
 
 SPEC CHECKSUMS:
+  1PasswordExtension: 627d5aecf210c7636968faf5a4c3546c9531385b
   OpenCV: be07c02f0d8f125f1d40d261e66a66cb66ece3b3
+  Soundcloud: 7e67cd9ab67884a565b486939c1a046c20243a30
+  UICKeyChainStore: 696cd35083f7c8fb5e201d909b7e6aea6b478575
 
 COCOAPODS: 0.39.0
