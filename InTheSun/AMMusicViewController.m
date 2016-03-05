@@ -7,6 +7,7 @@ static NSString * kSongCellIdentifier = @"songCell";
 @interface AMMusicViewController () <UITableViewDataSource, UITableViewDelegate, SoundCloudDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *contentTableView;
+@property (nonatomic, weak) IBOutlet UIImageView *albumArtwork;
 @property (nonatomic, strong) SoundCloudFacade *soundcloudFacade;
 @property (nonatomic, strong) AVPlayer * player;
 
@@ -84,6 +85,7 @@ static NSString * kSongCellIdentifier = @"songCell";
 - (void)didLoadAlbum
 {
     [self.contentTableView reloadData];
+    [self.soundcloudFacade loadAlbumImage];
 }
 - (void)albumLoadingFailed
 {
@@ -94,5 +96,9 @@ static NSString * kSongCellIdentifier = @"songCell";
                       otherButtonTitles:nil] show];
 }
 
+- (void)didLoadAlbumImage:(UIImage *)image
+{
+    self.albumArtwork.image = image;
+}
 
 @end

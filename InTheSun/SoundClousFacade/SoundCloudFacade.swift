@@ -5,6 +5,7 @@ import AVFoundation
 @objc protocol SoundCloudDelegate {
     func didLoadAlbum()
     func albumLoadingFailed()
+    func didLoadAlbumImage(image: UIImage)
 }
 
 @objc class SoundCloudFacade: NSObject {
@@ -49,6 +50,30 @@ import AVFoundation
             return self.playlist!.tracks[songIndex].title
         }
         return "Test"
+    }
+
+    func loadAlbumImage() {
+        let imageUrl = self.playlist?.artworkURL.largeURL
+        self.downloadImage(imageUrl!)
+    }
+    
+    func downloadImage(url: NSURL){
+        getDataFromUrl(url) { (data, response, error)  in
+            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                guard let data = data where error == nil else { return }
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    let image = UIImage(data: data)
+                    self.delegate?.didLoadAlbumImage(image!)
+                })
+            }
+        }
+    }
+
+    func getDataFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
+        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            completion(data: data, response: response, error: error)
+            }.resume()
     }
     
 }
