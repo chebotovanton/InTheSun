@@ -40,6 +40,8 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         self.player.play()
         self.setupPlayButton()
         self.currentPlayingIndex = index
+        self.songTitle.text = track.title
+        self.contentTableView.selectRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0), animated: true, scrollPosition: .Middle)
     }
     
     private func isPlaying() -> Bool {
@@ -123,6 +125,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     func didLoadAlbum(playlist: Playlist) {
         self.playlist = playlist
         self.contentTableView.reloadData()
+        self.albumTitle.text = self.playlist!.title
         self.soundcloudFacade.loadAlbumImage()
     }
     

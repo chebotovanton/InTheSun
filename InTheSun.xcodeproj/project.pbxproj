@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1AC443E731A5A284CD12BFA4 /* Pods_InTheSun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BA08A4973517418B0A2CFF /* Pods_InTheSun.framework */; };
-		9F041A0A1C8B3AB00092CBAC /* albumArt.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F041A091C8B3AB00092CBAC /* albumArt.png */; };
 		9F041A151C8C7E020092CBAC /* AMMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F041A131C8C7E020092CBAC /* AMMusicViewController.swift */; };
 		9F041A161C8C7E020092CBAC /* AMMusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F041A141C8C7E020092CBAC /* AMMusicViewController.xib */; };
 		9F81E05C1C8B08D6003FA920 /* SoundCloudFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81E05B1C8B08D6003FA920 /* SoundCloudFacade.swift */; };
@@ -43,7 +42,6 @@
 
 /* Begin PBXFileReference section */
 		08BA08A4973517418B0A2CFF /* Pods_InTheSun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InTheSun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F041A091C8B3AB00092CBAC /* albumArt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = albumArt.png; path = ../../../../Desktop/albumArt.png; sourceTree = "<group>"; };
 		9F041A131C8C7E020092CBAC /* AMMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMMusicViewController.swift; sourceTree = "<group>"; };
 		9F041A141C8C7E020092CBAC /* AMMusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMMusicViewController.xib; sourceTree = "<group>"; };
 		9F81E05B1C8B08D6003FA920 /* SoundCloudFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCloudFacade.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 		9FADBCD21C65FBDC00562B13 /* InTheSun */ = {
 			isa = PBXGroup;
 			children = (
-				9F041A091C8B3AB00092CBAC /* albumArt.png */,
 				9F81E0591C8B08B5003FA920 /* SoundClousFacade */,
 				9FADBCD61C65FBDC00562B13 /* AppDelegate.h */,
 				9FADBCD71C65FBDC00562B13 /* AppDelegate.m */,
@@ -306,7 +303,6 @@
 				9FD4F62F1C81EED8004A0734 /* SecondViewController.xib in Resources */,
 				9FADBD041C6638C700562B13 /* LaunchScreen.xib in Resources */,
 				9FADBCE31C65FBDC00562B13 /* Assets.xcassets in Resources */,
-				9F041A0A1C8B3AB00092CBAC /* albumArt.png in Resources */,
 				9F041A161C8C7E020092CBAC /* AMMusicViewController.xib in Resources */,
 				9FADBD001C66141C00562B13 /* AMBlockingScreenVC.xib in Resources */,
 			);

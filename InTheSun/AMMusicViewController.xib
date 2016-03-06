@@ -8,7 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AMMusicViewController" customModule="InTheSun" customModuleProvider="target">
             <connections>
                 <outlet property="albumArtwork" destination="XCd-tQ-fM8" id="uTs-9w-Uke"/>
-                <outlet property="albumTitle" destination="iCJ-Bz-MGy" id="d6T-2G-t5U"/>
+                <outlet property="albumTitle" destination="mdn-Ol-ap0" id="Uvc-5d-u1c"/>
                 <outlet property="contentTableView" destination="Ivd-uV-bdV" id="tad-pe-1Av"/>
                 <outlet property="nextButton" destination="2Jz-0e-CbZ" id="A5m-pO-DGg"/>
                 <outlet property="playButton" destination="JTj-Fc-df9" id="hcm-Gu-dyR"/>
@@ -55,12 +55,6 @@
                                 <constraint firstAttribute="width" constant="128" id="Yhr-QJ-Nby"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCJ-Bz-MGy">
-                            <rect key="frame" x="343" y="11" width="98.5" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmR-ww-Mmq">
                             <rect key="frame" x="153" y="109" width="59" height="30"/>
                             <state key="normal" title="Previous"/>
@@ -69,21 +63,21 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTj-Fc-df9">
-                            <rect key="frame" x="242" y="109" width="30" height="30"/>
+                            <rect key="frame" x="222" y="109" width="30" height="30"/>
                             <state key="normal" title="Play"/>
                             <connections>
                                 <action selector="play" destination="-1" eventType="touchUpInside" id="2hX-zW-nZB"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jz-0e-CbZ">
-                            <rect key="frame" x="302" y="109" width="32" height="30"/>
+                            <rect key="frame" x="262" y="109" width="32" height="30"/>
                             <state key="normal" title="Next"/>
                             <connections>
                                 <action selector="next" destination="-1" eventType="touchUpInside" id="BWR-Pt-kwY"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAU-ZC-xim">
-                            <rect key="frame" x="371" y="39.5" width="42" height="20.5"/>
+                            <rect key="frame" x="153" y="39.5" width="42" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -91,16 +85,14 @@
                     </subviews>
                     <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="JTj-Fc-df9" firstAttribute="leading" secondItem="nmR-ww-Mmq" secondAttribute="trailing" constant="30" id="6J4-qF-cns"/>
-                        <constraint firstItem="NAU-ZC-xim" firstAttribute="centerX" secondItem="iCJ-Bz-MGy" secondAttribute="centerX" id="VwQ-qi-ybg"/>
-                        <constraint firstItem="2Jz-0e-CbZ" firstAttribute="leading" secondItem="JTj-Fc-df9" secondAttribute="trailing" constant="30" id="Y7w-PI-gSc"/>
-                        <constraint firstItem="iCJ-Bz-MGy" firstAttribute="leading" secondItem="XCd-tQ-fM8" secondAttribute="trailing" constant="200" id="Ygb-5a-m9x"/>
+                        <constraint firstItem="JTj-Fc-df9" firstAttribute="leading" secondItem="nmR-ww-Mmq" secondAttribute="trailing" constant="10" id="6J4-qF-cns"/>
+                        <constraint firstItem="NAU-ZC-xim" firstAttribute="top" secondItem="LTD-wS-aka" secondAttribute="top" constant="39.5" id="Q91-c7-lnp"/>
+                        <constraint firstItem="NAU-ZC-xim" firstAttribute="leading" secondItem="XCd-tQ-fM8" secondAttribute="trailing" constant="10" id="VnJ-UJ-k0i"/>
+                        <constraint firstItem="2Jz-0e-CbZ" firstAttribute="leading" secondItem="JTj-Fc-df9" secondAttribute="trailing" constant="10" id="Y7w-PI-gSc"/>
                         <constraint firstItem="nmR-ww-Mmq" firstAttribute="leading" secondItem="XCd-tQ-fM8" secondAttribute="trailing" constant="10" id="Yjp-fa-iQx"/>
                         <constraint firstItem="JTj-Fc-df9" firstAttribute="baseline" secondItem="nmR-ww-Mmq" secondAttribute="baseline" id="Zaa-cT-ARa"/>
-                        <constraint firstItem="NAU-ZC-xim" firstAttribute="top" secondItem="iCJ-Bz-MGy" secondAttribute="bottom" constant="8" id="axL-Mt-nS3"/>
                         <constraint firstItem="XCd-tQ-fM8" firstAttribute="leading" secondItem="LTD-wS-aka" secondAttribute="leading" constant="15" id="cg3-29-T8J"/>
                         <constraint firstItem="XCd-tQ-fM8" firstAttribute="centerY" secondItem="LTD-wS-aka" secondAttribute="centerY" id="ijf-jG-Eke"/>
-                        <constraint firstItem="iCJ-Bz-MGy" firstAttribute="top" secondItem="XCd-tQ-fM8" secondAttribute="top" id="lRY-Mh-qbk"/>
                         <constraint firstItem="nmR-ww-Mmq" firstAttribute="bottom" secondItem="XCd-tQ-fM8" secondAttribute="bottom" id="mNJ-6Y-Eh6"/>
                         <constraint firstItem="2Jz-0e-CbZ" firstAttribute="baseline" secondItem="JTj-Fc-df9" secondAttribute="baseline" id="o6N-c4-Lek"/>
                         <constraint firstAttribute="height" constant="150" id="wT2-mh-ej4"/>
