@@ -2,8 +2,8 @@ import UIKit
 import Soundcloud
 import AVFoundation
 
-@objc protocol SoundCloudDelegate {
-    func didLoadAlbum()
+protocol SoundCloudDelegate {
+    func didLoadAlbum(playlist: Playlist)
     func albumLoadingFailed()
     func didLoadAlbumImage(image: UIImage)
 }
@@ -12,46 +12,24 @@ import AVFoundation
 
     var playlist: Playlist?
     var delegate: SoundCloudDelegate?
-    var player = AVPlayer()
     
     class func registerUser() {
         Soundcloud.clientIdentifier = "8867dd81941c97cd17a7b2553b76a3b1"
         Soundcloud.clientSecret  = "94dcc39144fb995dab134aa073dc6679"
         Soundcloud.redirectURI = "http://google.com"
     }
-    
-    func play(songIndex: Int) {
-        let track = self.playlist!.tracks[songIndex]
-        self.player.pause()
-        self.player = AVPlayer(URL: track.streamURL!)
-        player.play()
-    }
-    
+        
     func loadAlbum(albumId: Int) {
         Playlist.playlist(albumId) { (result: SimpleAPIResponse<Playlist>) -> Void in
             self.playlist = result.response.result
             if (self.playlist != nil) {
-                self.delegate?.didLoadAlbum()
+                self.delegate?.didLoadAlbum(self.playlist!)
             } else {
                 self.delegate?.albumLoadingFailed()
             }
         }
     }
     
-    func songsCount() -> Int {
-        if (self.playlist != nil) {
-            return self.playlist!.tracks.count
-        }
-        return 0
-    }
-    
-    func songTitle(songIndex: Int) -> String? {
-        if (self.playlist != nil) {
-            return self.playlist!.tracks[songIndex].title
-        }
-        return "Test"
-    }
-
     func loadAlbumImage() {
         let imageUrl = self.playlist?.artworkURL.largeURL
         self.downloadImage(imageUrl!)
