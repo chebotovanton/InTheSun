@@ -31,18 +31,12 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ce7-Ox-8em">
-                            <rect key="frame" x="497" y="18" width="88" height="30"/>
-                            <state key="normal" title="About album"/>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="mdn-Ol-ap0" secondAttribute="bottom" constant="7" id="Boq-FJ-FdO"/>
                         <constraint firstAttribute="height" constant="50" id="Ipb-Zu-A5R"/>
                         <constraint firstItem="mdn-Ol-ap0" firstAttribute="centerX" secondItem="eSh-oK-LB4" secondAttribute="centerX" id="S54-Sw-cnI"/>
-                        <constraint firstAttribute="trailing" secondItem="Ce7-Ox-8em" secondAttribute="trailing" constant="15" id="bGS-Ex-LPE"/>
-                        <constraint firstItem="Ce7-Ox-8em" firstAttribute="centerY" secondItem="mdn-Ol-ap0" secondAttribute="centerY" id="gsC-gr-In8"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTD-wS-aka" userLabel="HeaderView">
