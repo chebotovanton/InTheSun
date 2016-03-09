@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 #import "AMBlockingScreenVC.h"
 #import "AMTabMenuVC.h"
@@ -15,6 +16,9 @@ static NSString * kLaunchCountKey = @"launchCountKey";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     [SoundCloudFacade registerUser];
     
@@ -26,25 +30,17 @@ static NSString * kLaunchCountKey = @"launchCountKey";
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation
+            ];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
+    [FBSDKAppEvents activateApp];
 }
 
 #pragma mark - Private
