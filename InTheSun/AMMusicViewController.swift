@@ -1,6 +1,7 @@
 import UIKit
 import Soundcloud
 import AVFoundation
+import MediaPlayer
 
 class AMMusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SoundCloudDelegate {
 
@@ -8,7 +9,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var player: AVPlayer = AVPlayer()
     var playlist: Playlist?
-    var currentPlayingIndex: Int = -1
+    var currentPlayingIndex: Int = 0
     
     @IBOutlet weak var contentTableView: UITableView!
     @IBOutlet weak var albumArtwork: UIImageView!
@@ -31,6 +32,22 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         self.soundcloudFacade.loadAlbum(41780534)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
+        self.becomeFirstResponder()
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {}
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.sharedApplication().endReceivingRemoteControlEvents()
+        self.resignFirstResponder()
+    }
+    
     //MARK: - Private
     
     func playItem(index: Int) {
@@ -42,6 +59,13 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         self.currentPlayingIndex = index
         self.songTitle.text = track.title
         self.contentTableView.selectRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0), animated: true, scrollPosition: .Middle)
+        
+        var trackInfo:[String:AnyObject] = [MPMediaItemPropertyArtist:"АукцЫон", MPMediaItemPropertyTitle:track.title, MPMediaItemPropertyAlbumTitle:"На Солнце", MPMediaItemPropertyPlaybackDuration:track.duration / 1000]
+        
+        if let artwork = self.albumArtwork.image {
+            trackInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: artwork)
+        }
+        MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = trackInfo
     }
     
     private func isPlaying() -> Bool {
@@ -73,7 +97,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     //MARK: - IBActions
     
-    @IBAction func play() {
+    @IBAction func togglePlay() {
         if (self.isPlaying()) {
             self.player.pause()
         } else {
@@ -86,6 +110,8 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         let newIndex = self.currentPlayingIndex + 1
         if newIndex < self.tracksCount() {
             self.playItem(newIndex)
+        } else {
+            self.playItem(0)
         }
     }
     
@@ -93,6 +119,8 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         let newIndex = self.currentPlayingIndex - 1
         if newIndex >= 0 {
             self.playItem(newIndex)
+        } else {
+            self.playItem(self.tracksCount() - 1)
         }
     }
     
@@ -138,6 +166,28 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func didLoadAlbumImage(image: UIImage) {
         self.albumArtwork.image = image
+    }
+    
+    //MARK: - Remote control events
+    
+    override func remoteControlReceivedWithEvent(event: UIEvent?) {
+        if let subtype = event?.subtype {
+            switch subtype {
+                case UIEventSubtype.RemoteControlPause,
+                     UIEventSubtype.RemoteControlTogglePlayPause,
+                     UIEventSubtype.RemoteControlPlay:
+                        self.togglePlay()
+                        break
+                case UIEventSubtype.RemoteControlNextTrack:
+                    self.next()
+                    break
+                case UIEventSubtype.RemoteControlPreviousTrack:
+                    self.previous()
+                    break
+                default:
+                    break
+            }
+        }
     }
     
 }
