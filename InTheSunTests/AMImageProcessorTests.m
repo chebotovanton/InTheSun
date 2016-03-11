@@ -6,6 +6,8 @@
 //  Copyright © 2016 Anton Chebotov. All rights reserved.
 #import <XCTest/XCTest.h>
 #import "AMImageProcessor.h"
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 @interface AMImageProcessorTests : XCTestCase
 
@@ -22,6 +24,12 @@
 - (void)testSunnyImage2
 {
     UIImage *image = [self imageNamed:@"sunny2.jpeg"];
+    XCTAssertTrue([AMImageProcessor doesImageFitConditions:image]);
+}
+
+- (void)testSunnyImage3
+{
+    UIImage *image = [self imageNamed:@"sunny3.jpg"];
     XCTAssertTrue([AMImageProcessor doesImageFitConditions:image]);
 }
 

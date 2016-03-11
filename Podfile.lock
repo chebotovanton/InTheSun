@@ -12,7 +12,6 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.10.0):
     - FBSDKCoreKit
-  - OpenCV (3.0.0)
   - Soundcloud (0.7.1):
     - 1PasswordExtension (~> 1.5)
     - UICKeyChainStore (~> 2.0.6)
@@ -22,7 +21,6 @@ DEPENDENCIES:
   - FBSDKCoreKit (~> 4.10)
   - FBSDKLoginKit (~> 4.10)
   - FBSDKShareKit (~> 4.10)
-  - OpenCV (~> 3.0)
   - Soundcloud (~> 0.7)
 
 SPEC CHECKSUMS:
@@ -31,7 +29,6 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 13bec8373fb3af94d44daf2aa1e0958687897fbd
   FBSDKLoginKit: d3d4a2e9d31954deb00bfea964167a05ca1ea976
   FBSDKShareKit: 54587b4624706ace1e810cf83412a918141f807a
-  OpenCV: be07c02f0d8f125f1d40d261e66a66cb66ece3b3
   Soundcloud: 7e67cd9ab67884a565b486939c1a046c20243a30
   UICKeyChainStore: 696cd35083f7c8fb5e201d909b7e6aea6b478575
 

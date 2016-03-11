@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1AC443E731A5A284CD12BFA4 /* Pods_InTheSun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BA08A4973517418B0A2CFF /* Pods_InTheSun.framework */; };
+		2D6EB37A1C92133100EBDD69 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2D6EB3791C92133100EBDD69 /* OpenCVWrapper.mm */; };
+		2D6EB37D1C9213DB00EBDD69 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2D6EB37C1C9213DB00EBDD69 /* UIImage+OpenCV.mm */; };
+		2D6EB37F1C923A1E00EBDD69 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6EB37E1C923A1E00EBDD69 /* opencv2.framework */; };
+		2D6EB3811C923E8700EBDD69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6EB3801C923E8700EBDD69 /* CoreGraphics.framework */; };
+		2D6EB3831C923F1000EBDD69 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6EB3821C923F1000EBDD69 /* libc++.tbd */; };
+		2D6EB38B1C9240E300EBDD69 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6EB38A1C9240E300EBDD69 /* libstdc++.6.0.9.tbd */; };
+		2D6EB38C1C935D2700EBDD69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6EB3801C923E8700EBDD69 /* CoreGraphics.framework */; };
+		2D6EB38E1C935D3200EBDD69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6EB38D1C935D3200EBDD69 /* UIKit.framework */; };
+		2D6EB3901C935F4400EBDD69 /* sunny3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D6EB38F1C935F4400EBDD69 /* sunny3.jpg */; };
 		9F041A151C8C7E020092CBAC /* AMMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F041A131C8C7E020092CBAC /* AMMusicViewController.swift */; };
 		9F041A161C8C7E020092CBAC /* AMMusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F041A141C8C7E020092CBAC /* AMMusicViewController.xib */; };
 		9F041A1C1C8C8C580092CBAC /* AMAlbumInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F041A1A1C8C8C580092CBAC /* AMAlbumInfoVC.m */; };
@@ -46,6 +55,19 @@
 
 /* Begin PBXFileReference section */
 		08BA08A4973517418B0A2CFF /* Pods_InTheSun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InTheSun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D6EB3781C92133100EBDD69 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
+		2D6EB3791C92133100EBDD69 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
+		2D6EB37B1C9213DB00EBDD69 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
+		2D6EB37C1C9213DB00EBDD69 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
+		2D6EB37E1C923A1E00EBDD69 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		2D6EB3801C923E8700EBDD69 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2D6EB3821C923F1000EBDD69 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		2D6EB3841C923FBE00EBDD69 /* dylib1.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = dylib1.o; path = usr/lib/dylib1.o; sourceTree = SDKROOT; };
+		2D6EB3861C923FCD00EBDD69 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		2D6EB3881C923FD400EBDD69 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
+		2D6EB38A1C9240E300EBDD69 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		2D6EB38D1C935D3200EBDD69 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2D6EB38F1C935F4400EBDD69 /* sunny3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny3.jpg; sourceTree = "<group>"; };
 		9F041A131C8C7E020092CBAC /* AMMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMMusicViewController.swift; sourceTree = "<group>"; };
 		9F041A141C8C7E020092CBAC /* AMMusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMMusicViewController.xib; sourceTree = "<group>"; };
 		9F041A191C8C8C580092CBAC /* AMAlbumInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMAlbumInfoVC.h; sourceTree = "<group>"; };
@@ -91,6 +113,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D6EB38B1C9240E300EBDD69 /* libstdc++.6.0.9.tbd in Frameworks */,
+				2D6EB3831C923F1000EBDD69 /* libc++.tbd in Frameworks */,
+				2D6EB3811C923E8700EBDD69 /* CoreGraphics.framework in Frameworks */,
+				2D6EB37F1C923A1E00EBDD69 /* opencv2.framework in Frameworks */,
 				9FADBD061C66435000562B13 /* MediaPlayer.framework in Frameworks */,
 				1AC443E731A5A284CD12BFA4 /* Pods_InTheSun.framework in Frameworks */,
 			);
@@ -100,6 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D6EB38E1C935D3200EBDD69 /* UIKit.framework in Frameworks */,
+				2D6EB38C1C935D2700EBDD69 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +137,14 @@
 		2A1F9A940D21CB2BDBE5C6D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D6EB38D1C935D3200EBDD69 /* UIKit.framework */,
+				2D6EB38A1C9240E300EBDD69 /* libstdc++.6.0.9.tbd */,
+				2D6EB3881C923FD400EBDD69 /* libc++abi.tbd */,
+				2D6EB3861C923FCD00EBDD69 /* libc++.1.tbd */,
+				2D6EB3841C923FBE00EBDD69 /* dylib1.o */,
+				2D6EB3821C923F1000EBDD69 /* libc++.tbd */,
+				2D6EB3801C923E8700EBDD69 /* CoreGraphics.framework */,
+				2D6EB37E1C923A1E00EBDD69 /* opencv2.framework */,
 				08BA08A4973517418B0A2CFF /* Pods_InTheSun.framework */,
 			);
 			name = Frameworks;
@@ -231,6 +267,10 @@
 			children = (
 				9FADBD081C67B07E00562B13 /* AMImageProcessor.h */,
 				9FADBD091C67B07E00562B13 /* AMImageProcessor.m */,
+				2D6EB3781C92133100EBDD69 /* OpenCVWrapper.h */,
+				2D6EB3791C92133100EBDD69 /* OpenCVWrapper.mm */,
+				2D6EB37B1C9213DB00EBDD69 /* UIImage+OpenCV.h */,
+				2D6EB37C1C9213DB00EBDD69 /* UIImage+OpenCV.mm */,
 			);
 			path = ImageProcessor;
 			sourceTree = "<group>";
@@ -238,6 +278,7 @@
 		9FBEFA9C1C69016F00821123 /* TestImages */ = {
 			isa = PBXGroup;
 			children = (
+				2D6EB38F1C935F4400EBDD69 /* sunny3.jpg */,
 				9FBEFA9D1C6901F000821123 /* dark1.jpeg */,
 				9FBEFA9E1C6901F000821123 /* dark2.jpeg */,
 				9FBEFA9F1C6901F000821123 /* sunny1.jpeg */,
@@ -307,7 +348,7 @@
 				TargetAttributes = {
 					9FADBCCF1C65FBDC00562B13 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = C92M3ZV55X;
+						DevelopmentTeam = 4GWDBCF5A4;
 					};
 					9FADBCEB1C65FBDC00562B13 = {
 						CreatedOnToolsVersion = 7.2;
@@ -356,6 +397,7 @@
 			files = (
 				9FBEFAA41C6901F000821123 /* sunny2.jpeg in Resources */,
 				9FBEFAA21C6901F000821123 /* dark2.jpeg in Resources */,
+				2D6EB3901C935F4400EBDD69 /* sunny3.jpg in Resources */,
 				9FBEFAA11C6901F000821123 /* dark1.jpeg in Resources */,
 				9FBEFAA31C6901F000821123 /* sunny1.jpeg in Resources */,
 			);
@@ -424,7 +466,9 @@
 				9F041A1C1C8C8C580092CBAC /* AMAlbumInfoVC.m in Sources */,
 				9F041A151C8C7E020092CBAC /* AMMusicViewController.swift in Sources */,
 				9F81E05C1C8B08D6003FA920 /* SoundCloudFacade.swift in Sources */,
+				2D6EB37A1C92133100EBDD69 /* OpenCVWrapper.mm in Sources */,
 				9FD4F62A1C81CF39004A0734 /* AMTabMenuVC.m in Sources */,
+				2D6EB37D1C9213DB00EBDD69 /* UIImage+OpenCV.mm in Sources */,
 				9FADBCD51C65FBDC00562B13 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,13 +581,23 @@
 			baseConfigurationReference = AD583DF034C7E9280CC9302B /* Pods-InTheSun.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = InTheSun/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.InTheSun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "InTheSun/SoundClousFacade/InTheSun-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -554,13 +608,23 @@
 			baseConfigurationReference = B10B75000799D04DC96EAE94 /* Pods-InTheSun.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = InTheSun/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.InTheSun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "InTheSun/SoundClousFacade/InTheSun-Bridging-Header.h";
 			};
 			name = Release;
