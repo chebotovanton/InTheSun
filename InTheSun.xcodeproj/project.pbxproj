@@ -7,12 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		98DB3BCD1D2FDD3BA0152E9A /* libPods-InTheSun.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00826D850DF4F81DF31E846A /* libPods-InTheSun.a */; };
+		1AC443E731A5A284CD12BFA4 /* Pods_InTheSun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BA08A4973517418B0A2CFF /* Pods_InTheSun.framework */; };
+		2D6EB37A1C92133100EBDD69 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2D6EB3791C92133100EBDD69 /* OpenCVWrapper.mm */; };
+		2D6EB37D1C9213DB00EBDD69 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2D6EB37C1C9213DB00EBDD69 /* UIImage+OpenCV.mm */; };
+		2D6EB37F1C923A1E00EBDD69 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6EB37E1C923A1E00EBDD69 /* opencv2.framework */; };
+		2D6EB3811C923E8700EBDD69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6EB3801C923E8700EBDD69 /* CoreGraphics.framework */; };
+		2D6EB3831C923F1000EBDD69 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6EB3821C923F1000EBDD69 /* libc++.tbd */; };
+		2D6EB38B1C9240E300EBDD69 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6EB38A1C9240E300EBDD69 /* libstdc++.6.0.9.tbd */; };
+		2D6EB38C1C935D2700EBDD69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6EB3801C923E8700EBDD69 /* CoreGraphics.framework */; };
+		2D6EB38E1C935D3200EBDD69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6EB38D1C935D3200EBDD69 /* UIKit.framework */; };
+		2D6EB3901C935F4400EBDD69 /* sunny3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D6EB38F1C935F4400EBDD69 /* sunny3.jpg */; };
+		9F041A151C8C7E020092CBAC /* AMMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F041A131C8C7E020092CBAC /* AMMusicViewController.swift */; };
+		9F041A161C8C7E020092CBAC /* AMMusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F041A141C8C7E020092CBAC /* AMMusicViewController.xib */; };
+		9F041A1C1C8C8C580092CBAC /* AMAlbumInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F041A1A1C8C8C580092CBAC /* AMAlbumInfoVC.m */; };
+		9F041A1D1C8C8C580092CBAC /* AMAlbumInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F041A1B1C8C8C580092CBAC /* AMAlbumInfoVC.xib */; };
+		9F041A221C8C8F280092CBAC /* EventsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F041A201C8C8F280092CBAC /* EventsVC.m */; };
+		9F041A231C8C8F280092CBAC /* EventsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F041A211C8C8F280092CBAC /* EventsVC.xib */; };
+		9F81E05C1C8B08D6003FA920 /* SoundCloudFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81E05B1C8B08D6003FA920 /* SoundCloudFacade.swift */; };
 		9FADBCD51C65FBDC00562B13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCD41C65FBDC00562B13 /* main.m */; };
 		9FADBCD81C65FBDC00562B13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCD71C65FBDC00562B13 /* AppDelegate.m */; };
-		9FADBCDB1C65FBDC00562B13 /* AMMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCDA1C65FBDC00562B13 /* AMMusicViewController.m */; };
 		9FADBCDE1C65FBDC00562B13 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCDD1C65FBDC00562B13 /* SecondViewController.m */; };
-		9FADBCE11C65FBDC00562B13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBCDF1C65FBDC00562B13 /* Main.storyboard */; };
 		9FADBCE31C65FBDC00562B13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBCE21C65FBDC00562B13 /* Assets.xcassets */; };
 		9FADBCFF1C66141C00562B13 /* AMBlockingScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCFD1C66141C00562B13 /* AMBlockingScreenVC.m */; };
 		9FADBD001C66141C00562B13 /* AMBlockingScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBCFE1C66141C00562B13 /* AMBlockingScreenVC.xib */; };
@@ -24,6 +38,9 @@
 		9FBEFAA21C6901F000821123 /* dark2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFA9E1C6901F000821123 /* dark2.jpeg */; };
 		9FBEFAA31C6901F000821123 /* sunny1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFA9F1C6901F000821123 /* sunny1.jpeg */; };
 		9FBEFAA41C6901F000821123 /* sunny2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFAA01C6901F000821123 /* sunny2.jpeg */; };
+		9FD4F62A1C81CF39004A0734 /* AMTabMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD4F6281C81CF39004A0734 /* AMTabMenuVC.m */; };
+		9FD4F62B1C81CF39004A0734 /* AMTabMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD4F6291C81CF39004A0734 /* AMTabMenuVC.xib */; };
+		9FD4F62F1C81EED8004A0734 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD4F62E1C81EED8004A0734 /* SecondViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,16 +54,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00826D850DF4F81DF31E846A /* libPods-InTheSun.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InTheSun.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08BA08A4973517418B0A2CFF /* Pods_InTheSun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InTheSun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D6EB3781C92133100EBDD69 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
+		2D6EB3791C92133100EBDD69 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
+		2D6EB37B1C9213DB00EBDD69 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
+		2D6EB37C1C9213DB00EBDD69 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
+		2D6EB37E1C923A1E00EBDD69 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		2D6EB3801C923E8700EBDD69 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2D6EB3821C923F1000EBDD69 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		2D6EB3841C923FBE00EBDD69 /* dylib1.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = dylib1.o; path = usr/lib/dylib1.o; sourceTree = SDKROOT; };
+		2D6EB3861C923FCD00EBDD69 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		2D6EB3881C923FD400EBDD69 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
+		2D6EB38A1C9240E300EBDD69 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		2D6EB38D1C935D3200EBDD69 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2D6EB38F1C935F4400EBDD69 /* sunny3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny3.jpg; sourceTree = "<group>"; };
+		9F041A131C8C7E020092CBAC /* AMMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMMusicViewController.swift; sourceTree = "<group>"; };
+		9F041A141C8C7E020092CBAC /* AMMusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMMusicViewController.xib; sourceTree = "<group>"; };
+		9F041A191C8C8C580092CBAC /* AMAlbumInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMAlbumInfoVC.h; sourceTree = "<group>"; };
+		9F041A1A1C8C8C580092CBAC /* AMAlbumInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMAlbumInfoVC.m; sourceTree = "<group>"; };
+		9F041A1B1C8C8C580092CBAC /* AMAlbumInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMAlbumInfoVC.xib; sourceTree = "<group>"; };
+		9F041A1F1C8C8F280092CBAC /* EventsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsVC.h; sourceTree = "<group>"; };
+		9F041A201C8C8F280092CBAC /* EventsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsVC.m; sourceTree = "<group>"; };
+		9F041A211C8C8F280092CBAC /* EventsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsVC.xib; sourceTree = "<group>"; };
+		9F81E05B1C8B08D6003FA920 /* SoundCloudFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCloudFacade.swift; sourceTree = "<group>"; };
+		9F81E05F1C8B0A37003FA920 /* InTheSun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InTheSun-Bridging-Header.h"; sourceTree = "<group>"; };
 		9FADBCD01C65FBDC00562B13 /* InTheSun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InTheSun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FADBCD41C65FBDC00562B13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9FADBCD61C65FBDC00562B13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9FADBCD71C65FBDC00562B13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9FADBCD91C65FBDC00562B13 /* AMMusicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMMusicViewController.h; sourceTree = "<group>"; };
-		9FADBCDA1C65FBDC00562B13 /* AMMusicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMMusicViewController.m; sourceTree = "<group>"; };
 		9FADBCDC1C65FBDC00562B13 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		9FADBCDD1C65FBDC00562B13 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		9FADBCE01C65FBDC00562B13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FADBCE21C65FBDC00562B13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FADBCE71C65FBDC00562B13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FADBCEC1C65FBDC00562B13 /* InTheSunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InTheSunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +100,10 @@
 		9FBEFA9E1C6901F000821123 /* dark2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dark2.jpeg; sourceTree = "<group>"; };
 		9FBEFA9F1C6901F000821123 /* sunny1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny1.jpeg; sourceTree = "<group>"; };
 		9FBEFAA01C6901F000821123 /* sunny2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny2.jpeg; sourceTree = "<group>"; };
+		9FD4F6271C81CF39004A0734 /* AMTabMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMTabMenuVC.h; sourceTree = "<group>"; };
+		9FD4F6281C81CF39004A0734 /* AMTabMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMTabMenuVC.m; sourceTree = "<group>"; };
+		9FD4F6291C81CF39004A0734 /* AMTabMenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMTabMenuVC.xib; sourceTree = "<group>"; };
+		9FD4F62E1C81EED8004A0734 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 		AD583DF034C7E9280CC9302B /* Pods-InTheSun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InTheSun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InTheSun/Pods-InTheSun.debug.xcconfig"; sourceTree = "<group>"; };
 		B10B75000799D04DC96EAE94 /* Pods-InTheSun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InTheSun.release.xcconfig"; path = "Pods/Target Support Files/Pods-InTheSun/Pods-InTheSun.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,8 +113,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D6EB38B1C9240E300EBDD69 /* libstdc++.6.0.9.tbd in Frameworks */,
+				2D6EB3831C923F1000EBDD69 /* libc++.tbd in Frameworks */,
+				2D6EB3811C923E8700EBDD69 /* CoreGraphics.framework in Frameworks */,
+				2D6EB37F1C923A1E00EBDD69 /* opencv2.framework in Frameworks */,
 				9FADBD061C66435000562B13 /* MediaPlayer.framework in Frameworks */,
-				98DB3BCD1D2FDD3BA0152E9A /* libPods-InTheSun.a in Frameworks */,
+				1AC443E731A5A284CD12BFA4 /* Pods_InTheSun.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D6EB38E1C935D3200EBDD69 /* UIKit.framework in Frameworks */,
+				2D6EB38C1C935D2700EBDD69 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,9 +137,55 @@
 		2A1F9A940D21CB2BDBE5C6D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				00826D850DF4F81DF31E846A /* libPods-InTheSun.a */,
+				2D6EB38D1C935D3200EBDD69 /* UIKit.framework */,
+				2D6EB38A1C9240E300EBDD69 /* libstdc++.6.0.9.tbd */,
+				2D6EB3881C923FD400EBDD69 /* libc++abi.tbd */,
+				2D6EB3861C923FCD00EBDD69 /* libc++.1.tbd */,
+				2D6EB3841C923FBE00EBDD69 /* dylib1.o */,
+				2D6EB3821C923F1000EBDD69 /* libc++.tbd */,
+				2D6EB3801C923E8700EBDD69 /* CoreGraphics.framework */,
+				2D6EB37E1C923A1E00EBDD69 /* opencv2.framework */,
+				08BA08A4973517418B0A2CFF /* Pods_InTheSun.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F041A171C8C8C3D0092CBAC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9F041A181C8C8C3D0092CBAC /* AlbumInfo */,
+				9F041A1E1C8C8F0C0092CBAC /* Events */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9F041A181C8C8C3D0092CBAC /* AlbumInfo */ = {
+			isa = PBXGroup;
+			children = (
+				9F041A191C8C8C580092CBAC /* AMAlbumInfoVC.h */,
+				9F041A1A1C8C8C580092CBAC /* AMAlbumInfoVC.m */,
+				9F041A1B1C8C8C580092CBAC /* AMAlbumInfoVC.xib */,
+			);
+			path = AlbumInfo;
+			sourceTree = "<group>";
+		};
+		9F041A1E1C8C8F0C0092CBAC /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				9F041A1F1C8C8F280092CBAC /* EventsVC.h */,
+				9F041A201C8C8F280092CBAC /* EventsVC.m */,
+				9F041A211C8C8F280092CBAC /* EventsVC.xib */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		9F81E0591C8B08B5003FA920 /* SoundClousFacade */ = {
+			isa = PBXGroup;
+			children = (
+				9F81E05F1C8B0A37003FA920 /* InTheSun-Bridging-Header.h */,
+				9F81E05B1C8B08D6003FA920 /* SoundCloudFacade.swift */,
+			);
+			path = SoundClousFacade;
 			sourceTree = "<group>";
 		};
 		9FADBCC71C65FBDC00562B13 = {
@@ -120,13 +213,18 @@
 		9FADBCD21C65FBDC00562B13 /* InTheSun */ = {
 			isa = PBXGroup;
 			children = (
+				9F041A171C8C8C3D0092CBAC /* Common */,
+				9F81E0591C8B08B5003FA920 /* SoundClousFacade */,
 				9FADBCD61C65FBDC00562B13 /* AppDelegate.h */,
 				9FADBCD71C65FBDC00562B13 /* AppDelegate.m */,
-				9FADBCD91C65FBDC00562B13 /* AMMusicViewController.h */,
-				9FADBCDA1C65FBDC00562B13 /* AMMusicViewController.m */,
+				9F041A131C8C7E020092CBAC /* AMMusicViewController.swift */,
+				9F041A141C8C7E020092CBAC /* AMMusicViewController.xib */,
+				9FD4F6271C81CF39004A0734 /* AMTabMenuVC.h */,
+				9FD4F6281C81CF39004A0734 /* AMTabMenuVC.m */,
+				9FD4F6291C81CF39004A0734 /* AMTabMenuVC.xib */,
 				9FADBCDC1C65FBDC00562B13 /* SecondViewController.h */,
 				9FADBCDD1C65FBDC00562B13 /* SecondViewController.m */,
-				9FADBCDF1C65FBDC00562B13 /* Main.storyboard */,
+				9FD4F62E1C81EED8004A0734 /* SecondViewController.xib */,
 				9FADBCE21C65FBDC00562B13 /* Assets.xcassets */,
 				9FADBCE71C65FBDC00562B13 /* Info.plist */,
 				9FADBD071C67B04C00562B13 /* ImageProcessor */,
@@ -169,6 +267,10 @@
 			children = (
 				9FADBD081C67B07E00562B13 /* AMImageProcessor.h */,
 				9FADBD091C67B07E00562B13 /* AMImageProcessor.m */,
+				2D6EB3781C92133100EBDD69 /* OpenCVWrapper.h */,
+				2D6EB3791C92133100EBDD69 /* OpenCVWrapper.mm */,
+				2D6EB37B1C9213DB00EBDD69 /* UIImage+OpenCV.h */,
+				2D6EB37C1C9213DB00EBDD69 /* UIImage+OpenCV.mm */,
 			);
 			path = ImageProcessor;
 			sourceTree = "<group>";
@@ -176,6 +278,7 @@
 		9FBEFA9C1C69016F00821123 /* TestImages */ = {
 			isa = PBXGroup;
 			children = (
+				2D6EB38F1C935F4400EBDD69 /* sunny3.jpg */,
 				9FBEFA9D1C6901F000821123 /* dark1.jpeg */,
 				9FBEFA9E1C6901F000821123 /* dark2.jpeg */,
 				9FBEFA9F1C6901F000821123 /* sunny1.jpeg */,
@@ -245,7 +348,7 @@
 				TargetAttributes = {
 					9FADBCCF1C65FBDC00562B13 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = C92M3ZV55X;
+						DevelopmentTeam = 4GWDBCF5A4;
 					};
 					9FADBCEB1C65FBDC00562B13 = {
 						CreatedOnToolsVersion = 7.2;
@@ -277,9 +380,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FD4F62B1C81CF39004A0734 /* AMTabMenuVC.xib in Resources */,
+				9F041A1D1C8C8C580092CBAC /* AMAlbumInfoVC.xib in Resources */,
+				9FD4F62F1C81EED8004A0734 /* SecondViewController.xib in Resources */,
+				9F041A231C8C8F280092CBAC /* EventsVC.xib in Resources */,
 				9FADBD041C6638C700562B13 /* LaunchScreen.xib in Resources */,
 				9FADBCE31C65FBDC00562B13 /* Assets.xcassets in Resources */,
-				9FADBCE11C65FBDC00562B13 /* Main.storyboard in Resources */,
+				9F041A161C8C7E020092CBAC /* AMMusicViewController.xib in Resources */,
 				9FADBD001C66141C00562B13 /* AMBlockingScreenVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +397,7 @@
 			files = (
 				9FBEFAA41C6901F000821123 /* sunny2.jpeg in Resources */,
 				9FBEFAA21C6901F000821123 /* dark2.jpeg in Resources */,
+				2D6EB3901C935F4400EBDD69 /* sunny3.jpg in Resources */,
 				9FBEFAA11C6901F000821123 /* dark1.jpeg in Resources */,
 				9FBEFAA31C6901F000821123 /* sunny1.jpeg in Resources */,
 			);
@@ -352,9 +460,15 @@
 			files = (
 				9FADBCDE1C65FBDC00562B13 /* SecondViewController.m in Sources */,
 				9FADBCD81C65FBDC00562B13 /* AppDelegate.m in Sources */,
-				9FADBCDB1C65FBDC00562B13 /* AMMusicViewController.m in Sources */,
 				9FADBCFF1C66141C00562B13 /* AMBlockingScreenVC.m in Sources */,
+				9F041A221C8C8F280092CBAC /* EventsVC.m in Sources */,
 				9FADBD0A1C67B07E00562B13 /* AMImageProcessor.m in Sources */,
+				9F041A1C1C8C8C580092CBAC /* AMAlbumInfoVC.m in Sources */,
+				9F041A151C8C7E020092CBAC /* AMMusicViewController.swift in Sources */,
+				9F81E05C1C8B08D6003FA920 /* SoundCloudFacade.swift in Sources */,
+				2D6EB37A1C92133100EBDD69 /* OpenCVWrapper.mm in Sources */,
+				9FD4F62A1C81CF39004A0734 /* AMTabMenuVC.m in Sources */,
+				2D6EB37D1C9213DB00EBDD69 /* UIImage+OpenCV.mm in Sources */,
 				9FADBCD51C65FBDC00562B13 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,17 +491,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		9FADBCDF1C65FBDC00562B13 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9FADBCE01C65FBDC00562B13 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		9FADBCF31C65FBDC00562B13 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -409,6 +512,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -453,6 +557,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -476,12 +581,25 @@
 			baseConfigurationReference = AD583DF034C7E9280CC9302B /* Pods-InTheSun.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = InTheSun/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.InTheSun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "InTheSun/SoundClousFacade/InTheSun-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -490,12 +608,24 @@
 			baseConfigurationReference = B10B75000799D04DC96EAE94 /* Pods-InTheSun.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = InTheSun/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.InTheSun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "InTheSun/SoundClousFacade/InTheSun-Bridging-Header.h";
 			};
 			name = Release;
 		};

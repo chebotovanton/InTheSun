@@ -1,10 +1,35 @@
 PODS:
-  - OpenCV (3.0.0)
+  - 1PasswordExtension (1.8)
+  - Bolts (1.6.0):
+    - Bolts/AppLinks (= 1.6.0)
+    - Bolts/Tasks (= 1.6.0)
+  - Bolts/AppLinks (1.6.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.6.0)
+  - FBSDKCoreKit (4.10.0):
+    - Bolts (~> 1.5)
+  - FBSDKLoginKit (4.10.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.10.0):
+    - FBSDKCoreKit
+  - Soundcloud (0.7.1):
+    - 1PasswordExtension (~> 1.5)
+    - UICKeyChainStore (~> 2.0.6)
+  - UICKeyChainStore (2.0.7)
 
 DEPENDENCIES:
-  - OpenCV (~> 3.0)
+  - FBSDKCoreKit (~> 4.10)
+  - FBSDKLoginKit (~> 4.10)
+  - FBSDKShareKit (~> 4.10)
+  - Soundcloud (~> 0.7)
 
 SPEC CHECKSUMS:
-  OpenCV: be07c02f0d8f125f1d40d261e66a66cb66ece3b3
+  1PasswordExtension: 627d5aecf210c7636968faf5a4c3546c9531385b
+  Bolts: f52a250053bb517ca874523c3913776359ab3def
+  FBSDKCoreKit: 13bec8373fb3af94d44daf2aa1e0958687897fbd
+  FBSDKLoginKit: d3d4a2e9d31954deb00bfea964167a05ca1ea976
+  FBSDKShareKit: 54587b4624706ace1e810cf83412a918141f807a
+  Soundcloud: 7e67cd9ab67884a565b486939c1a046c20243a30
+  UICKeyChainStore: 696cd35083f7c8fb5e201d909b7e6aea6b478575
 
 COCOAPODS: 0.39.0

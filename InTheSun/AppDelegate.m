@@ -1,48 +1,46 @@
-//
-//  AppDelegate.m
-//  InTheSun
-//
-//  Created by Anton Chebotov on 06/02/16.
-//  Copyright © 2016 Anton Chebotov. All rights reserved.
-//
-
 #import "AppDelegate.h"
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+
 #import "AMBlockingScreenVC.h"
+#import "AMTabMenuVC.h"
+#import "InTheSun-Swift.h"
 
 static NSString * kLaunchCountKey = @"launchCountKey";
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [SoundCloudFacade registerUser];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];    
+    self.window.rootViewController = [[AMTabMenuVC alloc] initWithNibName:@"AMTabMenuVC" bundle:nil];
     [self.window makeKeyAndVisible];
+    
     [self showBlockingScreenIfNeeded];
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation
+            ];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
+    [FBSDKAppEvents activateApp];
 }
 
 #pragma mark - Private
