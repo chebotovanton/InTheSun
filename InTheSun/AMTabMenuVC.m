@@ -21,25 +21,21 @@
 {
     AMMusicViewController *musicVC = [[AMMusicViewController alloc] initWithNibName:@"AMMusicViewController" bundle:nil];
     UITabBarItem * musicBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"musicMenuIcon"] tag:0];
-    musicBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
     musicBarItem.title = @"Music";
     musicVC.tabBarItem = musicBarItem;
 
     AMAlbumInfoVC *albumInfoVC = [[AMAlbumInfoVC alloc] initWithNibName:@"AMAlbumInfoVC" bundle:nil];
     UITabBarItem * albumBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"albumMenuIcon"] tag:0];
-    albumBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
     albumBarItem.title = @"Album Info";
     albumInfoVC.tabBarItem = albumBarItem;
     
     EventsVC *eventsVC = [[EventsVC alloc] initWithNibName:@"EventsVC" bundle:nil];
     UITabBarItem * eventsBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"eventsMenuIcon"] tag:0];
-    eventsBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
     eventsBarItem.title = @"Events";
     eventsVC.tabBarItem = eventsBarItem;
 
     SecondViewController *secondVC = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
     UITabBarItem * secondBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"friendsMenuIcon"] tag:0];
-    secondBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
     secondBarItem.title = @"Second";
     secondVC.tabBarItem = secondBarItem;
     
