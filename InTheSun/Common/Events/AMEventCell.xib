@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="AMEventCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EBp-gT-gVy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
+                        <color key="backgroundColor" red="0.49803921569999998" green="0.50588235290000005" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </imageView>
+                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMU-Hd-Dtu" userLabel="Transparent View">
+                        <rect key="frame" x="0.0" y="64" width="320" height="65"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01.06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQP-PV-k2r">
+                                <rect key="frame" x="15" y="10" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19.03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrF-S4-6TI">
+                                <rect key="frame" x="261" y="10" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Союз Космического Авангарда - Культурный бар VinyllaSky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUf-Ot-qQi">
+                                <rect key="frame" x="15" y="34" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Арт-кафе \&quot;Март\&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7X9-cV-TIt">
+                                <rect key="frame" x="157" y="34" width="148" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="7X9-cV-TIt" secondAttribute="bottom" constant="10" id="1c9-P5-aHl"/>
+                            <constraint firstItem="cQP-PV-k2r" firstAttribute="top" secondItem="dMU-Hd-Dtu" secondAttribute="top" constant="10" id="3hu-I8-G9D"/>
+                            <constraint firstAttribute="trailing" secondItem="WrF-S4-6TI" secondAttribute="trailing" constant="15" id="MJf-Dw-O8C"/>
+                            <constraint firstItem="cQP-PV-k2r" firstAttribute="leading" secondItem="dMU-Hd-Dtu" secondAttribute="leading" constant="15" id="Uw8-J4-CJa"/>
+                            <constraint firstAttribute="height" constant="65" id="ZJt-O4-YXE"/>
+                            <constraint firstAttribute="trailing" secondItem="7X9-cV-TIt" secondAttribute="trailing" constant="15" id="ZUp-kY-iN8"/>
+                            <constraint firstItem="WrF-S4-6TI" firstAttribute="top" secondItem="dMU-Hd-Dtu" secondAttribute="top" constant="10" id="a3u-w6-RdF"/>
+                            <constraint firstItem="7X9-cV-TIt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AUf-Ot-qQi" secondAttribute="trailing" constant="10" id="bVP-Es-ZF3"/>
+                            <constraint firstAttribute="bottom" secondItem="AUf-Ot-qQi" secondAttribute="bottom" constant="10" id="mpy-M7-4AV"/>
+                            <constraint firstItem="AUf-Ot-qQi" firstAttribute="leading" secondItem="dMU-Hd-Dtu" secondAttribute="leading" constant="15" id="vMh-cC-sem"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="dMU-Hd-Dtu" secondAttribute="bottom" id="G4W-gi-slw"/>
+                    <constraint firstAttribute="bottom" secondItem="EBp-gT-gVy" secondAttribute="bottom" id="SaT-ob-JrK"/>
+                    <constraint firstItem="EBp-gT-gVy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Vcr-tf-lkU"/>
+                    <constraint firstAttribute="trailing" secondItem="dMU-Hd-Dtu" secondAttribute="trailing" id="qqG-8a-cQg"/>
+                    <constraint firstItem="dMU-Hd-Dtu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="sKM-PD-mCq"/>
+                    <constraint firstAttribute="trailing" secondItem="EBp-gT-gVy" secondAttribute="trailing" id="vkT-j1-4Ly"/>
+                    <constraint firstItem="EBp-gT-gVy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xkV-Mr-789"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="WrF-S4-6TI" id="ZCI-rz-DnC"/>
+                <outlet property="eventImage" destination="EBp-gT-gVy" id="BvT-d2-vNv"/>
+                <outlet property="nameLabel" destination="AUf-Ot-qQi" id="5JT-dO-jwF"/>
+                <outlet property="placeLabel" destination="7X9-cV-TIt" id="xGh-k7-oeL"/>
+                <outlet property="timeLabel" destination="cQP-PV-k2r" id="3tQ-Up-AjH"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

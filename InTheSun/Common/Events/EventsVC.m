@@ -1,20 +1,14 @@
 #import "EventsVC.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-
-@interface AMEvent: NSObject
-
-@property (nonatomic, strong) NSString *name;
-
-@end
-
-@implementation AMEvent
-
-@end
+#import "AMEventCell.h"
+#import "AMEvent.h"
 
 @interface EventsVC () <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+
 @property (nonatomic, strong) NSArray *items;
-@property (nonatomic, weak) IBOutlet UITableView * tableView;
+@property (nonatomic, strong) NSString *cellReuseIdentifier;
 
 @end
 
@@ -22,10 +16,14 @@
 
 - (void)viewDidLoad
 {
+    self.cellReuseIdentifier = @"AMEventCell";
+    [self.tableView registerNib:[UINib nibWithNibName:self.cellReuseIdentifier bundle:nil] forCellReuseIdentifier:self.cellReuseIdentifier];
+    
     [super viewDidLoad];
     FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
-                                  initWithGraphPath:@"/auktyon/events?access_token=CAACEdEose0cBAMNVyt1CeSDbT41XNMQSKBdXDHVQHwogZAe5bdK5gr0eo4Hjh0XELWVAIlxXrbbFKzU8BIzsibP3N8SiHNQi4ltKYnFj1ZCAZBZCYCWy2MEp8dZBdZARPOnZAy7pG5wOQsgu5FkYmAqyp1nUjmZAAuwxthkALUhc0RLnJCflOnMZBjkU0S1ZB4QN7ajLLyUIsPJAZDZD"
-                                  parameters:nil
+                                  initWithGraphPath:@"/auktyon/events"
+                                  parameters:@{@"fields" : @"name, place, start_time, type, category",
+                                               @"access_token" : @"1696621093884195|dd2b1b044ab94adfd38f1273f6627e5e"}
                                   HTTPMethod:@"GET"];
     [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
                                           id result,
@@ -45,9 +43,19 @@
     for (NSDictionary * rawEvent in eventsRawArray) {
         AMEvent * event = [AMEvent new];
         event.name = rawEvent[@"name"];
+        NSString *dateString = rawEvent[@"start_time"];
+        event.startDate = [self dateFromFacebookString:dateString];
         [events addObject:event];
     }
     return events;
+}
+
+- (NSDate *)dateFromFacebookString:(NSString *)string
+{
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH:mm:ssZ"];
+    NSDate *date = [dateFormatter dateFromString:string];
+    return date;
 }
 
 #pragma mark - UITableViewDataSource
@@ -65,9 +73,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AMEvent *event = self.items[indexPath.row];
-    UITableViewCell * cell = [UITableViewCell new];
-    cell.textLabel.text = event.name;
+    AMEventCell *cell = (AMEventCell *)[tableView dequeueReusableCellWithIdentifier:self.cellReuseIdentifier];
+    [cell setupWithEvent:event];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 130.0;
 }
 
 #pragma mark - UITableViewDelegate
