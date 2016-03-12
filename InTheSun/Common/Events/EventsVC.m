@@ -2,6 +2,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "AMEventCell.h"
 #import "AMEvent.h"
+#import "AMFacebookEventsHelper.h"
 
 @interface EventsVC () <UITableViewDataSource, UITableViewDelegate>
 
@@ -22,41 +23,18 @@
     [super viewDidLoad];
     FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
                                   initWithGraphPath:@"/auktyon/events"
-                                  parameters:@{@"fields" : @"name, place, start_time, type, category",
-                                               @"access_token" : @"1696621093884195|dd2b1b044ab94adfd38f1273f6627e5e"}
+                                  parameters:[AMFacebookEventsHelper eventsListParams]
                                   HTTPMethod:@"GET"];
     [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
                                           id result,
                                           NSError *error) {
         
         NSArray *eventsRawArray = result[@"data"];
-        self.items = [self parseRawEvents:eventsRawArray];
+        self.items = [AMFacebookEventsHelper parseRawEvents:eventsRawArray];
         [self.tableView reloadData];
     }];
 }
 
-#pragma mark - Private
-
-- (NSArray *)parseRawEvents:(NSArray *)eventsRawArray
-{
-    NSMutableArray *events = [NSMutableArray new];
-    for (NSDictionary * rawEvent in eventsRawArray) {
-        AMEvent * event = [AMEvent new];
-        event.name = rawEvent[@"name"];
-        NSString *dateString = rawEvent[@"start_time"];
-        event.startDate = [self dateFromFacebookString:dateString];
-        [events addObject:event];
-    }
-    return events;
-}
-
-- (NSDate *)dateFromFacebookString:(NSString *)string
-{
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH:mm:ssZ"];
-    NSDate *date = [dateFormatter dateFromString:string];
-    return date;
-}
 
 #pragma mark - UITableViewDataSource
 

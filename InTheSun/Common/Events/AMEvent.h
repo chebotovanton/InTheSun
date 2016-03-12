@@ -2,10 +2,12 @@
 
 @interface AMEvent : NSObject
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *cityName;
-@property (nonatomic, strong) NSString *placeName;
-@property (nonatomic, strong) NSString *category;
-@property (nonatomic, strong) NSDate *startDate;
+@property (nonatomic, copy) NSString *eventId;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *cityName;
+@property (nonatomic, copy) NSString *placeName;
+@property (nonatomic, copy) NSString *category;
+@property (nonatomic, copy) NSDate *startDate;
+@property (nonatomic, copy) NSString *imageUrl;
 
 @end

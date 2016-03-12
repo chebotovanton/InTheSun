@@ -1,5 +1,7 @@
 #import "AMEventCell.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "AMEvent.h"
+#import "AMFacebookEventsHelper.h"
 
 @interface AMEventCell()
 
@@ -22,6 +24,7 @@
     self.dateLabel.text = [self dayFromDate:event.startDate];
     self.timeLabel.text = [self timeFromDate:event.startDate];
     self.placeLabel.text = event.placeName;
+    [self loadEventImage:event];
 }
 
 - (NSString *)timeFromDate:(NSDate *)date
@@ -38,6 +41,13 @@
     formatter.dateStyle = kCFDateFormatterShortStyle;
     formatter.timeStyle = kCFDateFormatterNoStyle;
     return [formatter stringFromDate:date];
+}
+
+- (void)loadEventImage:(AMEvent *)event
+{
+    NSURL *url = [NSURL URLWithString:event.imageUrl];
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+    self.eventImage.image = image;
 }
 
 @end
