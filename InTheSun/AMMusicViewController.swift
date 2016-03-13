@@ -5,7 +5,7 @@ import MediaPlayer
 
 class AMMusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SoundCloudDelegate {
 
-    private let kSongCellIdentifier = "songCell"
+    private let kSongCellIdentifier = "AMSongCell"
     
     var player: AVPlayer = AVPlayer()
     var playlist: Playlist?
@@ -26,7 +26,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         
         self.setupPlayButton()
-        self.contentTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: kSongCellIdentifier)
+        self.contentTableView.registerNib(UINib(nibName: self.kSongCellIdentifier, bundle: nil), forCellReuseIdentifier: self.kSongCellIdentifier)
         
         let footer = UIView()
         footer.frame = CGRectMake(0, 0, 10, 50.0)
@@ -141,9 +141,9 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(kSongCellIdentifier)
-        cell?.textLabel?.text = self.songTitle(indexPath.row)
-        return cell!
+        let cell = tableView.dequeueReusableCellWithIdentifier(kSongCellIdentifier) as! AMSongCell
+        cell.setupWithTrack(self.playlist!.tracks[indexPath.row])
+        return cell
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
