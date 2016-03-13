@@ -9,6 +9,10 @@ class AMSongCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        let selectedView = UIView()
+        selectedView.backgroundColor = UIColor(red: 246.0/255.0, green: 240.0/255.0, blue: 212.0/255.0, alpha: 1.0)
+        self.selectedBackgroundView = selectedView
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
