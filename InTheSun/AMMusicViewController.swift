@@ -88,9 +88,9 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func setupPlayButton() {
         if self.isPlaying() {
-            self.playButton.setTitle("Pause", forState: .Normal)
+            self.playButton.selected = true
         } else {
-            self.playButton.setTitle("Play", forState: .Normal)
+            self.playButton.selected = false
         }
     }
 
