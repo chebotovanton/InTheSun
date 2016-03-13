@@ -30,7 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="h1v-f0-DAJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="DjK-qa-19w"/>
                     <constraint firstAttribute="trailing" secondItem="J8Y-AS-i5A" secondAttribute="trailing" constant="15" id="VHr-Qg-m7O"/>
@@ -41,6 +41,7 @@
                     <constraint firstItem="J8Y-AS-i5A" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fbz-cT-QcE"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="activityIcon" destination="h1v-f0-DAJ" id="M56-gD-LRm"/>
                 <outlet property="songDurationLabel" destination="J8Y-AS-i5A" id="Ty4-sM-QKn"/>
