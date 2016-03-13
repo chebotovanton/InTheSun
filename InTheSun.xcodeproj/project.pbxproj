@@ -15,6 +15,7 @@
 		9F041A221C8C8F280092CBAC /* EventsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F041A201C8C8F280092CBAC /* EventsVC.m */; };
 		9F041A231C8C8F280092CBAC /* EventsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F041A211C8C8F280092CBAC /* EventsVC.xib */; };
 		9F81E05C1C8B08D6003FA920 /* SoundCloudFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F81E05B1C8B08D6003FA920 /* SoundCloudFacade.swift */; };
+		9F8454F41C95C5BC00AA7B90 /* AMStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8454F31C95C5BC00AA7B90 /* AMStringUtils.m */; };
 		9FADBCD51C65FBDC00562B13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCD41C65FBDC00562B13 /* main.m */; };
 		9FADBCD81C65FBDC00562B13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCD71C65FBDC00562B13 /* AppDelegate.m */; };
 		9FADBCDE1C65FBDC00562B13 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCDD1C65FBDC00562B13 /* SecondViewController.m */; };
@@ -56,6 +57,8 @@
 		9F041A211C8C8F280092CBAC /* EventsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsVC.xib; sourceTree = "<group>"; };
 		9F81E05B1C8B08D6003FA920 /* SoundCloudFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCloudFacade.swift; sourceTree = "<group>"; };
 		9F81E05F1C8B0A37003FA920 /* InTheSun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InTheSun-Bridging-Header.h"; sourceTree = "<group>"; };
+		9F8454F21C95C5BC00AA7B90 /* AMStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMStringUtils.h; sourceTree = "<group>"; };
+		9F8454F31C95C5BC00AA7B90 /* AMStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMStringUtils.m; sourceTree = "<group>"; };
 		9FADBCD01C65FBDC00562B13 /* InTheSun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InTheSun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FADBCD41C65FBDC00562B13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9FADBCD61C65FBDC00562B13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 		9F041A171C8C8C3D0092CBAC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9F8454F11C95C5AE00AA7B90 /* Utils */,
 				9F041A181C8C8C3D0092CBAC /* AlbumInfo */,
 				9F041A1E1C8C8F0C0092CBAC /* Events */,
 			);
@@ -150,6 +154,15 @@
 				9F81E05B1C8B08D6003FA920 /* SoundCloudFacade.swift */,
 			);
 			path = SoundClousFacade;
+			sourceTree = "<group>";
+		};
+		9F8454F11C95C5AE00AA7B90 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9F8454F21C95C5BC00AA7B90 /* AMStringUtils.h */,
+				9F8454F31C95C5BC00AA7B90 /* AMStringUtils.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		9FADBCC71C65FBDC00562B13 = {
@@ -420,6 +433,7 @@
 				9FADBCD81C65FBDC00562B13 /* AppDelegate.m in Sources */,
 				9FADBCFF1C66141C00562B13 /* AMBlockingScreenVC.m in Sources */,
 				9F041A221C8C8F280092CBAC /* EventsVC.m in Sources */,
+				9F8454F41C95C5BC00AA7B90 /* AMStringUtils.m in Sources */,
 				9FADBD0A1C67B07E00562B13 /* AMImageProcessor.m in Sources */,
 				9F041A1C1C8C8C580092CBAC /* AMAlbumInfoVC.m in Sources */,
 				9F041A151C8C7E020092CBAC /* AMMusicViewController.swift in Sources */,

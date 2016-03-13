@@ -15,6 +15,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var albumArtwork: UIImageView!
     @IBOutlet weak var albumTitle: UILabel!
     @IBOutlet weak var songTitle: UILabel!
+    @IBOutlet weak var songDurationLabel: UILabel!
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
@@ -23,10 +24,14 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setupPlayButton()
         self.contentTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: kSongCellIdentifier)
+        
         let footer = UIView()
         footer.frame = CGRectMake(0, 0, 10, 50.0)
         self.contentTableView.tableFooterView = footer
+        
         self.soundcloudFacade = SoundCloudFacade()
         self.soundcloudFacade.delegate = self;
         self.soundcloudFacade.loadAlbum(41780534)
@@ -56,10 +61,11 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         self.player = AVPlayer(URL: track.streamURL!)
         self.player.play()
         self.setupPlayButton()
+        self.songDurationLabel.text = AMStringUtils.durationString(track.duration)
         self.currentPlayingIndex = index
         self.songTitle.text = track.title
         self.contentTableView.selectRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0), animated: true, scrollPosition: .Middle)
-        
+        //WARNING: Set correct album name and artist
         var trackInfo:[String:AnyObject] = [MPMediaItemPropertyArtist:"АукцЫон", MPMediaItemPropertyTitle:track.title, MPMediaItemPropertyAlbumTitle:"На Солнце", MPMediaItemPropertyPlaybackDuration:track.duration / 1000]
         
         if let artwork = self.albumArtwork.image {
@@ -89,11 +95,14 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     func setupPlayButton() {
         if self.isPlaying() {
             self.playButton.selected = true
+            self.songDurationLabel.hidden = false
+            self.songTitle.hidden = false
         } else {
             self.playButton.selected = false
+            self.songDurationLabel.hidden = true
+            self.songTitle.hidden = true
         }
     }
-
     
     //MARK: - IBActions
     

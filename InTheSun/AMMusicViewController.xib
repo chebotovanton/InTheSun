@@ -13,6 +13,7 @@
                 <outlet property="nextButton" destination="2Jz-0e-CbZ" id="A5m-pO-DGg"/>
                 <outlet property="playButton" destination="JTj-Fc-df9" id="hcm-Gu-dyR"/>
                 <outlet property="previousButton" destination="nmR-ww-Mmq" id="bc4-bP-eGd"/>
+                <outlet property="songDurationLabel" destination="RHD-4p-uN9" id="XTG-8I-cVx"/>
                 <outlet property="songTitle" destination="NAU-ZC-xim" id="XKm-kZ-Q5B"/>
                 <outlet property="view" destination="wv8-2E-TM8" id="3mn-3C-E0m"/>
             </connections>
@@ -26,7 +27,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdn-Ol-ap0">
-                            <rect key="frame" x="277" y="22.5" width="47" height="20.5"/>
+                            <rect key="frame" x="277" y="22" width="47" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -49,7 +50,7 @@
                                 <constraint firstAttribute="width" constant="128" id="Yhr-QJ-Nby"/>
                             </constraints>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmR-ww-Mmq">
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmR-ww-Mmq">
                             <rect key="frame" x="153" y="77" width="60" height="62"/>
                             <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
                             <inset key="imageEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
@@ -58,7 +59,7 @@
                                 <action selector="previous" destination="-1" eventType="touchUpInside" id="zxW-BV-c6J"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTj-Fc-df9">
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTj-Fc-df9">
                             <rect key="frame" x="213" y="83" width="50" height="50"/>
                             <state key="normal" image="playPlayerIcon"/>
                             <state key="selected" image="pausePlayerIcon"/>
@@ -74,10 +75,16 @@
                                 <action selector="next" destination="-1" eventType="touchUpInside" id="BWR-Pt-kwY"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAU-ZC-xim">
-                            <rect key="frame" x="153" y="39.5" width="42" height="20.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHD-4p-uN9">
+                            <rect key="frame" x="220" y="59" width="36.5" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.62352941179999999" green="0.62352941179999999" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Очень длинное название песни" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAU-ZC-xim">
+                            <rect key="frame" x="153" y="31" width="254" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.62352941176470589" green="0.62352941176470589" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -85,24 +92,19 @@
                     <constraints>
                         <constraint firstItem="JTj-Fc-df9" firstAttribute="leading" secondItem="nmR-ww-Mmq" secondAttribute="trailing" id="6J4-qF-cns"/>
                         <constraint firstItem="JTj-Fc-df9" firstAttribute="centerY" secondItem="nmR-ww-Mmq" secondAttribute="centerY" id="PQT-7h-oO4"/>
-                        <constraint firstItem="NAU-ZC-xim" firstAttribute="top" secondItem="LTD-wS-aka" secondAttribute="top" constant="39.5" id="Q91-c7-lnp"/>
-                        <constraint firstItem="NAU-ZC-xim" firstAttribute="leading" secondItem="XCd-tQ-fM8" secondAttribute="trailing" constant="10" id="VnJ-UJ-k0i"/>
                         <constraint firstItem="2Jz-0e-CbZ" firstAttribute="leading" secondItem="JTj-Fc-df9" secondAttribute="trailing" id="Y7w-PI-gSc"/>
                         <constraint firstItem="nmR-ww-Mmq" firstAttribute="leading" secondItem="XCd-tQ-fM8" secondAttribute="trailing" constant="10" id="Yjp-fa-iQx"/>
-                        <constraint firstItem="JTj-Fc-df9" firstAttribute="baseline" secondItem="nmR-ww-Mmq" secondAttribute="baseline" id="Zaa-cT-ARa"/>
                         <constraint firstItem="XCd-tQ-fM8" firstAttribute="leading" secondItem="LTD-wS-aka" secondAttribute="leading" constant="15" id="cg3-29-T8J"/>
+                        <constraint firstItem="NAU-ZC-xim" firstAttribute="centerX" secondItem="JTj-Fc-df9" secondAttribute="centerX" priority="100" id="d4s-Kr-PUc"/>
+                        <constraint firstItem="NAU-ZC-xim" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XCd-tQ-fM8" secondAttribute="trailing" constant="10" id="fZo-4u-dVP"/>
                         <constraint firstItem="XCd-tQ-fM8" firstAttribute="centerY" secondItem="LTD-wS-aka" secondAttribute="centerY" id="ijf-jG-Eke"/>
                         <constraint firstItem="nmR-ww-Mmq" firstAttribute="bottom" secondItem="XCd-tQ-fM8" secondAttribute="bottom" id="mNJ-6Y-Eh6"/>
-                        <constraint firstItem="2Jz-0e-CbZ" firstAttribute="baseline" secondItem="JTj-Fc-df9" secondAttribute="baseline" id="o6N-c4-Lek"/>
+                        <constraint firstItem="RHD-4p-uN9" firstAttribute="centerX" secondItem="JTj-Fc-df9" secondAttribute="centerX" id="rKB-xL-xta"/>
                         <constraint firstItem="2Jz-0e-CbZ" firstAttribute="centerY" secondItem="nmR-ww-Mmq" secondAttribute="centerY" id="slx-BU-fmc"/>
+                        <constraint firstItem="JTj-Fc-df9" firstAttribute="top" secondItem="RHD-4p-uN9" secondAttribute="bottom" constant="8" id="t7s-dY-CRx"/>
+                        <constraint firstItem="RHD-4p-uN9" firstAttribute="top" secondItem="NAU-ZC-xim" secondAttribute="bottom" constant="8" id="vi6-H1-OOC"/>
                         <constraint firstAttribute="height" constant="150" id="wT2-mh-ej4"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="Zaa-cT-ARa"/>
-                            <exclude reference="o6N-c4-Lek"/>
-                        </mask>
-                    </variation>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ivd-uV-bdV">
                     <rect key="frame" x="0.0" y="200" width="600" height="400"/>
