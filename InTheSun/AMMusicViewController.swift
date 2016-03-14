@@ -150,6 +150,10 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         return 1
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 44.0
+    }
+    
     //MARK: - UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -12,7 +12,7 @@
 + (NSDictionary *)photoLoadingParams
 {
     return @{@"access_token" : [self accessToken],
-             @"fields" : @"picture.type(large)"};
+             @"fields" : @"picture.width(320).height(150)"};
 }
 
 + (NSString *)accessToken
