@@ -9,6 +9,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *placeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *cityLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *eventImage;
 
 @property (nonatomic, strong) AMEvent *event;
@@ -24,6 +25,7 @@
     self.dateLabel.text = [self dayFromDate:event.startDate];
     self.timeLabel.text = [self timeFromDate:event.startDate];
     self.placeLabel.text = event.placeName;
+    self.cityLabel.text = event.cityName;
     self.imageView.image = nil;
     [self loadEventImage:event];
 }

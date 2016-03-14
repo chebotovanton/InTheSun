@@ -35,6 +35,9 @@
         NSString *placeName = placeDict[@"name"];
         event.placeName = placeName;
         
+        NSDictionary *cityDict = placeDict[@"location"];
+        event.cityName = cityDict[@"city"];
+        
         NSDictionary *imageDict = rawEvent[@"picture"];
         imageDict = imageDict[@"data"];
         event.imageUrl = imageDict[@"url"];
