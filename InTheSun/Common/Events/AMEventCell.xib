@@ -28,13 +28,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Союз Космического Авангарда - Культурный бар VinyllaSky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1x-YN-xmI">
-                        <rect key="frame" x="15" y="167.5" width="295" height="17"/>
+                        <rect key="frame" x="15" y="167" width="295" height="17"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Арт-кафе \&quot;Март\&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ih7-KN-F3d">
-                        <rect key="frame" x="196" y="143" width="109" height="14.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Арт-кафе &quot;Март&quot; зазазазаззазааз" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ih7-KN-F3d">
+                        <rect key="frame" x="128.5" y="143" width="176.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01.06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlC-e8-IVl">
-                        <rect key="frame" x="249.5" y="119" width="55.5" height="24"/>
+                        <rect key="frame" x="249" y="119" width="55.5" height="24"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -68,6 +68,7 @@
                     <constraint firstItem="ih7-KN-F3d" firstAttribute="top" secondItem="zlC-e8-IVl" secondAttribute="bottom" id="bLu-m5-Yh2"/>
                     <constraint firstItem="gJK-Pa-4T8" firstAttribute="top" secondItem="dog-1G-P70" secondAttribute="bottom" id="iuF-q3-9eq"/>
                     <constraint firstItem="k1x-YN-xmI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ixw-cd-onB"/>
+                    <constraint firstItem="ih7-KN-F3d" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gJK-Pa-4T8" secondAttribute="trailing" constant="10" id="jE2-fs-Mwx"/>
                     <constraint firstItem="k1x-YN-xmI" firstAttribute="top" secondItem="gJK-Pa-4T8" secondAttribute="bottom" constant="10" id="qXT-Ei-TvJ"/>
                     <constraint firstAttribute="trailing" secondItem="diu-VT-e6c" secondAttribute="trailing" id="sJB-9O-b8p"/>
                     <constraint firstAttribute="trailing" secondItem="EBp-gT-gVy" secondAttribute="trailing" id="vkT-j1-4Ly"/>
