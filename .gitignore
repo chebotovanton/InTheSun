@@ -3,3 +3,7 @@ build/
 *.pbxuser
 !default.pbxuser
 Pods/
+InTheSun.xcodeproj/xcuserdata/nikitakardakov.xcuserdatad/*
+InTheSun.xcworkspace/xcuserdata/nikitakardakov.xcuserdatad/*
+InTheSun.xcodeproj/xcuserdata/*
+InTheSun.xcworkspace/xcuserdata/*
