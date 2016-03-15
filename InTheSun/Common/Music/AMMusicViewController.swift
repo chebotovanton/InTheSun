@@ -65,8 +65,8 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
             currentPlayingIndex = index
             setupButtonsAndTitlesState()
             contentTableView.selectRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0), animated: true, scrollPosition: .Middle)
-            //WARNING: Set correct album name and artist
             
+            //WARNING: Set correct artist name
             var trackInfo:[String:AnyObject] = [MPMediaItemPropertyArtist:"АукцЫон", MPMediaItemPropertyTitle:track.title, MPMediaItemPropertyAlbumTitle:playlist.title, MPMediaItemPropertyPlaybackDuration:track.duration / 1000]
             
             if let artwork = self.albumArtwork.image {
@@ -86,14 +86,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         return 0
     }
-    
-    func songTitle(songIndex: Int) -> String? {
-        if (self.playlist != nil) {
-            return self.playlist!.tracks[songIndex].title
-        }
-        return nil
-    }
-    
+        
     func setupButtonsAndTitlesState() {
         if self.isPlaying() {
             self.playButton.selected = true
