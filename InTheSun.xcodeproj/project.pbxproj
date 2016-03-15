@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1AC443E731A5A284CD12BFA4 /* Pods_InTheSun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BA08A4973517418B0A2CFF /* Pods_InTheSun.framework */; };
-		9F041A151C8C7E020092CBAC /* AMMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F041A131C8C7E020092CBAC /* AMMusicViewController.swift */; };
-		9F041A161C8C7E020092CBAC /* AMMusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F041A141C8C7E020092CBAC /* AMMusicViewController.xib */; };
 		9F041A1C1C8C8C580092CBAC /* AMAlbumInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F041A1A1C8C8C580092CBAC /* AMAlbumInfoVC.m */; };
 		9F041A1D1C8C8C580092CBAC /* AMAlbumInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F041A1B1C8C8C580092CBAC /* AMAlbumInfoVC.xib */; };
 		9F041A221C8C8F280092CBAC /* EventsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F041A201C8C8F280092CBAC /* EventsVC.m */; };
@@ -37,6 +35,8 @@
 		9FBEFAA31C6901F000821123 /* sunny1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFA9F1C6901F000821123 /* sunny1.jpeg */; };
 		9FBEFAA41C6901F000821123 /* sunny2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFAA01C6901F000821123 /* sunny2.jpeg */; };
 		9FCE57D91C9897A90080DC9B /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FCE57D81C9897A90080DC9B /* overlay.png */; };
+		9FCE57DC1C98991D0080DC9B /* AMMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE57DA1C98991D0080DC9B /* AMMusicViewController.swift */; };
+		9FCE57DD1C98991D0080DC9B /* AMMusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCE57DB1C98991D0080DC9B /* AMMusicViewController.xib */; };
 		9FD4F62A1C81CF39004A0734 /* AMTabMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD4F6281C81CF39004A0734 /* AMTabMenuVC.m */; };
 		9FD4F62B1C81CF39004A0734 /* AMTabMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD4F6291C81CF39004A0734 /* AMTabMenuVC.xib */; };
 		9FD4F62F1C81EED8004A0734 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD4F62E1C81EED8004A0734 /* SecondViewController.xib */; };
@@ -54,8 +54,6 @@
 
 /* Begin PBXFileReference section */
 		08BA08A4973517418B0A2CFF /* Pods_InTheSun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InTheSun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F041A131C8C7E020092CBAC /* AMMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMMusicViewController.swift; sourceTree = "<group>"; };
-		9F041A141C8C7E020092CBAC /* AMMusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMMusicViewController.xib; sourceTree = "<group>"; };
 		9F041A191C8C8C580092CBAC /* AMAlbumInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMAlbumInfoVC.h; sourceTree = "<group>"; };
 		9F041A1A1C8C8C580092CBAC /* AMAlbumInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMAlbumInfoVC.m; sourceTree = "<group>"; };
 		9F041A1B1C8C8C580092CBAC /* AMAlbumInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMAlbumInfoVC.xib; sourceTree = "<group>"; };
@@ -98,6 +96,8 @@
 		9FBEFA9F1C6901F000821123 /* sunny1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny1.jpeg; sourceTree = "<group>"; };
 		9FBEFAA01C6901F000821123 /* sunny2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny2.jpeg; sourceTree = "<group>"; };
 		9FCE57D81C9897A90080DC9B /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
+		9FCE57DA1C98991D0080DC9B /* AMMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMMusicViewController.swift; sourceTree = "<group>"; };
+		9FCE57DB1C98991D0080DC9B /* AMMusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMMusicViewController.xib; sourceTree = "<group>"; };
 		9FD4F6271C81CF39004A0734 /* AMTabMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMTabMenuVC.h; sourceTree = "<group>"; };
 		9FD4F6281C81CF39004A0734 /* AMTabMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMTabMenuVC.m; sourceTree = "<group>"; };
 		9FD4F6291C81CF39004A0734 /* AMTabMenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMTabMenuVC.xib; sourceTree = "<group>"; };
@@ -193,6 +193,8 @@
 		9F8454F51C95C92300AA7B90 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				9FCE57DA1C98991D0080DC9B /* AMMusicViewController.swift */,
+				9FCE57DB1C98991D0080DC9B /* AMMusicViewController.xib */,
 				9F8454F61C95C94C00AA7B90 /* AMSongCell.swift */,
 				9F8454F71C95C94C00AA7B90 /* AMSongCell.xib */,
 			);
@@ -229,8 +231,6 @@
 				9F81E0591C8B08B5003FA920 /* SoundClousFacade */,
 				9FADBCD61C65FBDC00562B13 /* AppDelegate.h */,
 				9FADBCD71C65FBDC00562B13 /* AppDelegate.m */,
-				9F041A131C8C7E020092CBAC /* AMMusicViewController.swift */,
-				9F041A141C8C7E020092CBAC /* AMMusicViewController.xib */,
 				9FD4F6271C81CF39004A0734 /* AMTabMenuVC.h */,
 				9FD4F6281C81CF39004A0734 /* AMTabMenuVC.m */,
 				9FD4F6291C81CF39004A0734 /* AMTabMenuVC.xib */,
@@ -390,13 +390,13 @@
 				9FD4F62B1C81CF39004A0734 /* AMTabMenuVC.xib in Resources */,
 				9F041A1D1C8C8C580092CBAC /* AMAlbumInfoVC.xib in Resources */,
 				9FD4F62F1C81EED8004A0734 /* SecondViewController.xib in Resources */,
+				9FCE57DD1C98991D0080DC9B /* AMMusicViewController.xib in Resources */,
 				9F4BD2811C944D13009E5DCC /* AMEventCell.xib in Resources */,
 				9FCE57D91C9897A90080DC9B /* overlay.png in Resources */,
 				9F041A231C8C8F280092CBAC /* EventsVC.xib in Resources */,
 				9F8454F91C95C94C00AA7B90 /* AMSongCell.xib in Resources */,
 				9FADBD041C6638C700562B13 /* LaunchScreen.xib in Resources */,
 				9FADBCE31C65FBDC00562B13 /* Assets.xcassets in Resources */,
-				9F041A161C8C7E020092CBAC /* AMMusicViewController.xib in Resources */,
 				9FADBD001C66141C00562B13 /* AMBlockingScreenVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,7 +476,7 @@
 				9F4BD2841C945155009E5DCC /* AMEvent.m in Sources */,
 				9FADBD0A1C67B07E00562B13 /* AMImageProcessor.m in Sources */,
 				9F041A1C1C8C8C580092CBAC /* AMAlbumInfoVC.m in Sources */,
-				9F041A151C8C7E020092CBAC /* AMMusicViewController.swift in Sources */,
+				9FCE57DC1C98991D0080DC9B /* AMMusicViewController.swift in Sources */,
 				9F8454F81C95C94C00AA7B90 /* AMSongCell.swift in Sources */,
 				9F81E05C1C8B08D6003FA920 /* SoundCloudFacade.swift in Sources */,
 				9FD4F62A1C81CF39004A0734 /* AMTabMenuVC.m in Sources */,
