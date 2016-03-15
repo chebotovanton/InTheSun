@@ -63,7 +63,6 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
             player = AVPlayer(URL: track.streamURL!)
             player.play()
             currentPlayingIndex = index
-            setupButtonsAndTitlesState()
             contentTableView.selectRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0), animated: true, scrollPosition: .Middle)
             
             //WARNING: Set correct artist name
@@ -86,7 +85,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         return 0
     }
-        
+    
     func setupButtonsAndTitlesState() {
         if self.isPlaying() {
             self.playButton.selected = true
@@ -162,7 +161,16 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     //MARK: - UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.playItem(indexPath.row)
+        if currentPlayingIndex == indexPath.row {
+            if isPlaying() {
+                player.pause()
+            } else {
+                player.play()
+            }
+        } else {
+            playItem(indexPath.row)
+        }
+        setupButtonsAndTitlesState()
     }
     
     
