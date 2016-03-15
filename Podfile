@@ -10,6 +10,7 @@ pod 'Soundcloud', '~> 0.7'
 pod 'FBSDKCoreKit', '~> 4.10'
 pod 'FBSDKLoginKit', '~> 4.10'
 pod 'FBSDKShareKit', '~> 4.10'
+pod 'SDWebImage', '~>3.7'
 
 end
 

@@ -1,5 +1,6 @@
 #import "AMEventCell.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "AMEvent.h"
 #import "AMFacebookEventsHelper.h"
 
@@ -48,33 +49,10 @@
 
 - (void)loadEventImage:(AMEvent *)event
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSURL *url = [NSURL URLWithString:event.imageUrl];
-        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-        NSString *eventId = self.event.eventId;
-#warning Control cell image
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if ([eventId isEqualToString:self.event.eventId]) {
-                self.eventImage.image = image;
-            } else {
-                NSLog(@"Cell changed! You've scrolled to fast!");
-            }
-            
-        });
-    });
+    NSURL *url = [NSURL URLWithString:event.imageUrl];
+    [self.eventImage sd_setImageWithURL:url
+                      placeholderImage:nil];
     
-//    NSString *requestString = [NSString stringWithFormat:@"/%@/picture", event.eventId];
-//    
-//    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
-//                                  initWithGraphPath:requestString
-//                                  parameters:[AMFacebookEventsHelper photoLoadingParams]
-//                                  HTTPMethod:@"GET"];
-//    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
-//                                          id result,
-//                                          NSError *error) {
-//        self.imageView.image = result;
-//    }];
-
 }
 
 @end
