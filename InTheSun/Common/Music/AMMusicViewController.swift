@@ -80,19 +80,15 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tracksCount() -> Int {
-        if (self.playlist != nil) {
-            return self.playlist!.tracks.count
+        if let playlist = self.playlist {
+            return playlist.tracks.count
         }
         return 0
     }
     
     func setupButtonsAndTitlesState() {
-        if self.isPlaying() {
-            self.playButton.selected = true
-        } else {
-            self.playButton.selected = false
-        }
-        
+
+        playButton.selected = isPlaying()
         if let playlist = self.playlist {
             songDurationLabel.hidden = false
             songTitle.hidden = false
@@ -104,8 +100,14 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
             songTitle.hidden = true
         }
         
-        
-        
+        let indexPath = NSIndexPath(forRow: currentPlayingIndex, inSection: 0)
+        if let selectedCell = contentTableView.cellForRowAtIndexPath(indexPath) as? AMSongCell {
+            if isPlaying() {
+                selectedCell.setIconHighlighted(true)
+            } else {
+                selectedCell.setIconHighlighted(false)
+            }
+        }
     }
     
     //MARK: - IBActions
@@ -147,7 +149,15 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(kSongCellIdentifier) as! AMSongCell
         cell.setupWithTrack(self.playlist!.tracks[indexPath.row])
+        
         return cell
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if let songCell = cell as? AMSongCell {
+            let iconActive = isPlaying() && (currentPlayingIndex == indexPath.row)
+            songCell.setIconHighlighted(iconActive)
+        }
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -162,10 +172,10 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if currentPlayingIndex == indexPath.row {
-            if isPlaying() {
-                player.pause()
+            if (self.isPlaying()) {
+                self.player.pause()
             } else {
-                player.play()
+                self.player.play()
             }
         } else {
             playItem(indexPath.row)

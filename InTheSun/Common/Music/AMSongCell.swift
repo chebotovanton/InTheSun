@@ -26,4 +26,8 @@ class AMSongCell: UITableViewCell {
         self.songDurationLabel.text = AMStringUtils.durationString(track.duration)
     }
     
+    func setIconHighlighted(highlighted: Bool) {
+       activityIcon.highlighted = highlighted
+    }
+    
 }
