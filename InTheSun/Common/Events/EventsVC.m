@@ -65,6 +65,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    AMEvent *event = self.items[indexPath.row];
+    NSString * urlString = [AMFacebookEventsHelper urlStringForEvent:event];
+    NSURL *url = [NSURL URLWithString:urlString];
+    [[UIApplication sharedApplication] openURL:url];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

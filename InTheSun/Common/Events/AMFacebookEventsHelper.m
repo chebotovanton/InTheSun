@@ -5,7 +5,7 @@
 
 + (NSDictionary *)eventsListParams
 {
-    return @{@"fields" : @"name, place, start_time, type, category, picture.type(large)",
+    return @{@"fields" : @"name, place, start_time, type, category, picture.type(large), url",
              @"access_token" : [self accessToken]};
 }
 
@@ -13,11 +13,6 @@
 {
     return @{@"access_token" : [self accessToken],
              @"fields" : @"picture.width(320).height(150)"};
-}
-
-+ (NSString *)accessToken
-{
-    return @"1696621093884195|dd2b1b044ab94adfd38f1273f6627e5e";
 }
 
 + (NSArray *)parseRawEvents:(NSArray *)eventsRawArray
@@ -47,6 +42,14 @@
     return events;
 }
 
++ (NSString *)urlStringForEvent:(AMEvent *)event
+{
+#warning Check this! Take url from api?
+    return [NSString stringWithFormat:@"https://www.facebook.com/events/%@/", event.eventId];
+}
+
+#pragma mark - Private
+
 + (NSDate *)dateFromFacebookString:(NSString *)string
 {
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
@@ -55,5 +58,9 @@
     return date;
 }
 
++ (NSString *)accessToken
+{
+    return @"1696621093884195|dd2b1b044ab94adfd38f1273f6627e5e";
+}
 
 @end
