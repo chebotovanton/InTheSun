@@ -111,6 +111,7 @@
                     <rect key="frame" x="0.0" y="257" width="320" height="311"/>
                     <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <inset key="separatorInset" minX="45" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="zSt-GT-iJv"/>
                         <outlet property="delegate" destination="-1" id="Pm1-ZT-Oju"/>

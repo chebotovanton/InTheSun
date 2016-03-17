@@ -12,6 +12,7 @@ class AMSongCell: UITableViewCell {
         
         let selectedView = UIView()
         selectedView.backgroundColor = UIColor(red: 246.0/255.0, green: 240.0/255.0, blue: 212.0/255.0, alpha: 1.0)
+        self.backgroundColor = UIColor.clearColor()
         self.selectedBackgroundView = selectedView
     }
 
