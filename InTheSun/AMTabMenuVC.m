@@ -36,7 +36,7 @@
 
     SecondViewController *secondVC = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
     UITabBarItem * secondBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"friendsMenuIcon"] tag:0];
-    secondBarItem.title = @"Second";
+    secondBarItem.title = @"DevSettings";
     secondVC.tabBarItem = secondBarItem;
     
     return @[musicVC, albumInfoVC, eventsVC, secondVC];
