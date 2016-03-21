@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AMAlbumInfoVC">
             <connections>
+                <outlet property="playerView" destination="DY7-aB-7bG" id="kED-Zg-eBf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +20,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlV-ZG-AHE">
-                            <rect key="frame" x="118" y="23" width="84.5" height="20.5"/>
+                            <rect key="frame" x="118" y="22" width="85" height="21"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -36,10 +37,17 @@
                     <rect key="frame" x="0.0" y="50" width="320" height="518"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3C-93-khF" userLabel="ContentView">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="413"/>
                             <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DY7-aB-7bG" userLabel="PlayerView" customClass="YTPlayerView">
+                                    <rect key="frame" x="10" y="10" width="300" height="200"/>
+                                    <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="200" id="Stq-j3-NMq"/>
+                                    </constraints>
+                                </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekG-oA-fL7">
-                                    <rect key="frame" x="15" y="15" width="290" height="183"/>
+                                    <rect key="frame" x="15" y="220" width="290" height="183"/>
                                     <string key="text">В основу альбома положен памятник древнерусской литературы конца 12 в. "Слово о полку Игореве". Написан неизвестным автором вскоре после похода Игоря Святославича, князя новгород-северского, на половцев в 1185 под свежим впечатлением событий.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,11 +56,22 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstAttribute="bottom" secondItem="ekG-oA-fL7" secondAttribute="bottom" constant="10" id="2kQ-Hh-db4"/>
+                                <constraint firstItem="ekG-oA-fL7" firstAttribute="top" secondItem="DY7-aB-7bG" secondAttribute="bottom" constant="10" id="BUh-TW-Ysq"/>
                                 <constraint firstItem="ekG-oA-fL7" firstAttribute="leading" secondItem="B3C-93-khF" secondAttribute="leading" constant="15" id="Iq4-3I-idw"/>
+                                <constraint firstAttribute="trailing" secondItem="DY7-aB-7bG" secondAttribute="trailing" constant="10" id="NLH-yl-pBL"/>
                                 <constraint firstAttribute="trailing" secondItem="ekG-oA-fL7" secondAttribute="trailing" constant="15" id="ZlX-Vp-bfO"/>
-                                <constraint firstItem="ekG-oA-fL7" firstAttribute="top" secondItem="B3C-93-khF" secondAttribute="top" constant="15" id="m95-CM-RPN"/>
+                                <constraint firstItem="DY7-aB-7bG" firstAttribute="top" secondItem="B3C-93-khF" secondAttribute="top" constant="10" id="c7D-n3-uUg"/>
+                                <constraint firstItem="DY7-aB-7bG" firstAttribute="bottom" secondItem="ekG-oA-fL7" secondAttribute="bottom" id="w3T-4C-TBj"/>
+                                <constraint firstItem="DY7-aB-7bG" firstAttribute="leading" secondItem="B3C-93-khF" secondAttribute="leading" constant="10" id="x51-7Z-pOL"/>
                                 <constraint firstAttribute="bottom" secondItem="ekG-oA-fL7" secondAttribute="bottom" constant="15" id="xzz-lB-lxh"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="w3T-4C-TBj"/>
+                                    <exclude reference="xzz-lB-lxh"/>
+                                </mask>
+                            </variation>
                         </view>
                     </subviews>
                     <constraints>

@@ -71,7 +71,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jz-0e-CbZ">
-                                    <rect key="frame" x="98" y="66" width="60" height="62"/>
+                                    <rect key="frame" x="98" y="72" width="60" height="62"/>
                                     <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
                                     <state key="normal" image="nextPlayerIcon"/>
                                     <connections>
@@ -97,6 +97,7 @@
                                 <constraint firstItem="NAU-ZC-xim" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lGz-Ve-RMU" secondAttribute="leading" id="2mk-F1-fcC"/>
                                 <constraint firstItem="RHD-4p-uN9" firstAttribute="centerX" secondItem="JTj-Fc-df9" secondAttribute="centerX" id="E2S-JR-EMd"/>
                                 <constraint firstAttribute="bottom" secondItem="nmR-ww-Mmq" secondAttribute="bottom" constant="-6" id="Gvw-5Q-Oda"/>
+                                <constraint firstItem="nmR-ww-Mmq" firstAttribute="centerY" secondItem="JTj-Fc-df9" secondAttribute="centerY" id="MBe-Vl-oMj"/>
                                 <constraint firstAttribute="bottom" secondItem="2Jz-0e-CbZ" secondAttribute="bottom" id="QNt-tQ-2GU"/>
                                 <constraint firstItem="JTj-Fc-df9" firstAttribute="top" secondItem="RHD-4p-uN9" secondAttribute="bottom" constant="15" id="TWt-sy-DfA"/>
                                 <constraint firstAttribute="bottom" secondItem="JTj-Fc-df9" secondAttribute="bottom" id="U9Q-4U-3q1"/>
@@ -104,8 +105,15 @@
                                 <constraint firstItem="JTj-Fc-df9" firstAttribute="leading" secondItem="nmR-ww-Mmq" secondAttribute="trailing" id="jYf-6P-pKf"/>
                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NAU-ZC-xim" secondAttribute="trailing" id="kko-wh-QGS"/>
                                 <constraint firstItem="JTj-Fc-df9" firstAttribute="top" secondItem="NAU-ZC-xim" secondAttribute="bottom" constant="39" id="lU0-1g-wqE"/>
+                                <constraint firstItem="2Jz-0e-CbZ" firstAttribute="centerY" secondItem="JTj-Fc-df9" secondAttribute="centerY" id="n50-eA-9qJ"/>
                                 <constraint firstItem="2Jz-0e-CbZ" firstAttribute="leading" secondItem="JTj-Fc-df9" secondAttribute="trailing" id="wI6-kd-SWI"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Gvw-5Q-Oda"/>
+                                    <exclude reference="QNt-tQ-2GU"/>
+                                </mask>
+                            </variation>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>

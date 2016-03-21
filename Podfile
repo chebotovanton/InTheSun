@@ -11,6 +11,7 @@ pod 'FBSDKCoreKit', '~> 4.10'
 pod 'FBSDKLoginKit', '~> 4.10'
 pod 'FBSDKShareKit', '~> 4.10'
 pod 'SDWebImage', '~>3.7'
+pod 'youtube-ios-player-helper', :git=>'https://github.com/youtube/youtube-ios-player-helper', :commit=>'head'
 
 end
 

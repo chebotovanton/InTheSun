@@ -53,6 +53,11 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         self.resignFirstResponder()
     }
     
+    func stopMusicPlayer() {
+        player.pause()
+        self.setupButtonsAndTitlesState()
+    }
+    
     //MARK: - Private
     
     func playItem(index: Int) {

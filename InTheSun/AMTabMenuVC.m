@@ -42,4 +42,9 @@
     return @[musicVC, albumInfoVC, eventsVC, secondVC];
 }
 
+- (void)stopMusicPlayer
+{
+    [(AMMusicViewController *)self.viewControllers[0] stopMusicPlayer];
+}
+
 @end
