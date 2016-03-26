@@ -1,4 +1,5 @@
 #import "AMImageProcessor.h"
+#import "OpenCVWrapper.h"
 
 static CGFloat kLuminanceThreshold = 0.5 * 255;
 
@@ -7,7 +8,7 @@ static CGFloat kLuminanceThreshold = 0.5 * 255;
 + (BOOL)doesImageFitConditions:(UIImage *)image
 {
     CGFloat averageLuminance = [self getAverageLuminanceFromImage:image step:10];
-    return averageLuminance > kLuminanceThreshold;
+    return averageLuminance > kLuminanceThreshold || [OpenCVWrapper imageHasCircle:image];
 }
 
 + (CGFloat)getAverageLuminanceFromImage:(UIImage *)image step:(NSInteger)step
