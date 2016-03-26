@@ -2,4 +2,6 @@
 
 @interface AMTabMenuVC : UITabBarController
 
+- (void)stopMusicPlayer;
+
 @end

@@ -31,7 +31,7 @@ protocol SoundCloudDelegate {
     }
     
     func loadAlbumImage() {
-        let imageUrl = self.playlist?.artworkURL.largeURL
+        let imageUrl = self.playlist?.artworkURL.highURL
         self.downloadImage(imageUrl!)
     }
     

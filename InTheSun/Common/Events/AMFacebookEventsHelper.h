@@ -7,5 +7,6 @@
 + (NSDictionary *)eventsListParams;
 + (NSDictionary *)photoLoadingParams;
 + (NSArray *)parseRawEvents:(NSArray *)eventsRawArray;
++ (NSString *)urlStringForEvent:(AMEvent *)event;
 
 @end

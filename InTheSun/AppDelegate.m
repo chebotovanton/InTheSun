@@ -48,11 +48,17 @@ static NSString * kLaunchCountKey = @"launchCountKey";
 - (void)showBlockingScreenIfNeeded
 {
     NSInteger launchCount = [[NSUserDefaults standardUserDefaults] integerForKey:kLaunchCountKey];
-    if (launchCount == 0) {
+    if (launchCount == 0 && ![self isSimulator]) {
         [self showBlockingScreenAnimated:NO];
     }
     launchCount ++;
     [[NSUserDefaults standardUserDefaults] setInteger:launchCount forKey:kLaunchCountKey];
+}
+
+- (BOOL)isSimulator
+{
+    NSString *name = [UIDevice currentDevice].name;
+    return [name rangeOfString:@"Simulator"].location != NSNotFound;
 }
 
 #pragma mark - Public
