@@ -51,6 +51,4 @@ static CGFloat kLuminanceThreshold = 0.5 * 255;
     return luminanceSum / luminanceTakes;
 }
 
-
-
 @end

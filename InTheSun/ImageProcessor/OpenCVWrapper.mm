@@ -3,8 +3,8 @@
 
 @implementation OpenCVWrapper
 
-+ (BOOL) imageHasCircle:(UIImage*)image {
-    
++ (BOOL) imageHasCircle:(UIImage*)image
+{    
     cv::Mat imageMatrix = [image CVMat];
     
     if(imageMatrix.empty()) {
@@ -21,7 +21,7 @@
     medianBlur(imageMatrix, imageMatrix, 5);
     
     std::vector<cv::Vec3f> circles;
-    // We need to have more tests here ;)
+#warning We need to have more tests here ;)
     HoughCircles(imageMatrix, circles, CV_HOUGH_GRADIENT, 1, 1000, 100, 30, 150, 400);
     
     return circles.size() > 0;
