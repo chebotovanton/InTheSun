@@ -34,12 +34,13 @@
 		9FBEFAA21C6901F000821123 /* dark2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFA9E1C6901F000821123 /* dark2.jpeg */; };
 		9FBEFAA31C6901F000821123 /* sunny1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFA9F1C6901F000821123 /* sunny1.jpeg */; };
 		9FBEFAA41C6901F000821123 /* sunny2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFAA01C6901F000821123 /* sunny2.jpeg */; };
-		9FCE57D91C9897A90080DC9B /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FCE57D81C9897A90080DC9B /* overlay.png */; };
 		9FCE57DC1C98991D0080DC9B /* AMMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE57DA1C98991D0080DC9B /* AMMusicViewController.swift */; };
 		9FCE57DD1C98991D0080DC9B /* AMMusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCE57DB1C98991D0080DC9B /* AMMusicViewController.xib */; };
 		9FD4F62A1C81CF39004A0734 /* AMTabMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD4F6281C81CF39004A0734 /* AMTabMenuVC.m */; };
 		9FD4F62B1C81CF39004A0734 /* AMTabMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD4F6291C81CF39004A0734 /* AMTabMenuVC.xib */; };
 		9FD4F62F1C81EED8004A0734 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD4F62E1C81EED8004A0734 /* SecondViewController.xib */; };
+		9FEFE0511CA69D1A00F413B1 /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9FEFE0501CA69D1A00F413B1 /* song.mp3 */; };
+		9FEFE0551CA69D3D00F413B1 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FEFE0541CA69D3D00F413B1 /* overlay.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,13 +96,14 @@
 		9FBEFA9E1C6901F000821123 /* dark2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dark2.jpeg; sourceTree = "<group>"; };
 		9FBEFA9F1C6901F000821123 /* sunny1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny1.jpeg; sourceTree = "<group>"; };
 		9FBEFAA01C6901F000821123 /* sunny2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny2.jpeg; sourceTree = "<group>"; };
-		9FCE57D81C9897A90080DC9B /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 		9FCE57DA1C98991D0080DC9B /* AMMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMMusicViewController.swift; sourceTree = "<group>"; };
 		9FCE57DB1C98991D0080DC9B /* AMMusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMMusicViewController.xib; sourceTree = "<group>"; };
 		9FD4F6271C81CF39004A0734 /* AMTabMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMTabMenuVC.h; sourceTree = "<group>"; };
 		9FD4F6281C81CF39004A0734 /* AMTabMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMTabMenuVC.m; sourceTree = "<group>"; };
 		9FD4F6291C81CF39004A0734 /* AMTabMenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMTabMenuVC.xib; sourceTree = "<group>"; };
 		9FD4F62E1C81EED8004A0734 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		9FEFE0501CA69D1A00F413B1 /* song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song.mp3; sourceTree = "<group>"; };
+		9FEFE0541CA69D3D00F413B1 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 		AD583DF034C7E9280CC9302B /* Pods-InTheSun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InTheSun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InTheSun/Pods-InTheSun.debug.xcconfig"; sourceTree = "<group>"; };
 		B10B75000799D04DC96EAE94 /* Pods-InTheSun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InTheSun.release.xcconfig"; path = "Pods/Target Support Files/Pods-InTheSun/Pods-InTheSun.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -226,7 +228,7 @@
 		9FADBCD21C65FBDC00562B13 /* InTheSun */ = {
 			isa = PBXGroup;
 			children = (
-				9FCE57D81C9897A90080DC9B /* overlay.png */,
+				9FEFE04F1CA69D1A00F413B1 /* Resources */,
 				9F041A171C8C8C3D0092CBAC /* Common */,
 				9F81E0591C8B08B5003FA920 /* SoundClousFacade */,
 				9FADBCD61C65FBDC00562B13 /* AppDelegate.h */,
@@ -292,6 +294,15 @@
 				9FBEFAA01C6901F000821123 /* sunny2.jpeg */,
 			);
 			path = TestImages;
+			sourceTree = "<group>";
+		};
+		9FEFE04F1CA69D1A00F413B1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9FEFE0541CA69D3D00F413B1 /* overlay.png */,
+				9FEFE0501CA69D1A00F413B1 /* song.mp3 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		F339C9549E1BAD2A7DF0FA87 /* Pods */ = {
@@ -387,12 +398,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FEFE0551CA69D3D00F413B1 /* overlay.png in Resources */,
 				9FD4F62B1C81CF39004A0734 /* AMTabMenuVC.xib in Resources */,
+				9FEFE0511CA69D1A00F413B1 /* song.mp3 in Resources */,
 				9F041A1D1C8C8C580092CBAC /* AMAlbumInfoVC.xib in Resources */,
 				9FD4F62F1C81EED8004A0734 /* SecondViewController.xib in Resources */,
 				9FCE57DD1C98991D0080DC9B /* AMMusicViewController.xib in Resources */,
 				9F4BD2811C944D13009E5DCC /* AMEventCell.xib in Resources */,
-				9FCE57D91C9897A90080DC9B /* overlay.png in Resources */,
 				9F041A231C8C8F280092CBAC /* EventsVC.xib in Resources */,
 				9F8454F91C95C94C00AA7B90 /* AMSongCell.xib in Resources */,
 				9FADBD041C6638C700562B13 /* LaunchScreen.xib in Resources */,

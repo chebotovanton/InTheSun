@@ -3,12 +3,18 @@
 #import "SecondViewController.h"
 #import "AMAlbumInfoVC.h"
 #import "EventsVC.h"
+#import <AVFoundation/AVFoundation.h>
+
+@interface AMTabMenuVC ()
+@property (nonatomic, strong) AVPlayer *player;
+@end
 
 @implementation AMTabMenuVC
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.tabBar.tintColor = [UIColor yellowColor];
     self.tabBar.backgroundColor = [UIColor colorWithRed:44.0/255.0 green:44.0/255.0 blue:44.0/255.0 alpha:1.0];
     self.tabBar.barStyle = UIBarStyleBlack;
@@ -16,6 +22,7 @@
     NSArray *vcs = [self createControllers];
     [self setViewControllers:vcs animated:YES];
 }
+
 
 - (NSArray *)createControllers
 {
