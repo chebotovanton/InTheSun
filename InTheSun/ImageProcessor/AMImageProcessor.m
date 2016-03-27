@@ -7,8 +7,11 @@ static CGFloat kLuminanceThreshold = 0.5 * 255;
 
 + (BOOL)doesImageFitConditions:(UIImage *)image
 {
+#warning We need to have more tests here ;)
     CGFloat averageLuminance = [self getAverageLuminanceFromImage:image step:10];
-    return averageLuminance > kLuminanceThreshold || [OpenCVWrapper imageHasCircle:image];
+    BOOL isImageBright = averageLuminance > kLuminanceThreshold;
+    BOOL imageHasCircles = [OpenCVWrapper imageHasCircle:image];
+    return  isImageBright || imageHasCircles;
 }
 
 + (CGPoint)circleCenter:(UIImage *)image

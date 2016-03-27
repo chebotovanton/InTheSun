@@ -43,6 +43,7 @@
 		9FEFE0551CA69D3D00F413B1 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FEFE0541CA69D3D00F413B1 /* overlay.png */; };
 		9FEFE07F1CA6FAE000F413B1 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE07C1CA6FAE000F413B1 /* OpenCVWrapper.mm */; };
 		9FEFE0801CA6FAE000F413B1 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE07E1CA6FAE000F413B1 /* UIImage+OpenCV.mm */; };
+		9FEFE0821CA85DFB00F413B1 /* sunny3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEFE0811CA85DFB00F413B1 /* sunny3.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		9FEFE07C1CA6FAE000F413B1 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
 		9FEFE07D1CA6FAE000F413B1 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
 		9FEFE07E1CA6FAE000F413B1 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
+		9FEFE0811CA85DFB00F413B1 /* sunny3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny3.jpeg; sourceTree = "<group>"; };
 		AD583DF034C7E9280CC9302B /* Pods-InTheSun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InTheSun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InTheSun/Pods-InTheSun.debug.xcconfig"; sourceTree = "<group>"; };
 		B10B75000799D04DC96EAE94 /* Pods-InTheSun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InTheSun.release.xcconfig"; path = "Pods/Target Support Files/Pods-InTheSun/Pods-InTheSun.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -302,6 +304,7 @@
 				9FBEFA9E1C6901F000821123 /* dark2.jpeg */,
 				9FBEFA9F1C6901F000821123 /* sunny1.jpeg */,
 				9FBEFAA01C6901F000821123 /* sunny2.jpeg */,
+				9FEFE0811CA85DFB00F413B1 /* sunny3.jpeg */,
 			);
 			path = TestImages;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FEFE0821CA85DFB00F413B1 /* sunny3.jpeg in Resources */,
 				9FBEFAA41C6901F000821123 /* sunny2.jpeg in Resources */,
 				9FBEFAA21C6901F000821123 /* dark2.jpeg in Resources */,
 				9FBEFAA11C6901F000821123 /* dark1.jpeg in Resources */,

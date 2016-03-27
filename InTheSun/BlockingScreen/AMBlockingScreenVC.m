@@ -42,29 +42,31 @@
 {
     self.descriptionLabel.hidden = YES;
     self.cameraButton.hidden = YES;
-    
-    self.circleView = [UIView new];
-    self.circleView.frame = CGRectMake(0.0, 0.0, 100.0, 100.0);
-    self.circleView.backgroundColor = [UIColor yellowColor];
-    [self.view addSubview:self.circleView];
+
+#warning Debug
+//    self.circleView = [UIView new];
+//    self.circleView.frame = CGRectMake(0.0, 0.0, 100.0, 100.0);
+//    self.circleView.backgroundColor = [UIColor yellowColor];
+//    [self.view addSubview:self.circleView];
 }
 
 - (void)showAlbumButton
 {
-    self.goToAlbumButton.hidden = NO;
-    [self.view bringSubviewToFront:self.goToAlbumButton];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.goToAlbumButton.hidden = NO;
+        [self.view bringSubviewToFront:self.goToAlbumButton];
+    });
 }
 
 - (void)playSong
 {
-#warning Switched off
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"song" ofType:@"mp3"];
-//    NSURL *url = [[NSURL alloc] initFileURLWithPath: path];
-//    AVAsset *asset = [AVURLAsset URLAssetWithURL:url options:nil];
-//    AVPlayerItem *anItem = [AVPlayerItem playerItemWithAsset:asset];
-//    
-//    self.player = [AVPlayer playerWithPlayerItem:anItem];
-//    [self.player play];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"song" ofType:@"mp3"];
+    NSURL *url = [[NSURL alloc] initFileURLWithPath: path];
+    AVAsset *asset = [AVURLAsset URLAssetWithURL:url options:nil];
+    AVPlayerItem *anItem = [AVPlayerItem playerItemWithAsset:asset];
+    
+    self.player = [AVPlayer playerWithPlayerItem:anItem];
+    [self.player play];
 }
 
 #pragma mark -
@@ -79,8 +81,6 @@
     // Configure the session to produce lower resolution video frames, if your
     // processing algorithm can cope. We'll specify medium quality for the
     // chosen device.
-#warning Preset changed
-//    session.sessionPreset = AVCaptureSessionPresetHigh;
     session.sessionPreset = AVCaptureSessionPresetMedium;
     
     // Find a suitable AVCaptureDevice
@@ -153,17 +153,27 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     // Create a UIImage from the sample buffer data
     [connection setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];
     UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
+
 #warning Debug
-    CGPoint center = [AMImageProcessor circleCenter:image];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.circleView.center = CGPointMake(center.x, self.view.frame.size.height - center.y);
-    });
+//    CGPoint desiredCenter = [AMImageProcessor circleCenter:image];
+//    desiredCenter = CGPointMake(desiredCenter.x, self.view.frame.size.height - desiredCenter.y);
+//    desiredCenter = CGPointMake([self filteredValueFrom:self.circleView.center.x to:desiredCenter.x],
+//                                [self filteredValueFrom:self.circleView.center.y to:desiredCenter.y]);
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        self.circleView.center = desiredCenter;
+//    });
     
-//    if (self.shouldCheckImage && [AMImageProcessor doesImageFitConditions:image]) {
-//        self.shouldCheckImage = NO;
-//        [self showAlbumButton];
-//        [self playSong];
-//    }
+    if (self.shouldCheckImage && [AMImageProcessor doesImageFitConditions:image]) {
+        self.shouldCheckImage = NO;
+        [self showAlbumButton];
+        [self playSong];
+    }
+}
+
+- (CGFloat)filteredValueFrom:(CGFloat)origin to:(CGFloat)target
+{
+    CGFloat filterCoeff = 0.1;
+    return origin + (target - origin) * filterCoeff;
 }
 
 // Create a UIImage from sample buffer data
