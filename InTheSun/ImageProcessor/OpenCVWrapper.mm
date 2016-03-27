@@ -46,7 +46,7 @@
     
     std::vector<cv::Vec3f> circles;
 #warning We need to have more tests here ;)
-    HoughCircles(imageMatrix, circles, CV_HOUGH_GRADIENT, 1, 70, 100, 30, 50, 500);
+    HoughCircles(imageMatrix, circles, CV_HOUGH_GRADIENT, 1, 70, 100, 100, 50, 500);
 //              image,        circles, method,         dp, dist, p1, p2, minR maxR
     
     
