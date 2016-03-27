@@ -3,6 +3,7 @@
 
 @interface OpenCVWrapper : NSObject
 
-+ (BOOL) imageHasCircle:(UIImage*)image;
++ (BOOL)imageHasCircle:(UIImage *)image;
++ (CGPoint)circleCenterAtImage:(UIImage *)image;
 
 @end

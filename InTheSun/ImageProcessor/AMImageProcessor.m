@@ -11,6 +11,11 @@ static CGFloat kLuminanceThreshold = 0.5 * 255;
     return averageLuminance > kLuminanceThreshold || [OpenCVWrapper imageHasCircle:image];
 }
 
++ (CGPoint)circleCenter:(UIImage *)image
+{
+    return [OpenCVWrapper circleCenterAtImage:image];
+}
+
 + (CGFloat)getAverageLuminanceFromImage:(UIImage *)image step:(NSInteger)step
 {
     // First get the image into your data buffer

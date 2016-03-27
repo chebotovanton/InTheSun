@@ -14,6 +14,8 @@
 @property (nonatomic, weak) IBOutlet UIButton *goToAlbumButton;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 
+@property (nonatomic, strong) UIView *circleView;
+
 @end
 
 @implementation AMBlockingScreenVC
@@ -40,6 +42,11 @@
 {
     self.descriptionLabel.hidden = YES;
     self.cameraButton.hidden = YES;
+    
+    self.circleView = [UIView new];
+    self.circleView.frame = CGRectMake(0.0, 0.0, 100.0, 100.0);
+    self.circleView.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:self.circleView];
 }
 
 - (void)showAlbumButton
@@ -72,6 +79,8 @@
     // Configure the session to produce lower resolution video frames, if your
     // processing algorithm can cope. We'll specify medium quality for the
     // chosen device.
+#warning Preset changed
+//    session.sessionPreset = AVCaptureSessionPresetHigh;
     session.sessionPreset = AVCaptureSessionPresetMedium;
     
     // Find a suitable AVCaptureDevice
@@ -144,12 +153,17 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     // Create a UIImage from the sample buffer data
     [connection setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];
     UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
+#warning Debug
+    CGPoint center = [AMImageProcessor circleCenter:image];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.circleView.center = CGPointMake(center.x, self.view.frame.size.height - center.y);
+    });
     
-    if (self.shouldCheckImage && [AMImageProcessor doesImageFitConditions:image]) {
-        self.shouldCheckImage = NO;
-        [self showAlbumButton];
-        [self playSong];
-    }
+//    if (self.shouldCheckImage && [AMImageProcessor doesImageFitConditions:image]) {
+//        self.shouldCheckImage = NO;
+//        [self showAlbumButton];
+//        [self playSong];
+//    }
 }
 
 // Create a UIImage from sample buffer data
