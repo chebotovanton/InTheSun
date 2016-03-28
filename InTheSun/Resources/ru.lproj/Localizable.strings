@@ -1,5 +1,8 @@
 // Menu
-
 "LOC_TAB_BAR_MUSIC" = "Музыка";
 "LOC_TAB_BAR_ALBUM" = "Об альбоме";
 "LOC_TAB_BAR_EVENTS" = "События";
+
+//Events
+"LOC_EVENTS_FUTURE_EVENTS" = "Предстоящие события";
+"LOC_EVENTS_PAST_EVENTS" = "Прошедшие события";
