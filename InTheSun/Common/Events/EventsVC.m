@@ -4,6 +4,7 @@
 #import "AMEvent.h"
 #import "AMFacebookEventsHelper.h"
 
+#warning Move to a separate class
 @interface AMEventSection : NSObject
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSArray <AMEvent *> *events;
@@ -15,6 +16,8 @@
 @interface EventsVC () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UIView *loadingView;
+@property (nonatomic, weak) IBOutlet UIView *errorView;
 
 @property (nonatomic, strong) NSString *cellReuseIdentifier;
 @property (nonatomic, strong) NSArray <AMEventSection *> *sections;
@@ -25,7 +28,13 @@
 
 - (void)viewDidLoad
 {
-#warning Hide table view while loading
+    [super viewDidLoad];
+    
+    self.loadingView.layer.cornerRadius = 10.0;
+    self.errorView.layer.cornerRadius = 10.0;
+    self.tableView.hidden = YES;
+    self.errorView.hidden = YES;
+    self.loadingView.hidden = NO;
     
     UIView *footer = [UIView new];
     footer.frame = CGRectMake(0.0, 0.0, 10.0, 50.0);
@@ -33,8 +42,7 @@
     
     self.cellReuseIdentifier = @"AMEventCell";
     [self.tableView registerNib:[UINib nibWithNibName:self.cellReuseIdentifier bundle:nil] forCellReuseIdentifier:self.cellReuseIdentifier];
-    
-    [super viewDidLoad];
+
     FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
                                   initWithGraphPath:@"/auktyon/events"
                                   parameters:[AMFacebookEventsHelper eventsListParams]
@@ -47,8 +55,13 @@
         NSArray *events = [AMFacebookEventsHelper parseRawEvents:eventsRawArray];
         self.sections = [self splitEvents:events];
         if (self.sections.count > 0) {
+            self.loadingView.hidden = YES;
+            self.errorView.hidden = YES;
+            self.tableView.hidden = NO;
             [self.tableView reloadData];
         } else {
+            self.loadingView.hidden = YES;
+            self.errorView.hidden = NO;
             self.tableView.hidden = YES;
         }
     }];

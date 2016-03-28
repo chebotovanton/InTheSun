@@ -6,3 +6,5 @@
 //Events
 "LOC_EVENTS_FUTURE_EVENTS" = "Future events";
 "LOC_EVENTS_PAST_EVENTS" = "Past events";
+"LOC_EVENTS_LOADING" = "Loading...";
+"LOC_EVENTS_ERROR" = "Nothing found";
