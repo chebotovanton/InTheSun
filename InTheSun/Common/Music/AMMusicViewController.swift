@@ -24,15 +24,6 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let path = NSBundle.mainBundle().pathForResource("song", ofType: "mp3")
-        let url = NSURL(string: path!)
-        let asset = AVURLAsset(URL: url!)
-        let item = AVPlayerItem(asset: asset)
-        player.volume = 1.0
-        player = AVPlayer(URL: url!)
-//        player = AVPlayer(playerItem: item)
-        player.play()
         
         self.setupButtonsAndTitlesState()
         self.contentTableView.registerNib(UINib(nibName: self.kSongCellIdentifier, bundle: nil), forCellReuseIdentifier: self.kSongCellIdentifier)

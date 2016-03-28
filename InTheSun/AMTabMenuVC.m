@@ -28,17 +28,17 @@
 {
     AMMusicViewController *musicVC = [[AMMusicViewController alloc] initWithNibName:@"AMMusicViewController" bundle:nil];
     UITabBarItem * musicBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"musicMenuIcon"] tag:0];
-    musicBarItem.title = @"Music";
+    musicBarItem.title = LS(@"LOC_TAB_BAR_MUSIC");
     musicVC.tabBarItem = musicBarItem;
 
     AMAlbumInfoVC *albumInfoVC = [[AMAlbumInfoVC alloc] initWithNibName:@"AMAlbumInfoVC" bundle:nil];
     UITabBarItem * albumBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"albumMenuIcon"] tag:0];
-    albumBarItem.title = @"Album Info";
+    albumBarItem.title = LS(@"LOC_TAB_BAR_ALBUM");
     albumInfoVC.tabBarItem = albumBarItem;
     
     EventsVC *eventsVC = [[EventsVC alloc] initWithNibName:@"EventsVC" bundle:nil];
     UITabBarItem * eventsBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"eventsMenuIcon"] tag:0];
-    eventsBarItem.title = @"Events";
+    eventsBarItem.title = LS(@"LOC_TAB_BAR_EVENTS");
     eventsVC.tabBarItem = eventsBarItem;
 
     SecondViewController *secondVC = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
