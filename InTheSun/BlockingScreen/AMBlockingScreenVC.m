@@ -8,13 +8,13 @@
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (nonatomic, strong) AVPlayer *player;
-@property (nonatomic, assign) BOOL shouldCheckImage;
+@property (nonatomic, assign) CGFloat luminanceSum;
+@property (nonatomic, assign) CGFloat luminanceLimit;
 
-@property (nonatomic, weak) IBOutlet UIButton *cameraButton;
+@property (nonatomic, weak) IBOutlet UIImageView *circleImage;
 @property (nonatomic, weak) IBOutlet UIButton *goToAlbumButton;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
-
-@property (nonatomic, strong) UIView *circleView;
+@property (nonatomic, weak) IBOutlet UILabel *debugLabel;
 
 @end
 
@@ -23,12 +23,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.shouldCheckImage = YES;
-}
-
-- (IBAction)startCamera
-{
-    [self hideControls];
+    self.luminanceSum = 0.0;
+    self.luminanceLimit = 50000;
     [self setupCaptureSession];
 }
 
@@ -38,35 +34,52 @@
     [appDelegate hideBlockingScreenAnimated:YES];
 }
 
-- (void)hideControls
-{
-    self.descriptionLabel.hidden = YES;
-    self.cameraButton.hidden = YES;
 
-#warning Debug
-//    self.circleView = [UIView new];
-//    self.circleView.frame = CGRectMake(0.0, 0.0, 100.0, 100.0);
-//    self.circleView.backgroundColor = [UIColor yellowColor];
-//    [self.view addSubview:self.circleView];
+- (void)setControlsToPlayMode
+{
+    self.goToAlbumButton.hidden = NO;
+
 }
 
-- (void)showAlbumButton
+- (void)switchToPlayState
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.goToAlbumButton.hidden = NO;
-        [self.view bringSubviewToFront:self.goToAlbumButton];
-    });
+    [self setControlsToPlayMode];
+    [self playSong];
+}
+
+- (void)updateCircleColor
+{
+    CGFloat alpha = self.luminanceSum/self.luminanceLimit;
+    NSLog(@"alpha: %.2f", alpha);
+    UIColor *color = [UIColor colorWithRed:252.0/255.0 green:213.0/255.0 blue:0.0 alpha:alpha];
+    self.circleImage.image = [self maskedImage:self.circleImage.image color:color];
+}
+
+- (UIImage *)maskedImage:(UIImage *)image color:(UIColor *)color
+{
+    CGRect rect = CGRectMake(0, 0, image.size.width, image.size.height);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, image.scale);
+    CGContextRef c = UIGraphicsGetCurrentContext();
+    [image drawInRect:rect];
+    CGContextSetFillColorWithColor(c, [color CGColor]);
+#warning Blend mode
+    CGContextSetBlendMode(c, kCGBlendModeSourceAtop);
+    CGContextFillRect(c, rect);
+    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return result;
 }
 
 - (void)playSong
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"song" ofType:@"mp3"];
-    NSURL *url = [[NSURL alloc] initFileURLWithPath: path];
-    AVAsset *asset = [AVURLAsset URLAssetWithURL:url options:nil];
-    AVPlayerItem *anItem = [AVPlayerItem playerItemWithAsset:asset];
-    
-    self.player = [AVPlayer playerWithPlayerItem:anItem];
-    [self.player play];
+#warning Start singleton player
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"song" ofType:@"mp3"];
+//    NSURL *url = [[NSURL alloc] initFileURLWithPath: path];
+//    AVAsset *asset = [AVURLAsset URLAssetWithURL:url options:nil];
+//    AVPlayerItem *anItem = [AVPlayerItem playerItemWithAsset:asset];
+//    
+//    self.player = [AVPlayer playerWithPlayerItem:anItem];
+//    [self.player play];
 }
 
 #pragma mark -
@@ -153,27 +166,17 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     // Create a UIImage from the sample buffer data
     [connection setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];
     UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
-
-#warning Debug
-//    CGPoint desiredCenter = [AMImageProcessor circleCenter:image];
-//    desiredCenter = CGPointMake(desiredCenter.x, self.view.frame.size.height - desiredCenter.y);
-//    desiredCenter = CGPointMake([self filteredValueFrom:self.circleView.center.x to:desiredCenter.x],
-//                                [self filteredValueFrom:self.circleView.center.y to:desiredCenter.y]);
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        self.circleView.center = desiredCenter;
-//    });
     
-    if (self.shouldCheckImage && [AMImageProcessor doesImageFitConditions:image]) {
-        self.shouldCheckImage = NO;
-        [self showAlbumButton];
-        [self playSong];
-    }
-}
-
-- (CGFloat)filteredValueFrom:(CGFloat)origin to:(CGFloat)target
-{
-    CGFloat filterCoeff = 0.1;
-    return origin + (target - origin) * filterCoeff;
+    CGFloat newLuminance = [AMImageProcessor getAverageLuminanceFromImage:image step:10];
+    self.luminanceSum += newLuminance;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self updateCircleColor];
+        self.debugLabel.text = [NSString stringWithFormat:@"Liminance: %.f", self.luminanceSum];
+        if (self.luminanceSum > self.luminanceLimit) {
+            [self switchToPlayState];
+        }
+    });
 }
 
 // Create a UIImage from sample buffer data

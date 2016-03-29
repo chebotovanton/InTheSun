@@ -6,4 +6,6 @@
 + (BOOL)doesImageFitConditions:(UIImage *)image;
 + (CGPoint)circleCenter:(UIImage *)image;
 
+
++ (CGFloat)getAverageLuminanceFromImage:(UIImage *)image step:(NSInteger)step;
 @end

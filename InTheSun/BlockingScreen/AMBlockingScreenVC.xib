@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AMBlockingScreenVC">
             <connections>
-                <outlet property="cameraButton" destination="lEp-sN-Vie" id="nGj-hF-As5"/>
-                <outlet property="descriptionLabel" destination="q8W-p6-y9g" id="0be-oD-mcf"/>
+                <outlet property="circleImage" destination="7Bz-af-ruX" id="H23-oF-oGV"/>
+                <outlet property="debugLabel" destination="10g-IS-Kfr" id="cQR-Em-9lo"/>
+                <outlet property="descriptionLabel" destination="IRr-5t-1Rg" id="Oqp-D8-qnV"/>
                 <outlet property="goToAlbumButton" destination="Lw2-fb-v0c" id="FAu-hj-idl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,19 +19,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEp-sN-Vie" userLabel="Open Camera">
-                    <rect key="frame" x="113" y="269" width="95" height="30"/>
-                    <state key="normal" title="Open Camera"/>
-                    <connections>
-                        <action selector="startCamera" destination="-1" eventType="touchUpInside" id="nf7-dg-4hc"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Откройте камеру, снимите солнце, послушайте альбом" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8W-p6-y9g">
-                    <rect key="frame" x="47" y="174" width="227" height="41"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lw2-fb-v0c">
                     <rect key="frame" x="117" y="510" width="86" height="30"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,25 +27,45 @@
                         <action selector="goToAlbum" destination="-1" eventType="touchUpInside" id="Bai-9q-h01"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Аукцыон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvK-Kr-TDe">
+                    <rect key="frame" x="111" y="106" width="98" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="7Bz-af-ruX">
+                    <rect key="frame" x="78" y="202" width="164" height="164"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Направьте камеру" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRr-5t-1Rg">
+                    <rect key="frame" x="56" y="433" width="208" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10g-IS-Kfr">
+                    <rect key="frame" x="8" y="8" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.70588235294117641" green="0.71764705882352942" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="lEp-sN-Vie" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0Mw-eP-IQL"/>
-                <constraint firstItem="q8W-p6-y9g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Esf-oL-svB"/>
+                <constraint firstItem="7Bz-af-ruX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9ZM-HF-FLU"/>
+                <constraint firstItem="7Bz-af-ruX" firstAttribute="top" secondItem="gvK-Kr-TDe" secondAttribute="bottom" constant="67" id="Ci6-Tj-wJ8"/>
+                <constraint firstItem="7Bz-af-ruX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="EAe-js-p69"/>
+                <constraint firstItem="IRr-5t-1Rg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GIz-7L-shI"/>
                 <constraint firstAttribute="bottom" secondItem="Lw2-fb-v0c" secondAttribute="bottom" constant="28" id="GaW-hN-oSf"/>
-                <constraint firstItem="q8W-p6-y9g" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="174" id="Snj-oc-u2l"/>
-                <constraint firstItem="q8W-p6-y9g" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zb3-OB-Md6"/>
-                <constraint firstItem="lEp-sN-Vie" firstAttribute="top" secondItem="q8W-p6-y9g" secondAttribute="bottom" constant="54" id="aaw-nU-Uzo"/>
-                <constraint firstItem="lEp-sN-Vie" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="fSM-mx-A6F"/>
+                <constraint firstItem="gvK-Kr-TDe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="K1h-lb-fsV"/>
+                <constraint firstItem="10g-IS-Kfr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="O4u-lH-XfK"/>
+                <constraint firstItem="10g-IS-Kfr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="fvO-id-6o7"/>
+                <constraint firstItem="IRr-5t-1Rg" firstAttribute="top" secondItem="7Bz-af-ruX" secondAttribute="bottom" constant="67" id="nXx-XR-1Ss"/>
                 <constraint firstItem="Lw2-fb-v0c" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vEO-e8-uXg"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="q8W-p6-y9g" secondAttribute="trailing" constant="20" id="zLl-Gb-OB3"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="fSM-mx-A6F"/>
-                </mask>
-            </variation>
         </view>
     </objects>
+    <resources>
+        <image name="circle" width="164" height="164"/>
+    </resources>
 </document>
