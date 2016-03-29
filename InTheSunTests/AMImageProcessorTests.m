@@ -25,6 +25,12 @@
     XCTAssertTrue([AMImageProcessor doesImageFitConditions:image]);
 }
 
+- (void)testSunnyImage3
+{
+    UIImage *image = [self imageNamed:@"sunny3.jpeg"];
+    XCTAssertTrue([AMImageProcessor doesImageFitConditions:image]);
+}
+
 - (void)testDarkImage1
 {
     UIImage *image = [self imageNamed:@"dark1.jpeg"];

@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventsVC">
             <connections>
+                <outlet property="errorView" destination="wpi-jo-e5z" id="aDh-sX-tIB"/>
+                <outlet property="loadingView" destination="bdr-3T-QRj" id="DqI-r7-3iO"/>
                 <outlet property="tableView" destination="COu-JQ-zyI" id="I39-pE-GCN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,10 +22,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVx-E3-JdF">
-                            <rect key="frame" x="133" y="31" width="56" height="21"/>
+                            <rect key="frame" x="132" y="31" width="56" height="21"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="LSKey" value="LOC_TAB_BAR_EVENTS"/>
+                            </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -33,9 +38,9 @@
                         <constraint firstAttribute="height" constant="64" id="bh3-7t-IdC"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="COu-JQ-zyI">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="COu-JQ-zyI">
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                    <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <connections>
@@ -43,15 +48,67 @@
                         <outlet property="delegate" destination="-1" id="52y-5i-gEj"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdr-3T-QRj">
+                    <rect key="frame" x="15" y="233" width="290" height="103"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Идет загрузка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZK-1C-uyt">
+                            <rect key="frame" x="88" y="15" width="115" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="LSKey" value="LOC_EVENTS_LOADING"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hni-u8-jCy">
+                            <rect key="frame" x="127" y="51" width="37" height="37"/>
+                            <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="rZK-1C-uyt" firstAttribute="centerX" secondItem="bdr-3T-QRj" secondAttribute="centerX" id="4PC-jr-5yp"/>
+                        <constraint firstItem="hni-u8-jCy" firstAttribute="top" secondItem="rZK-1C-uyt" secondAttribute="bottom" constant="15" id="7vw-vH-W3s"/>
+                        <constraint firstItem="rZK-1C-uyt" firstAttribute="top" secondItem="bdr-3T-QRj" secondAttribute="top" constant="15" id="Rwg-Td-qjn"/>
+                        <constraint firstAttribute="width" constant="290" id="UCW-D5-ypd"/>
+                        <constraint firstAttribute="bottom" secondItem="hni-u8-jCy" secondAttribute="bottom" constant="15" id="kLL-sM-cwa"/>
+                        <constraint firstItem="hni-u8-jCy" firstAttribute="centerX" secondItem="bdr-3T-QRj" secondAttribute="centerX" id="uPg-ZQ-MQr"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpi-jo-e5z">
+                    <rect key="frame" x="15" y="261" width="290" height="47"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Произошла ошибка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smh-Yw-red">
+                            <rect key="frame" x="79" y="15" width="133" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="LSKey" value="LOC_EVENTS_ERROR"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="smh-Yw-red" firstAttribute="top" secondItem="wpi-jo-e5z" secondAttribute="top" constant="15" id="1Ya-WY-SEw"/>
+                        <constraint firstItem="smh-Yw-red" firstAttribute="centerX" secondItem="wpi-jo-e5z" secondAttribute="centerX" id="Yh3-Mt-g83"/>
+                        <constraint firstAttribute="width" constant="290" id="jle-3Y-rZN"/>
+                        <constraint firstAttribute="bottom" secondItem="smh-Yw-red" secondAttribute="bottom" constant="15" id="vqe-Yz-1Aq"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="wpi-jo-e5z" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="2Fj-dL-koX"/>
                 <constraint firstAttribute="bottom" secondItem="COu-JQ-zyI" secondAttribute="bottom" id="4Kv-O0-LnO"/>
+                <constraint firstItem="bdr-3T-QRj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="BqI-Kv-q70"/>
                 <constraint firstAttribute="trailing" secondItem="COu-JQ-zyI" secondAttribute="trailing" id="OSC-DX-JL5"/>
                 <constraint firstItem="1MK-g2-ll9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Sk3-4h-oPQ"/>
+                <constraint firstItem="wpi-jo-e5z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cS4-Xc-tdF"/>
                 <constraint firstItem="1MK-g2-ll9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="diH-lM-qPs"/>
                 <constraint firstItem="COu-JQ-zyI" firstAttribute="top" secondItem="1MK-g2-ll9" secondAttribute="bottom" id="e5e-hq-lHZ"/>
                 <constraint firstItem="COu-JQ-zyI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vFI-gL-4al"/>
+                <constraint firstItem="bdr-3T-QRj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="whe-DP-5ZZ"/>
                 <constraint firstAttribute="trailing" secondItem="1MK-g2-ll9" secondAttribute="trailing" id="zVp-qT-nGT"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
