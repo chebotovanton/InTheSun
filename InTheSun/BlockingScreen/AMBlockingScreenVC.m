@@ -25,7 +25,6 @@
     [super viewDidLoad];
     self.luminanceSum = 0.0;
     self.luminanceLimit = 50000;
-    [self setupCaptureSession];
 }
 
 - (IBAction)goToAlbum
@@ -34,11 +33,16 @@
     [appDelegate hideBlockingScreenAnimated:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self setupCaptureSession];
+}
 
 - (void)setControlsToPlayMode
 {
     self.goToAlbumButton.hidden = NO;
-
+    self.descriptionLabel.hidden = YES;
 }
 
 - (void)switchToPlayState
