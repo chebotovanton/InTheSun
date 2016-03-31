@@ -54,14 +54,23 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         self.resignFirstResponder()
     }
     
+    
+    //MARK: - Public
+    
     func stopMusicPlayer() {
         player.pause()
         self.setupButtonsAndTitlesState()
     }
     
+    func playInitialSong() {
+    //WARNING: Fade volume in
+        self.playItem(6)
+        self.setupButtonsAndTitlesState()
+    }
+    
     //MARK: - Private
     
-    func playItem(index: Int) {
+    private func playItem(index: Int) {
         
         if let playlist = self.playlist {
             let track = playlist.tracks[index]
@@ -71,7 +80,6 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
             currentPlayingIndex = index
             contentTableView.selectRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0), animated: true, scrollPosition: .Middle)
             
-            //WARNING: Set correct artist name
             var trackInfo:[String:AnyObject] = [MPMediaItemPropertyArtist:"АукцЫон", MPMediaItemPropertyTitle:track.title, MPMediaItemPropertyAlbumTitle:playlist.title, MPMediaItemPropertyPlaybackDuration:track.duration / 1000]
             
             if let artwork = self.albumArtwork.image {

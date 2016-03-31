@@ -54,4 +54,10 @@
     [(AMMusicViewController *)self.viewControllers[0] stopMusicPlayer];
 }
 
+- (void)playInitialSong
+{
+    [(AMMusicViewController *)self.viewControllers[0] playInitialSong];
+}
+
+
 @end

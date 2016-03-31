@@ -1,7 +1,8 @@
 #import "AMBlockingScreenVC.h"
+#import <AVFoundation/AVFoundation.h>
 #import "AppDelegate.h"
 #import "AMImageProcessor.h"
-#import <AVFoundation/AVFoundation.h>
+#import "AMTabMenuVC.h"
 
 @interface AMBlockingScreenVC () <UINavigationControllerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
 
@@ -25,7 +26,7 @@
 {
     [super viewDidLoad];
     self.luminanceSum = 0.0;
-    self.luminanceLimit = 20000;
+    self.luminanceLimit = 10000;
     self.shouldCheckLuminance = YES;
 }
 
@@ -77,14 +78,15 @@
 
 - (void)playSong
 {
+    [(AMTabMenuVC *)self.presentingViewController playInitialSong];
 #warning Start singleton player
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"song" ofType:@"mp3"];
-    NSURL *url = [[NSURL alloc] initFileURLWithPath: path];
-    AVAsset *asset = [AVURLAsset URLAssetWithURL:url options:nil];
-    AVPlayerItem *anItem = [AVPlayerItem playerItemWithAsset:asset];
-    
-    self.player = [AVPlayer playerWithPlayerItem:anItem];
-    [self.player play];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"song" ofType:@"mp3"];
+//    NSURL *url = [[NSURL alloc] initFileURLWithPath: path];
+//    AVAsset *asset = [AVURLAsset URLAssetWithURL:url options:nil];
+//    AVPlayerItem *anItem = [AVPlayerItem playerItemWithAsset:asset];
+//    
+//    self.player = [AVPlayer playerWithPlayerItem:anItem];
+//    [self.player play];
 }
 
 #pragma mark -
