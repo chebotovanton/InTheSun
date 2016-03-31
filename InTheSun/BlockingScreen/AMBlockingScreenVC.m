@@ -79,14 +79,6 @@
 - (void)playSong
 {
     [(AMTabMenuVC *)self.presentingViewController playInitialSong];
-#warning Start singleton player
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"song" ofType:@"mp3"];
-//    NSURL *url = [[NSURL alloc] initFileURLWithPath: path];
-//    AVAsset *asset = [AVURLAsset URLAssetWithURL:url options:nil];
-//    AVPlayerItem *anItem = [AVPlayerItem playerItemWithAsset:asset];
-//    
-//    self.player = [AVPlayer playerWithPlayerItem:anItem];
-//    [self.player play];
 }
 
 #pragma mark -
@@ -139,7 +131,6 @@
 
 - (void)startCapturingWithSession: (AVCaptureSession *) captureSession
 {
-    NSLog(@"Adding video preview layer");
     [self setPreviewLayer:[[AVCaptureVideoPreviewLayer alloc] initWithSession:captureSession]];
     
     [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
@@ -147,7 +138,6 @@
     
     //----- DISPLAY THE PREVIEW LAYER -----
     //Display it full screen under our view controller existing controls
-    NSLog(@"Display the preview layer");
     CGRect layerRect = [[[self view] layer] bounds];
     [self.previewLayer setBounds:layerRect];
     [self.previewLayer setPosition:CGPointMake(CGRectGetMidX(layerRect),

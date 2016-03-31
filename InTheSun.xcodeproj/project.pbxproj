@@ -39,7 +39,6 @@
 		9FD4F62A1C81CF39004A0734 /* AMTabMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD4F6281C81CF39004A0734 /* AMTabMenuVC.m */; };
 		9FD4F62B1C81CF39004A0734 /* AMTabMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD4F6291C81CF39004A0734 /* AMTabMenuVC.xib */; };
 		9FD4F62F1C81EED8004A0734 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD4F62E1C81EED8004A0734 /* SecondViewController.xib */; };
-		9FEFE0511CA69D1A00F413B1 /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9FEFE0501CA69D1A00F413B1 /* song.mp3 */; };
 		9FEFE0551CA69D3D00F413B1 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FEFE0541CA69D3D00F413B1 /* overlay.png */; };
 		9FEFE07F1CA6FAE000F413B1 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE07C1CA6FAE000F413B1 /* OpenCVWrapper.mm */; };
 		9FEFE0801CA6FAE000F413B1 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE07E1CA6FAE000F413B1 /* UIImage+OpenCV.mm */; };
@@ -109,7 +108,6 @@
 		9FD4F6281C81CF39004A0734 /* AMTabMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMTabMenuVC.m; sourceTree = "<group>"; };
 		9FD4F6291C81CF39004A0734 /* AMTabMenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMTabMenuVC.xib; sourceTree = "<group>"; };
 		9FD4F62E1C81EED8004A0734 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
-		9FEFE0501CA69D1A00F413B1 /* song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song.mp3; sourceTree = "<group>"; };
 		9FEFE0541CA69D3D00F413B1 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 		9FEFE07B1CA6FAE000F413B1 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		9FEFE07C1CA6FAE000F413B1 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
@@ -330,7 +328,6 @@
 			isa = PBXGroup;
 			children = (
 				9FEFE0541CA69D3D00F413B1 /* overlay.png */,
-				9FEFE0501CA69D1A00F413B1 /* song.mp3 */,
 				9FEFE0921CA98F9C00F413B1 /* Localizable.strings */,
 			);
 			path = Resources;
@@ -449,7 +446,6 @@
 			files = (
 				9FEFE0551CA69D3D00F413B1 /* overlay.png in Resources */,
 				9FD4F62B1C81CF39004A0734 /* AMTabMenuVC.xib in Resources */,
-				9FEFE0511CA69D1A00F413B1 /* song.mp3 in Resources */,
 				9FEFE0991CA9948300F413B1 /* AMEventsHeader.xib in Resources */,
 				9F041A1D1C8C8C580092CBAC /* AMAlbumInfoVC.xib in Resources */,
 				9FD4F62F1C81EED8004A0734 /* SecondViewController.xib in Resources */,
