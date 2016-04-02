@@ -82,7 +82,7 @@
     [(AMTabMenuVC *)self.presentingViewController playInitialSong];
 }
 
-#pragma mark -
+#pragma mark - Camera
 
 - (void)setupCaptureSession
 {

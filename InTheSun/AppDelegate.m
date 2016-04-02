@@ -26,7 +26,9 @@ static NSString * kLaunchCountKey = @"launchCountKey";
     self.window.rootViewController = [[AMTabMenuVC alloc] initWithNibName:@"AMTabMenuVC" bundle:nil];
     [self.window makeKeyAndVisible];
     
+    [self fadeSplashScreen];
     [self showBlockingScreenIfNeeded];
+    
     return YES;
 }
 
@@ -62,6 +64,33 @@ static NSString * kLaunchCountKey = @"launchCountKey";
     NSString *name = [UIDevice currentDevice].name;
     return [name rangeOfString:@"Simulator"].location != NSNotFound;
 }
+
+- (void)fadeSplashScreen
+{
+    NSArray *allPngImageNames = [[NSBundle mainBundle] pathsForResourcesOfType:@"png"
+                                                                   inDirectory:nil];
+    UIImage *splashImage = nil;
+    for (NSString *imgName in allPngImageNames){
+        if ([imgName rangeOfString:@"SplashScreen"].location != NSNotFound){
+            UIImage *img = [UIImage imageWithContentsOfFile:imgName];
+            if (img.scale == [UIScreen mainScreen].scale && CGSizeEqualToSize(img.size, [UIScreen mainScreen].bounds.size)) {
+                splashImage = img;
+            }
+        }
+    }
+    UIView * splash = [[UIImageView alloc] initWithImage:splashImage];
+    [self.window addSubview:splash];
+    
+    [UIView animateWithDuration:3.0
+                     animations:^{
+                         splash.alpha = 0;
+                     }
+                     completion:^(BOOL finished) {
+                         [splash removeFromSuperview];
+                         [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+                     }];
+}
+
 
 #pragma mark - Public
 
