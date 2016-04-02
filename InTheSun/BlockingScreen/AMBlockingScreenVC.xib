@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AMBlockingScreenVC">
             <connections>
+                <outlet property="actionLabel" destination="Il3-IA-rmI" id="zsA-BH-LEN"/>
+                <outlet property="albumNameView" destination="mDc-gw-l3Z" id="AhY-dL-Jv3"/>
                 <outlet property="debugLabel" destination="10g-IS-Kfr" id="cQR-Em-9lo"/>
                 <outlet property="descriptionLabel" destination="IRr-5t-1Rg" id="Oqp-D8-qnV"/>
                 <outlet property="goToAlbumButton" destination="Lw2-fb-v0c" id="FAu-hj-idl"/>
@@ -20,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lw2-fb-v0c">
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lw2-fb-v0c">
                     <rect key="frame" x="117" y="510" width="86" height="30"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" title="Go to Album"/>
@@ -28,50 +30,62 @@
                         <action selector="goToAlbum" destination="-1" eventType="touchUpInside" id="Bai-9q-h01"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Аукцыон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvK-Kr-TDe">
-                    <rect key="frame" x="111" y="43" width="98" height="29"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCircle" translatesAutoresizingMaskIntoConstraints="NO" id="Ifq-M1-uk3" userLabel="YellowCircle">
                     <rect key="frame" x="11" y="140" width="298" height="289"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteCircle" translatesAutoresizingMaskIntoConstraints="NO" id="7Bz-af-ruX" userLabel="WhiteCircle">
                     <rect key="frame" x="11" y="139" width="298" height="290"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Направьте камеру" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRr-5t-1Rg">
-                    <rect key="frame" x="56" y="496" width="208" height="29"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10g-IS-Kfr">
                     <rect key="frame" x="8" y="8" width="59" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="groupName" translatesAutoresizingMaskIntoConstraints="NO" id="gGb-WW-0XV">
+                    <rect key="frame" x="47" y="81" width="227" height="38"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="albumName" translatesAutoresizingMaskIntoConstraints="NO" id="mDc-gw-l3Z">
+                    <rect key="frame" x="47" y="483" width="227" height="49"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="и слушайте" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il3-IA-rmI">
+                    <rect key="frame" x="106" y="534" width="109" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Направьте камеру" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRr-5t-1Rg">
+                    <rect key="frame" x="73" y="449" width="175" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.70588235294117641" green="0.71764705882352942" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="gGb-WW-0XV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0Xr-BB-a2k"/>
+                <constraint firstItem="7Bz-af-ruX" firstAttribute="top" secondItem="gGb-WW-0XV" secondAttribute="bottom" constant="20" id="2k8-yJ-yO9"/>
                 <constraint firstItem="7Bz-af-ruX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9ZM-HF-FLU"/>
-                <constraint firstItem="7Bz-af-ruX" firstAttribute="top" secondItem="gvK-Kr-TDe" secondAttribute="bottom" constant="67" id="Ci6-Tj-wJ8"/>
                 <constraint firstItem="7Bz-af-ruX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="EAe-js-p69"/>
                 <constraint firstItem="IRr-5t-1Rg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GIz-7L-shI"/>
                 <constraint firstAttribute="bottom" secondItem="Lw2-fb-v0c" secondAttribute="bottom" constant="28" id="GaW-hN-oSf"/>
                 <constraint firstItem="Ifq-M1-uk3" firstAttribute="centerY" secondItem="7Bz-af-ruX" secondAttribute="centerY" id="GfC-sc-vlF"/>
-                <constraint firstItem="gvK-Kr-TDe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="K1h-lb-fsV"/>
+                <constraint firstItem="mDc-gw-l3Z" firstAttribute="top" secondItem="IRr-5t-1Rg" secondAttribute="bottom" constant="10" id="Ku4-CG-cL5"/>
+                <constraint firstItem="mDc-gw-l3Z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ldb-Q7-j33"/>
                 <constraint firstItem="10g-IS-Kfr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="O4u-lH-XfK"/>
+                <constraint firstItem="Il3-IA-rmI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QXy-Sl-ZBC"/>
                 <constraint firstItem="Ifq-M1-uk3" firstAttribute="centerX" secondItem="7Bz-af-ruX" secondAttribute="centerX" id="cho-kp-kJJ"/>
+                <constraint firstItem="Il3-IA-rmI" firstAttribute="top" secondItem="mDc-gw-l3Z" secondAttribute="bottom" constant="2" id="cqb-Dc-T7P"/>
                 <constraint firstItem="10g-IS-Kfr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="fvO-id-6o7"/>
-                <constraint firstItem="IRr-5t-1Rg" firstAttribute="top" secondItem="7Bz-af-ruX" secondAttribute="bottom" constant="67" id="nXx-XR-1Ss"/>
+                <constraint firstItem="IRr-5t-1Rg" firstAttribute="top" secondItem="7Bz-af-ruX" secondAttribute="bottom" constant="20" id="nXx-XR-1Ss"/>
                 <constraint firstItem="Lw2-fb-v0c" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vEO-e8-uXg"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>
+        <image name="albumName" width="227" height="49"/>
+        <image name="groupName" width="227" height="38"/>
         <image name="whiteCircle" width="298" height="290"/>
         <image name="yellowCircle" width="298" height="289"/>
     </resources>

@@ -17,8 +17,11 @@
 @property (nonatomic, weak) IBOutlet UIImageView *whiteCircle;
 
 @property (nonatomic, weak) IBOutlet UIButton *goToAlbumButton;
+
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, weak) IBOutlet UILabel *actionLabel;
 @property (nonatomic, weak) IBOutlet UILabel *debugLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *albumNameView;
 
 @end
 
@@ -47,8 +50,19 @@
 
 - (void)setControlsToPlayMode
 {
-    self.goToAlbumButton.hidden = NO;
-    self.descriptionLabel.hidden = YES;
+    CGFloat duration = 0.3;
+    [UIView animateWithDuration:duration
+                     animations:^{
+                         self.goToAlbumButton.alpha = 0.0;
+                         self.descriptionLabel.alpha = 0.0;
+                         self.actionLabel.alpha = 0.0;
+                         self.albumNameView.alpha = 0.0;
+                     } completion:^(BOOL finished) {
+                         [UIView animateWithDuration:duration
+                                          animations:^{
+                                              self.goToAlbumButton.alpha = 1.0;
+                                          }];
+                     }];
 }
 
 - (void)switchToPlayState
