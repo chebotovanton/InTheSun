@@ -47,6 +47,11 @@
     [self setupCaptureSession];
 }
 
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
 - (void)setControlsToPlayMode
 {
     CGFloat duration = 0.3;
@@ -160,7 +165,6 @@
      [NSNumber numberWithInt:kCVPixelFormatType_32BGRA]
                                 forKey:(id)kCVPixelBufferPixelFormatTypeKey];
     
-    
     // Start the session running to start the flow of data
     [self startCapturingWithSession:session];
     
@@ -168,12 +172,31 @@
     [self setSession:session];
 }
 
+- (void)setVideoOrientation
+{
+    UIDeviceOrientation deviceOrientation = [UIDevice currentDevice].orientation;
+    switch (deviceOrientation) {
+        case UIInterfaceOrientationPortraitUpsideDown:
+            [self.previewLayer.connection setVideoOrientation:AVCaptureVideoOrientationPortraitUpsideDown];
+            break;
+        case UIInterfaceOrientationLandscapeLeft:
+            [self.previewLayer.connection setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];
+            break;
+        case UIInterfaceOrientationLandscapeRight:
+            [self.previewLayer.connection setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
+            break;
+        default:
+            [self.previewLayer.connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
+            break;
+    }
+}
+
 - (void)startCapturingWithSession: (AVCaptureSession *) captureSession
 {
     [self setPreviewLayer:[[AVCaptureVideoPreviewLayer alloc] initWithSession:captureSession]];
     
     [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
-    
+    [self setVideoOrientation];
     
     //----- DISPLAY THE PREVIEW LAYER -----
     //Display it full screen under our view controller existing controls
