@@ -26,7 +26,6 @@
 		9FADBCE31C65FBDC00562B13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBCE21C65FBDC00562B13 /* Assets.xcassets */; };
 		9FADBCFF1C66141C00562B13 /* AMBlockingScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBCFD1C66141C00562B13 /* AMBlockingScreenVC.m */; };
 		9FADBD001C66141C00562B13 /* AMBlockingScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBCFE1C66141C00562B13 /* AMBlockingScreenVC.xib */; };
-		9FADBD041C6638C700562B13 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBD031C6638C700562B13 /* LaunchScreen.xib */; };
 		9FADBD061C66435000562B13 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FADBD051C66435000562B13 /* MediaPlayer.framework */; };
 		9FADBD0A1C67B07E00562B13 /* AMImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBD091C67B07E00562B13 /* AMImageProcessor.m */; };
 		9FBEFA9B1C69011100821123 /* AMImageProcessorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEFA9A1C69011100821123 /* AMImageProcessorTests.m */; };
@@ -93,7 +92,6 @@
 		9FADBCFC1C66141C00562B13 /* AMBlockingScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBlockingScreenVC.h; sourceTree = "<group>"; };
 		9FADBCFD1C66141C00562B13 /* AMBlockingScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBlockingScreenVC.m; sourceTree = "<group>"; };
 		9FADBCFE1C66141C00562B13 /* AMBlockingScreenVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMBlockingScreenVC.xib; sourceTree = "<group>"; };
-		9FADBD031C6638C700562B13 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		9FADBD051C66435000562B13 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		9FADBD081C67B07E00562B13 /* AMImageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMImageProcessor.h; sourceTree = "<group>"; };
 		9FADBD091C67B07E00562B13 /* AMImageProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMImageProcessor.m; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 			children = (
 				9FEFE0941CA990A900F413B1 /* PrefixHeader.pch */,
 				9FADBD051C66435000562B13 /* MediaPlayer.framework */,
-				9FADBD031C6638C700562B13 /* LaunchScreen.xib */,
 				9FADBCD21C65FBDC00562B13 /* InTheSun */,
 				9FADBCEF1C65FBDC00562B13 /* InTheSunTests */,
 				9FADBCD11C65FBDC00562B13 /* Products */,
@@ -454,7 +451,6 @@
 				9F041A231C8C8F280092CBAC /* EventsVC.xib in Resources */,
 				9F8454F91C95C94C00AA7B90 /* AMSongCell.xib in Resources */,
 				9FEFE0901CA98F9C00F413B1 /* Localizable.strings in Resources */,
-				9FADBD041C6638C700562B13 /* LaunchScreen.xib in Resources */,
 				9FADBCE31C65FBDC00562B13 /* Assets.xcassets in Resources */,
 				9FADBD001C66141C00562B13 /* AMBlockingScreenVC.xib in Resources */,
 			);
