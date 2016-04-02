@@ -30,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.luminanceLimit = 50000;
+    self.luminanceLimit = 10000;
     [self updateCirclesWithAlpha:0.0];
     [self switchToInitialState];
 }

@@ -63,12 +63,23 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func playInitialSong() {
-    //WARNING: Fade volume in
-        self.playItem(6)
-        self.setupButtonsAndTitlesState()
+        playItem(6)
+        player.volume = 0.0;
+        fadeVolumeIn()
+        setupButtonsAndTitlesState()
     }
     
     //MARK: - Private
+    
+    func fadeVolumeIn()
+    {
+        if player.volume < 1 {
+            player.volume += 0.05
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                self.fadeVolumeIn()
+            })
+        }
+    }
     
     private func playItem(index: Int) {
         
