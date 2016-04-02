@@ -12,6 +12,7 @@
 		9F041A1D1C8C8C580092CBAC /* AMAlbumInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F041A1B1C8C8C580092CBAC /* AMAlbumInfoVC.xib */; };
 		9F041A221C8C8F280092CBAC /* EventsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F041A201C8C8F280092CBAC /* EventsVC.m */; };
 		9F041A231C8C8F280092CBAC /* EventsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F041A211C8C8F280092CBAC /* EventsVC.xib */; };
+		9F1DED801CB00C8F0051A63F /* Defines.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1DED7F1CB00C8F0051A63F /* Defines.m */; };
 		9F4BD2801C944D13009E5DCC /* AMEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4BD27E1C944D13009E5DCC /* AMEventCell.m */; };
 		9F4BD2811C944D13009E5DCC /* AMEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F4BD27F1C944D13009E5DCC /* AMEventCell.xib */; };
 		9F4BD2841C945155009E5DCC /* AMEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4BD2831C945155009E5DCC /* AMEvent.m */; };
@@ -66,6 +67,8 @@
 		9F041A1F1C8C8F280092CBAC /* EventsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsVC.h; sourceTree = "<group>"; };
 		9F041A201C8C8F280092CBAC /* EventsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsVC.m; sourceTree = "<group>"; };
 		9F041A211C8C8F280092CBAC /* EventsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsVC.xib; sourceTree = "<group>"; };
+		9F1DED7E1CB00C8F0051A63F /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		9F1DED7F1CB00C8F0051A63F /* Defines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Defines.m; sourceTree = "<group>"; };
 		9F4BD27D1C944D13009E5DCC /* AMEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMEventCell.h; sourceTree = "<group>"; };
 		9F4BD27E1C944D13009E5DCC /* AMEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMEventCell.m; sourceTree = "<group>"; };
 		9F4BD27F1C944D13009E5DCC /* AMEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMEventCell.xib; sourceTree = "<group>"; };
@@ -247,6 +250,8 @@
 		9FADBCD21C65FBDC00562B13 /* InTheSun */ = {
 			isa = PBXGroup;
 			children = (
+				9F1DED7E1CB00C8F0051A63F /* Defines.h */,
+				9F1DED7F1CB00C8F0051A63F /* Defines.m */,
 				9FEFE0891CA98DC000F413B1 /* Categories */,
 				9FEFE04F1CA69D1A00F413B1 /* Resources */,
 				9F041A171C8C8C3D0092CBAC /* Common */,
@@ -537,6 +542,7 @@
 				9FCE57DC1C98991D0080DC9B /* AMMusicViewController.swift in Sources */,
 				9F8454F81C95C94C00AA7B90 /* AMSongCell.swift in Sources */,
 				9FEFE0971CA9947500F413B1 /* AMEventsHeader.m in Sources */,
+				9F1DED801CB00C8F0051A63F /* Defines.m in Sources */,
 				9F81E05C1C8B08D6003FA920 /* SoundCloudFacade.swift in Sources */,
 				9FEFE0801CA6FAE000F413B1 /* UIImage+OpenCV.mm in Sources */,
 				9FD4F62A1C81CF39004A0734 /* AMTabMenuVC.m in Sources */,
