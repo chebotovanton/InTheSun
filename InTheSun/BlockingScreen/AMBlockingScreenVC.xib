@@ -12,6 +12,7 @@
                 <outlet property="debugLabel" destination="10g-IS-Kfr" id="cQR-Em-9lo"/>
                 <outlet property="descriptionLabel" destination="IRr-5t-1Rg" id="Oqp-D8-qnV"/>
                 <outlet property="goToAlbumButton" destination="Lw2-fb-v0c" id="FAu-hj-idl"/>
+                <outlet property="groupNameView" destination="gGb-WW-0XV" id="xnQ-AN-FvT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="whiteCircle" destination="7Bz-af-ruX" id="kqy-Y1-0Ru"/>
                 <outlet property="yellowCircle" destination="Ifq-M1-uk3" id="FVY-7h-ByU"/>

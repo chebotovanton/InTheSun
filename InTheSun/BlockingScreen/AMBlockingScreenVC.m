@@ -22,7 +22,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *actionLabel;
 @property (nonatomic, weak) IBOutlet UILabel *debugLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *albumNameView;
-
+@property (nonatomic, weak) IBOutlet UIImageView *groupNameView;
 @end
 
 @implementation AMBlockingScreenVC
@@ -30,10 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.luminanceSum = 0.0;
     self.luminanceLimit = 50000;
-    self.shouldCheckLuminance = YES;
     [self updateCirclesWithAlpha:0.0];
+    [self switchToInitialState];
 }
 
 - (IBAction)goToAlbum
@@ -65,10 +64,29 @@
                      }];
 }
 
-- (void)switchToPlayState
+- (void)setControlsToCameraMode
 {
-    [self setControlsToPlayMode];
-    [self playSong];
+    CGFloat duration = 0.3;
+    [UIView animateWithDuration:duration
+                     animations:^{
+                         self.descriptionLabel.alpha = 1.0;
+                         self.actionLabel.alpha = 1.0;
+                         self.albumNameView.alpha = 1.0;
+                         self.groupNameView.alpha = 1.0;
+                        [self updateCirclesWithAlpha:0.0];
+                     } completion:nil];
+    
+}
+
+- (void)setControlsToInitialMode
+{
+    self.goToAlbumButton.alpha = 0.0;
+    self.descriptionLabel.alpha = 0.0;
+    self.actionLabel.alpha = 0.0;
+    self.whiteCircle.alpha = 0.0;
+    self.yellowCircle.alpha = 0.0;
+    self.groupNameView.alpha = 0.0;
+    self.albumNameView.alpha = 0.0;
 }
 
 - (void)updateCirclesWithAlpha:(CGFloat)alpha
@@ -80,6 +98,26 @@
 - (void)playSong
 {
     [(AMTabMenuVC *)self.presentingViewController playInitialSong];
+}
+
+#pragma mark - Switch States
+
+- (void)switchToPlayState
+{
+    [self setControlsToPlayMode];
+    [self playSong];
+}
+
+- (void)switchToCameraState
+{
+    [self setControlsToCameraMode];
+    self.shouldCheckLuminance = YES;
+    self.luminanceSum = 0.0;
+}
+
+- (void)switchToInitialState
+{
+    [self setControlsToInitialMode];
 }
 
 #pragma mark - Camera
@@ -139,7 +177,8 @@
     
     //----- DISPLAY THE PREVIEW LAYER -----
     //Display it full screen under our view controller existing controls
-    CGRect layerRect = [[[self view] layer] bounds];
+    
+    CGRect layerRect = [UIScreen mainScreen].bounds;
     [self.previewLayer setBounds:layerRect];
     [self.previewLayer setPosition:CGPointMake(CGRectGetMidX(layerRect),
                                                CGRectGetMidY(layerRect))];

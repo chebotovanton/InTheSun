@@ -10,6 +10,7 @@
 static NSString * kLaunchCountKey = @"launchCountKey";
 
 @interface AppDelegate ()
+@property (nonatomic, strong) AMBlockingScreenVC *blockingScreen;
 @end
 
 @implementation AppDelegate
@@ -82,13 +83,18 @@ static NSString * kLaunchCountKey = @"launchCountKey";
     [self.window addSubview:splash];
     
     [UIView animateWithDuration:3.0
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          splash.alpha = 0;
                      }
                      completion:^(BOOL finished) {
                          [splash removeFromSuperview];
                          [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+                         [self.blockingScreen switchToCameraState];
                      }];
+    
+    
 }
 
 
@@ -96,13 +102,14 @@ static NSString * kLaunchCountKey = @"launchCountKey";
 
 - (void)showBlockingScreenAnimated:(BOOL)animated
 {
-    AMBlockingScreenVC *blockingScreen = [[AMBlockingScreenVC alloc] initWithNibName:@"AMBlockingScreenVC" bundle:nil];
-    [self.window.rootViewController presentViewController:blockingScreen animated:animated completion:nil];
+    self.blockingScreen = [[AMBlockingScreenVC alloc] initWithNibName:@"AMBlockingScreenVC" bundle:nil];
+    [self.window.rootViewController presentViewController:self.blockingScreen animated:animated completion:nil];
 }
 
 - (void)hideBlockingScreenAnimated:(BOOL)animated
 {
     [self.window.rootViewController dismissViewControllerAnimated:animated completion:nil];
+    self.blockingScreen = nil;
 }
 
 @end
