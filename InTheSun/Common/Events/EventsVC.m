@@ -3,8 +3,8 @@
 #import "AMEventCell.h"
 #import "AMEvent.h"
 #import "AMFacebookEventsHelper.h"
+#import "AMEventsHeader.h"
 
-#warning Move to a separate class
 @interface AMEventSection : NSObject
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSArray <AMEvent *> *events;
@@ -128,14 +128,15 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *header = [[[NSBundle mainBundle] loadNibNamed:@"AMEventsHeader" owner:nil options:nil] objectAtIndex:0];
-    
+    AMEventsHeader *header = [[[NSBundle mainBundle] loadNibNamed:@"AMEventsHeader" owner:nil options:nil] objectAtIndex:0];
+    AMEventSection *eventsSection = self.sections[section];
+    header.titleLabel.text = eventsSection.name;
     return header;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 200.0;
+    return is_ipa 200.0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
