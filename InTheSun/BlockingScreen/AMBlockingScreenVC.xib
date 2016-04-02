@@ -7,11 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AMBlockingScreenVC">
             <connections>
-                <outlet property="circleImage" destination="7Bz-af-ruX" id="H23-oF-oGV"/>
                 <outlet property="debugLabel" destination="10g-IS-Kfr" id="cQR-Em-9lo"/>
                 <outlet property="descriptionLabel" destination="IRr-5t-1Rg" id="Oqp-D8-qnV"/>
                 <outlet property="goToAlbumButton" destination="Lw2-fb-v0c" id="FAu-hj-idl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="whiteCircle" destination="7Bz-af-ruX" id="kqy-Y1-0Ru"/>
+                <outlet property="yellowCircle" destination="Ifq-M1-uk3" id="FVY-7h-ByU"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,16 +29,19 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Аукцыон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvK-Kr-TDe">
-                    <rect key="frame" x="111" y="106" width="98" height="29"/>
+                    <rect key="frame" x="111" y="43" width="98" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="7Bz-af-ruX">
-                    <rect key="frame" x="78" y="202" width="164" height="164"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowCircle" translatesAutoresizingMaskIntoConstraints="NO" id="Ifq-M1-uk3" userLabel="YellowCircle">
+                    <rect key="frame" x="11" y="140" width="298" height="289"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteCircle" translatesAutoresizingMaskIntoConstraints="NO" id="7Bz-af-ruX" userLabel="WhiteCircle">
+                    <rect key="frame" x="11" y="139" width="298" height="290"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Направьте камеру" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRr-5t-1Rg">
-                    <rect key="frame" x="56" y="433" width="208" height="29"/>
+                    <rect key="frame" x="56" y="496" width="208" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -56,8 +60,10 @@
                 <constraint firstItem="7Bz-af-ruX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="EAe-js-p69"/>
                 <constraint firstItem="IRr-5t-1Rg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GIz-7L-shI"/>
                 <constraint firstAttribute="bottom" secondItem="Lw2-fb-v0c" secondAttribute="bottom" constant="28" id="GaW-hN-oSf"/>
+                <constraint firstItem="Ifq-M1-uk3" firstAttribute="centerY" secondItem="7Bz-af-ruX" secondAttribute="centerY" id="GfC-sc-vlF"/>
                 <constraint firstItem="gvK-Kr-TDe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="K1h-lb-fsV"/>
                 <constraint firstItem="10g-IS-Kfr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="O4u-lH-XfK"/>
+                <constraint firstItem="Ifq-M1-uk3" firstAttribute="centerX" secondItem="7Bz-af-ruX" secondAttribute="centerX" id="cho-kp-kJJ"/>
                 <constraint firstItem="10g-IS-Kfr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="fvO-id-6o7"/>
                 <constraint firstItem="IRr-5t-1Rg" firstAttribute="top" secondItem="7Bz-af-ruX" secondAttribute="bottom" constant="67" id="nXx-XR-1Ss"/>
                 <constraint firstItem="Lw2-fb-v0c" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vEO-e8-uXg"/>
@@ -66,6 +72,7 @@
         </view>
     </objects>
     <resources>
-        <image name="circle" width="164" height="164"/>
+        <image name="whiteCircle" width="298" height="290"/>
+        <image name="yellowCircle" width="298" height="289"/>
     </resources>
 </document>

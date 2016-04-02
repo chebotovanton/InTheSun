@@ -13,7 +13,9 @@
 @property (nonatomic, assign) CGFloat luminanceLimit;
 @property (nonatomic, assign) BOOL shouldCheckLuminance;
 
-@property (nonatomic, weak) IBOutlet UIImageView *circleImage;
+@property (nonatomic, weak) IBOutlet UIImageView *yellowCircle;
+@property (nonatomic, weak) IBOutlet UIImageView *whiteCircle;
+
 @property (nonatomic, weak) IBOutlet UIButton *goToAlbumButton;
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, weak) IBOutlet UILabel *debugLabel;
@@ -26,8 +28,9 @@
 {
     [super viewDidLoad];
     self.luminanceSum = 0.0;
-    self.luminanceLimit = 10000;
+    self.luminanceLimit = 50000;
     self.shouldCheckLuminance = YES;
+    [self updateCirclesWithAlpha:0.0];
 }
 
 - (IBAction)goToAlbum
@@ -54,26 +57,10 @@
     [self playSong];
 }
 
-- (void)updateCircleColor
+- (void)updateCirclesWithAlpha:(CGFloat)alpha
 {
-    CGFloat alpha = self.luminanceSum/self.luminanceLimit;
-    UIColor *color = [UIColor colorWithRed:252.0/255.0 green:213.0/255.0 blue:0.0 alpha:alpha];
-    self.circleImage.image = [self maskedImage:self.circleImage.image color:color];
-    self.circleImage.alpha = alpha;
-}
-
-- (UIImage *)maskedImage:(UIImage *)image color:(UIColor *)color
-{
-    CGRect rect = CGRectMake(0, 0, image.size.width, image.size.height);
-    UIGraphicsBeginImageContextWithOptions(rect.size, NO, image.scale);
-    CGContextRef c = UIGraphicsGetCurrentContext();
-    [image drawInRect:rect];
-    CGContextSetFillColorWithColor(c, [color CGColor]);
-    CGContextSetBlendMode(c, kCGBlendModeSourceAtop);
-    CGContextFillRect(c, rect);
-    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return result;
+    self.whiteCircle.alpha = 1 - alpha;
+    self.yellowCircle.alpha = alpha;
 }
 
 - (void)playSong
@@ -169,7 +156,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         self.luminanceSum += newLuminance;
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self updateCircleColor];
+            CGFloat alpha = self.luminanceSum/self.luminanceLimit;
+            [self updateCirclesWithAlpha:alpha];
             self.debugLabel.text = [NSString stringWithFormat:@"Liminance: %.f", self.luminanceSum];
             if (self.luminanceSum > self.luminanceLimit) {
                 self.shouldCheckLuminance = NO;
