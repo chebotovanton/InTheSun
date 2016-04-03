@@ -24,10 +24,16 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lw2-fb-v0c">
-                    <rect key="frame" x="117" y="510" width="86" height="30"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Go to Album"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lw2-fb-v0c">
+                    <rect key="frame" x="43.5" y="464" width="233" height="71"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <state key="normal" title="Go to Album" backgroundImage="toAlbum">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="LSKey" value="LOC_GO_TO_ALBUM"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="goToAlbum" destination="-1" eventType="touchUpInside" id="Bai-9q-h01"/>
                     </connections>
@@ -73,7 +79,6 @@
                 <constraint firstItem="7Bz-af-ruX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="EAe-js-p69"/>
                 <constraint firstItem="jyk-dx-soB" firstAttribute="centerX" secondItem="Ifq-M1-uk3" secondAttribute="centerX" id="ENg-GX-w0j"/>
                 <constraint firstItem="IRr-5t-1Rg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GIz-7L-shI"/>
-                <constraint firstAttribute="bottom" secondItem="Lw2-fb-v0c" secondAttribute="bottom" constant="28" id="GaW-hN-oSf"/>
                 <constraint firstItem="Ifq-M1-uk3" firstAttribute="centerY" secondItem="7Bz-af-ruX" secondAttribute="centerY" id="GfC-sc-vlF"/>
                 <constraint firstItem="RbU-e1-oap" firstAttribute="top" secondItem="7Bz-af-ruX" secondAttribute="bottom" constant="20" id="Hal-7X-agF"/>
                 <constraint firstItem="jyk-dx-soB" firstAttribute="trailing" secondItem="Ifq-M1-uk3" secondAttribute="trailing" constant="-30" id="KsB-Y4-bpt"/>
@@ -84,6 +89,7 @@
                 <constraint firstItem="gGb-WW-0XV" firstAttribute="top" secondItem="RbU-e1-oap" secondAttribute="bottom" constant="10" id="chQ-IL-zGG"/>
                 <constraint firstItem="Ifq-M1-uk3" firstAttribute="centerX" secondItem="7Bz-af-ruX" secondAttribute="centerX" id="cho-kp-kJJ"/>
                 <constraint firstItem="10g-IS-Kfr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="fvO-id-6o7"/>
+                <constraint firstItem="Lw2-fb-v0c" firstAttribute="top" secondItem="7Bz-af-ruX" secondAttribute="bottom" constant="35" id="gEZ-kH-4cm"/>
                 <constraint firstItem="jyk-dx-soB" firstAttribute="leading" secondItem="Ifq-M1-uk3" secondAttribute="leading" constant="30" id="kkX-LM-kbh"/>
                 <constraint firstItem="7Bz-af-ruX" firstAttribute="top" secondItem="mDc-gw-l3Z" secondAttribute="bottom" constant="20" id="ri6-W5-y5c"/>
                 <constraint firstItem="jyk-dx-soB" firstAttribute="centerY" secondItem="Ifq-M1-uk3" secondAttribute="centerY" id="u0q-qj-QGw"/>
@@ -103,6 +109,7 @@
     <resources>
         <image name="albumName" width="280" height="61"/>
         <image name="groupName" width="280" height="47"/>
+        <image name="toAlbum" width="233" height="71"/>
         <image name="whiteCircle" width="298" height="290"/>
         <image name="yellowCircle" width="298" height="290"/>
     </resources>

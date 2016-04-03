@@ -220,10 +220,6 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func albumLoadingFailed() {
-        UIAlertView(title: "Error",
-            message: "Could not load album data",
-            delegate: nil,
-            cancelButtonTitle: "OK").show()
     }
     
     func didLoadAlbumImage(image: UIImage) {

@@ -8,3 +8,6 @@
 "LOC_EVENTS_PAST_EVENTS" = "Прошедшие события";
 "LOC_EVENTS_LOADING" = "Идет загрузка...";
 "LOC_EVENTS_ERROR" = "Ничего не найдено";
+
+//Blocking screen
+"LOC_GO_TO_ALBUM" = "Слушать альбом";
