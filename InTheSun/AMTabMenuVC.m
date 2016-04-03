@@ -15,7 +15,7 @@
 {
     [super viewDidLoad];
     
-    self.tabBar.tintColor = [UIColor yellowColor];
+    self.tabBar.tintColor = [UIColor colorWithRed:252.0/255.0 green:213.0/255.0 blue:0.0/255.0 alpha:1.0];
     self.tabBar.backgroundColor = [UIColor colorWithRed:44.0/255.0 green:44.0/255.0 blue:44.0/255.0 alpha:1.0];
     self.tabBar.barStyle = UIBarStyleBlack;
 
