@@ -12,7 +12,6 @@
                 <outlet property="nextButton" destination="2Jz-0e-CbZ" id="A5m-pO-DGg"/>
                 <outlet property="playButton" destination="JTj-Fc-df9" id="hcm-Gu-dyR"/>
                 <outlet property="previousButton" destination="nmR-ww-Mmq" id="bc4-bP-eGd"/>
-                <outlet property="songDurationLabel" destination="RHD-4p-uN9" id="XTG-8I-cVx"/>
                 <outlet property="songTitle" destination="NAU-ZC-xim" id="XKm-kZ-Q5B"/>
                 <outlet property="view" destination="wv8-2E-TM8" id="3mn-3C-E0m"/>
             </connections>
@@ -49,17 +48,23 @@
                     <rect key="frame" x="0.0" y="64" width="320" height="193"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicAlbumIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XCd-tQ-fM8">
-                            <rect key="frame" x="15" y="33" width="128" height="128"/>
+                            <rect key="frame" x="15" y="17" width="164" height="160"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="128" id="DTo-RO-gas"/>
                                 <constraint firstAttribute="width" constant="128" id="Yhr-QJ-Nby"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="DTo-RO-gas"/>
+                                    <exclude reference="Yhr-QJ-Nby"/>
+                                </mask>
+                            </variation>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGz-Ve-RMU" userLabel="ButtonsView">
-                            <rect key="frame" x="151" y="33" width="146" height="128"/>
+                            <rect key="frame" x="187" y="17" width="110" height="160"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmR-ww-Mmq">
-                                    <rect key="frame" x="-12" y="72" width="60" height="62"/>
+                                    <rect key="frame" x="-30" y="104" width="60" height="62"/>
                                     <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
                                     <inset key="imageEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
                                     <state key="normal" image="backPlayerIcon"/>
@@ -68,7 +73,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTj-Fc-df9">
-                                    <rect key="frame" x="48" y="78" width="50" height="50"/>
+                                    <rect key="frame" x="30" y="110" width="50" height="50"/>
                                     <state key="normal" image="playPlayerIcon"/>
                                     <state key="selected" image="pausePlayerIcon"/>
                                     <connections>
@@ -76,7 +81,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jz-0e-CbZ">
-                                    <rect key="frame" x="98" y="72" width="60" height="62"/>
+                                    <rect key="frame" x="80" y="104" width="60" height="62"/>
                                     <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
                                     <state key="normal" image="nextPlayerIcon"/>
                                     <connections>
@@ -84,41 +89,34 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Карандаши и палочки" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAU-ZC-xim">
-                                    <rect key="frame" x="17.5" y="-2" width="110.5" height="41"/>
+                                    <rect key="frame" x="0.0" y="49" width="110" height="41"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.81176470590000005" green="0.77647058820000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHD-4p-uN9">
-                                    <rect key="frame" x="54" y="47" width="37" height="16"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                    <color key="textColor" red="0.81176470590000005" green="0.77647058820000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZQ-DA-GhQ">
+                                    <rect key="frame" x="-18" y="-2" width="145" height="40"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="Купить" backgroundImage="buyButton">
+                                        <color key="titleColor" red="0.43137254901960786" green="0.29019607843137252" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="JTj-Fc-df9" firstAttribute="centerX" secondItem="lGz-Ve-RMU" secondAttribute="centerX" id="1ds-xN-31w"/>
                                 <constraint firstItem="NAU-ZC-xim" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lGz-Ve-RMU" secondAttribute="leading" id="2mk-F1-fcC"/>
-                                <constraint firstItem="RHD-4p-uN9" firstAttribute="centerX" secondItem="JTj-Fc-df9" secondAttribute="centerX" id="E2S-JR-EMd"/>
-                                <constraint firstAttribute="bottom" secondItem="nmR-ww-Mmq" secondAttribute="bottom" constant="-6" id="Gvw-5Q-Oda"/>
+                                <constraint firstItem="NAU-ZC-xim" firstAttribute="top" secondItem="YZQ-DA-GhQ" secondAttribute="bottom" constant="11" id="KxV-E3-Dh0"/>
                                 <constraint firstItem="nmR-ww-Mmq" firstAttribute="centerY" secondItem="JTj-Fc-df9" secondAttribute="centerY" id="MBe-Vl-oMj"/>
-                                <constraint firstAttribute="bottom" secondItem="2Jz-0e-CbZ" secondAttribute="bottom" id="QNt-tQ-2GU"/>
-                                <constraint firstItem="JTj-Fc-df9" firstAttribute="top" secondItem="RHD-4p-uN9" secondAttribute="bottom" constant="15" id="TWt-sy-DfA"/>
                                 <constraint firstAttribute="bottom" secondItem="JTj-Fc-df9" secondAttribute="bottom" id="U9Q-4U-3q1"/>
+                                <constraint firstItem="YZQ-DA-GhQ" firstAttribute="centerX" secondItem="JTj-Fc-df9" secondAttribute="centerX" id="cII-Q6-yuG"/>
                                 <constraint firstItem="NAU-ZC-xim" firstAttribute="centerX" secondItem="JTj-Fc-df9" secondAttribute="centerX" id="fRY-J1-7Jz"/>
                                 <constraint firstItem="JTj-Fc-df9" firstAttribute="leading" secondItem="nmR-ww-Mmq" secondAttribute="trailing" id="jYf-6P-pKf"/>
                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NAU-ZC-xim" secondAttribute="trailing" id="kko-wh-QGS"/>
-                                <constraint firstItem="JTj-Fc-df9" firstAttribute="top" secondItem="NAU-ZC-xim" secondAttribute="bottom" constant="39" id="lU0-1g-wqE"/>
+                                <constraint firstItem="JTj-Fc-df9" firstAttribute="top" secondItem="NAU-ZC-xim" secondAttribute="bottom" constant="20" id="lU0-1g-wqE"/>
                                 <constraint firstItem="2Jz-0e-CbZ" firstAttribute="centerY" secondItem="JTj-Fc-df9" secondAttribute="centerY" id="n50-eA-9qJ"/>
                                 <constraint firstItem="2Jz-0e-CbZ" firstAttribute="leading" secondItem="JTj-Fc-df9" secondAttribute="trailing" id="wI6-kd-SWI"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="Gvw-5Q-Oda"/>
-                                    <exclude reference="QNt-tQ-2GU"/>
-                                </mask>
-                            </variation>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -173,6 +171,7 @@
     <resources>
         <image name="backPlayerIcon" width="20" height="17"/>
         <image name="bg" width="375" height="667"/>
+        <image name="buyButton" width="145" height="40"/>
         <image name="musicAlbumIcon" width="164" height="160"/>
         <image name="nextPlayerIcon" width="20" height="17"/>
         <image name="pausePlayerIcon" width="50" height="50"/>

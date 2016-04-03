@@ -14,7 +14,6 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var contentTableView: UITableView!
     @IBOutlet weak var albumTitle: UILabel!
     @IBOutlet weak var songTitle: UILabel!
-    @IBOutlet weak var songDurationLabel: UILabel!
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
@@ -115,13 +114,10 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
 
         playButton.selected = isPlaying()
         if let playlist = self.playlist {
-            songDurationLabel.hidden = false
             songTitle.hidden = false
             let track = playlist.tracks[currentPlayingIndex]
             songTitle.text = track.title
-            songDurationLabel.text = AMStringUtils.durationString(track.duration)
         } else {
-            songDurationLabel.hidden = true
             songTitle.hidden = true
         }
         
@@ -162,6 +158,10 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         } else {
             self.playItem(self.tracksCount() - 1)
         }
+    }
+    
+    @IBAction func buyAlbum() {
+        //WARNING: Do something
     }
     
     

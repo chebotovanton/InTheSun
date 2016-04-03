@@ -149,7 +149,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     AMEventSection *eventsSection = self.sections[section];
-    return eventsSection.shouldShowHeader ? 60.0 : 0.001;
+    return eventsSection.shouldShowHeader ? 36.0 : 0.001;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
