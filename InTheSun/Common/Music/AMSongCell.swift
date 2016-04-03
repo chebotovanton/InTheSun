@@ -11,7 +11,7 @@ class AMSongCell: UITableViewCell {
         super.awakeFromNib()
         
         let selectedView = UIView()
-        selectedView.backgroundColor = UIColor(red: 246.0/255.0, green: 240.0/255.0, blue: 212.0/255.0, alpha: 1.0)
+        selectedView.backgroundColor = UIColor(red: 231.0/255.0, green: 153.0/255.0, blue: 53.0/255.0, alpha: 0.15)
         self.backgroundColor = UIColor.clearColor()
         self.selectedBackgroundView = selectedView
     }

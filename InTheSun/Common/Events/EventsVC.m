@@ -141,6 +141,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+#warning Hide first header
+    if (section == 0) {
+        return 0.001;
+    }
     return 60.0;
 }
 

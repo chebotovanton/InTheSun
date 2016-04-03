@@ -12,7 +12,6 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     var currentPlayingIndex: Int = 0
     
     @IBOutlet weak var contentTableView: UITableView!
-    @IBOutlet weak var albumArtwork: UIImageView!
     @IBOutlet weak var albumTitle: UILabel!
     @IBOutlet weak var songTitle: UILabel!
     @IBOutlet weak var songDurationLabel: UILabel!
@@ -93,9 +92,10 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
             
             var trackInfo:[String:AnyObject] = [MPMediaItemPropertyArtist:"АукцЫон", MPMediaItemPropertyTitle:track.title, MPMediaItemPropertyAlbumTitle:playlist.title, MPMediaItemPropertyPlaybackDuration:track.duration / 1000]
             
-            if let artwork = self.albumArtwork.image {
-                trackInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: artwork)
-            }
+//WARNING: image
+//            if let artwork = self.albumArtwork.image {
+//                trackInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: artwork)
+//            }
             MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = trackInfo
         }
     }
@@ -223,7 +223,8 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func didLoadAlbumImage(image: UIImage) {
-        self.albumArtwork.image = image
+        //WARNING: send image somewhere
+//        self.albumArtwork.image = image
     }
     
     //MARK: - Remote control events
