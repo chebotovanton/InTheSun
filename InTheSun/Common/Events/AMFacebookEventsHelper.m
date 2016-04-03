@@ -11,6 +11,7 @@
 
 + (NSDictionary *)photoLoadingParams
 {
+#warning Never used
     return @{@"access_token" : [self accessToken],
              @"fields" : @"picture.width(320).height(150)"};
 }

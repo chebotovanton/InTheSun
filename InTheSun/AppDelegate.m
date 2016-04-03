@@ -56,7 +56,7 @@ static NSString * kLaunchCountKey = @"launchCountKey";
     if (launchCount == 0 && ![self isSimulator]) {
         [self showBlockingScreenAnimated:NO];
     }
-    launchCount ++;
+    launchCount++;
     [[NSUserDefaults standardUserDefaults] setInteger:launchCount forKey:kLaunchCountKey];
 }
 

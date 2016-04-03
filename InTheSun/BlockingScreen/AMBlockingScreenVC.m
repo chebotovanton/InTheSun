@@ -23,6 +23,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *debugLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *albumNameView;
 @property (nonatomic, weak) IBOutlet UIImageView *groupNameView;
+@property (nonatomic, weak) IBOutlet UIImageView *circleAlbumName;
 @end
 
 @implementation AMBlockingScreenVC
@@ -61,10 +62,12 @@
                          self.descriptionLabel.alpha = 0.0;
                          self.actionLabel.alpha = 0.0;
                          self.albumNameView.alpha = 0.0;
+                         self.groupNameView.alpha = 0.0;
                      } completion:^(BOOL finished) {
                          [UIView animateWithDuration:duration
                                           animations:^{
                                               self.goToAlbumButton.alpha = 1.0;
+                                              self.circleAlbumName.alpha = 1.0;
                                           }];
                      }];
 }
@@ -76,8 +79,6 @@
                      animations:^{
                          self.descriptionLabel.alpha = 1.0;
                          self.actionLabel.alpha = 1.0;
-                         self.albumNameView.alpha = 1.0;
-                         self.groupNameView.alpha = 1.0;
                         [self updateCirclesWithAlpha:0.0];
                      } completion:nil];
     
@@ -90,8 +91,7 @@
     self.actionLabel.alpha = 0.0;
     self.whiteCircle.alpha = 0.0;
     self.yellowCircle.alpha = 0.0;
-    self.groupNameView.alpha = 0.0;
-    self.albumNameView.alpha = 0.0;
+    self.circleAlbumName.alpha = 0.0;
 }
 
 - (void)updateCirclesWithAlpha:(CGFloat)alpha
