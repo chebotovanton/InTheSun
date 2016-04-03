@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AMMusicViewController" customModule="InTheSun" customModuleProvider="target">
             <connections>
-                <outlet property="albumArtwork" destination="XCd-tQ-fM8" id="uTs-9w-Uke"/>
                 <outlet property="albumTitle" destination="mdn-Ol-ap0" id="Uvc-5d-u1c"/>
                 <outlet property="contentTableView" destination="Ivd-uV-bdV" id="tad-pe-1Av"/>
                 <outlet property="nextButton" destination="2Jz-0e-CbZ" id="A5m-pO-DGg"/>

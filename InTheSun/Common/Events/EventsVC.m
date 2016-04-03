@@ -8,6 +8,7 @@
 @interface AMEventSection : NSObject
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSArray <AMEvent *> *events;
+@property (nonatomic, assign) BOOL shouldShowHeader;
 @end
 
 @implementation AMEventSection
@@ -85,6 +86,7 @@
         AMEventSection *section = [AMEventSection new];
         section.name = LS(@"LOC_EVENTS_FUTURE_EVENTS");
         section.events = futureEvents;
+        section.shouldShowHeader = NO;
         [result addObject:section];
     }
     
@@ -92,6 +94,7 @@
         AMEventSection *section = [AMEventSection new];
         section.name = LS(@"LOC_EVENTS_PAST_EVENTS");
         section.events = pastEvents;
+        section.shouldShowHeader = YES;
         [result addObject:section];
     }
     
@@ -128,10 +131,14 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    AMEventsHeader *header = [[[NSBundle mainBundle] loadNibNamed:@"AMEventsHeader" owner:nil options:nil] objectAtIndex:0];
     AMEventSection *eventsSection = self.sections[section];
-    header.titleLabel.text = eventsSection.name;
-    return header;
+    if (eventsSection.shouldShowHeader) {
+        AMEventsHeader *header = [[[NSBundle mainBundle] loadNibNamed:@"AMEventsHeader" owner:nil options:nil] objectAtIndex:0];
+        header.titleLabel.text = eventsSection.name.uppercaseString;
+        return header;
+    } else {
+        return nil;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -141,11 +148,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-#warning Hide first header
-    if (section == 0) {
-        return 0.001;
-    }
-    return 60.0;
+    AMEventSection *eventsSection = self.sections[section];
+    return eventsSection.shouldShowHeader ? 60.0 : 0.001;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
