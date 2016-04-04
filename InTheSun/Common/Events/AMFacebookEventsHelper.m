@@ -5,7 +5,7 @@
 
 + (NSDictionary *)eventsListParams
 {
-    return @{@"fields" : @"name, place, start_time, type, category, picture.type(large), url",
+    return @{@"fields" : @"name, place, start_time, type, category, picture.type(large), url, cover",
              @"access_token" : [self accessToken]};
 }
 
@@ -21,7 +21,7 @@
     NSMutableArray *events = [NSMutableArray new];
     for (NSDictionary * rawEvent in eventsRawArray) {
         AMEvent * event = [AMEvent new];
-
+#warning Use cover!
         event.eventId = rawEvent[@"id"];
         event.name = rawEvent[@"name"];
         NSString *dateString = rawEvent[@"start_time"];
