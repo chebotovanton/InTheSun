@@ -40,6 +40,8 @@
 		9FD4F62A1C81CF39004A0734 /* AMTabMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD4F6281C81CF39004A0734 /* AMTabMenuVC.m */; };
 		9FD4F62B1C81CF39004A0734 /* AMTabMenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD4F6291C81CF39004A0734 /* AMTabMenuVC.xib */; };
 		9FD4F62F1C81EED8004A0734 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD4F62E1C81EED8004A0734 /* SecondViewController.xib */; };
+		9FEEC49C1CB58EBD00613361 /* AMInfoItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEC49A1CB58EBD00613361 /* AMInfoItemCell.m */; };
+		9FEEC49D1CB58EBD00613361 /* AMInfoItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FEEC49B1CB58EBD00613361 /* AMInfoItemCell.xib */; };
 		9FEFE0551CA69D3D00F413B1 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FEFE0541CA69D3D00F413B1 /* overlay.png */; };
 		9FEFE07F1CA6FAE000F413B1 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE07C1CA6FAE000F413B1 /* OpenCVWrapper.mm */; };
 		9FEFE0801CA6FAE000F413B1 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE07E1CA6FAE000F413B1 /* UIImage+OpenCV.mm */; };
@@ -111,6 +113,9 @@
 		9FD4F6281C81CF39004A0734 /* AMTabMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMTabMenuVC.m; sourceTree = "<group>"; };
 		9FD4F6291C81CF39004A0734 /* AMTabMenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMTabMenuVC.xib; sourceTree = "<group>"; };
 		9FD4F62E1C81EED8004A0734 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		9FEEC4991CB58EBD00613361 /* AMInfoItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMInfoItemCell.h; sourceTree = "<group>"; };
+		9FEEC49A1CB58EBD00613361 /* AMInfoItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMInfoItemCell.m; sourceTree = "<group>"; };
+		9FEEC49B1CB58EBD00613361 /* AMInfoItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMInfoItemCell.xib; sourceTree = "<group>"; };
 		9FEFE0541CA69D3D00F413B1 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 		9FEFE07B1CA6FAE000F413B1 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		9FEFE07C1CA6FAE000F413B1 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
@@ -174,6 +179,9 @@
 				9F041A191C8C8C580092CBAC /* AMAlbumInfoVC.h */,
 				9F041A1A1C8C8C580092CBAC /* AMAlbumInfoVC.m */,
 				9F041A1B1C8C8C580092CBAC /* AMAlbumInfoVC.xib */,
+				9FEEC4991CB58EBD00613361 /* AMInfoItemCell.h */,
+				9FEEC49A1CB58EBD00613361 /* AMInfoItemCell.m */,
+				9FEEC49B1CB58EBD00613361 /* AMInfoItemCell.xib */,
 			);
 			path = AlbumInfo;
 			sourceTree = "<group>";
@@ -453,6 +461,7 @@
 				9FD4F62B1C81CF39004A0734 /* AMTabMenuVC.xib in Resources */,
 				9FEFE0991CA9948300F413B1 /* AMEventsHeader.xib in Resources */,
 				9F041A1D1C8C8C580092CBAC /* AMAlbumInfoVC.xib in Resources */,
+				9FEEC49D1CB58EBD00613361 /* AMInfoItemCell.xib in Resources */,
 				9FD4F62F1C81EED8004A0734 /* SecondViewController.xib in Resources */,
 				9FCE57DD1C98991D0080DC9B /* AMMusicViewController.xib in Resources */,
 				9F4BD2811C944D13009E5DCC /* AMEventCell.xib in Resources */,
@@ -543,6 +552,7 @@
 				9F4BD2841C945155009E5DCC /* AMEvent.m in Sources */,
 				9FADBD0A1C67B07E00562B13 /* AMImageProcessor.m in Sources */,
 				9F041A1C1C8C8C580092CBAC /* AMAlbumInfoVC.m in Sources */,
+				9FEEC49C1CB58EBD00613361 /* AMInfoItemCell.m in Sources */,
 				9FCE57DC1C98991D0080DC9B /* AMMusicViewController.swift in Sources */,
 				9F8454F81C95C94C00AA7B90 /* AMSongCell.swift in Sources */,
 				9FEFE0971CA9947500F413B1 /* AMEventsHeader.m in Sources */,

@@ -12,7 +12,6 @@
                 <outlet property="nextButton" destination="2Jz-0e-CbZ" id="A5m-pO-DGg"/>
                 <outlet property="playButton" destination="JTj-Fc-df9" id="hcm-Gu-dyR"/>
                 <outlet property="previousButton" destination="nmR-ww-Mmq" id="bc4-bP-eGd"/>
-                <outlet property="songDurationLabel" destination="RHD-4p-uN9" id="XTG-8I-cVx"/>
                 <outlet property="songTitle" destination="NAU-ZC-xim" id="XKm-kZ-Q5B"/>
                 <outlet property="view" destination="wv8-2E-TM8" id="3mn-3C-E0m"/>
             </connections>
@@ -23,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="rhW-rY-Rff">
-                    <rect key="frame" x="196.5" y="178.5" width="375" height="667"/>
+                    <rect key="frame" x="197" y="179" width="375" height="667"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSh-oK-LB4" userLabel="NavBar">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
@@ -48,8 +47,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTD-wS-aka" userLabel="HeaderView">
                     <rect key="frame" x="0.0" y="64" width="768" height="350"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicAlbumIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XCd-tQ-fM8">
-                            <rect key="frame" x="15" y="95.5" width="164" height="160"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="musicAlbumIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XCd-tQ-fM8">
+                            <rect key="frame" x="15" y="96" width="164" height="160"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="128" id="DTo-RO-gas"/>
                                 <constraint firstAttribute="width" constant="128" id="Yhr-QJ-Nby"/>
@@ -61,8 +60,8 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGz-Ve-RMU" userLabel="ButtonsView">
-                            <rect key="frame" x="187" y="95.5" width="558" height="160"/>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGz-Ve-RMU" userLabel="ButtonsView">
+                            <rect key="frame" x="187" y="96" width="558" height="160"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmR-ww-Mmq">
                                     <rect key="frame" x="194" y="104" width="60" height="62"/>
@@ -90,14 +89,8 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Карандаши и палочки" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAU-ZC-xim">
-                                    <rect key="frame" x="190" y="50.5" width="176.5" height="20.5"/>
+                                    <rect key="frame" x="190" y="69" width="177" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.81176470590000005" green="0.77647058820000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHD-4p-uN9">
-                                    <rect key="frame" x="260" y="79" width="37" height="16"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.81176470590000005" green="0.77647058820000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -106,16 +99,14 @@
                             <constraints>
                                 <constraint firstItem="JTj-Fc-df9" firstAttribute="centerX" secondItem="lGz-Ve-RMU" secondAttribute="centerX" id="1ds-xN-31w"/>
                                 <constraint firstItem="NAU-ZC-xim" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lGz-Ve-RMU" secondAttribute="leading" id="2mk-F1-fcC"/>
-                                <constraint firstItem="RHD-4p-uN9" firstAttribute="centerX" secondItem="JTj-Fc-df9" secondAttribute="centerX" id="E2S-JR-EMd"/>
                                 <constraint firstAttribute="bottom" secondItem="nmR-ww-Mmq" secondAttribute="bottom" constant="-6" id="Gvw-5Q-Oda"/>
                                 <constraint firstItem="nmR-ww-Mmq" firstAttribute="centerY" secondItem="JTj-Fc-df9" secondAttribute="centerY" id="MBe-Vl-oMj"/>
                                 <constraint firstAttribute="bottom" secondItem="2Jz-0e-CbZ" secondAttribute="bottom" id="QNt-tQ-2GU"/>
-                                <constraint firstItem="JTj-Fc-df9" firstAttribute="top" secondItem="RHD-4p-uN9" secondAttribute="bottom" constant="15" id="TWt-sy-DfA"/>
                                 <constraint firstAttribute="bottom" secondItem="JTj-Fc-df9" secondAttribute="bottom" id="U9Q-4U-3q1"/>
                                 <constraint firstItem="NAU-ZC-xim" firstAttribute="centerX" secondItem="JTj-Fc-df9" secondAttribute="centerX" id="fRY-J1-7Jz"/>
                                 <constraint firstItem="JTj-Fc-df9" firstAttribute="leading" secondItem="nmR-ww-Mmq" secondAttribute="trailing" id="jYf-6P-pKf"/>
                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NAU-ZC-xim" secondAttribute="trailing" id="kko-wh-QGS"/>
-                                <constraint firstItem="JTj-Fc-df9" firstAttribute="top" secondItem="NAU-ZC-xim" secondAttribute="bottom" constant="39" id="lU0-1g-wqE"/>
+                                <constraint firstItem="JTj-Fc-df9" firstAttribute="top" secondItem="NAU-ZC-xim" secondAttribute="bottom" constant="20" id="lU0-1g-wqE"/>
                                 <constraint firstItem="2Jz-0e-CbZ" firstAttribute="centerY" secondItem="JTj-Fc-df9" secondAttribute="centerY" id="n50-eA-9qJ"/>
                                 <constraint firstItem="2Jz-0e-CbZ" firstAttribute="leading" secondItem="JTj-Fc-df9" secondAttribute="trailing" id="wI6-kd-SWI"/>
                             </constraints>

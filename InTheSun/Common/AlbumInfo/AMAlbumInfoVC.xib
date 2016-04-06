@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AMAlbumInfoVC">
             <connections>
+                <outlet property="collectionView" destination="72L-EG-C2F" id="ijc-wL-VEN"/>
                 <outlet property="playerView" destination="DY7-aB-7bG" id="kED-Zg-eBf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -40,7 +41,7 @@
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3C-93-khF" userLabel="ContentView">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="413"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="1430"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DY7-aB-7bG" userLabel="PlayerView" customClass="YTPlayerView">
                                     <rect key="frame" x="10" y="10" width="300" height="200"/>
@@ -49,32 +50,33 @@
                                         <constraint firstAttribute="height" constant="200" id="Stq-j3-NMq"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekG-oA-fL7">
-                                    <rect key="frame" x="15" y="220" width="290" height="183"/>
-                                    <string key="text">В основу альбома положен памятник древнерусской литературы конца 12 в. "Слово о полку Игореве". Написан неизвестным автором вскоре после похода Игоря Святославича, князя новгород-северского, на половцев в 1185 под свежим впечатлением событий.</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="72L-EG-C2F">
+                                    <rect key="frame" x="0.0" y="230" width="320" height="200"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="200" id="K5G-YW-4bn"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qkh-p2-Jr5">
+                                        <size key="itemSize" width="50" height="50"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="fxV-yt-FHP"/>
+                                        <outlet property="delegate" destination="-1" id="BYC-cU-gPc"/>
+                                    </connections>
+                                </collectionView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="ekG-oA-fL7" secondAttribute="bottom" constant="10" id="2kQ-Hh-db4"/>
-                                <constraint firstItem="ekG-oA-fL7" firstAttribute="top" secondItem="DY7-aB-7bG" secondAttribute="bottom" constant="10" id="BUh-TW-Ysq"/>
-                                <constraint firstItem="ekG-oA-fL7" firstAttribute="leading" secondItem="B3C-93-khF" secondAttribute="leading" constant="15" id="Iq4-3I-idw"/>
+                                <constraint firstAttribute="trailing" secondItem="72L-EG-C2F" secondAttribute="trailing" id="Jyp-WM-IJu"/>
                                 <constraint firstAttribute="trailing" secondItem="DY7-aB-7bG" secondAttribute="trailing" constant="10" id="NLH-yl-pBL"/>
-                                <constraint firstAttribute="trailing" secondItem="ekG-oA-fL7" secondAttribute="trailing" constant="15" id="ZlX-Vp-bfO"/>
+                                <constraint firstAttribute="bottom" secondItem="72L-EG-C2F" secondAttribute="bottom" constant="1000" id="NWY-EI-Cxj"/>
                                 <constraint firstItem="DY7-aB-7bG" firstAttribute="top" secondItem="B3C-93-khF" secondAttribute="top" constant="10" id="c7D-n3-uUg"/>
-                                <constraint firstItem="DY7-aB-7bG" firstAttribute="bottom" secondItem="ekG-oA-fL7" secondAttribute="bottom" id="w3T-4C-TBj"/>
+                                <constraint firstItem="72L-EG-C2F" firstAttribute="leading" secondItem="B3C-93-khF" secondAttribute="leading" id="h3v-xe-6pu"/>
+                                <constraint firstItem="72L-EG-C2F" firstAttribute="top" secondItem="DY7-aB-7bG" secondAttribute="bottom" constant="20" id="hWS-8M-H1Q"/>
                                 <constraint firstItem="DY7-aB-7bG" firstAttribute="leading" secondItem="B3C-93-khF" secondAttribute="leading" constant="10" id="x51-7Z-pOL"/>
-                                <constraint firstAttribute="bottom" secondItem="ekG-oA-fL7" secondAttribute="bottom" constant="15" id="xzz-lB-lxh"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="w3T-4C-TBj"/>
-                                    <exclude reference="xzz-lB-lxh"/>
-                                </mask>
-                            </variation>
                         </view>
                     </subviews>
                     <constraints>

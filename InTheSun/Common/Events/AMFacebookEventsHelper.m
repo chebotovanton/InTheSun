@@ -5,15 +5,8 @@
 
 + (NSDictionary *)eventsListParams
 {
-    return @{@"fields" : @"name, place, start_time, type, category, picture.type(large), url, cover",
+    return @{@"fields" : @"name, place, start_time, type, category, url, cover",
              @"access_token" : [self accessToken]};
-}
-
-+ (NSDictionary *)photoLoadingParams
-{
-#warning Never used
-    return @{@"access_token" : [self accessToken],
-             @"fields" : @"picture.width(320).height(150)"};
 }
 
 + (NSArray *)parseRawEvents:(NSArray *)eventsRawArray
@@ -21,7 +14,7 @@
     NSMutableArray *events = [NSMutableArray new];
     for (NSDictionary * rawEvent in eventsRawArray) {
         AMEvent * event = [AMEvent new];
-#warning Use cover!
+
         event.eventId = rawEvent[@"id"];
         event.name = rawEvent[@"name"];
         NSString *dateString = rawEvent[@"start_time"];
@@ -34,9 +27,8 @@
         NSDictionary *cityDict = placeDict[@"location"];
         event.cityName = cityDict[@"city"];
         
-        NSDictionary *imageDict = rawEvent[@"picture"];
-        imageDict = imageDict[@"data"];
-        event.imageUrl = imageDict[@"url"];
+        NSDictionary *imageDict = rawEvent[@"cover"];
+        event.imageUrl = imageDict[@"source"];
         
         [events addObject:event];
     }

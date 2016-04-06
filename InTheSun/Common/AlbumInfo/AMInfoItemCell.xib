@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AMInfoItemCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9t8-PZ-Z4Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <color key="backgroundColor" red="0.70588235290000001" green="0.71764705880000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="xX6-S1-sKy">
+                        <rect key="frame" x="0.0" y="0.5" width="320" height="199.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCY-3S-7NE">
+                        <rect key="frame" x="8" y="156" width="77.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="9t8-PZ-Z4Z" secondAttribute="bottom" id="CMX-gA-Hd8"/>
+                <constraint firstItem="xX6-S1-sKy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="0.5" id="EYw-ME-bmt"/>
+                <constraint firstItem="9t8-PZ-Z4Z" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="G4M-K5-RSh"/>
+                <constraint firstAttribute="bottom" secondItem="xX6-S1-sKy" secondAttribute="bottom" id="KAA-CD-NL6"/>
+                <constraint firstAttribute="trailing" secondItem="9t8-PZ-Z4Z" secondAttribute="trailing" id="Ldd-sx-4hG"/>
+                <constraint firstItem="xX6-S1-sKy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PlF-W8-6tc"/>
+                <constraint firstAttribute="trailing" secondItem="xX6-S1-sKy" secondAttribute="trailing" id="XKH-Nm-lHr"/>
+                <constraint firstItem="rCY-3S-7NE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="ckp-bT-0k0"/>
+                <constraint firstItem="9t8-PZ-Z4Z" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pBQ-dx-ihU"/>
+                <constraint firstAttribute="bottom" secondItem="rCY-3S-7NE" secondAttribute="bottom" constant="23" id="zGx-zk-XI8"/>
+            </constraints>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="overlay.png" width="399" height="187"/>
+    </resources>
+</document>
