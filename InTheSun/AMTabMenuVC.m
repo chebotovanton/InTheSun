@@ -41,7 +41,7 @@
     eventsBarItem.title = LS(@"LOC_TAB_BAR_EVENTS");
     eventsVC.tabBarItem = eventsBarItem;
     
-    return @[musicVC, albumInfoVC, eventsVC, secondVC];
+    return @[musicVC, albumInfoVC, eventsVC];
 }
 
 - (void)stopMusicPlayer
