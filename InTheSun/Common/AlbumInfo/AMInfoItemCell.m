@@ -1,18 +1,20 @@
-//
-//  AMInfoItemCell.m
-//  InTheSun
-//
-//  Created by Anton Chebotov on 06/04/16.
-//  Copyright © 2016 Anton Chebotov. All rights reserved.
-//
-
 #import "AMInfoItemCell.h"
+#import "AMAlbumInfoItem.h"
+
+@interface AMInfoItemCell()
+
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *subtitleLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+
+@end
 
 @implementation AMInfoItemCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+- (void)setupWithItem:(AMAlbumInfoItem *)item
+{
+    self.titleLabel.text = item.title;
+    self.subtitleLabel.text = item.subtitle;
+    self.imageView.image = item.image;
 }
-
 @end

@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AMAlbumInfoVC">
             <connections>
                 <outlet property="collectionView" destination="72L-EG-C2F" id="ijc-wL-VEN"/>
+                <outlet property="pageControl" destination="uyO-u2-YDA" id="RPc-7x-yeQ"/>
                 <outlet property="playerView" destination="DY7-aB-7bG" id="kED-Zg-eBf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -66,9 +67,14 @@
                                         <outlet property="delegate" destination="-1" id="BYC-cU-gPc"/>
                                     </connections>
                                 </collectionView>
+                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="uyO-u2-YDA">
+                                    <rect key="frame" x="141" y="393" width="39" height="37"/>
+                                </pageControl>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="uyO-u2-YDA" firstAttribute="bottom" secondItem="72L-EG-C2F" secondAttribute="bottom" id="ACE-OO-Fm4"/>
+                                <constraint firstItem="uyO-u2-YDA" firstAttribute="centerX" secondItem="72L-EG-C2F" secondAttribute="centerX" id="Hgq-4O-LHG"/>
                                 <constraint firstAttribute="trailing" secondItem="72L-EG-C2F" secondAttribute="trailing" id="Jyp-WM-IJu"/>
                                 <constraint firstAttribute="trailing" secondItem="DY7-aB-7bG" secondAttribute="trailing" constant="10" id="NLH-yl-pBL"/>
                                 <constraint firstAttribute="bottom" secondItem="72L-EG-C2F" secondAttribute="bottom" constant="1000" id="NWY-EI-Cxj"/>

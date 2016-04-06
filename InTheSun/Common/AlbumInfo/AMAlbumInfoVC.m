@@ -2,13 +2,16 @@
 #import "YTPlayerView.h"
 #import "AMTabMenuVC.h"
 #import "AMInfoItemCell.h"
-
+#import "AMAlbumInfoItem.h"
 
 @interface AMAlbumInfoVC () <YTPlayerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, weak) IBOutlet YTPlayerView *playerView;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, weak) IBOutlet UIPageControl *pageControl;
+
 @property (nonatomic, strong) NSString *kCellIdentifier;
+@property (nonatomic, strong) NSArray <AMAlbumInfoItem *> *items;
 
 @end
 
@@ -17,6 +20,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.items = [self createItems];
     
     self.kCellIdentifier = @"AMInfoItemCell";
     UINib *nib = [UINib nibWithNibName:@"AMInfoItemCell" bundle:nil];
@@ -37,6 +42,25 @@
 - (void)stopMusicPlayer
 {
     [(AMTabMenuVC *)self.tabBarController stopMusicPlayer];
+}
+
+#pragma mark - Private
+
+- (NSArray <AMAlbumInfoItem *> *)createItems
+{
+    AMAlbumInfoItem *item = [AMAlbumInfoItem new];
+    item.title = @"title1";
+    item.subtitle = @"subtitle1";
+    
+    AMAlbumInfoItem *item2 = [AMAlbumInfoItem new];
+    item2.title = @"title2";
+    item2.subtitle = @"subtitle2";
+    
+    AMAlbumInfoItem *item3 = [AMAlbumInfoItem new];
+    item3.title = @"title3";
+    item3.subtitle = @"subtitle";
+    
+    return @[item, item2, item3];
 }
 
 #pragma mark - YTPlayerViewDelegate
@@ -62,7 +86,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10.0;
+    return self.items.count;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -72,7 +96,9 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.kCellIdentifier forIndexPath:indexPath];
+    AMInfoItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.kCellIdentifier forIndexPath:indexPath];
+    AMAlbumInfoItem *item = self.items[indexPath.item];
+    [cell setupWithItem:item];
     return cell;
 }
 
