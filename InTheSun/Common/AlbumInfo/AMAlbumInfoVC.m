@@ -102,4 +102,14 @@
     return cell;
 }
 
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat pageWidth = self.collectionView.frame.size.width;
+    float fractionalPage = self.collectionView.contentOffset.x / pageWidth;
+    NSInteger page = lround(fractionalPage);
+    self.pageControl.currentPage = page;
+}
+
 @end
