@@ -40,11 +40,6 @@
     UITabBarItem * eventsBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"eventsMenuIcon"] tag:0];
     eventsBarItem.title = LS(@"LOC_TAB_BAR_EVENTS");
     eventsVC.tabBarItem = eventsBarItem;
-
-    SecondViewController *secondVC = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
-    UITabBarItem * secondBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"friendsMenuIcon"] tag:0];
-    secondBarItem.title = @"DevSettings";
-    secondVC.tabBarItem = secondBarItem;
     
     return @[musicVC, albumInfoVC, eventsVC, secondVC];
 }
