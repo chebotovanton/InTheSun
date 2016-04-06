@@ -69,6 +69,7 @@
                                 </collectionView>
                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="uyO-u2-YDA">
                                     <rect key="frame" x="141" y="393" width="39" height="37"/>
+                                    <color key="currentPageIndicatorTintColor" red="0.98823529409999999" green="0.83529411760000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </pageControl>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -23,6 +23,8 @@
     
     self.items = [self createItems];
     
+    self.pageControl.numberOfPages = self.items.count;
+    
     self.kCellIdentifier = @"AMInfoItemCell";
     UINib *nib = [UINib nibWithNibName:@"AMInfoItemCell" bundle:nil];
     [self.collectionView registerNib:nib forCellWithReuseIdentifier:self.kCellIdentifier];
