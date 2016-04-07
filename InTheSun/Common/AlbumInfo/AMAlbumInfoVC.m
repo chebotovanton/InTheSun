@@ -6,6 +6,7 @@
 
 @interface AMAlbumInfoVC () <YTPlayerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet YTPlayerView *playerView;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, weak) IBOutlet UIPageControl *pageControl;
@@ -20,6 +21,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 50.0, 0.0);
     
     self.items = [self createItems];
     
