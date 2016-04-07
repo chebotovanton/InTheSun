@@ -43,6 +43,7 @@
 		9FEEC49C1CB58EBD00613361 /* AMInfoItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEC49A1CB58EBD00613361 /* AMInfoItemCell.m */; };
 		9FEEC49D1CB58EBD00613361 /* AMInfoItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FEEC49B1CB58EBD00613361 /* AMInfoItemCell.xib */; };
 		9FEEC4A01CB59E0C00613361 /* AMAlbumInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEC49F1CB59E0C00613361 /* AMAlbumInfoItem.m */; };
+		9FEEC4A71CB6CA4700613361 /* AMAlbumInfoItemsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEC4A61CB6CA4700613361 /* AMAlbumInfoItemsManager.m */; };
 		9FEFE0551CA69D3D00F413B1 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FEFE0541CA69D3D00F413B1 /* overlay.png */; };
 		9FEFE07F1CA6FAE000F413B1 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE07C1CA6FAE000F413B1 /* OpenCVWrapper.mm */; };
 		9FEFE0801CA6FAE000F413B1 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE07E1CA6FAE000F413B1 /* UIImage+OpenCV.mm */; };
@@ -119,6 +120,8 @@
 		9FEEC49B1CB58EBD00613361 /* AMInfoItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMInfoItemCell.xib; sourceTree = "<group>"; };
 		9FEEC49E1CB59E0C00613361 /* AMAlbumInfoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMAlbumInfoItem.h; sourceTree = "<group>"; };
 		9FEEC49F1CB59E0C00613361 /* AMAlbumInfoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMAlbumInfoItem.m; sourceTree = "<group>"; };
+		9FEEC4A51CB6CA4700613361 /* AMAlbumInfoItemsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMAlbumInfoItemsManager.h; sourceTree = "<group>"; };
+		9FEEC4A61CB6CA4700613361 /* AMAlbumInfoItemsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMAlbumInfoItemsManager.m; sourceTree = "<group>"; };
 		9FEFE0541CA69D3D00F413B1 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 		9FEFE07B1CA6FAE000F413B1 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		9FEFE07C1CA6FAE000F413B1 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				9FEEC49B1CB58EBD00613361 /* AMInfoItemCell.xib */,
 				9FEEC49E1CB59E0C00613361 /* AMAlbumInfoItem.h */,
 				9FEEC49F1CB59E0C00613361 /* AMAlbumInfoItem.m */,
+				9FEEC4A51CB6CA4700613361 /* AMAlbumInfoItemsManager.h */,
+				9FEEC4A61CB6CA4700613361 /* AMAlbumInfoItemsManager.m */,
 			);
 			path = AlbumInfo;
 			sourceTree = "<group>";
@@ -550,6 +555,7 @@
 				9FADBCD81C65FBDC00562B13 /* AppDelegate.m in Sources */,
 				9FEEC4A01CB59E0C00613361 /* AMAlbumInfoItem.m in Sources */,
 				9FADBCFF1C66141C00562B13 /* AMBlockingScreenVC.m in Sources */,
+				9FEEC4A71CB6CA4700613361 /* AMAlbumInfoItemsManager.m in Sources */,
 				9F041A221C8C8F280092CBAC /* EventsVC.m in Sources */,
 				9FEFE07F1CA6FAE000F413B1 /* OpenCVWrapper.mm in Sources */,
 				9F8454F41C95C5BC00AA7B90 /* AMStringUtils.m in Sources */,

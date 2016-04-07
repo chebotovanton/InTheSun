@@ -4,6 +4,6 @@
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *subtitle;
-@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) NSString *imageName;
 
 @end

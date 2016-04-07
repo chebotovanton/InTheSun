@@ -18,16 +18,16 @@
                         <color key="backgroundColor" red="0.70588235290000001" green="0.71764705880000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="xX6-S1-sKy">
-                        <rect key="frame" x="0.0" y="0.5" width="320" height="199.5"/>
+                        <rect key="frame" x="0.0" y="1" width="320" height="199"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCY-3S-7NE">
-                        <rect key="frame" x="15" y="128" width="67" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Михаил Раппопорт, Виктор Бондарик, Николай Рубанов, Михаил Коловский, Дмитрий Озерский, Владимир Волков, Леонид Фёдоров" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCY-3S-7NE">
+                        <rect key="frame" x="15" y="50" width="274" height="67"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeT-EV-0kz">
-                        <rect key="frame" x="15" y="155.5" width="31" height="14.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Михаил Раппопорт, Виктор Бондарик, Николай Рубанов, Михаил Коловский, Дмитрий Озерский, Владимир Волков, Леонид Фёдоров" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeT-EV-0kz">
+                        <rect key="frame" x="15" y="122" width="282" height="43"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -39,22 +39,18 @@
                 <constraint firstItem="jeT-EV-0kz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="5h7-BO-TNS"/>
                 <constraint firstAttribute="bottom" secondItem="9t8-PZ-Z4Z" secondAttribute="bottom" id="CMX-gA-Hd8"/>
                 <constraint firstItem="xX6-S1-sKy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="0.5" id="EYw-ME-bmt"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rCY-3S-7NE" secondAttribute="trailing" constant="15" id="FPZ-K8-OTS"/>
                 <constraint firstItem="9t8-PZ-Z4Z" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="G4M-K5-RSh"/>
-                <constraint firstAttribute="bottom" secondItem="jeT-EV-0kz" secondAttribute="bottom" constant="30" id="HQV-iU-lQ9"/>
+                <constraint firstAttribute="bottom" secondItem="jeT-EV-0kz" secondAttribute="bottom" constant="35" id="HQV-iU-lQ9"/>
                 <constraint firstAttribute="bottom" secondItem="xX6-S1-sKy" secondAttribute="bottom" id="KAA-CD-NL6"/>
                 <constraint firstAttribute="trailing" secondItem="9t8-PZ-Z4Z" secondAttribute="trailing" id="Ldd-sx-4hG"/>
                 <constraint firstItem="xX6-S1-sKy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PlF-W8-6tc"/>
-                <constraint firstAttribute="bottom" secondItem="rCY-3S-7NE" secondAttribute="bottom" constant="40" id="TMb-yb-lq9"/>
                 <constraint firstAttribute="trailing" secondItem="xX6-S1-sKy" secondAttribute="trailing" id="XKH-Nm-lHr"/>
-                <constraint firstItem="jeT-EV-0kz" firstAttribute="top" secondItem="rCY-3S-7NE" secondAttribute="bottom" constant="10" id="cZU-4Z-dO1"/>
+                <constraint firstItem="jeT-EV-0kz" firstAttribute="top" secondItem="rCY-3S-7NE" secondAttribute="bottom" constant="5" id="cZU-4Z-dO1"/>
                 <constraint firstItem="rCY-3S-7NE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="ckp-bT-0k0"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jeT-EV-0kz" secondAttribute="trailing" constant="15" id="oay-5N-4cg"/>
                 <constraint firstItem="9t8-PZ-Z4Z" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pBQ-dx-ihU"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="TMb-yb-lq9"/>
-                </mask>
-            </variation>
             <connections>
                 <outlet property="imageView" destination="9t8-PZ-Z4Z" id="sUl-OK-RRp"/>
                 <outlet property="subtitleLabel" destination="jeT-EV-0kz" id="U8c-Sw-JJN"/>

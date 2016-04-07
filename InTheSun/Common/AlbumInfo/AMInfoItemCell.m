@@ -15,6 +15,7 @@
 {
     self.titleLabel.text = item.title;
     self.subtitleLabel.text = item.subtitle;
-    self.imageView.image = item.image;
+    self.imageView.image = [UIImage imageNamed:item.imageName];
 }
+
 @end

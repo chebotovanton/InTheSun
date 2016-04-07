@@ -3,6 +3,7 @@
 #import "AMTabMenuVC.h"
 #import "AMInfoItemCell.h"
 #import "AMAlbumInfoItem.h"
+#import "AMAlbumInfoItemsManager.h"
 
 @interface AMAlbumInfoVC () <YTPlayerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -10,7 +11,6 @@
 @property (nonatomic, weak) IBOutlet YTPlayerView *playerView;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, weak) IBOutlet UIPageControl *pageControl;
-@property (nonatomic, weak) IBOutlet UITextField *text;
 
 @property (nonatomic, strong) NSString *kCellIdentifier;
 @property (nonatomic, strong) NSArray <AMAlbumInfoItem *> *items;
@@ -25,7 +25,7 @@
     
     self.scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 50.0, 0.0);
     
-    self.items = [self createItems];
+    self.items = [AMAlbumInfoItemsManager createItems];
     
     self.pageControl.numberOfPages = self.items.count;
     
@@ -48,25 +48,6 @@
 - (void)stopMusicPlayer
 {
     [(AMTabMenuVC *)self.tabBarController stopMusicPlayer];
-}
-
-#pragma mark - Private
-
-- (NSArray <AMAlbumInfoItem *> *)createItems
-{
-    AMAlbumInfoItem *item = [AMAlbumInfoItem new];
-    item.title = @"title1";
-    item.subtitle = @"subtitle1";
-    
-    AMAlbumInfoItem *item2 = [AMAlbumInfoItem new];
-    item2.title = @"title2";
-    item2.subtitle = @"subtitle2";
-    
-    AMAlbumInfoItem *item3 = [AMAlbumInfoItem new];
-    item3.title = @"title3";
-    item3.subtitle = @"subtitle";
-    
-    return @[item, item2, item3];
 }
 
 #pragma mark - YTPlayerViewDelegate
