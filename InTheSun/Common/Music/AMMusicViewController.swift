@@ -10,6 +10,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     var player: AVPlayer = AVPlayer()
     var playlist: Playlist?
     var currentPlayingIndex: Int = 0
+    var albumImage: UIImage?
     
     @IBOutlet weak var contentTableView: UITableView!
     @IBOutlet weak var albumTitle: UILabel!
@@ -91,10 +92,9 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
             
             var trackInfo:[String:AnyObject] = [MPMediaItemPropertyArtist:"АукцЫон", MPMediaItemPropertyTitle:track.title, MPMediaItemPropertyAlbumTitle:playlist.title, MPMediaItemPropertyPlaybackDuration:track.duration / 1000]
             
-//WARNING: image
-//            if let artwork = self.albumArtwork.image {
-//                trackInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: artwork)
-//            }
+            if let albumImage = self.albumImage {
+                trackInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: albumImage)
+            }
             MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = trackInfo
         }
     }
@@ -223,8 +223,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func didLoadAlbumImage(image: UIImage) {
-        //WARNING: send image somewhere
-//        self.albumArtwork.image = image
+        albumImage = image
     }
     
     //MARK: - Remote control events
