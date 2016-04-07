@@ -10,6 +10,7 @@
 @property (nonatomic, weak) IBOutlet YTPlayerView *playerView;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, weak) IBOutlet UIPageControl *pageControl;
+@property (nonatomic, weak) IBOutlet UITextField *text;
 
 @property (nonatomic, strong) NSString *kCellIdentifier;
 @property (nonatomic, strong) NSArray <AMAlbumInfoItem *> *items;

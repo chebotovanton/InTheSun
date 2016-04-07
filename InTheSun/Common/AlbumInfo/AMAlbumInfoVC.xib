@@ -43,7 +43,7 @@
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3C-93-khF" userLabel="ContentView">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="816"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="712"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DY7-aB-7bG" userLabel="PlayerView" customClass="YTPlayerView">
                                     <rect key="frame" x="10" y="10" width="300" height="200"/>
@@ -72,36 +72,81 @@
                                     <rect key="frame" x="141" y="393" width="39" height="37"/>
                                     <color key="currentPageIndicatorTintColor" red="0.98823529409999999" green="0.83529411760000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </pageControl>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIC-FD-rRH">
-                                    <rect key="frame" x="0.0" y="440" width="320" height="366"/>
-                                    <string key="text">    МУЗЫКА - «АукцЫон» и Леонид Фёдоров, кроме «МИР ТАЕТ» - Владимир Волков
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XGf-12-iPn">
+                                    <rect key="frame" x="15" y="450" width="290" height="242"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <attributedString key="attributedText">
+                                        <fragment>
+                                            <string key="content">МУЗЫКА - «АукцЫон» и Леонид Фёдоров, кроме «МИР ТАЕТ» - Владимир Волков
 
-    ТЕКСТЫ - Дмитрий Озерский
+ТЕКСТЫ - Дмитрий Озерский
 
-    ЗАПИСЬ и СВЕДЕНИЕ -  Тонстудия киноконцерна Мосфильм  2015 — 2016 г.г.
-                         звукорежиссёр — Андрей Левин
-                       ассистент звукорежиссёра — Сергей Круглов
-                         мастеринг — Анатолий Рясин
+ЗАПИСЬ и СВЕДЕНИЕ -  Тонстудия киноконцерна Мосфильм  2015 — 2016 г.г.     звукорежиссёр — Андрей Левин     ассистент звукорежиссёра — Сергей Круглов     мастеринг — Анатолий Рясин
 
-                   За помощь и содействие огромное спасибо Сергею Адоньеву !!!</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+За помощь и содействие огромное спасибо Сергею Адоньеву !!!</string>
+                                            <attributes>
+                                                <font key="NSFont" size="14" name="ArialMT"/>
+                                                <real key="NSKern" value="0.0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="35.450000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="28">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="56">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="84">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="112">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="140">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="168">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="196">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="224">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="252">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="280">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="308">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="336">
+                                                            <options/>
+                                                        </textTab>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                                <color key="NSStrokeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="uyO-u2-YDA" firstAttribute="bottom" secondItem="72L-EG-C2F" secondAttribute="bottom" id="ACE-OO-Fm4"/>
-                                <constraint firstItem="LIC-FD-rRH" firstAttribute="leading" secondItem="B3C-93-khF" secondAttribute="leading" id="AIM-ll-WTV"/>
+                                <constraint firstAttribute="bottom" secondItem="XGf-12-iPn" secondAttribute="bottom" constant="20" id="BEU-T1-hhc"/>
                                 <constraint firstItem="uyO-u2-YDA" firstAttribute="centerX" secondItem="72L-EG-C2F" secondAttribute="centerX" id="Hgq-4O-LHG"/>
-                                <constraint firstAttribute="trailing" secondItem="LIC-FD-rRH" secondAttribute="trailing" id="Htf-Fm-lpo"/>
                                 <constraint firstAttribute="trailing" secondItem="72L-EG-C2F" secondAttribute="trailing" id="Jyp-WM-IJu"/>
                                 <constraint firstAttribute="trailing" secondItem="DY7-aB-7bG" secondAttribute="trailing" constant="10" id="NLH-yl-pBL"/>
+                                <constraint firstItem="XGf-12-iPn" firstAttribute="top" secondItem="72L-EG-C2F" secondAttribute="bottom" constant="20" id="ZUf-QM-EXH"/>
                                 <constraint firstItem="DY7-aB-7bG" firstAttribute="top" secondItem="B3C-93-khF" secondAttribute="top" constant="10" id="c7D-n3-uUg"/>
+                                <constraint firstAttribute="trailing" secondItem="XGf-12-iPn" secondAttribute="trailing" constant="15" id="h3g-OP-3Uw"/>
                                 <constraint firstItem="72L-EG-C2F" firstAttribute="leading" secondItem="B3C-93-khF" secondAttribute="leading" id="h3v-xe-6pu"/>
                                 <constraint firstItem="72L-EG-C2F" firstAttribute="top" secondItem="DY7-aB-7bG" secondAttribute="bottom" constant="20" id="hWS-8M-H1Q"/>
-                                <constraint firstAttribute="bottom" secondItem="LIC-FD-rRH" secondAttribute="bottom" constant="10" id="kcz-8s-r2E"/>
-                                <constraint firstItem="LIC-FD-rRH" firstAttribute="top" secondItem="72L-EG-C2F" secondAttribute="bottom" constant="10" id="nPq-Mu-HFk"/>
+                                <constraint firstItem="XGf-12-iPn" firstAttribute="leading" secondItem="B3C-93-khF" secondAttribute="leading" constant="15" id="k0s-jh-QH3"/>
                                 <constraint firstItem="DY7-aB-7bG" firstAttribute="leading" secondItem="B3C-93-khF" secondAttribute="leading" constant="10" id="x51-7Z-pOL"/>
                             </constraints>
                         </view>
