@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AMAlbumInfoVC">
+            <connections>
+                <outlet property="collectionView" destination="72L-EG-C2F" id="ijc-wL-VEN"/>
+                <outlet property="pageControl" destination="uyO-u2-YDA" id="RPc-7x-yeQ"/>
+                <outlet property="playerView" destination="DY7-aB-7bG" id="kED-Zg-eBf"/>
+                <outlet property="scrollView" destination="n3l-mn-d2n" id="GMg-6H-b33"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okY-Wd-yix" userLabel="NavBar">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlV-ZG-AHE">
+                            <rect key="frame" x="342" y="31" width="85" height="21"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="LSKey" value="LOC_TAB_BAR_ALBUM"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="KyX-Zr-Yh3"/>
+                        <constraint firstItem="NlV-ZG-AHE" firstAttribute="centerX" secondItem="okY-Wd-yix" secondAttribute="centerX" id="RfF-SL-d1Z"/>
+                        <constraint firstAttribute="bottom" secondItem="NlV-ZG-AHE" secondAttribute="bottom" constant="12" id="alS-ah-Ge0"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3l-mn-d2n">
+                    <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3C-93-khF" userLabel="ContentView">
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="1047"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DY7-aB-7bG" userLabel="PlayerView" customClass="YTPlayerView">
+                                    <rect key="frame" x="10" y="10" width="748" height="400"/>
+                                    <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="400" id="Stq-j3-NMq"/>
+                                    </constraints>
+                                </view>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="72L-EG-C2F">
+                                    <rect key="frame" x="0.0" y="430" width="768" height="400"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="400" id="K5G-YW-4bn"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qkh-p2-Jr5">
+                                        <size key="itemSize" width="50" height="50"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="fxV-yt-FHP"/>
+                                        <outlet property="delegate" destination="-1" id="BYC-cU-gPc"/>
+                                    </connections>
+                                </collectionView>
+                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="uyO-u2-YDA">
+                                    <rect key="frame" x="365" y="793" width="39" height="37"/>
+                                    <color key="currentPageIndicatorTintColor" red="0.98823529409999999" green="0.83529411760000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </pageControl>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XGf-12-iPn">
+                                    <rect key="frame" x="15" y="850" width="738" height="177"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <attributedString key="attributedText">
+                                        <fragment>
+                                            <string key="content">МУЗЫКА - «АукцЫон» и Леонид Фёдоров, кроме «МИР ТАЕТ» - Владимир Волков
+
+ТЕКСТЫ - Дмитрий Озерский
+
+ЗАПИСЬ и СВЕДЕНИЕ -  Тонстудия киноконцерна Мосфильм  2015 — 2016 г.г.     звукорежиссёр — Андрей Левин     ассистент звукорежиссёра — Сергей Круглов     мастеринг — Анатолий Рясин
+
+За помощь и содействие огромное спасибо Сергею Адоньеву !!!</string>
+                                            <attributes>
+                                                <font key="NSFont" size="14" name="ArialMT"/>
+                                                <real key="NSKern" value="0.0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="35.450000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                <color key="NSStrokeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="uyO-u2-YDA" firstAttribute="bottom" secondItem="72L-EG-C2F" secondAttribute="bottom" id="ACE-OO-Fm4"/>
+                                <constraint firstAttribute="bottom" secondItem="XGf-12-iPn" secondAttribute="bottom" constant="20" id="BEU-T1-hhc"/>
+                                <constraint firstItem="uyO-u2-YDA" firstAttribute="centerX" secondItem="72L-EG-C2F" secondAttribute="centerX" id="Hgq-4O-LHG"/>
+                                <constraint firstAttribute="trailing" secondItem="72L-EG-C2F" secondAttribute="trailing" id="Jyp-WM-IJu"/>
+                                <constraint firstAttribute="trailing" secondItem="DY7-aB-7bG" secondAttribute="trailing" constant="10" id="NLH-yl-pBL"/>
+                                <constraint firstItem="XGf-12-iPn" firstAttribute="top" secondItem="72L-EG-C2F" secondAttribute="bottom" constant="20" id="ZUf-QM-EXH"/>
+                                <constraint firstItem="DY7-aB-7bG" firstAttribute="top" secondItem="B3C-93-khF" secondAttribute="top" constant="10" id="c7D-n3-uUg"/>
+                                <constraint firstAttribute="trailing" secondItem="XGf-12-iPn" secondAttribute="trailing" constant="15" id="h3g-OP-3Uw"/>
+                                <constraint firstItem="72L-EG-C2F" firstAttribute="leading" secondItem="B3C-93-khF" secondAttribute="leading" id="h3v-xe-6pu"/>
+                                <constraint firstItem="72L-EG-C2F" firstAttribute="top" secondItem="DY7-aB-7bG" secondAttribute="bottom" constant="20" id="hWS-8M-H1Q"/>
+                                <constraint firstItem="XGf-12-iPn" firstAttribute="leading" secondItem="B3C-93-khF" secondAttribute="leading" constant="15" id="k0s-jh-QH3"/>
+                                <constraint firstItem="DY7-aB-7bG" firstAttribute="leading" secondItem="B3C-93-khF" secondAttribute="leading" constant="10" id="x51-7Z-pOL"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="B3C-93-khF" firstAttribute="width" secondItem="n3l-mn-d2n" secondAttribute="width" id="BJf-0M-uZR"/>
+                        <constraint firstItem="B3C-93-khF" firstAttribute="top" secondItem="n3l-mn-d2n" secondAttribute="top" id="Cm4-kc-kE8"/>
+                        <constraint firstItem="B3C-93-khF" firstAttribute="leading" secondItem="n3l-mn-d2n" secondAttribute="leading" id="DaL-ME-OB9"/>
+                        <constraint firstAttribute="bottom" secondItem="B3C-93-khF" secondAttribute="bottom" id="caR-w6-7rp"/>
+                        <constraint firstAttribute="trailing" secondItem="B3C-93-khF" secondAttribute="trailing" id="vaw-3s-sDV"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="n3l-mn-d2n" secondAttribute="bottom" id="17S-Tj-iGf"/>
+                <constraint firstItem="n3l-mn-d2n" firstAttribute="top" secondItem="okY-Wd-yix" secondAttribute="bottom" id="8wz-BX-BgR"/>
+                <constraint firstAttribute="trailing" secondItem="n3l-mn-d2n" secondAttribute="trailing" id="GYe-Nr-ZXh"/>
+                <constraint firstItem="n3l-mn-d2n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Vck-I1-y5u"/>
+                <constraint firstAttribute="trailing" secondItem="okY-Wd-yix" secondAttribute="trailing" id="cwP-Uk-w3h"/>
+                <constraint firstItem="okY-Wd-yix" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="q1K-TA-I20"/>
+                <constraint firstItem="okY-Wd-yix" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qZn-Ku-5GV"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+        </view>
+    </objects>
+</document>
