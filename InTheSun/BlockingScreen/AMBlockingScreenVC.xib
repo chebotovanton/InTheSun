@@ -10,7 +10,6 @@
                 <outlet property="actionLabel" destination="RbU-e1-oap" id="Xhd-aO-wVi"/>
                 <outlet property="albumNameView" destination="mDc-gw-l3Z" id="AhY-dL-Jv3"/>
                 <outlet property="circleAlbumName" destination="jyk-dx-soB" id="cGZ-Jc-H8t"/>
-                <outlet property="debugLabel" destination="10g-IS-Kfr" id="cQR-Em-9lo"/>
                 <outlet property="descriptionLabel" destination="IRr-5t-1Rg" id="Oqp-D8-qnV"/>
                 <outlet property="goToAlbumButton" destination="Lw2-fb-v0c" id="FAu-hj-idl"/>
                 <outlet property="groupNameView" destination="gGb-WW-0XV" id="xnQ-AN-FvT"/>
@@ -47,12 +46,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteCircle" translatesAutoresizingMaskIntoConstraints="NO" id="7Bz-af-ruX" userLabel="WhiteCircle">
                     <rect key="frame" x="11" y="139" width="298" height="290"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10g-IS-Kfr">
-                    <rect key="frame" x="8" y="8" width="59" height="29"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="albumName" translatesAutoresizingMaskIntoConstraints="NO" id="mDc-gw-l3Z">
                     <rect key="frame" x="20" y="58" width="280" height="61"/>
                 </imageView>
@@ -84,11 +77,9 @@
                 <constraint firstItem="jyk-dx-soB" firstAttribute="trailing" secondItem="Ifq-M1-uk3" secondAttribute="trailing" constant="-30" id="KsB-Y4-bpt"/>
                 <constraint firstItem="mDc-gw-l3Z" firstAttribute="top" secondItem="IRr-5t-1Rg" secondAttribute="bottom" constant="10" id="Ku4-CG-cL5"/>
                 <constraint firstItem="mDc-gw-l3Z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ldb-Q7-j33"/>
-                <constraint firstItem="10g-IS-Kfr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="O4u-lH-XfK"/>
                 <constraint firstItem="jyk-dx-soB" firstAttribute="centerX" secondItem="Ifq-M1-uk3" secondAttribute="centerX" id="cDC-zE-xZh"/>
                 <constraint firstItem="gGb-WW-0XV" firstAttribute="top" secondItem="RbU-e1-oap" secondAttribute="bottom" constant="10" id="chQ-IL-zGG"/>
                 <constraint firstItem="Ifq-M1-uk3" firstAttribute="centerX" secondItem="7Bz-af-ruX" secondAttribute="centerX" id="cho-kp-kJJ"/>
-                <constraint firstItem="10g-IS-Kfr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="fvO-id-6o7"/>
                 <constraint firstItem="Lw2-fb-v0c" firstAttribute="top" secondItem="7Bz-af-ruX" secondAttribute="bottom" constant="35" id="gEZ-kH-4cm"/>
                 <constraint firstItem="jyk-dx-soB" firstAttribute="leading" secondItem="Ifq-M1-uk3" secondAttribute="leading" constant="30" id="kkX-LM-kbh"/>
                 <constraint firstItem="7Bz-af-ruX" firstAttribute="top" secondItem="mDc-gw-l3Z" secondAttribute="bottom" constant="20" id="ri6-W5-y5c"/>

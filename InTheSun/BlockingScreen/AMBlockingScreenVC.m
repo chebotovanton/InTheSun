@@ -20,7 +20,6 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
 @property (nonatomic, weak) IBOutlet UILabel *actionLabel;
-@property (nonatomic, weak) IBOutlet UILabel *debugLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *albumNameView;
 @property (nonatomic, weak) IBOutlet UIImageView *groupNameView;
 @property (nonatomic, weak) IBOutlet UIImageView *circleAlbumName;
@@ -31,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.luminanceLimit = 10000;
+    self.luminanceLimit = 30000;
     [self updateCirclesWithAlpha:0.0];
     [self switchToInitialState];
 }
@@ -234,7 +233,6 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         dispatch_async(dispatch_get_main_queue(), ^{
             CGFloat alpha = self.luminanceSum/self.luminanceLimit;
             [self updateCirclesWithAlpha:alpha];
-            self.debugLabel.text = [NSString stringWithFormat:@"Liminance: %.f", self.luminanceSum];
             if (self.luminanceSum > self.luminanceLimit) {
                 self.shouldCheckLuminance = NO;
                 [self switchToPlayState];
