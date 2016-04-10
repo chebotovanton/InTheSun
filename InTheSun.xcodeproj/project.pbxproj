@@ -119,7 +119,6 @@
 		9FEFE0541CA69D3D00F413B1 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 		9FEFE08B1CA98DC000F413B1 /* UIView+IBInspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+IBInspectable.h"; sourceTree = "<group>"; };
 		9FEFE08C1CA98DC000F413B1 /* UIView+IBInspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IBInspectable.m"; sourceTree = "<group>"; };
-		9FEFE0911CA98F9C00F413B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9FEFE0931CA98FB300F413B1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9FEFE0941CA990A900F413B1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9FEFE0951CA9947500F413B1 /* AMEventsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMEventsHeader.h; sourceTree = "<group>"; };
@@ -422,7 +421,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 				ru,
 			);
@@ -569,7 +567,6 @@
 		9FEFE0921CA98F9C00F413B1 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9FEFE0911CA98F9C00F413B1 /* en */,
 				9FEFE0931CA98FB300F413B1 /* ru */,
 			);
 			name = Localizable.strings;
