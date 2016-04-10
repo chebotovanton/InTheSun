@@ -47,8 +47,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTD-wS-aka" userLabel="HeaderView">
                     <rect key="frame" x="0.0" y="64" width="768" height="350"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="musicAlbumIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XCd-tQ-fM8">
-                            <rect key="frame" x="15" y="96" width="164" height="160"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicAlbumIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XCd-tQ-fM8">
+                            <rect key="frame" x="15" y="95" width="164" height="160"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="128" id="DTo-RO-gas"/>
                                 <constraint firstAttribute="width" constant="128" id="Yhr-QJ-Nby"/>
@@ -60,8 +60,8 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGz-Ve-RMU" userLabel="ButtonsView">
-                            <rect key="frame" x="187" y="96" width="558" height="160"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGz-Ve-RMU" userLabel="ButtonsView">
+                            <rect key="frame" x="187" y="95" width="558" height="160"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmR-ww-Mmq">
                                     <rect key="frame" x="194" y="104" width="60" height="62"/>
@@ -94,6 +94,16 @@
                                     <color key="textColor" red="0.81176470590000005" green="0.77647058820000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLm-Ie-HbD">
+                                    <rect key="frame" x="206.5" y="21" width="145" height="40"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="Купить альбом" backgroundImage="buyButton">
+                                        <color key="titleColor" red="0.43137254899999999" green="0.2901960784" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="buyAlbum" destination="-1" eventType="touchUpInside" id="bAm-7m-NWj"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -104,6 +114,8 @@
                                 <constraint firstAttribute="bottom" secondItem="2Jz-0e-CbZ" secondAttribute="bottom" id="QNt-tQ-2GU"/>
                                 <constraint firstAttribute="bottom" secondItem="JTj-Fc-df9" secondAttribute="bottom" id="U9Q-4U-3q1"/>
                                 <constraint firstItem="NAU-ZC-xim" firstAttribute="centerX" secondItem="JTj-Fc-df9" secondAttribute="centerX" id="fRY-J1-7Jz"/>
+                                <constraint firstItem="zLm-Ie-HbD" firstAttribute="centerX" secondItem="NAU-ZC-xim" secondAttribute="centerX" id="gKJ-FB-ZYJ"/>
+                                <constraint firstItem="NAU-ZC-xim" firstAttribute="top" secondItem="zLm-Ie-HbD" secondAttribute="bottom" constant="8" id="i3n-JJ-aLE"/>
                                 <constraint firstItem="JTj-Fc-df9" firstAttribute="leading" secondItem="nmR-ww-Mmq" secondAttribute="trailing" id="jYf-6P-pKf"/>
                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NAU-ZC-xim" secondAttribute="trailing" id="kko-wh-QGS"/>
                                 <constraint firstItem="JTj-Fc-df9" firstAttribute="top" secondItem="NAU-ZC-xim" secondAttribute="bottom" constant="20" id="lU0-1g-wqE"/>
@@ -162,6 +174,7 @@
     <resources>
         <image name="backPlayerIcon" width="20" height="17"/>
         <image name="bg" width="375" height="667"/>
+        <image name="buyButton" width="145" height="40"/>
         <image name="musicAlbumIcon" width="164" height="160"/>
         <image name="nextPlayerIcon" width="20" height="17"/>
         <image name="pausePlayerIcon" width="50" height="50"/>
