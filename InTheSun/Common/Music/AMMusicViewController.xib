@@ -48,7 +48,7 @@
                     <rect key="frame" x="0.0" y="64" width="320" height="193"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicAlbumIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XCd-tQ-fM8">
-                            <rect key="frame" x="15" y="17" width="164" height="160"/>
+                            <rect key="frame" x="15" y="17" width="162" height="160"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="128" id="DTo-RO-gas"/>
                                 <constraint firstAttribute="width" constant="128" id="Yhr-QJ-Nby"/>
@@ -61,74 +61,91 @@
                             </variation>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGz-Ve-RMU" userLabel="ButtonsView">
-                            <rect key="frame" x="187" y="17" width="110" height="160"/>
+                            <rect key="frame" x="185" y="17" width="112" height="160"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmR-ww-Mmq">
-                                    <rect key="frame" x="-30" y="104" width="60" height="62"/>
-                                    <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
-                                    <inset key="imageEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
-                                    <state key="normal" image="backPlayerIcon"/>
-                                    <connections>
-                                        <action selector="previous" destination="-1" eventType="touchUpInside" id="zxW-BV-c6J"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTj-Fc-df9">
-                                    <rect key="frame" x="30" y="110" width="50" height="50"/>
+                                    <rect key="frame" x="31.5" y="110" width="50" height="50"/>
                                     <state key="normal" image="playPlayerIcon"/>
                                     <state key="selected" image="pausePlayerIcon"/>
                                     <connections>
                                         <action selector="togglePlay" destination="-2" eventType="touchUpInside" id="l3U-eZ-ate"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jz-0e-CbZ">
-                                    <rect key="frame" x="80" y="104" width="60" height="62"/>
-                                    <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
-                                    <state key="normal" image="nextPlayerIcon"/>
-                                    <connections>
-                                        <action selector="next" destination="-1" eventType="touchUpInside" id="BWR-Pt-kwY"/>
-                                    </connections>
-                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Карандаши и палочки" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAU-ZC-xim">
-                                    <rect key="frame" x="0.0" y="49" width="110" height="41"/>
+                                    <rect key="frame" x="1.5" y="49" width="110.5" height="41"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.81176470590000005" green="0.77647058820000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZQ-DA-GhQ">
-                                    <rect key="frame" x="-18" y="-2" width="145" height="40"/>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZQ-DA-GhQ">
+                                    <rect key="frame" x="0.0" y="-2" width="112" height="40"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <state key="normal" title="Купить" backgroundImage="buyButton">
                                         <color key="titleColor" red="0.43137254901960786" green="0.29019607843137252" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="buyAlbum" destination="-1" eventType="touchUpInside" id="wpy-fG-X5f"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="JTj-Fc-df9" firstAttribute="centerX" secondItem="lGz-Ve-RMU" secondAttribute="centerX" id="1ds-xN-31w"/>
                                 <constraint firstItem="NAU-ZC-xim" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lGz-Ve-RMU" secondAttribute="leading" id="2mk-F1-fcC"/>
+                                <constraint firstItem="YZQ-DA-GhQ" firstAttribute="leading" secondItem="lGz-Ve-RMU" secondAttribute="leading" id="4y6-8f-JCf"/>
                                 <constraint firstItem="NAU-ZC-xim" firstAttribute="top" secondItem="YZQ-DA-GhQ" secondAttribute="bottom" constant="11" id="KxV-E3-Dh0"/>
-                                <constraint firstItem="nmR-ww-Mmq" firstAttribute="centerY" secondItem="JTj-Fc-df9" secondAttribute="centerY" id="MBe-Vl-oMj"/>
                                 <constraint firstAttribute="bottom" secondItem="JTj-Fc-df9" secondAttribute="bottom" id="U9Q-4U-3q1"/>
+                                <constraint firstAttribute="trailing" secondItem="YZQ-DA-GhQ" secondAttribute="trailing" id="bdu-mm-YMi"/>
                                 <constraint firstItem="YZQ-DA-GhQ" firstAttribute="centerX" secondItem="JTj-Fc-df9" secondAttribute="centerX" id="cII-Q6-yuG"/>
                                 <constraint firstItem="NAU-ZC-xim" firstAttribute="centerX" secondItem="JTj-Fc-df9" secondAttribute="centerX" id="fRY-J1-7Jz"/>
-                                <constraint firstItem="JTj-Fc-df9" firstAttribute="leading" secondItem="nmR-ww-Mmq" secondAttribute="trailing" id="jYf-6P-pKf"/>
                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NAU-ZC-xim" secondAttribute="trailing" id="kko-wh-QGS"/>
                                 <constraint firstItem="JTj-Fc-df9" firstAttribute="top" secondItem="NAU-ZC-xim" secondAttribute="bottom" constant="20" id="lU0-1g-wqE"/>
-                                <constraint firstItem="2Jz-0e-CbZ" firstAttribute="centerY" secondItem="JTj-Fc-df9" secondAttribute="centerY" id="n50-eA-9qJ"/>
-                                <constraint firstItem="2Jz-0e-CbZ" firstAttribute="leading" secondItem="JTj-Fc-df9" secondAttribute="trailing" id="wI6-kd-SWI"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="KxV-E3-Dh0"/>
+                                </mask>
+                            </variation>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmR-ww-Mmq">
+                            <rect key="frame" x="156.5" y="121" width="60" height="62"/>
+                            <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                            <inset key="imageEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                            <state key="normal" image="backPlayerIcon"/>
+                            <connections>
+                                <action selector="previous" destination="-1" eventType="touchUpInside" id="zxW-BV-c6J"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jz-0e-CbZ">
+                            <rect key="frame" x="266.5" y="121" width="60" height="62"/>
+                            <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                            <state key="normal" image="nextPlayerIcon"/>
+                            <connections>
+                                <action selector="next" destination="-1" eventType="touchUpInside" id="BWR-Pt-kwY"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="2Jz-0e-CbZ" firstAttribute="leading" secondItem="JTj-Fc-df9" secondAttribute="trailing" id="1WB-YW-PM1"/>
                         <constraint firstAttribute="trailing" secondItem="lGz-Ve-RMU" secondAttribute="trailing" constant="23" id="57R-5E-0dD"/>
                         <constraint firstItem="lGz-Ve-RMU" firstAttribute="bottom" secondItem="XCd-tQ-fM8" secondAttribute="bottom" id="Ab0-fv-Ysr"/>
+                        <constraint firstItem="YZQ-DA-GhQ" firstAttribute="top" secondItem="LTD-wS-aka" secondAttribute="top" constant="15" id="Nj9-HB-KIM"/>
+                        <constraint firstItem="2Jz-0e-CbZ" firstAttribute="centerY" secondItem="JTj-Fc-df9" secondAttribute="centerY" id="Rzb-SJ-ucY"/>
+                        <constraint firstItem="JTj-Fc-df9" firstAttribute="leading" secondItem="nmR-ww-Mmq" secondAttribute="trailing" id="WSy-7I-lf1"/>
                         <constraint firstItem="XCd-tQ-fM8" firstAttribute="leading" secondItem="LTD-wS-aka" secondAttribute="leading" constant="15" id="cg3-29-T8J"/>
                         <constraint firstItem="XCd-tQ-fM8" firstAttribute="centerY" secondItem="LTD-wS-aka" secondAttribute="centerY" id="ijf-jG-Eke"/>
+                        <constraint firstItem="nmR-ww-Mmq" firstAttribute="centerY" secondItem="JTj-Fc-df9" secondAttribute="centerY" id="lXg-Du-jqQ"/>
                         <constraint firstItem="lGz-Ve-RMU" firstAttribute="leading" secondItem="XCd-tQ-fM8" secondAttribute="trailing" constant="8" id="pBA-7l-e5F"/>
                         <constraint firstItem="lGz-Ve-RMU" firstAttribute="top" secondItem="XCd-tQ-fM8" secondAttribute="top" id="q6R-T9-VcF"/>
+                        <constraint firstItem="nmR-ww-Mmq" firstAttribute="bottom" secondItem="lGz-Ve-RMU" secondAttribute="bottom" id="w1t-0f-7e7"/>
                         <constraint firstAttribute="height" constant="193" id="wT2-mh-ej4"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="w1t-0f-7e7"/>
+                        </mask>
+                    </variation>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ivd-uV-bdV">
                     <rect key="frame" x="0.0" y="257" width="320" height="223"/>
@@ -166,6 +183,7 @@
                     <exclude reference="L5d-Zr-1D8"/>
                 </mask>
             </variation>
+            <point key="canvasLocation" x="166" y="304"/>
         </view>
     </objects>
     <resources>
