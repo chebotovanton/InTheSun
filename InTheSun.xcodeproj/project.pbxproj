@@ -30,11 +30,6 @@
 		9FADBD001C66141C00562B13 /* AMBlockingScreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FADBCFE1C66141C00562B13 /* AMBlockingScreenVC.xib */; };
 		9FADBD061C66435000562B13 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FADBD051C66435000562B13 /* MediaPlayer.framework */; };
 		9FADBD0A1C67B07E00562B13 /* AMImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADBD091C67B07E00562B13 /* AMImageProcessor.m */; };
-		9FBEFA9B1C69011100821123 /* AMImageProcessorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEFA9A1C69011100821123 /* AMImageProcessorTests.m */; };
-		9FBEFAA11C6901F000821123 /* dark1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFA9D1C6901F000821123 /* dark1.jpeg */; };
-		9FBEFAA21C6901F000821123 /* dark2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFA9E1C6901F000821123 /* dark2.jpeg */; };
-		9FBEFAA31C6901F000821123 /* sunny1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFA9F1C6901F000821123 /* sunny1.jpeg */; };
-		9FBEFAA41C6901F000821123 /* sunny2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBEFAA01C6901F000821123 /* sunny2.jpeg */; };
 		9FCE57DC1C98991D0080DC9B /* AMMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE57DA1C98991D0080DC9B /* AMMusicViewController.swift */; };
 		9FCE57DD1C98991D0080DC9B /* AMMusicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCE57DB1C98991D0080DC9B /* AMMusicViewController.xib */; };
 		9FD4F62A1C81CF39004A0734 /* AMTabMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD4F6281C81CF39004A0734 /* AMTabMenuVC.m */; };
@@ -48,9 +43,6 @@
 		9FEEC4AC1CBA545000613361 /* AMMusicFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FEEC4AB1CBA545000613361 /* AMMusicFooterView.xib */; };
 		9FEEC4AE1CBA71D400613361 /* AMAlbumInfoVC~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FEEC4AD1CBA71D400613361 /* AMAlbumInfoVC~ipad.xib */; };
 		9FEFE0551CA69D3D00F413B1 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FEFE0541CA69D3D00F413B1 /* overlay.png */; };
-		9FEFE07F1CA6FAE000F413B1 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE07C1CA6FAE000F413B1 /* OpenCVWrapper.mm */; };
-		9FEFE0801CA6FAE000F413B1 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE07E1CA6FAE000F413B1 /* UIImage+OpenCV.mm */; };
-		9FEFE0821CA85DFB00F413B1 /* sunny3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEFE0811CA85DFB00F413B1 /* sunny3.jpeg */; };
 		9FEFE08D1CA98DC000F413B1 /* UIView+IBInspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE08C1CA98DC000F413B1 /* UIView+IBInspectable.m */; };
 		9FEFE0901CA98F9C00F413B1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9FEFE0921CA98F9C00F413B1 /* Localizable.strings */; };
 		9FEFE0971CA9947500F413B1 /* AMEventsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE0961CA9947500F413B1 /* AMEventsHeader.m */; };
@@ -107,11 +99,6 @@
 		9FADBD051C66435000562B13 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		9FADBD081C67B07E00562B13 /* AMImageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMImageProcessor.h; sourceTree = "<group>"; };
 		9FADBD091C67B07E00562B13 /* AMImageProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMImageProcessor.m; sourceTree = "<group>"; };
-		9FBEFA9A1C69011100821123 /* AMImageProcessorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMImageProcessorTests.m; sourceTree = "<group>"; };
-		9FBEFA9D1C6901F000821123 /* dark1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dark1.jpeg; sourceTree = "<group>"; };
-		9FBEFA9E1C6901F000821123 /* dark2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dark2.jpeg; sourceTree = "<group>"; };
-		9FBEFA9F1C6901F000821123 /* sunny1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny1.jpeg; sourceTree = "<group>"; };
-		9FBEFAA01C6901F000821123 /* sunny2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny2.jpeg; sourceTree = "<group>"; };
 		9FCE57DA1C98991D0080DC9B /* AMMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMMusicViewController.swift; sourceTree = "<group>"; };
 		9FCE57DB1C98991D0080DC9B /* AMMusicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMMusicViewController.xib; sourceTree = "<group>"; };
 		9FD4F6271C81CF39004A0734 /* AMTabMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMTabMenuVC.h; sourceTree = "<group>"; };
@@ -130,11 +117,6 @@
 		9FEEC4AB1CBA545000613361 /* AMMusicFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMMusicFooterView.xib; sourceTree = "<group>"; };
 		9FEEC4AD1CBA71D400613361 /* AMAlbumInfoVC~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AMAlbumInfoVC~ipad.xib"; sourceTree = "<group>"; };
 		9FEFE0541CA69D3D00F413B1 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
-		9FEFE07B1CA6FAE000F413B1 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
-		9FEFE07C1CA6FAE000F413B1 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
-		9FEFE07D1CA6FAE000F413B1 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
-		9FEFE07E1CA6FAE000F413B1 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
-		9FEFE0811CA85DFB00F413B1 /* sunny3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunny3.jpeg; sourceTree = "<group>"; };
 		9FEFE08B1CA98DC000F413B1 /* UIView+IBInspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+IBInspectable.h"; sourceTree = "<group>"; };
 		9FEFE08C1CA98DC000F413B1 /* UIView+IBInspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IBInspectable.m"; sourceTree = "<group>"; };
 		9FEFE0911CA98F9C00F413B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -316,9 +298,7 @@
 		9FADBCEF1C65FBDC00562B13 /* InTheSunTests */ = {
 			isa = PBXGroup;
 			children = (
-				9FBEFA9C1C69016F00821123 /* TestImages */,
 				9FADBCF21C65FBDC00562B13 /* Info.plist */,
-				9FBEFA9A1C69011100821123 /* AMImageProcessorTests.m */,
 			);
 			path = InTheSunTests;
 			sourceTree = "<group>";
@@ -336,26 +316,10 @@
 		9FADBD071C67B04C00562B13 /* ImageProcessor */ = {
 			isa = PBXGroup;
 			children = (
-				9FEFE07B1CA6FAE000F413B1 /* OpenCVWrapper.h */,
-				9FEFE07C1CA6FAE000F413B1 /* OpenCVWrapper.mm */,
-				9FEFE07D1CA6FAE000F413B1 /* UIImage+OpenCV.h */,
-				9FEFE07E1CA6FAE000F413B1 /* UIImage+OpenCV.mm */,
 				9FADBD081C67B07E00562B13 /* AMImageProcessor.h */,
 				9FADBD091C67B07E00562B13 /* AMImageProcessor.m */,
 			);
 			path = ImageProcessor;
-			sourceTree = "<group>";
-		};
-		9FBEFA9C1C69016F00821123 /* TestImages */ = {
-			isa = PBXGroup;
-			children = (
-				9FBEFA9D1C6901F000821123 /* dark1.jpeg */,
-				9FBEFA9E1C6901F000821123 /* dark2.jpeg */,
-				9FBEFA9F1C6901F000821123 /* sunny1.jpeg */,
-				9FBEFAA01C6901F000821123 /* sunny2.jpeg */,
-				9FEFE0811CA85DFB00F413B1 /* sunny3.jpeg */,
-			);
-			path = TestImages;
 			sourceTree = "<group>";
 		};
 		9FEFE04F1CA69D1A00F413B1 /* Resources */ = {
@@ -501,11 +465,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FEFE0821CA85DFB00F413B1 /* sunny3.jpeg in Resources */,
-				9FBEFAA41C6901F000821123 /* sunny2.jpeg in Resources */,
-				9FBEFAA21C6901F000821123 /* dark2.jpeg in Resources */,
-				9FBEFAA11C6901F000821123 /* dark1.jpeg in Resources */,
-				9FBEFAA31C6901F000821123 /* sunny1.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,7 +529,6 @@
 				9FADBCFF1C66141C00562B13 /* AMBlockingScreenVC.m in Sources */,
 				9FEEC4A71CB6CA4700613361 /* AMAlbumInfoItemsManager.m in Sources */,
 				9F041A221C8C8F280092CBAC /* EventsVC.m in Sources */,
-				9FEFE07F1CA6FAE000F413B1 /* OpenCVWrapper.mm in Sources */,
 				9FEEC4AA1CBA50BA00613361 /* AMMusicFooterView.m in Sources */,
 				9F8454F41C95C5BC00AA7B90 /* AMStringUtils.m in Sources */,
 				9FEFE08D1CA98DC000F413B1 /* UIView+IBInspectable.m in Sources */,
@@ -584,7 +542,6 @@
 				9FEFE0971CA9947500F413B1 /* AMEventsHeader.m in Sources */,
 				9F1DED801CB00C8F0051A63F /* Defines.m in Sources */,
 				9F81E05C1C8B08D6003FA920 /* SoundCloudFacade.swift in Sources */,
-				9FEFE0801CA6FAE000F413B1 /* UIImage+OpenCV.mm in Sources */,
 				9FD4F62A1C81CF39004A0734 /* AMTabMenuVC.m in Sources */,
 				9F4BD2801C944D13009E5DCC /* AMEventCell.m in Sources */,
 				9FADBCD51C65FBDC00562B13 /* main.m in Sources */,
@@ -595,7 +552,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FBEFA9B1C69011100821123 /* AMImageProcessorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
