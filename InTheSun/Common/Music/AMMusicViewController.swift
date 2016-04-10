@@ -6,6 +6,7 @@ import MediaPlayer
 class AMMusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SoundCloudDelegate, AMMusicFooterViewDelegate {
 
     private let kSongCellIdentifier = "AMSongCell"
+    private let itunesAlbumUrl = "https://itun.es/ru/A8uW1"
     
     var player: AVPlayer = AVPlayer()
     var playlist: Playlist?
@@ -164,8 +165,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func buyAlbum() {
-        let urlString = "https://itun.es/ru/A8uW1"
-        let url = NSURL(string: urlString)
+        let url = NSURL(string: itunesAlbumUrl)
         UIApplication.sharedApplication().openURL(url!)
     }
     
@@ -255,7 +255,8 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     //MARK: - AMMusicFooterViewDelegate
     
     func share(sender: UIButton!) {
-        let shareController = UIActivityViewController(activityItems: ["test"], applicationActivities: nil)
+        let url = NSURL(string: itunesAlbumUrl)
+        let shareController = UIActivityViewController(activityItems: ["Новый альбом группы АукцЫон", url!], applicationActivities: nil)
         shareController.popoverPresentationController?.sourceView = sender
         self.presentViewController(shareController, animated: true, completion:nil)
     }
