@@ -46,6 +46,7 @@
 		9FEEC4A71CB6CA4700613361 /* AMAlbumInfoItemsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEC4A61CB6CA4700613361 /* AMAlbumInfoItemsManager.m */; };
 		9FEEC4AA1CBA50BA00613361 /* AMMusicFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEC4A91CBA50BA00613361 /* AMMusicFooterView.m */; };
 		9FEEC4AC1CBA545000613361 /* AMMusicFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FEEC4AB1CBA545000613361 /* AMMusicFooterView.xib */; };
+		9FEEC4AE1CBA71D400613361 /* AMAlbumInfoVC~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FEEC4AD1CBA71D400613361 /* AMAlbumInfoVC~ipad.xib */; };
 		9FEFE0551CA69D3D00F413B1 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FEFE0541CA69D3D00F413B1 /* overlay.png */; };
 		9FEFE07F1CA6FAE000F413B1 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE07C1CA6FAE000F413B1 /* OpenCVWrapper.mm */; };
 		9FEFE0801CA6FAE000F413B1 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE07E1CA6FAE000F413B1 /* UIImage+OpenCV.mm */; };
@@ -127,6 +128,7 @@
 		9FEEC4A81CBA50BA00613361 /* AMMusicFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMMusicFooterView.h; sourceTree = "<group>"; };
 		9FEEC4A91CBA50BA00613361 /* AMMusicFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMMusicFooterView.m; sourceTree = "<group>"; };
 		9FEEC4AB1CBA545000613361 /* AMMusicFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMMusicFooterView.xib; sourceTree = "<group>"; };
+		9FEEC4AD1CBA71D400613361 /* AMAlbumInfoVC~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AMAlbumInfoVC~ipad.xib"; sourceTree = "<group>"; };
 		9FEFE0541CA69D3D00F413B1 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 		9FEFE07B1CA6FAE000F413B1 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		9FEFE07C1CA6FAE000F413B1 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				9F041A191C8C8C580092CBAC /* AMAlbumInfoVC.h */,
 				9F041A1A1C8C8C580092CBAC /* AMAlbumInfoVC.m */,
 				9F041A1B1C8C8C580092CBAC /* AMAlbumInfoVC.xib */,
+				9FEEC4AD1CBA71D400613361 /* AMAlbumInfoVC~ipad.xib */,
 				9FEEC4991CB58EBD00613361 /* AMInfoItemCell.h */,
 				9FEEC49A1CB58EBD00613361 /* AMInfoItemCell.m */,
 				9FEEC49B1CB58EBD00613361 /* AMInfoItemCell.xib */,
@@ -482,6 +485,7 @@
 				9FEEC49D1CB58EBD00613361 /* AMInfoItemCell.xib in Resources */,
 				9FD4F62F1C81EED8004A0734 /* SecondViewController.xib in Resources */,
 				9FCE57DD1C98991D0080DC9B /* AMMusicViewController.xib in Resources */,
+				9FEEC4AE1CBA71D400613361 /* AMAlbumInfoVC~ipad.xib in Resources */,
 				9F4BD2811C944D13009E5DCC /* AMEventCell.xib in Resources */,
 				9F041A231C8C8F280092CBAC /* EventsVC.xib in Resources */,
 				9F8454F91C95C94C00AA7B90 /* AMSongCell.xib in Resources */,
