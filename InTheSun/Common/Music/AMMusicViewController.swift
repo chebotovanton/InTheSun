@@ -3,7 +3,7 @@ import Soundcloud
 import AVFoundation
 import MediaPlayer
 
-class AMMusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SoundCloudDelegate {
+class AMMusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SoundCloudDelegate, AMMusicFooterViewDelegate {
 
     private let kSongCellIdentifier = "AMSongCell"
     
@@ -27,9 +27,12 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         self.setupButtonsAndTitlesState()
         self.contentTableView.registerNib(UINib(nibName: self.kSongCellIdentifier, bundle: nil), forCellReuseIdentifier: self.kSongCellIdentifier)
         
-        let footer = UIView()
-        footer.frame = CGRectMake(0, 0, 10, 50.0)
-        self.contentTableView.tableFooterView = footer
+        let footer = NSBundle.mainBundle().loadNibNamed("AMMusicFooterView", owner: nil, options: nil).first as! AMMusicFooterView
+        footer.delegate = self
+        footer.autoresizingMask = .None;
+        self.contentTableView.tableFooterView = footer;
+        
+        self.contentTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 50.0, 0.0);
         
         self.soundcloudFacade = SoundCloudFacade()
         self.soundcloudFacade.delegate = self;
@@ -247,6 +250,13 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
                     break
             }
         }
+    }
+    
+    //MARK: - AMMusicFooterViewDelegate
+    
+    func share() {
+        let shareController = UIActivityViewController(activityItems: ["test"], applicationActivities: nil)
+        self.presentViewController(shareController, animated: true, completion:nil)
     }
     
 }

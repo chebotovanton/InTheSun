@@ -44,6 +44,8 @@
 		9FEEC49D1CB58EBD00613361 /* AMInfoItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FEEC49B1CB58EBD00613361 /* AMInfoItemCell.xib */; };
 		9FEEC4A01CB59E0C00613361 /* AMAlbumInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEC49F1CB59E0C00613361 /* AMAlbumInfoItem.m */; };
 		9FEEC4A71CB6CA4700613361 /* AMAlbumInfoItemsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEC4A61CB6CA4700613361 /* AMAlbumInfoItemsManager.m */; };
+		9FEEC4AA1CBA50BA00613361 /* AMMusicFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEC4A91CBA50BA00613361 /* AMMusicFooterView.m */; };
+		9FEEC4AC1CBA545000613361 /* AMMusicFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FEEC4AB1CBA545000613361 /* AMMusicFooterView.xib */; };
 		9FEFE0551CA69D3D00F413B1 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FEFE0541CA69D3D00F413B1 /* overlay.png */; };
 		9FEFE07F1CA6FAE000F413B1 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE07C1CA6FAE000F413B1 /* OpenCVWrapper.mm */; };
 		9FEFE0801CA6FAE000F413B1 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9FEFE07E1CA6FAE000F413B1 /* UIImage+OpenCV.mm */; };
@@ -122,6 +124,9 @@
 		9FEEC49F1CB59E0C00613361 /* AMAlbumInfoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMAlbumInfoItem.m; sourceTree = "<group>"; };
 		9FEEC4A51CB6CA4700613361 /* AMAlbumInfoItemsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMAlbumInfoItemsManager.h; sourceTree = "<group>"; };
 		9FEEC4A61CB6CA4700613361 /* AMAlbumInfoItemsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMAlbumInfoItemsManager.m; sourceTree = "<group>"; };
+		9FEEC4A81CBA50BA00613361 /* AMMusicFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMMusicFooterView.h; sourceTree = "<group>"; };
+		9FEEC4A91CBA50BA00613361 /* AMMusicFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMMusicFooterView.m; sourceTree = "<group>"; };
+		9FEEC4AB1CBA545000613361 /* AMMusicFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMMusicFooterView.xib; sourceTree = "<group>"; };
 		9FEFE0541CA69D3D00F413B1 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 		9FEFE07B1CA6FAE000F413B1 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		9FEFE07C1CA6FAE000F413B1 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
@@ -242,6 +247,9 @@
 				9F2DCBDD1CB159DC00F70799 /* AMMusicViewController~ipad.xib */,
 				9F8454F61C95C94C00AA7B90 /* AMSongCell.swift */,
 				9F8454F71C95C94C00AA7B90 /* AMSongCell.xib */,
+				9FEEC4A81CBA50BA00613361 /* AMMusicFooterView.h */,
+				9FEEC4A91CBA50BA00613361 /* AMMusicFooterView.m */,
+				9FEEC4AB1CBA545000613361 /* AMMusicFooterView.xib */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -481,6 +489,7 @@
 				9F2DCBDE1CB159DC00F70799 /* AMMusicViewController~ipad.xib in Resources */,
 				9FADBCE31C65FBDC00562B13 /* Assets.xcassets in Resources */,
 				9FADBD001C66141C00562B13 /* AMBlockingScreenVC.xib in Resources */,
+				9FEEC4AC1CBA545000613361 /* AMMusicFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +567,7 @@
 				9FEEC4A71CB6CA4700613361 /* AMAlbumInfoItemsManager.m in Sources */,
 				9F041A221C8C8F280092CBAC /* EventsVC.m in Sources */,
 				9FEFE07F1CA6FAE000F413B1 /* OpenCVWrapper.mm in Sources */,
+				9FEEC4AA1CBA50BA00613361 /* AMMusicFooterView.m in Sources */,
 				9F8454F41C95C5BC00AA7B90 /* AMStringUtils.m in Sources */,
 				9FEFE08D1CA98DC000F413B1 /* UIView+IBInspectable.m in Sources */,
 				9F8454F01C94668300AA7B90 /* AMFacebookEventsHelper.m in Sources */,
