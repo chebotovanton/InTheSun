@@ -254,8 +254,9 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     //MARK: - AMMusicFooterViewDelegate
     
-    func share() {
+    func share(sender: UIButton!) {
         let shareController = UIActivityViewController(activityItems: ["test"], applicationActivities: nil)
+        shareController.popoverPresentationController?.sourceView = sender
         self.presentViewController(shareController, animated: true, completion:nil)
     }
     

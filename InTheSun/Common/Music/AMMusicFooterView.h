@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol AMMusicFooterViewDelegate <NSObject>
-- (void)share;
+- (void)share:(UIButton *)sender;
 @end
 
 @interface AMMusicFooterView : UIView

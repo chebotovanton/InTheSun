@@ -2,9 +2,9 @@
 
 @implementation AMMusicFooterView
 
-- (IBAction)share
+- (IBAction)share:(UIButton *)sender
 {
-    [self.delegate share];
+    [self.delegate share:sender];
 }
 
 @end

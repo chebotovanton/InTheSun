@@ -19,7 +19,7 @@
                         <color key="titleColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="share" destination="iN0-l3-epB" eventType="touchUpInside" id="2D2-Ut-V3C"/>
+                        <action selector="share:" destination="iN0-l3-epB" eventType="touchUpInside" id="jhc-DB-LoK"/>
                     </connections>
                 </button>
             </subviews>
