@@ -19,19 +19,11 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
-    @IBOutlet weak var albumCoverWidth: NSLayoutConstraint?
-    @IBOutlet weak var albumCoverHeight: NSLayoutConstraint?
-    
     var soundcloudFacade: SoundCloudFacade!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if is_iPhone4() || is_iPhone5() {
-            albumCoverWidth?.constant = 128.0
-            albumCoverHeight?.constant = 128.0
-        }
-        
+                
         self.setupButtonsAndTitlesState()
         self.contentTableView.registerNib(UINib(nibName: self.kSongCellIdentifier, bundle: nil), forCellReuseIdentifier: self.kSongCellIdentifier)
         
@@ -173,7 +165,6 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         let url = NSURL(string: urlString)
         UIApplication.sharedApplication().openURL(url!)
     }
-    
     
     //MARK: - UITableViewDataSource
     
