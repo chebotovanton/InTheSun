@@ -76,7 +76,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpi-jo-e5z">
-                    <rect key="frame" x="15" y="261" width="290" height="47"/>
+                    <rect key="frame" x="15" y="238.5" width="290" height="92"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Произошла ошибка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smh-Yw-red">
                             <rect key="frame" x="79" y="15" width="133" height="17"/>
@@ -87,14 +87,31 @@
                                 <userDefinedRuntimeAttribute type="string" keyPath="LSKey" value="LOC_EVENTS_ERROR"/>
                             </userDefinedRuntimeAttributes>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeu-GZ-BrZ">
+                            <rect key="frame" x="66.5" y="47" width="157" height="30"/>
+                            <state key="normal" title="Попробовать еще раз">
+                                <color key="titleColor" red="0.98823529409999999" green="0.83529411760000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="retryLoading" destination="-1" eventType="touchUpInside" id="xbu-D4-Rfm"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="smh-Yw-red" firstAttribute="top" secondItem="wpi-jo-e5z" secondAttribute="top" constant="15" id="1Ya-WY-SEw"/>
                         <constraint firstItem="smh-Yw-red" firstAttribute="centerX" secondItem="wpi-jo-e5z" secondAttribute="centerX" id="Yh3-Mt-g83"/>
+                        <constraint firstAttribute="bottom" secondItem="xeu-GZ-BrZ" secondAttribute="bottom" constant="15" id="c4i-0s-KEc"/>
                         <constraint firstAttribute="width" constant="290" id="jle-3Y-rZN"/>
-                        <constraint firstAttribute="bottom" secondItem="smh-Yw-red" secondAttribute="bottom" constant="15" id="vqe-Yz-1Aq"/>
+                        <constraint firstItem="xeu-GZ-BrZ" firstAttribute="top" secondItem="smh-Yw-red" secondAttribute="bottom" constant="15" id="riG-YJ-rAb"/>
+                        <constraint firstItem="xeu-GZ-BrZ" firstAttribute="centerX" secondItem="wpi-jo-e5z" secondAttribute="centerX" id="rtz-5h-LAH"/>
+                        <constraint firstAttribute="bottom" secondItem="smh-Yw-red" secondAttribute="bottom" constant="50" id="vqe-Yz-1Aq"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="vqe-Yz-1Aq"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

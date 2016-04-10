@@ -33,9 +33,6 @@
     
     self.loadingView.layer.cornerRadius = 10.0;
     self.errorView.layer.cornerRadius = 10.0;
-    self.tableView.hidden = YES;
-    self.errorView.hidden = YES;
-    self.loadingView.hidden = NO;
     
     UIView *footer = [UIView new];
     footer.frame = CGRectMake(0.0, 0.0, 10.0, 50.0);
@@ -43,29 +40,8 @@
     
     self.cellReuseIdentifier = @"AMEventCell";
     [self.tableView registerNib:[UINib nibWithNibName:self.cellReuseIdentifier bundle:nil] forCellReuseIdentifier:self.cellReuseIdentifier];
-
-    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
-                                  initWithGraphPath:@"/auktyon/events"
-                                  parameters:[AMFacebookEventsHelper eventsListParams]
-                                  HTTPMethod:@"GET"];
-    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
-                                          id result,
-                                          NSError *error) {
-        
-        NSArray *eventsRawArray = result[@"data"];
-        NSArray *events = [AMFacebookEventsHelper parseRawEvents:eventsRawArray];
-        self.sections = [self splitEvents:events];
-        if (self.sections.count > 0) {
-            self.loadingView.hidden = YES;
-            self.errorView.hidden = YES;
-            self.tableView.hidden = NO;
-            [self.tableView reloadData];
-        } else {
-            self.loadingView.hidden = YES;
-            self.errorView.hidden = NO;
-            self.tableView.hidden = YES;
-        }
-    }];
+    
+    [self loadData];
 }
 
 - (NSArray *)splitEvents:(NSArray <AMEvent *> *)events
@@ -105,6 +81,42 @@
 {
     NSTimeInterval interval = [date timeIntervalSinceNow];
     return interval > 0;
+}
+
+- (void)loadData
+{
+    self.tableView.hidden = YES;
+    self.errorView.hidden = YES;
+    self.loadingView.hidden = NO;
+    
+    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+                                  initWithGraphPath:@"/auktyon/events"
+                                  parameters:[AMFacebookEventsHelper eventsListParams]
+                                  HTTPMethod:@"GET"];
+    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+                                          id result,
+                                          NSError *error) {
+        NSArray *eventsRawArray = result[@"data"];
+        NSArray *events = [AMFacebookEventsHelper parseRawEvents:eventsRawArray];
+        self.sections = [self splitEvents:events];
+        if (self.sections.count > 0) {
+            self.loadingView.hidden = YES;
+            self.errorView.hidden = YES;
+            self.tableView.hidden = NO;
+            [self.tableView reloadData];
+        } else {
+            self.loadingView.hidden = YES;
+            self.errorView.hidden = NO;
+            self.tableView.hidden = YES;
+        }
+    }];
+}
+
+#pragma mark - Actions
+
+- (IBAction)retryLoading
+{
+    [self loadData];
 }
 
 #pragma mark - UITableViewDataSource
