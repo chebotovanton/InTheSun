@@ -20,6 +20,10 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var headerView: UIView!
+    
     var soundcloudFacade: SoundCloudFacade!
 
     override func viewDidLoad() {
@@ -37,7 +41,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         
         self.soundcloudFacade = SoundCloudFacade()
         self.soundcloudFacade.delegate = self;
-        self.soundcloudFacade.loadAlbum(41780534)
+        loadAlbum()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -135,6 +139,27 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
+    func switchToPlayMode() {
+        errorView.hidden = true
+        loadingView.hidden = true
+        contentTableView.hidden = false
+        headerView.hidden = false
+    }
+    
+    func switchToLoadingMode() {
+        errorView.hidden = true
+        loadingView.hidden = false
+        contentTableView.hidden = true
+        headerView.hidden = true
+    }
+    
+    func switchToErrorMode() {
+        errorView.hidden = false
+        loadingView.hidden = true
+        contentTableView.hidden = true
+        headerView.hidden = true
+    }
+    
     //MARK: - IBActions
     
     @IBAction func togglePlay() {
@@ -167,6 +192,11 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBAction func buyAlbum() {
         let url = NSURL(string: itunesAlbumUrl)
         UIApplication.sharedApplication().openURL(url!)
+    }
+    
+    @IBAction func loadAlbum() {
+        switchToLoadingMode()
+        soundcloudFacade.loadAlbum(41780534)
     }
     
     //MARK: - UITableViewDataSource
@@ -216,6 +246,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     //MARK: - SoundCloudDelegate Methods
     
     func didLoadAlbum(playlist: Playlist) {
+        self.switchToPlayMode()
         self.playlist = playlist
         self.contentTableView.reloadData()
         self.albumTitle.text = self.playlist!.title
@@ -224,6 +255,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func albumLoadingFailed() {
+        self.switchToErrorMode()
     }
     
     func didLoadAlbumImage(image: UIImage) {

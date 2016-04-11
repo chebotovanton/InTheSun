@@ -75,8 +75,8 @@
                         <constraint firstItem="hni-u8-jCy" firstAttribute="centerX" secondItem="bdr-3T-QRj" secondAttribute="centerX" id="uPg-ZQ-MQr"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpi-jo-e5z">
-                    <rect key="frame" x="15" y="238.5" width="290" height="92"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wpi-jo-e5z">
+                    <rect key="frame" x="15" y="239" width="290" height="92"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Произошла ошибка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smh-Yw-red">
                             <rect key="frame" x="79" y="15" width="133" height="17"/>
@@ -88,7 +88,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeu-GZ-BrZ">
-                            <rect key="frame" x="66.5" y="47" width="157" height="30"/>
+                            <rect key="frame" x="67" y="47" width="157" height="30"/>
                             <state key="normal" title="Попробовать еще раз">
                                 <color key="titleColor" red="0.98823529409999999" green="0.83529411760000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
