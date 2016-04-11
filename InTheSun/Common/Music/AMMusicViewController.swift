@@ -23,11 +23,18 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var errorView: UIView!
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var errorTitleConstraint: NSLayoutConstraint?
     
     var soundcloudFacade: SoundCloudFacade!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if is_iPhone4() {
+            if let constraint = errorTitleConstraint {
+                constraint.constant = 20.0
+            }
+        }
                 
         self.setupButtonsAndTitlesState()
         self.contentTableView.registerNib(UINib(nibName: self.kSongCellIdentifier, bundle: nil), forCellReuseIdentifier: self.kSongCellIdentifier)

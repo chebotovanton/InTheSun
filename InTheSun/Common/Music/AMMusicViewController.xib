@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="albumTitle" destination="mdn-Ol-ap0" id="Uvc-5d-u1c"/>
                 <outlet property="contentTableView" destination="Ivd-uV-bdV" id="tad-pe-1Av"/>
+                <outlet property="errorTitleConstraint" destination="hU2-c1-v88" id="0b4-VA-hhM"/>
                 <outlet property="errorView" destination="DL3-v3-xBW" id="mBJ-4u-UqM"/>
                 <outlet property="headerView" destination="LTD-wS-aka" id="xdR-YV-mdq"/>
                 <outlet property="loadingView" destination="t4P-0q-4QR" id="egI-zl-j3A"/>
