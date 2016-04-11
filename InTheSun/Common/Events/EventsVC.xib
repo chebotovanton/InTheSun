@@ -75,8 +75,8 @@
                         <constraint firstItem="hni-u8-jCy" firstAttribute="centerX" secondItem="bdr-3T-QRj" secondAttribute="centerX" id="uPg-ZQ-MQr"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wpi-jo-e5z">
-                    <rect key="frame" x="15" y="239" width="290" height="92"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wpi-jo-e5z">
+                    <rect key="frame" x="15" y="238" width="290" height="92"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Произошла ошибка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smh-Yw-red">
                             <rect key="frame" x="79" y="15" width="133" height="17"/>

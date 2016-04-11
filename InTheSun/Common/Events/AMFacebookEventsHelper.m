@@ -37,7 +37,6 @@
 
 + (NSString *)urlStringForEvent:(AMEvent *)event
 {
-#warning Check this! Take url from api?
     return [NSString stringWithFormat:@"https://www.facebook.com/events/%@/", event.eventId];
 }
 

@@ -56,7 +56,6 @@
 
 - (void)playInitialSong
 {
-#warning move to singleton?
     [(AMMusicViewController *)self.viewControllers[0] playInitialSong];
 }
 
