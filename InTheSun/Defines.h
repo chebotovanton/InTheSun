@@ -6,3 +6,4 @@ bool is_iPhone6(void);
 bool is_iPhone6Plus(void);
 bool is_iPad(void);
 bool is_iPhone(void);
+bool isSimulator(void);

@@ -27,3 +27,9 @@ bool is_iPhone()
 {
     return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone);
 }
+
+bool isSimulator()
+{
+    NSString *name = [UIDevice currentDevice].name;
+    return [name rangeOfString:@"Simulator"].location != NSNotFound;
+}

@@ -44,7 +44,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self setupCaptureSession];
+    if (!isSimulator()) {
+        [self setupCaptureSession];
+    }
 }
 
 - (BOOL)shouldAutorotate
