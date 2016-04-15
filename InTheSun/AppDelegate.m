@@ -52,7 +52,7 @@ static NSString * kLaunchCountKey = @"launchCountKey";
 {
     NSInteger launchCount = [[NSUserDefaults standardUserDefaults] integerForKey:kLaunchCountKey];
     #warning Debug
-    launchCount = 0;
+    launchCount = 1;
     if (launchCount == 0) {
         [self showBlockingScreenAnimated:NO];
     }

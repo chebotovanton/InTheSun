@@ -30,6 +30,8 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(itemDidFinishPLaying), name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
+        
         if is_iPhone4() {
             if let constraint = errorTitleConstraint {
                 constraint.constant = 20.0
@@ -298,6 +300,12 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         let shareController = UIActivityViewController(activityItems: ["Новый альбом группы АукцЫон", url!], applicationActivities: nil)
         shareController.popoverPresentationController?.sourceView = sender
         self.presentViewController(shareController, animated: true, completion:nil)
+    }
+    
+    //MARK: - Playback notifications
+    
+    func itemDidFinishPLaying() {
+        next()
     }
     
 }
