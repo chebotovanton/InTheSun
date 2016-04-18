@@ -29,15 +29,15 @@
     
     [result addObject:[self itemWithTitle:@"Дмитрий Озерский"
                                  subtitle:@"Клавишные"
-                                imageName:nil]];
+                                imageName:@"ozersky.jpg"]];
     
     [result addObject:[self itemWithTitle:@"Владимир Волков"
                                  subtitle:@"Контрабас, клавишные, виола да гамба, калимба, арфочка, перкуссия"
-                                imageName:nil]];
+                                imageName:@"volkov.jpg"]];
     
     [result addObject:[self itemWithTitle:@"Леонид Фёдоров"
                                  subtitle:@"Гитара, вокал, перкуссия, клавишные"
-                                imageName:nil]];
+                                imageName:@"fedorov.jpg"]];
     
     [result addObject:[self itemWithTitle:@"Лидия Фёдорова"
                                  subtitle:@"голос в «И ДЕНЬ И НОЧЬ»"
@@ -49,7 +49,7 @@
     
     [result addObject:[self itemWithTitle:@"ОЛЕГ ГАРКУША"
                                  subtitle:@"Всегда с нами!!!"
-                                imageName:nil]];
+                                imageName:@"garkusha.jpg"]];
     
     return result;
 }

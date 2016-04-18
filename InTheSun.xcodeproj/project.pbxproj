@@ -14,6 +14,10 @@
 		9F041A231C8C8F280092CBAC /* EventsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F041A211C8C8F280092CBAC /* EventsVC.xib */; };
 		9F1DED801CB00C8F0051A63F /* Defines.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1DED7F1CB00C8F0051A63F /* Defines.m */; };
 		9F2DCBDE1CB159DC00F70799 /* AMMusicViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2DCBDD1CB159DC00F70799 /* AMMusicViewController~ipad.xib */; };
+		9F31C4D81CC51CC60019D28B /* fedorov.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F31C4D41CC51CC60019D28B /* fedorov.jpg */; };
+		9F31C4D91CC51CC60019D28B /* garkusha.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F31C4D51CC51CC60019D28B /* garkusha.jpg */; };
+		9F31C4DA1CC51CC60019D28B /* ozersky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F31C4D61CC51CC60019D28B /* ozersky.jpg */; };
+		9F31C4DB1CC51CC60019D28B /* volkov.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F31C4D71CC51CC60019D28B /* volkov.jpg */; };
 		9F4BD2801C944D13009E5DCC /* AMEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4BD27E1C944D13009E5DCC /* AMEventCell.m */; };
 		9F4BD2811C944D13009E5DCC /* AMEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F4BD27F1C944D13009E5DCC /* AMEventCell.xib */; };
 		9F4BD2841C945155009E5DCC /* AMEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4BD2831C945155009E5DCC /* AMEvent.m */; };
@@ -70,6 +74,10 @@
 		9F1DED7E1CB00C8F0051A63F /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 		9F1DED7F1CB00C8F0051A63F /* Defines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Defines.m; sourceTree = "<group>"; };
 		9F2DCBDD1CB159DC00F70799 /* AMMusicViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AMMusicViewController~ipad.xib"; sourceTree = "<group>"; };
+		9F31C4D41CC51CC60019D28B /* fedorov.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fedorov.jpg; sourceTree = "<group>"; };
+		9F31C4D51CC51CC60019D28B /* garkusha.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = garkusha.jpg; sourceTree = "<group>"; };
+		9F31C4D61CC51CC60019D28B /* ozersky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ozersky.jpg; sourceTree = "<group>"; };
+		9F31C4D71CC51CC60019D28B /* volkov.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = volkov.jpg; sourceTree = "<group>"; };
 		9F4BD27D1C944D13009E5DCC /* AMEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMEventCell.h; sourceTree = "<group>"; };
 		9F4BD27E1C944D13009E5DCC /* AMEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMEventCell.m; sourceTree = "<group>"; };
 		9F4BD27F1C944D13009E5DCC /* AMEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMEventCell.xib; sourceTree = "<group>"; };
@@ -205,6 +213,17 @@
 			path = Events;
 			sourceTree = "<group>";
 		};
+		9F31C4D31CC51CC60019D28B /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				9F31C4D41CC51CC60019D28B /* fedorov.jpg */,
+				9F31C4D51CC51CC60019D28B /* garkusha.jpg */,
+				9F31C4D61CC51CC60019D28B /* ozersky.jpg */,
+				9F31C4D71CC51CC60019D28B /* volkov.jpg */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
 		9F81E0591C8B08B5003FA920 /* SoundClousFacade */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +343,7 @@
 		9FEFE04F1CA69D1A00F413B1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9F31C4D31CC51CC60019D28B /* Photos */,
 				9FEFE0541CA69D3D00F413B1 /* overlay.png */,
 				9FEFE0921CA98F9C00F413B1 /* Localizable.strings */,
 			);
@@ -443,6 +463,7 @@
 				9FEFE0551CA69D3D00F413B1 /* overlay.png in Resources */,
 				9FD4F62B1C81CF39004A0734 /* AMTabMenuVC.xib in Resources */,
 				9FEFE0991CA9948300F413B1 /* AMEventsHeader.xib in Resources */,
+				9F31C4DA1CC51CC60019D28B /* ozersky.jpg in Resources */,
 				9F041A1D1C8C8C580092CBAC /* AMAlbumInfoVC.xib in Resources */,
 				9FEEC49D1CB58EBD00613361 /* AMInfoItemCell.xib in Resources */,
 				9FD4F62F1C81EED8004A0734 /* SecondViewController.xib in Resources */,
@@ -453,9 +474,12 @@
 				9F8454F91C95C94C00AA7B90 /* AMSongCell.xib in Resources */,
 				9FEFE0901CA98F9C00F413B1 /* Localizable.strings in Resources */,
 				9F2DCBDE1CB159DC00F70799 /* AMMusicViewController~ipad.xib in Resources */,
+				9F31C4DB1CC51CC60019D28B /* volkov.jpg in Resources */,
+				9F31C4D91CC51CC60019D28B /* garkusha.jpg in Resources */,
 				9FADBCE31C65FBDC00562B13 /* Assets.xcassets in Resources */,
 				9FADBD001C66141C00562B13 /* AMBlockingScreenVC.xib in Resources */,
 				9FEEC4AC1CBA545000613361 /* AMMusicFooterView.xib in Resources */,
+				9F31C4D81CC51CC60019D28B /* fedorov.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
