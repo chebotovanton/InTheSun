@@ -15,7 +15,11 @@
 {
     self.titleLabel.text = item.title;
     self.subtitleLabel.text = item.subtitle;
-    self.imageView.image = [UIImage imageNamed:item.imageName];
+    if (item.imageName) {
+        self.imageView.image = [UIImage imageNamed:item.imageName];
+    } else {
+        self.imageView.image = nil;
+    }
 }
 
 @end

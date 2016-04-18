@@ -9,8 +9,10 @@
             <connections>
                 <outlet property="pageControl" destination="uyO-u2-YDA" id="RPc-7x-yeQ"/>
                 <outlet property="photoCollectionView" destination="72L-EG-C2F" id="vSX-C2-eXM"/>
+                <outlet property="photosHeight" destination="K5G-YW-4bn" id="Ms6-Op-NbZ"/>
                 <outlet property="playerView" destination="DY7-aB-7bG" id="kED-Zg-eBf"/>
                 <outlet property="scrollView" destination="n3l-mn-d2n" id="GMg-6H-b33"/>
+                <outlet property="videoHeight" destination="Stq-j3-NMq" id="v8G-BB-NGc"/>
                 <outlet property="videoPlaceholder" destination="Vwl-AA-k54" id="VhJ-bj-DpN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
