@@ -5,14 +5,8 @@
 
 + (NSDictionary *)eventsListParams
 {
-    return @{@"fields" : @"name, place, start_time, type, category, picture.type(large), url",
+    return @{@"fields" : @"name, place, start_time, type, category, url, cover",
              @"access_token" : [self accessToken]};
-}
-
-+ (NSDictionary *)photoLoadingParams
-{
-    return @{@"access_token" : [self accessToken],
-             @"fields" : @"picture.width(320).height(150)"};
 }
 
 + (NSArray *)parseRawEvents:(NSArray *)eventsRawArray
@@ -33,9 +27,8 @@
         NSDictionary *cityDict = placeDict[@"location"];
         event.cityName = cityDict[@"city"];
         
-        NSDictionary *imageDict = rawEvent[@"picture"];
-        imageDict = imageDict[@"data"];
-        event.imageUrl = imageDict[@"url"];
+        NSDictionary *imageDict = rawEvent[@"cover"];
+        event.imageUrl = imageDict[@"source"];
         
         [events addObject:event];
     }
@@ -44,7 +37,6 @@
 
 + (NSString *)urlStringForEvent:(AMEvent *)event
 {
-#warning Check this! Take url from api?
     return [NSString stringWithFormat:@"https://www.facebook.com/events/%@/", event.eventId];
 }
 

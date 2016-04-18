@@ -3,38 +3,54 @@ import Soundcloud
 import AVFoundation
 import MediaPlayer
 
-class AMMusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SoundCloudDelegate {
+class AMMusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SoundCloudDelegate, AMMusicFooterViewDelegate {
 
     private let kSongCellIdentifier = "AMSongCell"
+    private let itunesAlbumUrl = "https://itun.es/ru/A8uW1"
     
     var player: AVPlayer = AVPlayer()
     var playlist: Playlist?
     var currentPlayingIndex: Int = 0
+    var albumImage: UIImage?
     
     @IBOutlet weak var contentTableView: UITableView!
-    @IBOutlet weak var albumArtwork: UIImageView!
     @IBOutlet weak var albumTitle: UILabel!
     @IBOutlet weak var songTitle: UILabel!
-    @IBOutlet weak var songDurationLabel: UILabel!
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var errorTitleConstraint: NSLayoutConstraint?
     
     var soundcloudFacade: SoundCloudFacade!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(itemDidFinishPLaying), name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
+        
+        if is_iPhone4() {
+            if let constraint = errorTitleConstraint {
+                constraint.constant = 20.0
+            }
+        }
+                
         self.setupButtonsAndTitlesState()
         self.contentTableView.registerNib(UINib(nibName: self.kSongCellIdentifier, bundle: nil), forCellReuseIdentifier: self.kSongCellIdentifier)
         
-        let footer = UIView()
-        footer.frame = CGRectMake(0, 0, 10, 50.0)
-        self.contentTableView.tableFooterView = footer
+        let footer = NSBundle.mainBundle().loadNibNamed("AMMusicFooterView", owner: nil, options: nil).first as! AMMusicFooterView
+        footer.delegate = self
+        footer.autoresizingMask = .None;
+        self.contentTableView.tableFooterView = footer;
+        
+        self.contentTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 50.0, 0.0);
         
         self.soundcloudFacade = SoundCloudFacade()
         self.soundcloudFacade.delegate = self;
-        self.soundcloudFacade.loadAlbum(41780534)
+        loadAlbum()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -54,14 +70,34 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         self.resignFirstResponder()
     }
     
+    
+    //MARK: - Public
+    
     func stopMusicPlayer() {
         player.pause()
         self.setupButtonsAndTitlesState()
     }
     
+    func playInitialSong() {
+        playItem(6)
+        player.volume = 0.0;
+        fadeVolumeIn()
+        setupButtonsAndTitlesState()
+    }
+    
     //MARK: - Private
     
-    func playItem(index: Int) {
+    func fadeVolumeIn()
+    {
+        if player.volume < 1 {
+            player.volume += 0.05
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                self.fadeVolumeIn()
+            })
+        }
+    }
+    
+    private func playItem(index: Int) {
         
         if let playlist = self.playlist {
             let track = playlist.tracks[index]
@@ -71,11 +107,10 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
             currentPlayingIndex = index
             contentTableView.selectRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0), animated: true, scrollPosition: .Middle)
             
-            //WARNING: Set correct artist name
             var trackInfo:[String:AnyObject] = [MPMediaItemPropertyArtist:"АукцЫон", MPMediaItemPropertyTitle:track.title, MPMediaItemPropertyAlbumTitle:playlist.title, MPMediaItemPropertyPlaybackDuration:track.duration / 1000]
             
-            if let artwork = self.albumArtwork.image {
-                trackInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: artwork)
+            if let albumImage = self.albumImage {
+                trackInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: albumImage)
             }
             MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = trackInfo
         }
@@ -96,13 +131,10 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
 
         playButton.selected = isPlaying()
         if let playlist = self.playlist {
-            songDurationLabel.hidden = false
             songTitle.hidden = false
             let track = playlist.tracks[currentPlayingIndex]
             songTitle.text = track.title
-            songDurationLabel.text = AMStringUtils.durationString(track.duration)
         } else {
-            songDurationLabel.hidden = true
             songTitle.hidden = true
         }
         
@@ -114,6 +146,27 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
                 selectedCell.setIconHighlighted(false)
             }
         }
+    }
+    
+    func switchToPlayMode() {
+        errorView.hidden = true
+        loadingView.hidden = true
+        contentTableView.hidden = false
+        headerView.hidden = false
+    }
+    
+    func switchToLoadingMode() {
+        errorView.hidden = true
+        loadingView.hidden = false
+        contentTableView.hidden = true
+        headerView.hidden = true
+    }
+    
+    func switchToErrorMode() {
+        errorView.hidden = false
+        loadingView.hidden = true
+        contentTableView.hidden = true
+        headerView.hidden = true
     }
     
     //MARK: - IBActions
@@ -145,6 +198,15 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
+    @IBAction func buyAlbum() {
+        let url = NSURL(string: itunesAlbumUrl)
+        UIApplication.sharedApplication().openURL(url!)
+    }
+    
+    @IBAction func loadAlbum() {
+        switchToLoadingMode()
+        soundcloudFacade.loadAlbum(41780534)
+    }
     
     //MARK: - UITableViewDataSource
     
@@ -193,6 +255,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     //MARK: - SoundCloudDelegate Methods
     
     func didLoadAlbum(playlist: Playlist) {
+        self.switchToPlayMode()
         self.playlist = playlist
         self.contentTableView.reloadData()
         self.albumTitle.text = self.playlist!.title
@@ -201,14 +264,11 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func albumLoadingFailed() {
-        UIAlertView(title: "Error",
-            message: "Could not load album data",
-            delegate: nil,
-            cancelButtonTitle: "OK").show()
+        self.switchToErrorMode()
     }
     
     func didLoadAlbumImage(image: UIImage) {
-        self.albumArtwork.image = image
+        albumImage = image
     }
     
     //MARK: - Remote control events
@@ -231,6 +291,21 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
                     break
             }
         }
+    }
+    
+    //MARK: - AMMusicFooterViewDelegate
+    
+    func share(sender: UIButton!) {
+        let url = NSURL(string: itunesAlbumUrl)
+        let shareController = UIActivityViewController(activityItems: ["Новый альбом группы АукцЫон", url!], applicationActivities: nil)
+        shareController.popoverPresentationController?.sourceView = sender
+        self.presentViewController(shareController, animated: true, completion:nil)
+    }
+    
+    //MARK: - Playback notifications
+    
+    func itemDidFinishPLaying() {
+        next()
     }
     
 }

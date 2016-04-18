@@ -2,5 +2,6 @@
 #define PrefixHeader_pch
 
 #import "UIView+IBInspectable.h"
+#import "Defines.h"
 
 #endif /* PrefixHeader_pch */

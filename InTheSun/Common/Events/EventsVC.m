@@ -3,11 +3,12 @@
 #import "AMEventCell.h"
 #import "AMEvent.h"
 #import "AMFacebookEventsHelper.h"
+#import "AMEventsHeader.h"
 
-#warning Move to a separate class
 @interface AMEventSection : NSObject
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSArray <AMEvent *> *events;
+@property (nonatomic, assign) BOOL shouldShowHeader;
 @end
 
 @implementation AMEventSection
@@ -32,9 +33,6 @@
     
     self.loadingView.layer.cornerRadius = 10.0;
     self.errorView.layer.cornerRadius = 10.0;
-    self.tableView.hidden = YES;
-    self.errorView.hidden = YES;
-    self.loadingView.hidden = NO;
     
     UIView *footer = [UIView new];
     footer.frame = CGRectMake(0.0, 0.0, 10.0, 50.0);
@@ -42,29 +40,8 @@
     
     self.cellReuseIdentifier = @"AMEventCell";
     [self.tableView registerNib:[UINib nibWithNibName:self.cellReuseIdentifier bundle:nil] forCellReuseIdentifier:self.cellReuseIdentifier];
-
-    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
-                                  initWithGraphPath:@"/auktyon/events"
-                                  parameters:[AMFacebookEventsHelper eventsListParams]
-                                  HTTPMethod:@"GET"];
-    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
-                                          id result,
-                                          NSError *error) {
-        
-        NSArray *eventsRawArray = result[@"data"];
-        NSArray *events = [AMFacebookEventsHelper parseRawEvents:eventsRawArray];
-        self.sections = [self splitEvents:events];
-        if (self.sections.count > 0) {
-            self.loadingView.hidden = YES;
-            self.errorView.hidden = YES;
-            self.tableView.hidden = NO;
-            [self.tableView reloadData];
-        } else {
-            self.loadingView.hidden = YES;
-            self.errorView.hidden = NO;
-            self.tableView.hidden = YES;
-        }
-    }];
+    
+    [self loadData];
 }
 
 - (NSArray *)splitEvents:(NSArray <AMEvent *> *)events
@@ -85,6 +62,7 @@
         AMEventSection *section = [AMEventSection new];
         section.name = LS(@"LOC_EVENTS_FUTURE_EVENTS");
         section.events = futureEvents;
+        section.shouldShowHeader = NO;
         [result addObject:section];
     }
     
@@ -92,6 +70,7 @@
         AMEventSection *section = [AMEventSection new];
         section.name = LS(@"LOC_EVENTS_PAST_EVENTS");
         section.events = pastEvents;
+        section.shouldShowHeader = YES;
         [result addObject:section];
     }
     
@@ -102,6 +81,42 @@
 {
     NSTimeInterval interval = [date timeIntervalSinceNow];
     return interval > 0;
+}
+
+- (void)loadData
+{
+    self.tableView.hidden = YES;
+    self.errorView.hidden = YES;
+    self.loadingView.hidden = NO;
+    
+    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+                                  initWithGraphPath:@"/auktyon/events"
+                                  parameters:[AMFacebookEventsHelper eventsListParams]
+                                  HTTPMethod:@"GET"];
+    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+                                          id result,
+                                          NSError *error) {
+        NSArray *eventsRawArray = result[@"data"];
+        NSArray *events = [AMFacebookEventsHelper parseRawEvents:eventsRawArray];
+        self.sections = [self splitEvents:events];
+        if (self.sections.count > 0) {
+            self.loadingView.hidden = YES;
+            self.errorView.hidden = YES;
+            self.tableView.hidden = NO;
+            [self.tableView reloadData];
+        } else {
+            self.loadingView.hidden = YES;
+            self.errorView.hidden = NO;
+            self.tableView.hidden = YES;
+        }
+    }];
+}
+
+#pragma mark - Actions
+
+- (IBAction)retryLoading
+{
+    [self loadData];
 }
 
 #pragma mark - UITableViewDataSource
@@ -128,19 +143,25 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *header = [[[NSBundle mainBundle] loadNibNamed:@"AMEventsHeader" owner:nil options:nil] objectAtIndex:0];
-    
-    return header;
+    AMEventSection *eventsSection = self.sections[section];
+    if (eventsSection.shouldShowHeader) {
+        AMEventsHeader *header = [[[NSBundle mainBundle] loadNibNamed:@"AMEventsHeader" owner:nil options:nil] objectAtIndex:0];
+        header.titleLabel.text = eventsSection.name.uppercaseString;
+        return header;
+    } else {
+        return nil;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 200.0;
+    return is_iPad() ? 350.0 : 200.0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 60.0;
+    AMEventSection *eventsSection = self.sections[section];
+    return eventsSection.shouldShowHeader ? 36.0 : 0.001;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

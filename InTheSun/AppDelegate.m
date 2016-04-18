@@ -10,6 +10,7 @@
 static NSString * kLaunchCountKey = @"launchCountKey";
 
 @interface AppDelegate ()
+@property (nonatomic, strong) AMBlockingScreenVC *blockingScreen;
 @end
 
 @implementation AppDelegate
@@ -26,7 +27,9 @@ static NSString * kLaunchCountKey = @"launchCountKey";
     self.window.rootViewController = [[AMTabMenuVC alloc] initWithNibName:@"AMTabMenuVC" bundle:nil];
     [self.window makeKeyAndVisible];
     
+    [self fadeSplashScreen];
     [self showBlockingScreenIfNeeded];
+    
     return YES;
 }
 
@@ -48,10 +51,12 @@ static NSString * kLaunchCountKey = @"launchCountKey";
 - (void)showBlockingScreenIfNeeded
 {
     NSInteger launchCount = [[NSUserDefaults standardUserDefaults] integerForKey:kLaunchCountKey];
-    if (launchCount == 0 && ![self isSimulator]) {
+    #warning Debug
+    launchCount = 1;
+    if (launchCount == 0) {
         [self showBlockingScreenAnimated:NO];
     }
-    launchCount ++;
+    launchCount++;
     [[NSUserDefaults standardUserDefaults] setInteger:launchCount forKey:kLaunchCountKey];
 }
 
@@ -61,17 +66,50 @@ static NSString * kLaunchCountKey = @"launchCountKey";
     return [name rangeOfString:@"Simulator"].location != NSNotFound;
 }
 
+- (void)fadeSplashScreen
+{
+    NSArray *allPngImageNames = [[NSBundle mainBundle] pathsForResourcesOfType:@"png"
+                                                                   inDirectory:nil];
+    UIImage *splashImage = nil;
+    for (NSString *imgName in allPngImageNames){
+        if ([imgName rangeOfString:@"SplashScreen"].location != NSNotFound){
+            UIImage *img = [UIImage imageWithContentsOfFile:imgName];
+            if (img.scale == [UIScreen mainScreen].scale && CGSizeEqualToSize(img.size, [UIScreen mainScreen].bounds.size)) {
+                splashImage = img;
+            }
+        }
+    }
+    UIView * splash = [[UIImageView alloc] initWithImage:splashImage];
+    [self.window addSubview:splash];
+    
+    [UIView animateWithDuration:3.0
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         splash.alpha = 0;
+                     }
+                     completion:^(BOOL finished) {
+                         [splash removeFromSuperview];
+                         [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+                         [self.blockingScreen switchToCameraState];
+                     }];
+    
+    
+}
+
+
 #pragma mark - Public
 
 - (void)showBlockingScreenAnimated:(BOOL)animated
 {
-    AMBlockingScreenVC *blockingScreen = [[AMBlockingScreenVC alloc] initWithNibName:@"AMBlockingScreenVC" bundle:nil];
-    [self.window.rootViewController presentViewController:blockingScreen animated:animated completion:nil];
+    self.blockingScreen = [[AMBlockingScreenVC alloc] initWithNibName:@"AMBlockingScreenVC" bundle:nil];
+    [self.window.rootViewController presentViewController:self.blockingScreen animated:animated completion:nil];
 }
 
 - (void)hideBlockingScreenAnimated:(BOOL)animated
 {
     [self.window.rootViewController dismissViewControllerAnimated:animated completion:nil];
+    self.blockingScreen = nil;
 }
 
 @end

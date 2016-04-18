@@ -8,3 +8,6 @@
 "LOC_EVENTS_PAST_EVENTS" = "Past events";
 "LOC_EVENTS_LOADING" = "Loading...";
 "LOC_EVENTS_ERROR" = "Nothing found";
+
+//Blocking screen
+"LOC_GO_TO_ALBUM" = "Go to album";

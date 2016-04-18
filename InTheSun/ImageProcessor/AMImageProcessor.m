@@ -1,23 +1,6 @@
 #import "AMImageProcessor.h"
-#import "OpenCVWrapper.h"
-
-static CGFloat kLuminanceThreshold = 0.5 * 255;
 
 @implementation AMImageProcessor
-
-+ (BOOL)doesImageFitConditions:(UIImage *)image
-{
-#warning We need to have more tests here ;)
-    CGFloat averageLuminance = [self getAverageLuminanceFromImage:image step:10];
-    BOOL isImageBright = averageLuminance > kLuminanceThreshold;
-    BOOL imageHasCircles = [OpenCVWrapper imageHasCircle:image];
-    return  isImageBright || imageHasCircles;
-}
-
-+ (CGPoint)circleCenter:(UIImage *)image
-{
-    return [OpenCVWrapper circleCenterAtImage:image];
-}
 
 + (CGFloat)getAverageLuminanceFromImage:(UIImage *)image step:(NSInteger)step
 {

@@ -1,21 +1,28 @@
 #import "AMBlockingScreenVC.h"
+#import <AVFoundation/AVFoundation.h>
 #import "AppDelegate.h"
 #import "AMImageProcessor.h"
-#import <AVFoundation/AVFoundation.h>
+#import "AMTabMenuVC.h"
 
 @interface AMBlockingScreenVC () <UINavigationControllerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
 
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 @property (nonatomic, strong) AVPlayer *player;
-@property (nonatomic, assign) BOOL shouldCheckImage;
+@property (nonatomic, assign) CGFloat luminanceSum;
+@property (nonatomic, assign) CGFloat luminanceLimit;
+@property (nonatomic, assign) BOOL shouldCheckLuminance;
 
-@property (nonatomic, weak) IBOutlet UIButton *cameraButton;
+@property (nonatomic, weak) IBOutlet UIImageView *yellowCircle;
+@property (nonatomic, weak) IBOutlet UIImageView *whiteCircle;
+
 @property (nonatomic, weak) IBOutlet UIButton *goToAlbumButton;
+
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
-
-@property (nonatomic, strong) UIView *circleView;
-
+@property (nonatomic, weak) IBOutlet UILabel *actionLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *albumNameView;
+@property (nonatomic, weak) IBOutlet UIImageView *groupNameView;
+@property (nonatomic, weak) IBOutlet UIImageView *circleAlbumName;
 @end
 
 @implementation AMBlockingScreenVC
@@ -23,13 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.shouldCheckImage = YES;
-}
-
-- (IBAction)startCamera
-{
-    [self hideControls];
-    [self setupCaptureSession];
+    self.luminanceLimit = 30000;
+    [self updateCirclesWithAlpha:0.0];
+    [self switchToInitialState];
 }
 
 - (IBAction)goToAlbum
@@ -38,38 +41,92 @@
     [appDelegate hideBlockingScreenAnimated:YES];
 }
 
-- (void)hideControls
+- (void)viewWillAppear:(BOOL)animated
 {
-    self.descriptionLabel.hidden = YES;
-    self.cameraButton.hidden = YES;
-
-#warning Debug
-//    self.circleView = [UIView new];
-//    self.circleView.frame = CGRectMake(0.0, 0.0, 100.0, 100.0);
-//    self.circleView.backgroundColor = [UIColor yellowColor];
-//    [self.view addSubview:self.circleView];
+    [super viewWillAppear:animated];
+    if (!isSimulator()) {
+        [self setupCaptureSession];
+    }
 }
 
-- (void)showAlbumButton
+- (BOOL)shouldAutorotate
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.goToAlbumButton.hidden = NO;
-        [self.view bringSubviewToFront:self.goToAlbumButton];
-    });
+    return NO;
+}
+
+- (void)setControlsToPlayMode
+{
+    CGFloat duration = 0.3;
+    [UIView animateWithDuration:duration
+                     animations:^{
+                         self.goToAlbumButton.alpha = 0.0;
+                         self.descriptionLabel.alpha = 0.0;
+                         self.actionLabel.alpha = 0.0;
+                         self.albumNameView.alpha = 0.0;
+                         self.groupNameView.alpha = 0.0;
+                     } completion:^(BOOL finished) {
+                         [UIView animateWithDuration:duration
+                                          animations:^{
+                                              self.goToAlbumButton.alpha = 1.0;
+                                              self.circleAlbumName.alpha = 1.0;
+                                          }];
+                     }];
+}
+
+- (void)setControlsToCameraMode
+{
+    CGFloat duration = 0.3;
+    [UIView animateWithDuration:duration
+                     animations:^{
+                         self.descriptionLabel.alpha = 1.0;
+                         self.actionLabel.alpha = 1.0;
+                        [self updateCirclesWithAlpha:0.0];
+                     } completion:nil];
+    
+}
+
+- (void)setControlsToInitialMode
+{
+    self.goToAlbumButton.alpha = 0.0;
+    self.descriptionLabel.alpha = 0.0;
+    self.actionLabel.alpha = 0.0;
+    self.whiteCircle.alpha = 0.0;
+    self.yellowCircle.alpha = 0.0;
+    self.circleAlbumName.alpha = 0.0;
+}
+
+- (void)updateCirclesWithAlpha:(CGFloat)alpha
+{
+    self.whiteCircle.alpha = 1 - alpha;
+    self.yellowCircle.alpha = alpha;
 }
 
 - (void)playSong
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"song" ofType:@"mp3"];
-    NSURL *url = [[NSURL alloc] initFileURLWithPath: path];
-    AVAsset *asset = [AVURLAsset URLAssetWithURL:url options:nil];
-    AVPlayerItem *anItem = [AVPlayerItem playerItemWithAsset:asset];
-    
-    self.player = [AVPlayer playerWithPlayerItem:anItem];
-    [self.player play];
+    [(AMTabMenuVC *)self.presentingViewController playInitialSong];
 }
 
-#pragma mark -
+#pragma mark - Switch States
+
+- (void)switchToPlayState
+{
+    [self setControlsToPlayMode];
+    [self playSong];
+}
+
+- (void)switchToCameraState
+{
+    [self setControlsToCameraMode];
+    self.shouldCheckLuminance = YES;
+    self.luminanceSum = 0.0;
+}
+
+- (void)switchToInitialState
+{
+    [self setControlsToInitialMode];
+}
+
+#pragma mark - Camera
 
 - (void)setupCaptureSession
 {
@@ -109,7 +166,6 @@
      [NSNumber numberWithInt:kCVPixelFormatType_32BGRA]
                                 forKey:(id)kCVPixelBufferPixelFormatTypeKey];
     
-    
     // Start the session running to start the flow of data
     [self startCapturingWithSession:session];
     
@@ -117,18 +173,36 @@
     [self setSession:session];
 }
 
+- (void)setVideoOrientation
+{
+    UIDeviceOrientation deviceOrientation = [UIDevice currentDevice].orientation;
+    switch (deviceOrientation) {
+        case UIInterfaceOrientationPortraitUpsideDown:
+            [self.previewLayer.connection setVideoOrientation:AVCaptureVideoOrientationPortraitUpsideDown];
+            break;
+        case UIInterfaceOrientationLandscapeLeft:
+            [self.previewLayer.connection setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];
+            break;
+        case UIInterfaceOrientationLandscapeRight:
+            [self.previewLayer.connection setVideoOrientation:AVCaptureVideoOrientationLandscapeRight];
+            break;
+        default:
+            [self.previewLayer.connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
+            break;
+    }
+}
+
 - (void)startCapturingWithSession: (AVCaptureSession *) captureSession
 {
-    NSLog(@"Adding video preview layer");
     [self setPreviewLayer:[[AVCaptureVideoPreviewLayer alloc] initWithSession:captureSession]];
     
     [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
-    
+    [self setVideoOrientation];
     
     //----- DISPLAY THE PREVIEW LAYER -----
     //Display it full screen under our view controller existing controls
-    NSLog(@"Display the preview layer");
-    CGRect layerRect = [[[self view] layer] bounds];
+    
+    CGRect layerRect = [UIScreen mainScreen].bounds;
     [self.previewLayer setBounds:layerRect];
     [self.previewLayer setPosition:CGPointMake(CGRectGetMidX(layerRect),
                                                CGRectGetMidY(layerRect))];
@@ -139,7 +213,6 @@
     [self.view sendSubviewToBack:CameraView];
     
     [[CameraView layer] addSublayer:self.previewLayer];
-    
     
     //----- START THE CAPTURE SESSION RUNNING -----
     [captureSession startRunning];
@@ -152,28 +225,22 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 {
     // Create a UIImage from the sample buffer data
     [connection setVideoOrientation:AVCaptureVideoOrientationLandscapeLeft];
-    UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
-
-#warning Debug
-//    CGPoint desiredCenter = [AMImageProcessor circleCenter:image];
-//    desiredCenter = CGPointMake(desiredCenter.x, self.view.frame.size.height - desiredCenter.y);
-//    desiredCenter = CGPointMake([self filteredValueFrom:self.circleView.center.x to:desiredCenter.x],
-//                                [self filteredValueFrom:self.circleView.center.y to:desiredCenter.y]);
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        self.circleView.center = desiredCenter;
-//    });
     
-    if (self.shouldCheckImage && [AMImageProcessor doesImageFitConditions:image]) {
-        self.shouldCheckImage = NO;
-        [self showAlbumButton];
-        [self playSong];
+    if (self.shouldCheckLuminance) {
+        UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
+        
+        CGFloat newLuminance = [AMImageProcessor getAverageLuminanceFromImage:image step:10];
+        self.luminanceSum += newLuminance;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            CGFloat alpha = self.luminanceSum/self.luminanceLimit;
+            [self updateCirclesWithAlpha:alpha];
+            if (self.luminanceSum > self.luminanceLimit) {
+                self.shouldCheckLuminance = NO;
+                [self switchToPlayState];
+            }
+        });
     }
-}
-
-- (CGFloat)filteredValueFrom:(CGFloat)origin to:(CGFloat)target
-{
-    CGFloat filterCoeff = 0.1;
-    return origin + (target - origin) * filterCoeff;
 }
 
 // Create a UIImage from sample buffer data
