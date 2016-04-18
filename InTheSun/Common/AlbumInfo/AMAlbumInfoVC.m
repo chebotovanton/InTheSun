@@ -12,6 +12,8 @@
 @property (nonatomic, weak) IBOutlet UIView *videoPlaceholder;
 @property (nonatomic, weak) IBOutlet UICollectionView *photoCollectionView;
 @property (nonatomic, weak) IBOutlet UIPageControl *pageControl;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *videoHeight;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *photosHeight;
 
 @property (nonatomic, strong) NSString *kCellIdentifier;
 @property (nonatomic, strong) NSArray <AMAlbumInfoItem *> *items;
@@ -24,10 +26,9 @@
 {
     [super viewDidLoad];
     
+    [self setConstraints];
     self.scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 50.0, 0.0);
-    
     self.items = [AMAlbumInfoItemsManager createItems];
-    
     self.pageControl.numberOfPages = self.items.count;
     
     self.kCellIdentifier = @"AMInfoItemCell";
@@ -43,6 +44,18 @@
     self.photoCollectionView.collectionViewLayout = layout;
     
     self.playerView.delegate = self;
+}
+
+- (void)setConstraints
+{
+    if (is_iPhone6()) {
+        self.videoHeight.constant = 270.0;
+        self.photosHeight.constant = 270.0;
+    }
+    if (is_iPhone6Plus()) {
+        self.videoHeight.constant = 320.0;
+        self.photosHeight.constant = 320.0;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -73,11 +86,6 @@
         default:
             break;
     }
-}
-
-- (void)playerView:(nonnull YTPlayerView *)playerView receivedError:(YTPlayerError)error
-{
-    NSLog(@"azzaza");
 }
 
 - (void)playerViewDidBecomeReady:(nonnull YTPlayerView *)playerView
