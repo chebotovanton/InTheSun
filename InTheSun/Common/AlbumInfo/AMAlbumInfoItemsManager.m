@@ -38,15 +38,7 @@
     [result addObject:[self itemWithTitle:@"Леонид Фёдоров"
                                  subtitle:@"Гитара, вокал, перкуссия, клавишные"
                                 imageName:@"fedorov.jpg"]];
-    
-    [result addObject:[self itemWithTitle:@"Лидия Фёдорова"
-                                 subtitle:@"голос в «И ДЕНЬ И НОЧЬ»"
-                                imageName:nil]];
-    
-    [result addObject:[self itemWithTitle:@"ХОР в «МИР ТАЕТ»"
-                                 subtitle:@"Михаил Раппопорт, Виктор Бондарик, Николай Рубанов, Михаил Коловский, Дмитрий Озерский, Владимир Волков, Леонид Фёдоров"
-                                imageName:nil]];
-    
+        
     [result addObject:[self itemWithTitle:@"ОЛЕГ ГАРКУША"
                                  subtitle:@"Всегда с нами!!!"
                                 imageName:@"garkusha.jpg"]];
