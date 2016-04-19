@@ -38,7 +38,7 @@
     [result addObject:[self itemWithTitle:@"Леонид Фёдоров"
                                  subtitle:@"Гитара, вокал, перкуссия, клавишные"
                                 imageName:@"fedorov.jpg"]];
-        
+    
     [result addObject:[self itemWithTitle:@"ОЛЕГ ГАРКУША"
                                  subtitle:@"Всегда с нами!!!"
                                 imageName:@"garkusha.jpg"]];
