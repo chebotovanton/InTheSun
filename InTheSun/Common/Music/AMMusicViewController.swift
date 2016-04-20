@@ -10,7 +10,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var player: AVPlayer = AVPlayer()
     var playlist: Playlist?
-    var currentPlayingIndex: Int = 0
+    var currentPlayingIndex: Int = -1
     var albumImage: UIImage?
     
     @IBOutlet weak var contentTableView: UITableView!
@@ -120,6 +120,12 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func setupButtonsAndTitlesState() {
 
+        if currentPlayingIndex < 0 {
+            songTitle.hidden = true
+            
+            return
+        }
+        
         playButton.selected = isPlaying()
         if let playlist = self.playlist {
             songTitle.hidden = false

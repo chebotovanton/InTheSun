@@ -47,6 +47,11 @@
     self.playerView.delegate = self;
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return is_iPad() ? UIInterfaceOrientationMaskAllButUpsideDown : UIInterfaceOrientationMaskPortrait;
+}
+
 - (void)setConstraints
 {
     if (is_iPhone6()) {
@@ -73,6 +78,20 @@
 {
     CGPoint newOffset = CGPointMake(pageControl.currentPage * self.scrollView.frame.size.width, 0.0);
     [self.photoCollectionView setContentOffset:newOffset animated:YES];
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    
+#warning Doesn't work
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+        [self.photoCollectionView.collectionViewLayout invalidateLayout];
+//        [self.photoCollectionView reloadData];
+//        CGPoint point = CGPointMake(currentPage * self.photoCollectionView.bounds.size.width, 0.0);
+//        [self.photoCollectionView setContentOffset:point animated:YES];
+    }
+                                 completion:nil];
 }
 
 #pragma mark - YTPlayerViewDelegate

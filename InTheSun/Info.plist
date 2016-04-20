@@ -82,15 +82,5 @@
 			<false/>
 		</dict>
 	</dict>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~iphone</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-	</array>
 </dict>
 </plist>
