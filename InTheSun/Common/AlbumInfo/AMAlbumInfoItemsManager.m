@@ -9,23 +9,23 @@
 
     [result addObject:[self itemWithTitle:@"Борис Шавейников"
                                  subtitle:@"Барабаны, перкуссия"
-                                imageName:nil]];
+                                imageName:@"shaveinikov.jpg"]];
     
     [result addObject:[self itemWithTitle:@"Виктор Бондарик"
                                  subtitle:@"Бас-гитара"
-                                imageName:nil]];
+                                imageName:@"bondarik.jpg"]];
     
     [result addObject:[self itemWithTitle:@"Юрий Парфёнов"
                                  subtitle:@"Труба, флюгельгорн, мянкелефинский кларнет, флейта"
-                                imageName:nil]];
+                                imageName:@"parfenov.jpg"]];
     
     [result addObject:[self itemWithTitle:@"Николай Рубанов"
                                  subtitle:@"Тенор саксофон, баритон саксофон, сопрано саксофон, бас кларнет, клавишные"
-                                imageName:nil]];
+                                imageName:@"rubanov.jpg"]];
     
     [result addObject:[self itemWithTitle:@"Михаил Коловский"
                                  subtitle:@"Туба, диджириду"
-                                imageName:nil]];
+                                imageName:@"kolovski.jpg"]];
     
     [result addObject:[self itemWithTitle:@"Дмитрий Озерский"
                                  subtitle:@"Клавишные"
