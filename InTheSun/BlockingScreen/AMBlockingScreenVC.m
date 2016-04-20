@@ -4,7 +4,11 @@
 #import "AMImageProcessor.h"
 #import "AMTabMenuVC.h"
 
+static CGFloat kSongStartLuminanceLimit = 20000.0;
+static CGFloat kModeSwitchLuminanceLimit = 30000.0;
+
 @interface AMBlockingScreenVC () <UINavigationControllerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
+
 
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
@@ -30,7 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.luminanceLimit = 30000;
+    
     [self updateCirclesWithAlpha:0.0];
     [self switchToInitialState];
 }
@@ -44,6 +48,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     if (!isSimulator()) {
         [self setupCaptureSession];
     }
@@ -103,7 +108,7 @@
 
 - (void)playSong
 {
-    [(AMTabMenuVC *)self.presentingViewController playInitialSong];
+    [self.delegate playInitialSong];
 }
 
 #pragma mark - Switch States
@@ -111,7 +116,6 @@
 - (void)switchToPlayState
 {
     [self setControlsToPlayMode];
-    [self playSong];
 }
 
 - (void)switchToCameraState
@@ -233,9 +237,12 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         self.luminanceSum += newLuminance;
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            CGFloat alpha = self.luminanceSum/self.luminanceLimit;
+            CGFloat alpha = self.luminanceSum/kModeSwitchLuminanceLimit;
             [self updateCirclesWithAlpha:alpha];
-            if (self.luminanceSum > self.luminanceLimit) {
+            if ([self.delegate isPlaying] == NO && self.luminanceSum > kSongStartLuminanceLimit) {
+                [self playSong];
+            }
+            if (self.luminanceSum > kModeSwitchLuminanceLimit) {
                 self.shouldCheckLuminance = NO;
                 [self switchToPlayState];
             }

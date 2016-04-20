@@ -35,6 +35,7 @@
     musicVC.tabBarItem = musicBarItem;
 
     AMAlbumInfoVC *albumInfoVC = [[AMAlbumInfoVC alloc] initWithNibName:@"AMAlbumInfoVC" bundle:nil];
+    albumInfoVC.delegate = self;
     UITabBarItem *albumBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"albumMenuIcon"] tag:0];
     albumBarItem.titlePositionAdjustment = titleOffset;
     albumBarItem.title = LS(@"LOC_TAB_BAR_ALBUM");
@@ -57,6 +58,11 @@
 - (void)playInitialSong
 {
     [(AMMusicViewController *)self.viewControllers[0] playInitialSong];
+}
+
+- (BOOL)isPlaying
+{
+    return [(AMMusicViewController *)self.viewControllers[0] isPlaying];
 }
 
 

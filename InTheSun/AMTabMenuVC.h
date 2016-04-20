@@ -1,8 +1,6 @@
 #import <UIKit/UIKit.h>
+#import "AMPlayerStatusProtocol.h"
 
-@interface AMTabMenuVC : UITabBarController
-
-- (void)stopMusicPlayer;
-- (void)playInitialSong;
+@interface AMTabMenuVC : UITabBarController <AMPlayerStatusProtocol>
 
 @end

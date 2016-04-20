@@ -84,6 +84,7 @@
 		9F4BD27F1C944D13009E5DCC /* AMEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMEventCell.xib; sourceTree = "<group>"; };
 		9F4BD2821C945155009E5DCC /* AMEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMEvent.h; sourceTree = "<group>"; };
 		9F4BD2831C945155009E5DCC /* AMEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMEvent.m; sourceTree = "<group>"; };
+		9F5256D91CC7DCD400CA83D6 /* AMPlayerStatusProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPlayerStatusProtocol.h; sourceTree = "<group>"; };
 		9F81E05B1C8B08D6003FA920 /* SoundCloudFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCloudFacade.swift; sourceTree = "<group>"; };
 		9F81E05F1C8B0A37003FA920 /* InTheSun-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InTheSun-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F8253B11CC7AEF00063D592 /* bondarik.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bondarik.jpg; sourceTree = "<group>"; };
@@ -305,6 +306,7 @@
 				9F81E0591C8B08B5003FA920 /* SoundClousFacade */,
 				9FADBCD61C65FBDC00562B13 /* AppDelegate.h */,
 				9FADBCD71C65FBDC00562B13 /* AppDelegate.m */,
+				9F5256D91CC7DCD400CA83D6 /* AMPlayerStatusProtocol.h */,
 				9FD4F6271C81CF39004A0734 /* AMTabMenuVC.h */,
 				9FD4F6281C81CF39004A0734 /* AMTabMenuVC.m */,
 				9FD4F6291C81CF39004A0734 /* AMTabMenuVC.xib */,

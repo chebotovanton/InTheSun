@@ -65,7 +65,7 @@
 
 - (void)stopMusicPlayer
 {
-    [(AMTabMenuVC *)self.tabBarController stopMusicPlayer];
+    [self.delegate stopMusicPlayer];
 }
 
 - (IBAction)selectPage:(UIPageControl *)pageControl
