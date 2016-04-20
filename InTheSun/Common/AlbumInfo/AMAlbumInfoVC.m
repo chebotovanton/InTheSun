@@ -4,6 +4,7 @@
 #import "AMInfoItemCell.h"
 #import "AMAlbumInfoItem.h"
 #import "AMAlbumInfoItemsManager.h"
+#import "IDMPhotoBrowser.h"
 
 @interface AMAlbumInfoVC () <YTPlayerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -16,7 +17,7 @@
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *photosHeight;
 
 @property (nonatomic, strong) NSString *kCellIdentifier;
-@property (nonatomic, strong) NSArray <AMAlbumInfoItem *> *items;
+@property (nonatomic, strong) AMAlbumInfoItemsManager *itemsManager;
 
 @end
 
@@ -28,8 +29,8 @@
     
     [self setConstraints];
     self.scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 50.0, 0.0);
-    self.items = [AMAlbumInfoItemsManager createItems];
-    self.pageControl.numberOfPages = self.items.count;
+    self.itemsManager = [AMAlbumInfoItemsManager new];
+    self.pageControl.numberOfPages = self.itemsManager.items.count;
     
     self.kCellIdentifier = @"AMInfoItemCell";
     UINib *nib = [UINib nibWithNibName:@"AMInfoItemCell" bundle:nil];
@@ -109,7 +110,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.items.count;
+    return self.itemsManager.items.count;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -120,9 +121,17 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     AMInfoItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.kCellIdentifier forIndexPath:indexPath];
-    AMAlbumInfoItem *item = self.items[indexPath.item];
+    AMAlbumInfoItem *item = self.itemsManager.items[indexPath.item];
     [cell setupWithItem:item];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *photos = [self.itemsManager allPhotos];
+    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
+    [browser setInitialPageIndex:indexPath.item];
+    [self presentViewController:browser animated:YES completion:nil];
 }
 
 #pragma mark - UIScrollViewDelegate

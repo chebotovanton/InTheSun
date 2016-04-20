@@ -6,12 +6,18 @@ PODS:
   - Bolts/AppLinks (1.6.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.6.0)
+  - DACircularProgress (2.3.1)
   - FBSDKCoreKit (4.10.0):
     - Bolts (~> 1.5)
   - FBSDKLoginKit (4.10.0):
     - FBSDKCoreKit
   - FBSDKShareKit (4.10.0):
     - FBSDKCoreKit
+  - IDMPhotoBrowser (1.8.4):
+    - DACircularProgress
+    - pop
+    - SDWebImage
+  - pop (1.0.9)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
@@ -25,6 +31,7 @@ DEPENDENCIES:
   - FBSDKCoreKit (~> 4.10)
   - FBSDKLoginKit (~> 4.10)
   - FBSDKShareKit (~> 4.10)
+  - IDMPhotoBrowser (~> 1.8)
   - SDWebImage (~> 3.7)
   - Soundcloud (~> 0.7)
   - youtube-ios-player-helper (from `https://github.com/youtube/youtube-ios-player-helper`,
@@ -43,9 +50,12 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   1PasswordExtension: 627d5aecf210c7636968faf5a4c3546c9531385b
   Bolts: f52a250053bb517ca874523c3913776359ab3def
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   FBSDKCoreKit: 13bec8373fb3af94d44daf2aa1e0958687897fbd
   FBSDKLoginKit: d3d4a2e9d31954deb00bfea964167a05ca1ea976
   FBSDKShareKit: 54587b4624706ace1e810cf83412a918141f807a
+  IDMPhotoBrowser: b574fe3229754e701f32df271afbc4ac7e4e1997
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   Soundcloud: 7e67cd9ab67884a565b486939c1a046c20243a30
   UICKeyChainStore: 696cd35083f7c8fb5e201d909b7e6aea6b478575

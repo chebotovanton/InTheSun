@@ -1,7 +1,31 @@
 #import "AMAlbumInfoItemsManager.h"
 #import "AMAlbumInfoItem.h"
+#import "IDMPhoto.h"
 
 @implementation AMAlbumInfoItemsManager
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.items = [AMAlbumInfoItemsManager createItems];
+    }
+    return self;
+}
+
+- (NSArray <IDMPhoto *> *)allPhotos
+{
+    NSMutableArray *result = [NSMutableArray new];
+    for (AMAlbumInfoItem *item in self.items) {
+        UIImage *image = [UIImage imageNamed:item.imageName];
+        if (image) {
+            IDMPhoto *photo = [IDMPhoto photoWithImage:image];
+            [result addObject:photo];
+        }
+    }
+    
+    return result;
+}
 
 + (NSArray <AMAlbumInfoItem *> *)createItems
 {

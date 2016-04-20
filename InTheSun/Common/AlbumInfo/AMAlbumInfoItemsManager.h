@@ -1,9 +1,11 @@
 #import <Foundation/Foundation.h>
 
 @class AMAlbumInfoItem;
+@class IDMPhoto;
 
 @interface AMAlbumInfoItemsManager : NSObject
 
-+ (NSArray <AMAlbumInfoItem *> *)createItems;
+@property (nonatomic, strong) NSArray <AMAlbumInfoItem *> *items;
+- (NSArray <IDMPhoto *> *)allPhotos;
 
 @end
