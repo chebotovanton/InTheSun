@@ -7,8 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AMAlbumInfoVC">
             <connections>
-                <outlet property="collectionView" destination="72L-EG-C2F" id="ijc-wL-VEN"/>
                 <outlet property="pageControl" destination="uyO-u2-YDA" id="RPc-7x-yeQ"/>
+                <outlet property="photoCollectionView" destination="72L-EG-C2F" id="8pW-m5-fJ9"/>
                 <outlet property="playerView" destination="DY7-aB-7bG" id="kED-Zg-eBf"/>
                 <outlet property="scrollView" destination="n3l-mn-d2n" id="GMg-6H-b33"/>
                 <outlet property="videoPlaceholder" destination="rWY-IR-n2M" id="w74-wt-XVT"/>

@@ -60,12 +60,12 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.playerView loadWithVideoId:@"Wsjka9Ran7A"];
+    [self.playerView loadWithVideoId:@"UP7yivCcABM"];
 }
 
 - (void)stopMusicPlayer
 {
-    [(AMTabMenuVC *)self.tabBarController stopMusicPlayer];
+    [self.delegate stopMusicPlayer];
 }
 
 - (IBAction)selectPage:(UIPageControl *)pageControl

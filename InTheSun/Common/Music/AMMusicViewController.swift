@@ -6,7 +6,7 @@ import MediaPlayer
 class AMMusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SoundCloudDelegate, AMMusicFooterViewDelegate {
 
     private let kSongCellIdentifier = "AMSongCell"
-    private let itunesAlbumUrl = "https://itun.es/ru/A8uW1"
+    private let itunesAlbumUrl = "itms-apps://itun.es/ru/A8uW1"
     
     var player: AVPlayer = AVPlayer()
     var playlist: Playlist?
@@ -54,8 +54,8 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     override func viewWillAppear(animated: Bool) {
-        
         super.viewWillAppear(animated)
+        
         UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
         self.becomeFirstResponder()
         do {
@@ -66,6 +66,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        
         UIApplication.sharedApplication().endReceivingRemoteControlEvents()
         self.resignFirstResponder()
     }
@@ -80,22 +81,16 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func playInitialSong() {
         playItem(6)
-        player.volume = 0.0;
-        fadeVolumeIn()
+        let time = CMTimeMakeWithSeconds(20.0, 1)
+        player.seekToTime(time)
         setupButtonsAndTitlesState()
     }
     
-    //MARK: - Private
-    
-    func fadeVolumeIn()
-    {
-        if player.volume < 1 {
-            player.volume += 0.05
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-                self.fadeVolumeIn()
-            })
-        }
+    func isPlaying() -> Bool {
+        return (self.player.rate != 0 && self.player.error == nil)
     }
+    
+    //MARK: - Private
     
     private func playItem(index: Int) {
         
@@ -114,10 +109,6 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
             }
             MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = trackInfo
         }
-    }
-    
-    private func isPlaying() -> Bool {
-        return (self.player.rate != 0 && self.player.error == nil)
     }
     
     func tracksCount() -> Int {

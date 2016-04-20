@@ -9,23 +9,23 @@
 
     [result addObject:[self itemWithTitle:@"Борис Шавейников"
                                  subtitle:@"Барабаны, перкуссия"
-                                imageName:nil]];
+                                imageName:@"shaveinikov.jpg"]];
     
     [result addObject:[self itemWithTitle:@"Виктор Бондарик"
                                  subtitle:@"Бас-гитара"
-                                imageName:nil]];
+                                imageName:@"bondarik.jpg"]];
     
     [result addObject:[self itemWithTitle:@"Юрий Парфёнов"
                                  subtitle:@"Труба, флюгельгорн, мянкелефинский кларнет, флейта"
-                                imageName:nil]];
+                                imageName:@"parfenov.jpg"]];
     
     [result addObject:[self itemWithTitle:@"Николай Рубанов"
                                  subtitle:@"Тенор саксофон, баритон саксофон, сопрано саксофон, бас кларнет, клавишные"
-                                imageName:nil]];
+                                imageName:@"rubanov.jpg"]];
     
     [result addObject:[self itemWithTitle:@"Михаил Коловский"
                                  subtitle:@"Туба, диджириду"
-                                imageName:nil]];
+                                imageName:@"kolovski.jpg"]];
     
     [result addObject:[self itemWithTitle:@"Дмитрий Озерский"
                                  subtitle:@"Клавишные"
@@ -38,14 +38,6 @@
     [result addObject:[self itemWithTitle:@"Леонид Фёдоров"
                                  subtitle:@"Гитара, вокал, перкуссия, клавишные"
                                 imageName:@"fedorov.jpg"]];
-    
-    [result addObject:[self itemWithTitle:@"Лидия Фёдорова"
-                                 subtitle:@"голос в «И ДЕНЬ И НОЧЬ»"
-                                imageName:nil]];
-    
-    [result addObject:[self itemWithTitle:@"ХОР в «МИР ТАЕТ»"
-                                 subtitle:@"Михаил Раппопорт, Виктор Бондарик, Николай Рубанов, Михаил Коловский, Дмитрий Озерский, Владимир Волков, Леонид Фёдоров"
-                                imageName:nil]];
     
     [result addObject:[self itemWithTitle:@"ОЛЕГ ГАРКУША"
                                  subtitle:@"Всегда с нами!!!"

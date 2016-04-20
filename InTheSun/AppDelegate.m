@@ -52,7 +52,7 @@ static NSString * kLaunchCountKey = @"launchCountKey";
 {
     NSInteger launchCount = [[NSUserDefaults standardUserDefaults] integerForKey:kLaunchCountKey];
     #warning Debug
-    launchCount = 1;
+    launchCount = 0;
     if (launchCount == 0) {
         [self showBlockingScreenAnimated:NO];
     }
@@ -102,8 +102,10 @@ static NSString * kLaunchCountKey = @"launchCountKey";
 
 - (void)showBlockingScreenAnimated:(BOOL)animated
 {
+    AMTabMenuVC *rootVC = (AMTabMenuVC *)self.window.rootViewController;
     self.blockingScreen = [[AMBlockingScreenVC alloc] initWithNibName:@"AMBlockingScreenVC" bundle:nil];
-    [self.window.rootViewController presentViewController:self.blockingScreen animated:animated completion:nil];
+    self.blockingScreen.delegate = rootVC;
+    [rootVC presentViewController:self.blockingScreen animated:animated completion:nil];
 }
 
 - (void)hideBlockingScreenAnimated:(BOOL)animated
