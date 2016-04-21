@@ -157,8 +157,10 @@
 {
     NSArray *photos = [self.itemsManager allPhotos];
     IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
+    browser.displayActionButton = NO;
     [browser setInitialPageIndex:indexPath.item];
     
+#warning Gallery rotation
 //    browser.modalPresentationStyle = UIModalPresentationCurrentContext;
 //    browser.providesPresentationContextTransitionStyle = YES;
 //    browser.definesPresentationContext = YES;
