@@ -6,7 +6,7 @@ import MediaPlayer
 class AMMusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SoundCloudDelegate, AMMusicFooterViewDelegate {
 
     private let kSongCellIdentifier = "AMSongCell"
-    private let itunesAlbumUrl = "itms-apps://itun.es/ru/A8uW1"
+    private let itunesAlbumUrl = "https://geo.itunes.apple.com/ru/album/ula/id901861146?mt=1&app=itunes"
     
     var player: AVPlayer = AVPlayer()
     var playlist: Playlist?
