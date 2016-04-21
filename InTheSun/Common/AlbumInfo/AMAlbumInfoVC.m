@@ -7,7 +7,7 @@
 #import "IDMPhotoBrowser.h"
 #import "NYTPhotosViewController.h"
 
-@interface AMAlbumInfoVC () <YTPlayerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface AMAlbumInfoVC () <YTPlayerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, IDMPhotoBrowserDelegate>
 
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet YTPlayerView *playerView;
@@ -159,9 +159,11 @@
     IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
     [browser setInitialPageIndex:indexPath.item];
     
-    browser.modalPresentationStyle = UIModalPresentationCurrentContext;
-    browser.providesPresentationContextTransitionStyle = YES;
-    browser.definesPresentationContext = YES;
+//    browser.modalPresentationStyle = UIModalPresentationCurrentContext;
+//    browser.providesPresentationContextTransitionStyle = YES;
+//    browser.definesPresentationContext = YES;
+    
+    browser.delegate = self;
     
     [self presentViewController:browser animated:YES completion:nil];    
 }
@@ -174,6 +176,15 @@
     float fractionalPage = self.photoCollectionView.contentOffset.x / pageWidth;
     NSInteger page = lround(fractionalPage);
     self.pageControl.currentPage = page;
+}
+
+#pragma mark - IDMPhotoBrowserDelegate
+
+- (void)photoBrowser:(IDMPhotoBrowser *)photoBrowser didShowPhotoAtIndex:(NSUInteger)index
+{
+    [self.photoCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]
+                                     atScrollPosition:UICollectionViewScrollPositionLeft
+                                             animated:NO];
 }
 
 @end
