@@ -12,7 +12,6 @@ pod 'FBSDKShareKit', '~> 4.10'
 pod 'SDWebImage', '~>3.7'
 pod 'youtube-ios-player-helper', :git=>'https://github.com/youtube/youtube-ios-player-helper', :commit=>'head'
 pod 'IDMPhotoBrowser', '~> 1.8'
-
 end
 
 target 'InTheSunTests' do

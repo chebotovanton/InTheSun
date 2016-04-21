@@ -5,6 +5,7 @@
 #import "AMAlbumInfoItem.h"
 #import "AMAlbumInfoItemsManager.h"
 #import "IDMPhotoBrowser.h"
+#import "NYTPhotosViewController.h"
 
 @interface AMAlbumInfoVC () <YTPlayerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -52,6 +53,11 @@
     return is_iPad() ? UIInterfaceOrientationMaskAllButUpsideDown : UIInterfaceOrientationMaskPortrait;
 }
 
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
 - (void)setConstraints
 {
     if (is_iPhone6()) {
@@ -82,14 +88,16 @@
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
+    NSIndexPath *indexPath = self.photoCollectionView.indexPathsForVisibleItems.firstObject;
+    
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     
-#warning Doesn't work
+    [self.photoCollectionView.collectionViewLayout invalidateLayout];
+    
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        [self.photoCollectionView.collectionViewLayout invalidateLayout];
-//        [self.photoCollectionView reloadData];
-//        CGPoint point = CGPointMake(currentPage * self.photoCollectionView.bounds.size.width, 0.0);
-//        [self.photoCollectionView setContentOffset:point animated:YES];
+        [self.photoCollectionView scrollToItemAtIndexPath:indexPath
+                                         atScrollPosition:UICollectionViewScrollPositionLeft
+                                                 animated:NO];
     }
                                  completion:nil];
 }
@@ -150,7 +158,12 @@
     NSArray *photos = [self.itemsManager allPhotos];
     IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
     [browser setInitialPageIndex:indexPath.item];
-    [self presentViewController:browser animated:YES completion:nil];
+    
+    browser.modalPresentationStyle = UIModalPresentationCurrentContext;
+    browser.providesPresentationContextTransitionStyle = YES;
+    browser.definesPresentationContext = YES;
+    
+    [self presentViewController:browser animated:YES completion:nil];    
 }
 
 #pragma mark - UIScrollViewDelegate

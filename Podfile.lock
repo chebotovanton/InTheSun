@@ -13,10 +13,18 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.10.0):
     - FBSDKCoreKit
+  - FLAnimatedImage (1.0.12)
   - IDMPhotoBrowser (1.8.4):
     - DACircularProgress
     - pop
     - SDWebImage
+  - NYTPhotoViewer (1.1.0):
+    - NYTPhotoViewer/AnimatedGifSupport (= 1.1.0)
+    - NYTPhotoViewer/Core (= 1.1.0)
+  - NYTPhotoViewer/AnimatedGifSupport (1.1.0):
+    - FLAnimatedImage (~> 1.0.8)
+    - NYTPhotoViewer/Core
+  - NYTPhotoViewer/Core (1.1.0)
   - pop (1.0.9)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
@@ -32,6 +40,7 @@ DEPENDENCIES:
   - FBSDKLoginKit (~> 4.10)
   - FBSDKShareKit (~> 4.10)
   - IDMPhotoBrowser (~> 1.8)
+  - NYTPhotoViewer (~> 1.1.0)
   - SDWebImage (~> 3.7)
   - Soundcloud (~> 0.7)
   - youtube-ios-player-helper (from `https://github.com/youtube/youtube-ios-player-helper`,
@@ -54,7 +63,9 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 13bec8373fb3af94d44daf2aa1e0958687897fbd
   FBSDKLoginKit: d3d4a2e9d31954deb00bfea964167a05ca1ea976
   FBSDKShareKit: 54587b4624706ace1e810cf83412a918141f807a
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   IDMPhotoBrowser: b574fe3229754e701f32df271afbc4ac7e4e1997
+  NYTPhotoViewer: e80e8767f3780d2df37c6f72cbab15d6c7232911
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   Soundcloud: 7e67cd9ab67884a565b486939c1a046c20243a30

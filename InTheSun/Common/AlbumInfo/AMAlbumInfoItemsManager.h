@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "NYTPhoto.h"
 
 @class AMAlbumInfoItem;
 @class IDMPhoto;
