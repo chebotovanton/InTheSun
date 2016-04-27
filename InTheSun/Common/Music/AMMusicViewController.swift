@@ -81,7 +81,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func playInitialSong() {
         playItem(6)
-        let time = CMTimeMakeWithSeconds(20.0, 1)
+        let time = CMTimeMakeWithSeconds(28.0, 1)
         player.seekToTime(time)
         setupButtonsAndTitlesState()
     }
@@ -294,7 +294,8 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func share(sender: UIButton!) {
         let url = NSURL(string: itunesAlbumUrl)
-        let shareController = UIActivityViewController(activityItems: ["Новый альбом группы АукцЫон", url!], applicationActivities: nil)
+        let image = UIImage(named: "musicAlbumIcon")
+        let shareController = UIActivityViewController(activityItems: [image!, "Новый альбом группы АукцЫон", url!], applicationActivities: nil)
         shareController.popoverPresentationController?.sourceView = sender
         self.presentViewController(shareController, animated: true, completion:nil)
     }
