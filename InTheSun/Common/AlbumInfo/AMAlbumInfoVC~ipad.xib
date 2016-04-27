@@ -44,7 +44,7 @@
                     <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3C-93-khF" userLabel="ContentView">
-                            <rect key="frame" x="0.0" y="0.0" width="768" height="1057"/>
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="1089.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DY7-aB-7bG" userLabel="PlayerView" customClass="YTPlayerView">
                                     <rect key="frame" x="0.0" y="20" width="768" height="400"/>
@@ -96,7 +96,7 @@
                                     <color key="currentPageIndicatorTintColor" red="0.98823529409999999" green="0.83529411760000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </pageControl>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XGf-12-iPn">
-                                    <rect key="frame" x="15" y="860" width="738" height="177"/>
+                                    <rect key="frame" x="15" y="860" width="738" height="209.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <attributedString key="attributedText">
                                         <fragment content="МУЗЫКА">
@@ -143,10 +143,17 @@
                                         <fragment>
                                             <string key="content"> – Тонстудия киноконцерна Мосфильм 2015 – 2016 г.г.     звукорежиссёр – Андрей Левин     ассистент звукорежиссёра – Сергей Круглов     мастеринг – Анатолий Рясин
 
-За помощь и содействие огромное спасибо Сергею Адоньеву!!!</string>
+За помощь и содействие огромное спасибо Сергею Адоньеву  </string>
                                             <attributes>
                                                 <font key="NSFont" size="14" name="ArialMT"/>
                                                 <real key="NSKern" value="0.0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="35.450000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="Идея и креативное сопровождение: агентство GREAT">
+                                            <attributes>
+                                                <font key="NSFont" size="14" name="ArialMT"/>
+                                                <integer key="NSLigature" value="0"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="35.450000000000003" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             </attributes>
                                         </fragment>

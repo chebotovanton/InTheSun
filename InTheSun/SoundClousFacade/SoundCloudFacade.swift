@@ -20,14 +20,14 @@ protocol SoundCloudDelegate {
     }
         
     func loadAlbum(albumId: Int) {
-        Playlist.playlist(albumId) { (result: SimpleAPIResponse<Playlist>) -> Void in
+        Playlist.playlist(albumId, secretToken: "s-hQ9Wc") { (result: SimpleAPIResponse<Playlist>) -> Void in
             self.playlist = result.response.result
             if (self.playlist != nil) {
                 self.delegate?.didLoadAlbum(self.playlist!)
             } else {
                 self.delegate?.albumLoadingFailed()
             }
-        }
+        }        
     }
     
     func loadAlbumImage() {
