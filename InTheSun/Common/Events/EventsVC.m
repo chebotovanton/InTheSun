@@ -118,8 +118,7 @@
 
 - (BOOL)isDateInFuture:(NSDate *)date
 {
-    NSTimeInterval interval = [date timeIntervalSinceNow];
-    return interval > 0;
+    [date timeIntervalSinceNow] > 0;
 }
 
 #pragma mark - Actions
