@@ -12,9 +12,7 @@ static CGFloat kModeSwitchLuminanceLimit = 30000.0;
 
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
-@property (nonatomic, strong) AVPlayer *player;
 @property (nonatomic, assign) CGFloat luminanceSum;
-@property (nonatomic, assign) CGFloat luminanceLimit;
 @property (nonatomic, assign) BOOL shouldCheckLuminance;
 
 @property (nonatomic, weak) IBOutlet UIImageView *yellowCircle;
