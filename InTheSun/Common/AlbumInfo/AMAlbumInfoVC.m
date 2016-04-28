@@ -159,7 +159,7 @@
     [self.browser setInitialPageIndex:indexPath.item];
     self.browser.delegate = self;
     
-    [self presentViewController:self.browser animated:YES completion:nil];    
+    [self presentViewController:self.browser animated:YES completion:nil];
 }
 
 #pragma mark - UIScrollViewDelegate
