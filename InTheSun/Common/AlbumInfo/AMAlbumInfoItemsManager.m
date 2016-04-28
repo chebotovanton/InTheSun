@@ -1,12 +1,6 @@
 #import "AMAlbumInfoItemsManager.h"
 #import "AMAlbumInfoItem.h"
 #import "IDMPhoto.h"
-#import "NYTPhoto.h"
-
-
-@interface AMPhoto : NSObject <NYTPhoto>
-@end
-
 
 @implementation AMAlbumInfoItemsManager
 

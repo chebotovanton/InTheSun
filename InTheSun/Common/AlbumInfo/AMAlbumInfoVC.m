@@ -5,7 +5,6 @@
 #import "AMAlbumInfoItem.h"
 #import "AMAlbumInfoItemsManager.h"
 #import "IDMPhotoBrowser.h"
-#import "NYTPhotosViewController.h"
 
 @interface AMAlbumInfoVC () <YTPlayerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, IDMPhotoBrowserDelegate>
 
