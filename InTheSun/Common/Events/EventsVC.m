@@ -118,7 +118,7 @@
 
 - (BOOL)isDateInFuture:(NSDate *)date
 {
-    [date timeIntervalSinceNow] > 0;
+    return [date timeIntervalSinceNow] > 0;
 }
 
 #pragma mark - Actions
