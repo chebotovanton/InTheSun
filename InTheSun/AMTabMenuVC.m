@@ -23,7 +23,6 @@
     [self setViewControllers:vcs animated:YES];
 }
 
-
 - (NSArray *)createControllers
 {
     UIOffset titleOffset = UIOffsetMake(0.0, -3.0);
@@ -65,5 +64,9 @@
     return [(AMMusicViewController *)self.viewControllers[0] isPlaying];
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return is_iPad() ? UIInterfaceOrientationMaskAllButUpsideDown : UIInterfaceOrientationMaskPortrait;
+}
 
 @end

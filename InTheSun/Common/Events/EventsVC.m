@@ -61,7 +61,7 @@
     if (futureEvents.count > 0) {
         AMEventSection *section = [AMEventSection new];
         section.name = LS(@"LOC_EVENTS_FUTURE_EVENTS");
-        section.events = futureEvents;
+        section.events = [self sortEventsByDate:futureEvents];
         section.shouldShowHeader = NO;
         [result addObject:section];
     }
@@ -75,12 +75,6 @@
     }
     
     return result;
-}
-
-- (BOOL)isDateInFuture:(NSDate *)date
-{
-    NSTimeInterval interval = [date timeIntervalSinceNow];
-    return interval > 0;
 }
 
 - (void)loadData
@@ -110,6 +104,21 @@
             self.tableView.hidden = YES;
         }
     }];
+}
+
+#pragma mark - Private
+
+- (NSArray <AMEvent *> *)sortEventsByDate:(NSArray <AMEvent *> *)events
+{
+    return [events sortedArrayUsingComparator:^NSComparisonResult(AMEvent * _Nonnull event1, AMEvent * _Nonnull event2) {
+        return [event1.startDate compare:event2.startDate];
+    }];
+}
+
+
+- (BOOL)isDateInFuture:(NSDate *)date
+{
+    return [date timeIntervalSinceNow] > 0;
 }
 
 #pragma mark - Actions

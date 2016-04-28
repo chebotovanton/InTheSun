@@ -6,11 +6,10 @@ import MediaPlayer
 class AMMusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SoundCloudDelegate, AMMusicFooterViewDelegate {
 
     private let kSongCellIdentifier = "AMSongCell"
-    private let itunesAlbumUrl = "itms-apps://itun.es/ru/A8uW1"
-    
+    private let itunesAlbumUrl = "https://geo.itunes.apple.com/album/id1108068285?mt=1&app=itunes"
     var player: AVPlayer = AVPlayer()
     var playlist: Playlist?
-    var currentPlayingIndex: Int = 0
+    var currentPlayingIndex: Int = -1
     var albumImage: UIImage?
     
     @IBOutlet weak var contentTableView: UITableView!
@@ -81,7 +80,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func playInitialSong() {
         playItem(6)
-        let time = CMTimeMakeWithSeconds(20.0, 1)
+        let time = CMTimeMakeWithSeconds(29.0, 1)
         player.seekToTime(time)
         setupButtonsAndTitlesState()
     }
@@ -120,6 +119,12 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func setupButtonsAndTitlesState() {
 
+        if currentPlayingIndex < 0 {
+            songTitle.hidden = true
+            
+            return
+        }
+        
         playButton.selected = isPlaying()
         if let playlist = self.playlist {
             songTitle.hidden = false
@@ -196,7 +201,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func loadAlbum() {
         switchToLoadingMode()
-        soundcloudFacade.loadAlbum(41780534)
+        soundcloudFacade.loadAlbum(219884633)
     }
     
     //MARK: - UITableViewDataSource
@@ -288,7 +293,8 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func share(sender: UIButton!) {
         let url = NSURL(string: itunesAlbumUrl)
-        let shareController = UIActivityViewController(activityItems: ["Новый альбом группы АукцЫон", url!], applicationActivities: nil)
+        let image = UIImage(named: "musicAlbumIcon")
+        let shareController = UIActivityViewController(activityItems: [image!, "Я слушаю На Солнце", url!], applicationActivities: nil)
         shareController.popoverPresentationController?.sourceView = sender
         self.presentViewController(shareController, animated: true, completion:nil)
     }

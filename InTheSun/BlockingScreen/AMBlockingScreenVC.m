@@ -6,15 +6,14 @@
 
 static CGFloat kSongStartLuminanceLimit = 20000.0;
 static CGFloat kModeSwitchLuminanceLimit = 30000.0;
+static CGFloat kLuminanceTreshold = 128.0;
 
 @interface AMBlockingScreenVC () <UINavigationControllerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
 
 
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
-@property (nonatomic, strong) AVPlayer *player;
 @property (nonatomic, assign) CGFloat luminanceSum;
-@property (nonatomic, assign) CGFloat luminanceLimit;
 @property (nonatomic, assign) BOOL shouldCheckLuminance;
 
 @property (nonatomic, weak) IBOutlet UIImageView *yellowCircle;
@@ -234,17 +233,20 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
         
         CGFloat newLuminance = [AMImageProcessor getAverageLuminanceFromImage:image step:10];
-        self.luminanceSum += newLuminance;
+        if (newLuminance > kLuminanceTreshold) {
+            self.luminanceSum += newLuminance;
+        }
         
         dispatch_async(dispatch_get_main_queue(), ^{
             CGFloat alpha = self.luminanceSum/kModeSwitchLuminanceLimit;
             [self updateCirclesWithAlpha:alpha];
             if ([self.delegate isPlaying] == NO && self.luminanceSum > kSongStartLuminanceLimit) {
-                [self playSong];
-            }
-            if (self.luminanceSum > kModeSwitchLuminanceLimit) {
                 self.shouldCheckLuminance = NO;
-                [self switchToPlayState];
+                [self playSong];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self switchToPlayState];
+                });
+
             }
         });
     }
