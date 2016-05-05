@@ -50,12 +50,9 @@ static NSString * kLaunchCountKey = @"launchCountKey";
 
 - (void)showBlockingScreenIfNeeded
 {
+    [self showBlockingScreenAnimated:NO];
+    
     NSInteger launchCount = [[NSUserDefaults standardUserDefaults] integerForKey:kLaunchCountKey];
-    #warning Debug
-    launchCount = 1;
-    if (launchCount == 0) {
-        [self showBlockingScreenAnimated:NO];
-    }
     launchCount++;
     [[NSUserDefaults standardUserDefaults] setInteger:launchCount forKey:kLaunchCountKey];
 }

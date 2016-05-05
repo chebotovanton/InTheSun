@@ -7,6 +7,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
 
     private let kSongCellIdentifier = "AMSongCell"
     private let itunesAlbumUrl = "https://geo.itunes.apple.com/album/id1108068285?mt=1&app=itunes"
+    private let appUrl = "https://itunes.apple.com/us/app/na-solnce-aukcyon/id1111135609?ls=1&mt=8"
     var player: AVPlayer = AVPlayer()
     var playlist: Playlist?
     var currentPlayingIndex: Int = -1
@@ -292,7 +293,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     //MARK: - AMMusicFooterViewDelegate
     
     func share(sender: UIButton!) {
-        let url = NSURL(string: itunesAlbumUrl)
+        let url = NSURL(string: appUrl)
         let image = UIImage(named: "musicAlbumIcon")
         let shareController = UIActivityViewController(activityItems: [image!, "Я слушаю На Солнце", url!], applicationActivities: nil)
         shareController.popoverPresentationController?.sourceView = sender

@@ -4,9 +4,8 @@
 #import "AMImageProcessor.h"
 #import "AMTabMenuVC.h"
 
-static CGFloat kSongStartLuminanceLimit = 20000.0;
-static CGFloat kModeSwitchLuminanceLimit = 30000.0;
-static CGFloat kLuminanceTreshold = 128.0;
+static CGFloat kSongStartLuminanceLimit = 50000.0;
+static CGFloat kLuminanceTreshold = 185;
 
 @interface AMBlockingScreenVC () <UINavigationControllerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
 
@@ -26,6 +25,7 @@ static CGFloat kLuminanceTreshold = 128.0;
 @property (nonatomic, weak) IBOutlet UIImageView *albumNameView;
 @property (nonatomic, weak) IBOutlet UIImageView *groupNameView;
 @property (nonatomic, weak) IBOutlet UIImageView *circleAlbumName;
+
 @end
 
 @implementation AMBlockingScreenVC
@@ -195,7 +195,7 @@ static CGFloat kLuminanceTreshold = 128.0;
     }
 }
 
-- (void)startCapturingWithSession: (AVCaptureSession *) captureSession
+- (void)startCapturingWithSession: (AVCaptureSession *)captureSession
 {
     [self setPreviewLayer:[[AVCaptureVideoPreviewLayer alloc] initWithSession:captureSession]];
     
@@ -232,13 +232,16 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     if (self.shouldCheckLuminance) {
         UIImage *image = [self imageFromSampleBuffer:sampleBuffer];
         
-        CGFloat newLuminance = [AMImageProcessor getAverageLuminanceFromImage:image step:10];
+        CGFloat newLuminance = [AMImageProcessor getCenterLuminanceFromImage:image step:10.0];
         if (newLuminance > kLuminanceTreshold) {
             self.luminanceSum += newLuminance;
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            CGFloat alpha = self.luminanceSum/kModeSwitchLuminanceLimit;
+                        
+            CGFloat halfALimit = kSongStartLuminanceLimit / 2.0;
+            
+            CGFloat alpha = MAX((self.luminanceSum - halfALimit) / halfALimit, 0.0);
             [self updateCirclesWithAlpha:alpha];
             if ([self.delegate isPlaying] == NO && self.luminanceSum > kSongStartLuminanceLimit) {
                 self.shouldCheckLuminance = NO;
