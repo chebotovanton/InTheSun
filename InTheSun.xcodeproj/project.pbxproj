@@ -448,7 +448,7 @@
 				TargetAttributes = {
 					9FADBCCF1C65FBDC00562B13 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = C92M3ZV55X;
+						DevelopmentTeam = 9EW2YS75Q2;
 					};
 					9FADBCEB1C65FBDC00562B13 = {
 						CreatedOnToolsVersion = 7.2;
@@ -717,12 +717,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = SplashScreen;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = InTheSun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.InTheSun.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "InTheSun/SoundClousFacade/InTheSun-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -736,12 +738,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = SplashScreen;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = InTheSun/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.InTheSun.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "InTheSun/SoundClousFacade/InTheSun-Bridging-Header.h";
 			};
 			name = Release;
