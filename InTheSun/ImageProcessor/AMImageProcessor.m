@@ -106,7 +106,6 @@
     CGContextRelease(context);
     
     CGFloat luminanceSum = 0.0;
-    NSInteger luminanceTakes = 0;
     
     NSInteger centerX = width / 2;
     NSInteger centerY = height / 2;

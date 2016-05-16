@@ -6,8 +6,49 @@
 //Events
 "LOC_EVENTS_FUTURE_EVENTS" = "Предстоящие события";
 "LOC_EVENTS_PAST_EVENTS" = "Прошедшие события";
-"LOC_EVENTS_LOADING" = "Идет загрузка...";
-"LOC_EVENTS_ERROR" = "Ничего не найдено";
 
 //Blocking screen
+"LOC_SET_CAMERA" = "Направьте камеру";
+"LOC_AND_LISTEN" = "и слушайте";
 "LOC_GO_TO_ALBUM" = "Слушать альбом";
+
+//Music screen
+"LOC_BUY_IPHONE" = "Купить";
+"LOC_BUY_IPAD" = "Купить альбом";
+"LOC_SHARE_BUTTON" = "Поделиться";
+"LOC_SHARE_TITLE" = "Я слушаю На Солнце";
+
+//Errors
+"LOC_CONNECTION_ERROR_TITLE" = "Кажется, у вас проблемы с сетью";
+"LOC_CONNECTION_MUSIC_ERROR_DESCRIPTION" = "Подключитесь к интернету, чтобы загрузить новый альбом \"На солнце\"";
+"LOC_CONNECTION_EVENTS_ERROR_DESCRIPTION" = "Подключитесь к интернету, чтобы загрузить список ближайших событий";
+"LOC_TRY_AGAIN_BUTTON" = "Попробовать еще раз";
+"LOC_LOADING_TITLE" = "Идет загрузка...";
+
+//Album info
+"LOC_ALBUM_INFO_NAME_SHAV" = "Борис Шавейников";
+"LOC_ALBUM_INFO_ROLE_SHAV" = "Барабаны, перкуссия";
+
+"LOC_ALBUM_INFO_NAME_BOND" = "Виктор Бондарик";
+"LOC_ALBUM_INFO_ROLE_BOND" = "Бас-гитара";
+
+"LOC_ALBUM_INFO_NAME_PARF" = "Юрий Парфёнов";
+"LOC_ALBUM_INFO_ROLE_PARF" = "Труба, флюгельгорн, мянкелефинский кларнет, флейта";
+
+"LOC_ALBUM_INFO_NAME_RUBA" = "Николай Рубанов";
+"LOC_ALBUM_INFO_ROLE_RUBA" = "Тенор саксофон, баритон саксофон, сопрано саксофон, бас кларнет, клавишные";
+
+"LOC_ALBUM_INFO_NAME_KOLO" = "Михаил Коловский";
+"LOC_ALBUM_INFO_ROLE_KOLO" = "Туба, диджириду";
+
+"LOC_ALBUM_INFO_NAME_OZER" = "Дмитрий Озерский";
+"LOC_ALBUM_INFO_ROLE_OZER" = "Клавишные";
+
+"LOC_ALBUM_INFO_NAME_VOLK" = "Владимир Волков";
+"LOC_ALBUM_INFO_ROLE_VOLK" = "Контрабас, клавишные, виола да гамба, калимба, арфочка, перкуссия";
+
+"LOC_ALBUM_INFO_NAME_FEDO" = "Леонид Фёдоров";
+"LOC_ALBUM_INFO_ROLE_FEDO" = "Гитара, вокал, перкуссия, клавишные";
+
+"LOC_ALBUM_INFO_NAME_GARK" = "ОЛЕГ ГАРКУША";
+"LOC_ALBUM_INFO_ROLE_GARK" = "Всегда с нами!!!";

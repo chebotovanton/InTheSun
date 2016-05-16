@@ -31,42 +31,42 @@
 {
     NSMutableArray *result = [NSMutableArray new];
 
-    [result addObject:[self itemWithTitle:@"Борис Шавейников"
-                                 subtitle:@"Барабаны, перкуссия"
+    [result addObject:[self itemWithTitle:LS(@"LOC_ALBUM_INFO_NAME_SHAV")
+                                 subtitle:LS(@"LOC_ALBUM_INFO_ROLE_SHAV")
                                 imageName:@"shaveinikov.jpg"]];
     
-    [result addObject:[self itemWithTitle:@"Виктор Бондарик"
-                                 subtitle:@"Бас-гитара"
+    [result addObject:[self itemWithTitle:LS(@"LOC_ALBUM_INFO_NAME_BOND")
+                                 subtitle:LS(@"LOC_ALBUM_INFO_ROLE_BOND")
                                 imageName:@"bondarik.jpg"]];
     
-    [result addObject:[self itemWithTitle:@"Юрий Парфёнов"
-                                 subtitle:@"Труба, флюгельгорн, мянкелефинский кларнет, флейта"
+    [result addObject:[self itemWithTitle:LS(@"LOC_ALBUM_INFO_NAME_PARF")
+                                 subtitle:LS(@"LOC_ALBUM_INFO_ROLE_PARF")
                                 imageName:@"parfenov.jpg"]];
     
-    [result addObject:[self itemWithTitle:@"Николай Рубанов"
-                                 subtitle:@"Тенор саксофон, баритон саксофон, сопрано саксофон, бас кларнет, клавишные"
+    [result addObject:[self itemWithTitle:LS(@"LOC_ALBUM_INFO_NAME_RUBA")
+                                 subtitle:LS(@"LOC_ALBUM_INFO_ROLE_RUBA")
                                 imageName:@"rubanov.jpg"]];
     
-    [result addObject:[self itemWithTitle:@"Михаил Коловский"
-                                 subtitle:@"Туба, диджириду"
+    [result addObject:[self itemWithTitle:LS(@"LOC_ALBUM_INFO_NAME_KOLO")
+                                 subtitle:LS(@"LOC_ALBUM_INFO_ROLE_KOLO")
                                 imageName:@"kolovski.jpg"]];
     
-    [result addObject:[self itemWithTitle:@"Дмитрий Озерский"
-                                 subtitle:@"Клавишные"
+    [result addObject:[self itemWithTitle:LS(@"LOC_ALBUM_INFO_NAME_OZER")
+                                 subtitle:LS(@"LOC_ALBUM_INFO_ROLE_OZER")
                                 imageName:@"ozersky.jpg"]];
     
-    [result addObject:[self itemWithTitle:@"Владимир Волков"
-                                 subtitle:@"Контрабас, клавишные, виола да гамба, калимба, арфочка, перкуссия"
+    [result addObject:[self itemWithTitle:LS(@"LOC_ALBUM_INFO_NAME_VOLK")
+                                 subtitle:LS(@"LOC_ALBUM_INFO_ROLE_VOLK")
                                 imageName:@"volkov.jpg"]];
     
-    [result addObject:[self itemWithTitle:@"Леонид Фёдоров"
-                                 subtitle:@"Гитара, вокал, перкуссия, клавишные"
+    [result addObject:[self itemWithTitle:LS(@"LOC_ALBUM_INFO_NAME_FEDO")
+                                 subtitle:LS(@"LOC_ALBUM_INFO_ROLE_FEDO")
                                 imageName:@"fedorov.jpg"]];
     
-    [result addObject:[self itemWithTitle:@"ОЛЕГ ГАРКУША"
-                                 subtitle:@"Всегда с нами!!!"
+    [result addObject:[self itemWithTitle:LS(@"LOC_ALBUM_INFO_NAME_GARK")
+                                 subtitle:LS(@"LOC_ALBUM_INFO_ROLE_GARK")
                                 imageName:@"garkusha.jpg"]];
-    
+
     return result;
 }
 

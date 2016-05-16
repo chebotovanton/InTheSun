@@ -4,10 +4,25 @@
 "LOC_TAB_BAR_EVENTS" = "Events";
 
 //Events
-"LOC_EVENTS_FUTURE_EVENTS" = "Future events";
-"LOC_EVENTS_PAST_EVENTS" = "Past events";
-"LOC_EVENTS_LOADING" = "Loading...";
-"LOC_EVENTS_ERROR" = "Nothing found";
+"LOC_EVENTS_FUTURE_EVENTS" = "Предстоящие события";
+"LOC_EVENTS_PAST_EVENTS" = "Прошедшие события";
+"LOC_EVENTS_LOADING" = "Идет загрузка...";
+"LOC_EVENTS_ERROR" = "Ничего не найдено";
 
 //Blocking screen
-"LOC_GO_TO_ALBUM" = "Go to album";
+"LOC_SET_CAMERA" = "Set camera";
+"LOC_AND_LISTEN" = "and listen to";
+"LOC_GO_TO_ALBUM" = "Слушать альбом";
+
+//Music screen
+"LOC_BUY_IPHONE" = "Buy";
+"LOC_BUY_IPAD" = "Buy album";
+"LOC_SHARE_BUTTON" = "Share";
+"LOC_SHARE_TITLE" = "I'm listening to \"На Солнце\"";
+
+//Errors
+"LOC_CONNECTION_ERROR_TITLE" = "Connection error";
+"LOC_CONNECTION_MUSIC_ERROR_DESCRIPTION" = "Check your internet connection to load new album";
+"LOC_CONNECTION_EVENTS_ERROR_DESCRIPTION" = "Check your internet connection to load events list";
+"LOC_TRY_AGAIN_BUTTON" = "Try again";
+"LOC_LOADING_TITLE" = "Loading...";

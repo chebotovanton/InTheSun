@@ -14,6 +14,7 @@
 		9F041A231C8C8F280092CBAC /* EventsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F041A211C8C8F280092CBAC /* EventsVC.xib */; };
 		9F1DED801CB00C8F0051A63F /* Defines.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1DED7F1CB00C8F0051A63F /* Defines.m */; };
 		9F2DCBDE1CB159DC00F70799 /* AMMusicViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2DCBDD1CB159DC00F70799 /* AMMusicViewController~ipad.xib */; };
+		9F3720C71CEA3C88003F7ECC /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3720C61CEA3C88003F7ECC /* Defines.swift */; };
 		9F4BD2801C944D13009E5DCC /* AMEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4BD27E1C944D13009E5DCC /* AMEventCell.m */; };
 		9F4BD2811C944D13009E5DCC /* AMEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F4BD27F1C944D13009E5DCC /* AMEventCell.xib */; };
 		9F4BD2841C945155009E5DCC /* AMEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4BD2831C945155009E5DCC /* AMEvent.m */; };
@@ -80,6 +81,8 @@
 		9F1DED7E1CB00C8F0051A63F /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 		9F1DED7F1CB00C8F0051A63F /* Defines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Defines.m; sourceTree = "<group>"; };
 		9F2DCBDD1CB159DC00F70799 /* AMMusicViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AMMusicViewController~ipad.xib"; sourceTree = "<group>"; };
+		9F3720C51CEA356D003F7ECC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9F3720C61CEA3C88003F7ECC /* Defines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
 		9F4BD27D1C944D13009E5DCC /* AMEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMEventCell.h; sourceTree = "<group>"; };
 		9F4BD27E1C944D13009E5DCC /* AMEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMEventCell.m; sourceTree = "<group>"; };
 		9F4BD27F1C944D13009E5DCC /* AMEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMEventCell.xib; sourceTree = "<group>"; };
@@ -301,6 +304,7 @@
 		9FADBCD21C65FBDC00562B13 /* InTheSun */ = {
 			isa = PBXGroup;
 			children = (
+				9F3720C61CEA3C88003F7ECC /* Defines.swift */,
 				9F1DED7E1CB00C8F0051A63F /* Defines.h */,
 				9F1DED7F1CB00C8F0051A63F /* Defines.m */,
 				9FEFE0891CA98DC000F413B1 /* Categories */,
@@ -463,6 +467,7 @@
 			knownRegions = (
 				Base,
 				ru,
+				en,
 			);
 			mainGroup = 9FADBCC71C65FBDC00562B13;
 			productRefGroup = 9FADBCD11C65FBDC00562B13 /* Products */;
@@ -573,6 +578,7 @@
 			files = (
 				9FADBCDE1C65FBDC00562B13 /* SecondViewController.m in Sources */,
 				9FADBCD81C65FBDC00562B13 /* AppDelegate.m in Sources */,
+				9F3720C71CEA3C88003F7ECC /* Defines.swift in Sources */,
 				9FEEC4A01CB59E0C00613361 /* AMAlbumInfoItem.m in Sources */,
 				9FADBCFF1C66141C00562B13 /* AMBlockingScreenVC.m in Sources */,
 				9FEEC4A71CB6CA4700613361 /* AMAlbumInfoItemsManager.m in Sources */,
@@ -618,6 +624,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9FEFE0931CA98FB300F413B1 /* ru */,
+				9F3720C51CEA356D003F7ECC /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

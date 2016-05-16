@@ -295,7 +295,7 @@ class AMMusicViewController: UIViewController, UITableViewDataSource, UITableVie
     func share(sender: UIButton!) {
         let url = NSURL(string: appUrl)
         let image = UIImage(named: "musicAlbumIcon")
-        let shareController = UIActivityViewController(activityItems: [image!, "Я слушаю На Солнце", url!], applicationActivities: nil)
+        let shareController = UIActivityViewController(activityItems: [image!, LS("LOC_SHARE_TITLE"), url!], applicationActivities: nil)
         shareController.popoverPresentationController?.sourceView = sender
         self.presentViewController(shareController, animated: true, completion:nil)
     }
