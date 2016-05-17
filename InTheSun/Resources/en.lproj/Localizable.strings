@@ -1,26 +1,56 @@
 // Menu
 "LOC_TAB_BAR_MUSIC" = "Music";
-"LOC_TAB_BAR_ALBUM" = "Album info";
+"LOC_TAB_BAR_ALBUM" = "About";
 "LOC_TAB_BAR_EVENTS" = "Events";
 
 //Events
-"LOC_EVENTS_FUTURE_EVENTS" = "Предстоящие события";
-"LOC_EVENTS_PAST_EVENTS" = "Прошедшие события";
+"LOC_EVENTS_FUTURE_EVENTS" = "Upcoming events";
+"LOC_EVENTS_PAST_EVENTS" = "Recent events";
 
 //Blocking screen
-"LOC_SET_CAMERA" = "Set camera";
-"LOC_AND_LISTEN" = "and listen to";
-"LOC_GO_TO_ALBUM" = "Слушать альбом";
+"LOC_SET_CAMERA" = "Point camera at the Sun";
+"LOC_AND_LISTEN" = "";
+"LOC_GO_TO_ALBUM" = "Listen";
 
 //Music screen
 "LOC_BUY_IPHONE" = "Buy";
 "LOC_BUY_IPAD" = "Buy album";
 "LOC_SHARE_BUTTON" = "Share";
-"LOC_SHARE_TITLE" = "I'm listening to \"На Солнце\"";
+"LOC_SHARE_TITLE" = "I'm listening \"На Солнце\" by Auktyon";
 
 //Errors
-"LOC_CONNECTION_ERROR_TITLE" = "Connection error";
-"LOC_CONNECTION_MUSIC_ERROR_DESCRIPTION" = "Check your internet connection to load new album";
-"LOC_CONNECTION_EVENTS_ERROR_DESCRIPTION" = "Check your internet connection to load events list";
+"LOC_CONNECTION_ERROR_TITLE" = "You are no longer connected to the internet";
+"LOC_CONNECTION_MUSIC_ERROR_DESCRIPTION" = "Please check your internet connection to download \"На солнце\"";
+"LOC_CONNECTION_EVENTS_ERROR_DESCRIPTION" = "Please check your internet connection to load the list of upcoming events";
 "LOC_TRY_AGAIN_BUTTON" = "Try again";
 "LOC_LOADING_TITLE" = "Loading...";
+
+//Album info
+"LOC_ALBUM_INFO_NAME_SHAV" = "Boris Shaveinikov";
+"LOC_ALBUM_INFO_ROLE_SHAV" = "Drums, percussion";
+
+"LOC_ALBUM_INFO_NAME_BOND" = "Viktor Bondarik";
+"LOC_ALBUM_INFO_ROLE_BOND" = "Bass guitar";
+
+"LOC_ALBUM_INFO_NAME_PARF" = "Yuri Parfenov";
+"LOC_ALBUM_INFO_ROLE_PARF" = "Trumpet, flugelhorn, clarinet, flute";
+
+"LOC_ALBUM_INFO_NAME_RUBA" = "Nikolai Rubanov";
+"LOC_ALBUM_INFO_ROLE_RUBA" = "Tenor saxaphone, baritone saxaphone, soprano saxaphone, bass clarinet, keyboards";
+
+"LOC_ALBUM_INFO_NAME_KOLO" = "Mikhail Kolovskiy";
+"LOC_ALBUM_INFO_ROLE_KOLO" = "Tuba, didgeridoo";
+
+"LOC_ALBUM_INFO_NAME_OZER" = "Dmitri Ozerskiy";
+"LOC_ALBUM_INFO_ROLE_OZER" = "Keyboards";
+
+"LOC_ALBUM_INFO_NAME_VOLK" = "Vladimir Volkov";
+"LOC_ALBUM_INFO_ROLE_VOLK" = "Double bass, keyboards, viola da gamba, calimba, harp, percussion";
+
+"LOC_ALBUM_INFO_NAME_FEDO" = "Leonid Fedorov";
+"LOC_ALBUM_INFO_ROLE_FEDO" = "Guitar, vocals, percussion, keyboards";
+
+"LOC_ALBUM_INFO_NAME_GARK" = "Oleg Garkusha";
+"LOC_ALBUM_INFO_ROLE_GARK" = "Always with us!!!";
+
+"LOC_ALBUM_DESCRIPTION" = "MUSIC – «Auktyon» and Leonid Fedorov, except for «МИР ТАЕТ» – Vladimir Volkov\n\nLYRICS – Dmitri Ozerskiy\n\nRECORDING and MIXING – Mosfilm Tonstudios 2015 – 2016 г.г.\nrecord producer – Andrey Levin\nassistant engineer – Sergei Kruglov\nmastering – Anatoliy Ryasov\n\nSpecial thanks to Sergei Adoniev\n\nIdea and creative design: GREAT advertising group\n\nAPP – Anton Chebotov, Irina Malygina, Nick Kardakov";
