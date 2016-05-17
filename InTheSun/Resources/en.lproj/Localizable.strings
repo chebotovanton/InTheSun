@@ -9,7 +9,7 @@
 
 //Blocking screen
 "LOC_SET_CAMERA" = "Point camera at the Sun";
-"LOC_AND_LISTEN" = "";
+"LOC_AND_LISTEN" = "and listen to";
 "LOC_GO_TO_ALBUM" = "Listen";
 
 //Music screen
@@ -19,13 +19,16 @@
 "LOC_SHARE_TITLE" = "I'm listening \"На Солнце\" by Auktyon";
 
 //Errors
-"LOC_CONNECTION_ERROR_TITLE" = "You are no longer connected to the internet";
+"LOC_CONNECTION_ERROR_TITLE" = "You are no longer connected\nto the internet";
 "LOC_CONNECTION_MUSIC_ERROR_DESCRIPTION" = "Please check your internet connection to download \"На солнце\"";
 "LOC_CONNECTION_EVENTS_ERROR_DESCRIPTION" = "Please check your internet connection to load the list of upcoming events";
 "LOC_TRY_AGAIN_BUTTON" = "Try again";
 "LOC_LOADING_TITLE" = "Loading...";
 
 //Album info
+
+"LOC_LOADING_VIDEO" = "Loading...";
+
 "LOC_ALBUM_INFO_NAME_SHAV" = "Boris Shaveinikov";
 "LOC_ALBUM_INFO_ROLE_SHAV" = "Drums, percussion";
 

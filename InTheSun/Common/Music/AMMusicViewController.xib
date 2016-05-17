@@ -76,7 +76,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Карандаши и палочки" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAU-ZC-xim">
-                                    <rect key="frame" x="0.0" y="70" width="109" height="20"/>
+                                    <rect key="frame" x="0.0" y="49" width="109" height="41"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.81176470590000005" green="0.77647058820000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -157,7 +157,7 @@
                     <rect key="frame" x="-40" y="182" width="400" height="117"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Идет загрузка..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMX-pj-9Jb">
-                            <rect key="frame" x="136" y="20" width="128" height="21"/>
+                            <rect key="frame" x="136" y="20" width="129" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -182,7 +182,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DL3-v3-xBW">
                     <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кажется, у вас проблемы с сетью" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sy-VP-AZ6">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кажется, у вас проблемы с сетью" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sy-VP-AZ6">
                             <rect key="frame" x="25" y="60" width="271" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -223,6 +223,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="vJs-kq-aXo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DL3-v3-xBW" secondAttribute="leading" constant="20" id="Og4-Xu-xli"/>
+                        <constraint firstItem="2sy-VP-AZ6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DL3-v3-xBW" secondAttribute="leading" constant="20" id="ZS4-77-MBv"/>
                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vJs-kq-aXo" secondAttribute="trailing" constant="20" id="f5a-ah-NfQ"/>
                         <constraint firstItem="2sy-VP-AZ6" firstAttribute="top" secondItem="DL3-v3-xBW" secondAttribute="top" constant="60" id="hU2-c1-v88"/>
                         <constraint firstItem="2sy-VP-AZ6" firstAttribute="centerX" secondItem="DL3-v3-xBW" secondAttribute="centerX" id="ngd-Rj-umz"/>
@@ -231,6 +232,7 @@
                         <constraint firstAttribute="bottom" secondItem="VNO-oV-JYw" secondAttribute="bottom" constant="80" id="rRC-fd-QWh"/>
                         <constraint firstItem="O8K-m3-LYX" firstAttribute="centerX" secondItem="DL3-v3-xBW" secondAttribute="centerX" id="sOy-cb-G5n"/>
                         <constraint firstItem="vJs-kq-aXo" firstAttribute="centerX" secondItem="DL3-v3-xBW" secondAttribute="centerX" id="uRX-zy-NQF"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2sy-VP-AZ6" secondAttribute="trailing" constant="20" id="wDb-zR-7k8"/>
                         <constraint firstItem="O8K-m3-LYX" firstAttribute="top" secondItem="vJs-kq-aXo" secondAttribute="bottom" constant="40" id="ztz-Vv-M1e"/>
                     </constraints>
                 </view>

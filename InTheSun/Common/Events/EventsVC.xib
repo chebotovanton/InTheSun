@@ -51,7 +51,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEV-Ef-8Fi">
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кажется, у вас проблемы с сетью" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tia-QW-ydY">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кажется, у вас проблемы с сетью" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tia-QW-ydY">
                             <rect key="frame" x="25" y="60" width="271" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -94,6 +94,8 @@
                         <constraint firstItem="HFV-gj-kvJ" firstAttribute="top" secondItem="Tia-QW-ydY" secondAttribute="bottom" constant="20" id="019-f1-AJE"/>
                         <constraint firstItem="Tia-QW-ydY" firstAttribute="top" secondItem="BEV-Ef-8Fi" secondAttribute="top" constant="60" id="3oO-DR-beW"/>
                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HFV-gj-kvJ" secondAttribute="trailing" constant="20" id="Euy-So-oiW"/>
+                        <constraint firstItem="Tia-QW-ydY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BEV-Ef-8Fi" secondAttribute="leading" constant="20" id="PAb-YQ-YFt"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tia-QW-ydY" secondAttribute="trailing" constant="20" id="TqG-vG-iVS"/>
                         <constraint firstAttribute="bottom" secondItem="xoL-X0-wbM" secondAttribute="bottom" constant="80" id="WL0-Zj-7tr"/>
                         <constraint firstItem="HFV-gj-kvJ" firstAttribute="centerX" secondItem="BEV-Ef-8Fi" secondAttribute="centerX" id="Y1c-QP-vsy"/>
                         <constraint firstItem="rJa-LP-Cl7" firstAttribute="top" secondItem="HFV-gj-kvJ" secondAttribute="bottom" constant="40" id="fga-WL-kiA"/>

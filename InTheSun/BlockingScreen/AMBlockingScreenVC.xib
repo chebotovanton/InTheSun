@@ -54,6 +54,9 @@
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="LSKey" value="LOC_SET_CAMERA"/>
+                    </userDefinedRuntimeAttributes>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="groupName" translatesAutoresizingMaskIntoConstraints="NO" id="gGb-WW-0XV">
                     <rect key="frame" x="20" y="483" width="280" height="47"/>

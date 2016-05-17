@@ -28,6 +28,7 @@ static NSString * kLaunchCountKey = @"launchCountKey";
     [self.window makeKeyAndVisible];
     
     [self fadeSplashScreen];
+#warning azaza
 //    [self showBlockingScreenIfNeeded];
 
     return YES;
